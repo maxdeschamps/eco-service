@@ -1,0 +1,140 @@
+// =============================================================================
+// FONTS
+//
+// Ce fichier importe les différentes polices,
+// et défini les tailles de texte par défaut
+// =============================================================================
+
+@import 'assets/sass/bases/variables' ;
+
+
+
+// Font faces
+// ===================================================================
+
+// @font-face {
+//   font-family: 'Overpass';
+//   src: url('/build/fonts/Overpass-Regular.eot');
+//   src: url('/build/fonts/Overpass-Regular.eot?#iefix') format('embedded-opentype'),
+//       url('/build/fonts/Overpass-Regular.woff2') format('woff2'),
+//       url('/build/fonts/Overpass-Regular.woff') format('woff'),
+//       url('/build/fonts/Overpass-Regular.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+ @font-face {
+   font-family: 'Montserrat';
+   src: url('/build/fonts/Montserrat-Regular.ttf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/build/fonts/Poppins-Bold.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Black';
+  src: url('/build/fonts/Poppins-Black.ttf');
+  font-style: normal;
+}
+
+
+// Fonts sizes
+// ===================================================================
+
+body {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+
+    h1, h2, h4, h5, h6 {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: "Poppins-Black", sans-serif;
+      font-weight: 900;
+    }
+
+    @media (min-width: $min-md-bkpt) {
+      h1 {
+        font-size: 3.2em;
+        color: #FF5656;
+      }
+
+      h2 {
+        font-size: 1.98571em;
+      }
+      
+      h3 {
+        font-size: 1.62857em;
+      }
+      
+      h4 {
+        font-size: 1.38571em;
+      }
+      
+      h5 {
+        font-size: 1.24286em;
+      }
+      
+      h6 {
+        font-size: 1.17143em;
+      }
+
+      span {
+        font-size: 1.15em;
+      }
+
+      p {
+          font-size: 1em;
+      }
+    }
+
+    @media (max-width: $max-sm-bkpt) {
+      .center {
+        text-align: center;
+        h1 {
+          font-size: 3.2em;
+          color: #FF5656;
+        }
+      }
+
+
+      h2 {
+        font-size: 1.68571em;
+      }
+      
+      h3 {
+        font-size: 1.42857em;
+        font-family: "Poppins-Black", sans-serif;
+        font-weight: 900;
+      }
+      
+      h4 {
+        font-size: 1.28571em;
+      }
+      
+      h5 {
+        font-size: 1.14286em;
+      }
+      
+      h6 {
+        font-size: 1.12143em;
+      }
+
+      span {
+        font-size: 1.1em;
+      }
+
+      p {
+          font-size: 1em;
+      }
+    }
+}

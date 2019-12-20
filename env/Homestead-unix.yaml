@@ -1,0 +1,38 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: .
+      to: /home/vagrant/www
+      type: "nfs"
+      nfs_version: 4
+      mount_options: ['rw','actimeo=2']
+      nfs_udp: false
+
+sites:
+    - map: ./public
+      to: /home/vagrant/www/public
+      type: symfony4
+
+databases:
+    - homestead
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

@@ -1,0 +1,94 @@
+// =============================================================================
+// VARIABLES
+//
+// Ce fichier regroupes toutes les variables du site :
+// Point de ruptures pour le responsive, couleurs...
+// =============================================================================
+
+
+
+// Breakpoints
+// ===================================================================
+
+// from 320px : zone col-
+$max-xxs-bkpt: 399px;
+$min-xs-bkpt: 400px;
+
+// Start Bootstrap 4 breaktpoints
+// zone col- suite
+$max-xs-bkpt: 575px;
+$min-sm-bkpt: 576px;
+// zone col-sm-
+$max-sm-bkpt: 767px;
+$min-md-bkpt: 768px;
+// zone col-md-
+$max-md-bkpt: 991px;
+$min-lg-bkpt: 992px;
+// zone col-lg-
+$max-lg-bkpt: 1199px;
+$min-xl-bkpt: 1200px;
+// zone col-xl-
+// End Bootstrap 4 breakpoints
+
+$max-xl-bkpt: 1399px; 
+$min-xxl-bkpt: 1800px;
+// zone col-xl suite
+
+
+
+// Bootstrap container width
+// ===================================================================
+
+$container-sm-width: 540px;
+$container-md-width: 720px;
+$container-lg-width: 960px;
+$container-xl-width: 1100px;
+$container-xxl-width: 1700px;
+
+
+
+// Colors
+// ===================================================================
+
+// White
+$white: rgb(255,255,255);
+
+// Grey
+$x-light-grey: rgb(220,220,220);
+$light-grey: rgb(211,211,211);
+$grey: rgb(169,169,169);
+$dark-grey: rgb(128,128,128);
+$x-dark-grey: rgb(105,105,105);
+
+// Black
+$black: rgb(0,0,0);
+
+// Red
+// $light-red: rgb(255,127,127);
+// $red: rgb(226, 0, 57);
+// $dark-red: rgb(204,0,0);
+
+// Blue
+// $light-blue: rgb(142,213,240);
+// $blue: rgb(64, 115, 178);
+// $dark-blue: rgb(0,153,204);
+
+// Green
+// $light-green: rgb(182, 219,43);
+// $green: rgb(133,188,34);
+// $dark-green: rgb(65,178,158);
+
+// Orange
+// $light-orange: transparent;
+// $orange: rgb(241, 101, 49);
+// $dark-orange: rgb(204,108,0);
+
+// Yellow
+// $light-yellow: rgb(255,229,100);
+// $yellow: rgb(255,187,51);
+// $dark-yellow: transparent;
+
+// Purple
+// $light-purple: rgb(178,64,133);
+// $purple: rgb(146,68,167);
+

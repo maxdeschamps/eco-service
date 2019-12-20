@@ -1,0 +1,55 @@
+// =============================================================================
+// INIT
+//
+// Ce fichier regroupe les imports vers les librairies externes
+// et les règles de normalization / initialisation de styles sur les éléments html directement
+// =============================================================================
+
+
+
+// Import librairies
+// ===================================================================
+
+@import "~normalize.css/normalize";
+@import "~bootstrap/scss/bootstrap";
+
+
+
+// Initialization 
+// Default style on html elements
+// ===================================================================
+
+body {
+    // Needed for footer fixed to bottom
+    // #content {
+    //   flex: 1 0 auto;
+    // }
+    * {
+      box-sizing: border-box;
+    }
+  
+    p {
+      margin: 0 0 15px;
+    }
+  
+    a:before, a:after {
+      display: inline-block;
+      text-decoration: none;
+    }
+  
+    ul {
+      padding: 0;
+      margin: 0 0 0 15px;
+    }
+
+    input {
+        margin: 8px;
+    }
+
+    button {
+      border: none;
+    }
+  }
+  
+  
+  

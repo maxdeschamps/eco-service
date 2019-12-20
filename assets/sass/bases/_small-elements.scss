@@ -1,0 +1,64 @@
+// =============================================================================
+// SMALL ELEMENTS
+// 
+// Ce fichier regroupe tous les petis éléments utiles a travers tout le site,
+// avec leur style par défaut et leurs différentes variantes
+// liens, boutons, titres, sous-titres...
+// =============================================================================
+
+@import 'variables' ;
+
+
+
+// Links
+// ===================================================================
+a {
+
+}
+
+// Titres
+// ===================================================================
+h1 {
+    font-size: 50px;
+    color: red;
+    background: url('../../../public/images/nyan.gif'); // Nous sommes obligés de passer par un chemin relatif depuis Webpack, no problem !
+    margin: 16px 0;
+    min-height: 200px;
+}
+
+// Buttons
+// ===================================================================
+@mixin btn-primary() {
+
+}
+
+.btn-primary {
+    @include btn-primary() ;
+}
+
+.btn-primary--modifier {
+    @include btn-primary() ;
+}
+
+@mixin btn-secondary() {
+
+}
+
+.btn-primary {
+    @include btn-secondary() ;
+}
+
+.btn-primary--modifier {
+    @include btn-secondary() ;
+}
+
+
+
+// Defaut typo
+// ===================================================================
+
+// Title
+
+// Subtitle
+
+// Basic text 

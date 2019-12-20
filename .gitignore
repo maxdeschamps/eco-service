@@ -1,0 +1,32 @@
+###> PhpStorm IDE ###
+/.idea/**
+!/.idea/webServers.xml
+/.vscode/**
+!/.vscode/.sftp.json
+.git/
+.DS_Store
+###< PhpStorm IDE ###
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+/.vagrant/
+/node_modules/
+/public/build/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+*.lock
