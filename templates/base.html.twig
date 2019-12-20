@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - E-commerce G4</title>
+    {% block stylesheets %}
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      {% block nav %}
+
+      {% endblock %}
+    </header>
+    <main>
+      {% block body %}{% endblock %}
+    </main>
+    <footer>
+      {% block footer %}
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link">&copy; {{ 'now'|date('Y') }}</a>
+            </li>
+          </ul>
+      {% endblock %}
+  </footer>
+  {% block javascripts %}
+    <script src="{{ asset('build/app.js') }}"></script>
+    <script src="{{ asset('build/runtime.js') }}"></script>
+  {% endblock %}
+  </body>
+</html>
