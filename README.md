@@ -11,7 +11,7 @@ Projet E-commerce G4 - ING1 - symfony
 - $ php bin/console doctrine:schema:update --force
 - $ npm run dev
 
-# Lancement du site
+## Lancement du site
 - $ php bin/console server:run
 - Aller sur cette url : 127.0.0.1:8000/
 - C'est bon !
