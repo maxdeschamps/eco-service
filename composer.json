@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
+        "phpunit/phpunit": "^8.5",
         "sensio/framework-extra-bundle": "^5.4",
         "symfony/asset": "4.3.*",
         "symfony/console": "4.3.*",
@@ -27,13 +28,14 @@
         "symfony/validator": "4.3.*",
         "symfony/web-link": "4.3.*",
         "symfony/webpack-encore-bundle": "^1.7",
-        "symfony/yaml": "4.3.*"
+        "symfony/yaml": "4.3.*",
+        "twbs/bootstrap": "4.4.1"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.14",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*",
+        "symfony/test-pack": "^1.0",
         "symfony/web-server-bundle": "4.3.*"
     },
     "config": {

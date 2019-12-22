@@ -1,17 +1,27 @@
 # Eco-Service
-Projet E-commerce G4 - ING1 - symfony
+Projet E-commerce G4 - ING1 - Symfony
 
 ## Installation
-- cloner le projet dans le dossier htdocs de XAMPP
+- Mettez-vous dans le dossier htdocs de XAMPP (ou www de Wampp)
+- $ git clone https://github.com/maxdeschamps/eco-service.git
 - $ cd eco-service
 - $ composer install && npm install
-- lancer xampp/wampp/uwampp/ou quelque soit votre connerie...
-- lancer vos serveurs apache et mysql
+- Lancez xampp/wampp/uwampp/ou quelque soit votre connerie...
+- Lancez vos serveurs Apache et MySql
 - $ php bin/console doctrine:database:create
 - $ php bin/console doctrine:schema:update --force
 - $ npm run dev
 
 ## Lancement du site
 - $ php bin/console server:run
-- Aller sur cette url : 127.0.0.1:8000/
+- Allez sur cette url : 127.0.0.1:8000/
 - C'est bon !
+
+## Webpack, CSS et JavaScript
+- Ajoutez vos fichiers SCSS ou JS dans ./assets/css/ ou ./assets/js/
+- Pensez à respecter l'arborescence ! Les styles/scripts qui sont communs à plusieurs ou toutes les pages vont dans bases/global.extension, ceux qui ne concernent qu'une page vont dans pages/nom-de-page.extension
+- Si vous êtes amené à rajouter une page, pensez à la mettre aussi dans le app.scss (pour les styles) ou app.js (pour les scripts) !
+- Quand vous avez terminé vos modifications de style, enregistrez le app.scss en version minifiée
+  Exemple : Pour Atom, allez dans le menu Packages > SASS Autocompile > Output style > Compressed (la valeur doit être cochée). Tous vos fichiers scss seront enregistrés dans le format scss, et aussi dans le format min.css
+- $ npm run dev
+- Si vous êtes amené à faire plusieurs modifications du style, lancez plutôt $ npm run watch (la compilation du code se fait automatiquement dès que vous modifiez un fichier)
