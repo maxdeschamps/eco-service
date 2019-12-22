@@ -9,7 +9,7 @@
 require('../css/app.min.css');
 
 const $ = require('jquery');
-require('bootstrap');
+// require('bootstrap');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
