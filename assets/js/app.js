@@ -14,7 +14,7 @@ require('bootstrap');
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 // bases
-require('bases/global.js');
+require('./bases/global.js');
 
 // pages
-require('pages/home.js');
+require('./pages/home.js');
