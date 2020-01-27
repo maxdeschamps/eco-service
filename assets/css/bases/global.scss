@@ -27,19 +27,23 @@ body {
         margin: 0;
         height: 100%;
         line-height: 90px;
+        transition-duration: 0.3s;
 
         &:hover {
           background: #3f3f3f;
+          transition-duration: 0.3s;
 
           &:hover a {
             color: white;
             text-decoration: none;
+            transition-duration: 0.3s;
           }
         }
 
         a {
           text-decoration: none;
           color: #3f3f3f;
+          transition-duration: 0.3s;
         }
       }
     }
@@ -63,9 +67,11 @@ body {
         margin: 0;
         height: 100%;
         line-height: 90px;
+        transition-duration: 0.3s;
 
         &:hover {
           background: #3f3f3f;
+          transition-duration: 0.3s;
         }
 
         img {
