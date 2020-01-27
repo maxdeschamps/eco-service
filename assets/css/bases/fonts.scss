@@ -1,0 +1,39 @@
+// =============================================================================
+// FONTS
+// =============================================================================
+
+// Font faces
+// ===================================================================
+
+ @font-face {
+    font-family: 'Gotham-Bold';
+    src: url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.eot');
+    src: url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.otf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.svg') format('svg'),
+         url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.ttf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.woff') format('woff'),
+         url('/fonts/Gotham/Gotham-Bold/Gotham-Bold.woff2') format('woff2');
+ }
+
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('/fonts/Gotham/Gotham-Light/Gotham-Light.eot');
+    src: url('/fonts/Gotham/Gotham-Light/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Gotham/Gotham-Light/Gotham-Light.otf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Light/Gotham-Light.svg') format('svg'),
+         url('/fonts/Gotham/Gotham-Light/Gotham-Light.ttf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Light/Gotham-Light.woff') format('woff'),
+         url('/fonts/Gotham/Gotham-Light/Gotham-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.eot');
+    src: url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.otf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.svg') format('svg'),
+         url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.ttf') format('truetype'),
+         url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.woff') format('woff'),
+         url('/fonts/Gotham/Gotham-Medium/Gotham-Medium.woff2') format('woff2');
+}
