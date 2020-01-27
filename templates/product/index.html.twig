@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Tous les produits{% endblock %}
+
+{% block body %}
+  <h1>Liste des produits</h1>
+
+  <ul>
+    {% for product in products %}
+      <li>
+        <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">{{ product.getName }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

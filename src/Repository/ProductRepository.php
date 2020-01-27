@@ -20,6 +20,22 @@ class ProductRepository extends ServiceEntityRepository
     }
 
     // /**
+    //  * @return Product[]
+    //  */
+    // public function findAll(): array
+    // {
+    //   $entityManager = $this->getEntityManager();
+    //
+    //   $query = $entityManager->createQuery(
+    //     'SELECT p.id, p.price_ht, p.price_ttc, p.quantity, p.category
+    //     FROM App\Entity\Product p'
+    //   );
+    //
+    //   // returns an array of Product objects
+    //   return $query->getResult();
+    // }
+
+    // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
     /*

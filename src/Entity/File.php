@@ -31,11 +31,6 @@ class File
      */
     private $alt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Catalogue", inversedBy="files")
-     */
-    private $catalogue;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -73,18 +68,6 @@ class File
     public function setAlt(?string $alt): self
     {
         $this->alt = $alt;
-
-        return $this;
-    }
-
-    public function getCatalogue(): ?Catalogue
-    {
-        return $this->catalogue;
-    }
-
-    public function setCatalogue(?Catalogue $catalogue): self
-    {
-        $this->catalogue = $catalogue;
 
         return $this;
     }
