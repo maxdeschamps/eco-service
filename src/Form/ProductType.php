@@ -44,10 +44,6 @@ class ProductType extends AbstractType
             // ->add('author')
             ->add('category',EntityType::class, [
                 'label'=>'Catégorie',
-                // 'class' => Category::class,
-                // 'choice_value' => function ($category) {
-                //     return $category ? $category->getSlug() : '';
-                // },
                 'class' => Category::class,
                 'query_builder' => function (EntityRepository $er) {
                   return $er->createQueryBuilder('c')
