@@ -34,20 +34,25 @@ class Article
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\File")
-     */
-    private $files;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ArticleFile", mappedBy="article")
+     */
+    private $articleFiles;
+
+    public function __construct()
+    {
+        $this->articleFiles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,37 +95,6 @@ class Article
         return $this;
     }
 
-    /**
-     * @return Collection|File[]
-     */
-    public function getFiles(): Collection
-    {
-        return $this->files;
-    }
-
-    public function addFile(File $file): self
-    {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
-            $file->setCatalogue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFile(File $file): self
-    {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
-            // set the owning side to null (unless already changed)
-            if ($file->getCatalogue() === $this) {
-                $file->setCatalogue(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getAuthor(): ?User
     {
         return $this->author;
@@ -141,6 +115,37 @@ class Article
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ArticleFile[]
+     */
+    public function getArticleFiles(): Collection
+    {
+        return $this->articleFiles;
+    }
+
+    public function addArticleFile(ArticleFile $articleFile): self
+    {
+        if (!$this->articleFiles->contains($articleFile)) {
+            $this->articleFiles[] = $articleFile;
+            $articleFile->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticleFile(ArticleFile $articleFile): self
+    {
+        if ($this->articleFiles->contains($articleFile)) {
+            $this->articleFiles->removeElement($articleFile);
+            // set the owning side to null (unless already changed)
+            if ($articleFile->getArticle() === $this) {
+                $articleFile->setArticle(null);
+            }
+        }
 
         return $this;
     }

@@ -64,6 +64,17 @@ class Service
      */
     private $unity;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ServiceFile", mappedBy="service")
+     */
+    private $serviceFiles;
+
+    public function __construct()
+    {
+        $this->serviceFiles = new ArrayCollection();
+    }
+
+
     public function getName(): ?string
     {
         return $this->name;
@@ -96,37 +107,6 @@ class Service
     public function setContent(?string $content): self
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|File[]
-     */
-    public function getFiles(): Collection
-    {
-        return $this->files;
-    }
-
-    public function addFile(File $file): self
-    {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
-            $file->setCatalogue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFile(File $file): self
-    {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
-            // set the owning side to null (unless already changed)
-            if ($file->getCatalogue() === $this) {
-                $file->setCatalogue(null);
-            }
-        }
 
         return $this;
     }
@@ -187,6 +167,37 @@ class Service
     public function setUnity(?Unity $unity): self
     {
         $this->unity = $unity;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ServiceFile[]
+     */
+    public function getServiceFiles(): Collection
+    {
+        return $this->serviceFiles;
+    }
+
+    public function addServiceFile(ServiceFile $serviceFile): self
+    {
+        if (!$this->serviceFiles->contains($serviceFile)) {
+            $this->serviceFiles[] = $serviceFile;
+            $serviceFile->setService($this);
+        }
+
+        return $this;
+    }
+
+    public function removeServiceFile(ServiceFile $serviceFile): self
+    {
+        if ($this->serviceFiles->contains($serviceFile)) {
+            $this->serviceFiles->removeElement($serviceFile);
+            // set the owning side to null (unless already changed)
+            if ($serviceFile->getService() === $this) {
+                $serviceFile->setService(null);
+            }
+        }
 
         return $this;
     }

@@ -27,6 +27,11 @@ class File
     private $uri;
 
     /**
+     * @ORM\Column(type="integer", length=11)
+     */
+    private $order;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $alt;
@@ -56,6 +61,18 @@ class File
     public function setUri(string $uri): self
     {
         $this->uri = $uri;
+
+        return $this;
+    }
+
+    public function getOrder(): ?int
+    {
+        return $this->order;
+    }
+
+    public function setOrder(int $order): self
+    {
+        $this->order = $order;
 
         return $this;
     }

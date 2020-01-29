@@ -61,6 +61,16 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductFile", mappedBy="product")
+     */
+    private $productFiles;
+
+    public function __construct()
+    {
+        $this->productFiles = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -159,6 +169,37 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ProductFile[]
+     */
+    public function getProductFiles(): Collection
+    {
+        return $this->productFiles;
+    }
+
+    public function addProductFile(ProductFile $productFile): self
+    {
+        if (!$this->productFiles->contains($productFile)) {
+            $this->productFiles[] = $productFile;
+            $productFile->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductFile(ProductFile $productFile): self
+    {
+        if ($this->productFiles->contains($productFile)) {
+            $this->productFiles->removeElement($productFile);
+            // set the owning side to null (unless already changed)
+            if ($productFile->getProduct() === $this) {
+                $productFile->setProduct(null);
+            }
+        }
 
         return $this;
     }
