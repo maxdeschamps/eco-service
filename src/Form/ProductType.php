@@ -3,12 +3,15 @@
 namespace App\Form;
 
 use App\Entity\Product;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ProductType extends AbstractType
 {
@@ -38,7 +41,19 @@ class ProductType extends AbstractType
             ])
             // ->add('files')
             // ->add('author')
-            // ->add('category')
+            ->add('category',EntityType::class, [
+                'label'=>'Catégorie',
+                // 'class' => Category::class,
+                // 'choice_value' => function ($category) {
+                //     return $category ? $category->getSlug() : '';
+                // },
+                'class' => Category::class,
+                'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('c')
+                    ->orderBy('c.slug', 'ASC');
+                },
+                'choice_label' => 'name',
+            ])
         ;
     }
 

@@ -48,6 +48,8 @@ class ProductController extends AbstractController
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
+      die(var_dump($product));
+      $product->setSlug('');
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->persist($product);
       $entityManager->flush();
