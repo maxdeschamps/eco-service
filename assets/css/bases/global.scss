@@ -102,7 +102,7 @@ footer {
   background: #2ece99;
   text-decoration: none;
 
-  #footer-conteneur {
+  #footer-container {
     min-height: 40vh;
     display: flex;
     flex-direction: row;
@@ -153,17 +153,20 @@ footer {
         margin: 0;
         padding: 0;
         text-align: center;
+
         li {
           list-style: none;
+
           a {
             #logo-site-footer {
               width: 50%;
             }
-          i {
-            margin-top: 15px;
-            color:white;
-            font-size: 40px;
-          }
+
+            i {
+              margin-top: 15px;
+              color: white;
+              font-size: 40px;
+            }
           }
         }
       }
