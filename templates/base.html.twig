@@ -8,6 +8,7 @@
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' rel='stylesheet' type='text/css'>
   {% endblock %}
 </head>
 
@@ -52,11 +53,39 @@
   </main>
   <footer>
     {% block footer %}
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link">&copy; {{ 'now'|date('Y') }}</a>
-      </li>
-    </ul>
+    <div id="footer-conteneur">
+      <div id="footer-menu">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Demande de devis</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Connexion</a></li>
+        </ul>
+      </div>
+      <div id="footer-empty"></div>
+      <div id="footer-logos">
+        <ul>
+          <li>
+            <a href="/">
+              <img id="logo-site-footer" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    <div id="CGV">
+      <a href="#"> Conditions générales de vente. </a>
+    </div>
     {% endblock %}
   </footer>
   {% block javascripts %}
