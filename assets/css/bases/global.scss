@@ -196,12 +196,16 @@ footer {
   #CGV {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    background: #2ece99;
+    min-height: 30px;
+    font-family: 'Raleway';
+    font-size: 16px;
 
     a {
       text-decoration: none;
       color: #fff;
       transition-duration: 0.3s;
+      padding-bottom: 10px;
 
       &:hover {
         color: #3f3f3f;

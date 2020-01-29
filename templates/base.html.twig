@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <title>{% block title %}{% endblock %} - E-commerce G4</title>
-  {% block stylesheets %}
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' rel='stylesheet' type='text/css'>
-  {% endblock %}
-</head>
-
-<body>
-  <header>
-    {% block nav %}
-    <div id="header-menu">
-      <div id="header-menu-gauche">
-        <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Produits</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Demande de devis</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Connexion</a></li>
-        </ul>
-      </div>
-      <div id="header-menu-droite">
-        <ul>
-          <li>
-            <a href="#">
-              <img src="https://image.flaticon.com/icons/png/512/126/126083.png" alt="logo-panier">
-            </a></li>
-          <li>
-            <a href="#">
-              <img src="https://mpng.pngfly.com/20180401/klw/kisspng-user-profile-computer-icons-clip-art-profile-5ac092f6f2d337.1560498715225699749946.jpg" alt="logo-compte">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://image.flaticon.com/icons/png/512/126/126083.png" alt="logo du site">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}{% endblock %}
+      - E-commerce G4</title>
+    {% block stylesheets %}
+      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      {{ encore_entry_link_tags('app')}}
+      <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' rel='stylesheet' type='text/css'>
     {% endblock %}
-  </header>
-  <main>
-    {% block body %}{% endblock %}
-  </main>
-  <footer>
-    {% block footer %}
-    <div id="footer-container">
-      <div id="footer-menu">
-        <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Produits</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Demande de devis</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Connexion</a></li>
-        </ul>
-      </div>
-      <div id="footer-empty"></div>
-      <div id="footer-logos">
-        <ul>
-          <li>
-            <a href="/">
-              <img id="logo-site-footer" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/" target="_blank">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  </head>
 
-    </div>
-    <div id="CGV">
-      <a href="#"> Conditions générales de vente. </a>
-    </div>
+  <body>
+    <header>
+      {% block nav %}
+        <div id="header-menu">
+          <div id="header-menu-gauche">
+            <ul>
+              <li>
+                <a href="#">Accueil</a>
+              </li>
+              <li>
+                <a href="{{ path('index_product') }}">Produits</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Demande de devis</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Connexion</a>
+              </li>
+            </ul>
+          </div>
+          <div id="header-menu-droite">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="https://image.flaticon.com/icons/png/512/126/126083.png" alt="logo-panier">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="https://mpng.pngfly.com/20180401/klw/kisspng-user-profile-computer-icons-clip-art-profile-5ac092f6f2d337.1560498715225699749946.jpg" alt="logo-compte">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="https://image.flaticon.com/icons/png/512/126/126083.png" alt="logo du site">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {% endblock %}
+    </header>
+    <main>
+      {% block body %}{% endblock %}
+    </main>
+    <footer>
+      {% block footer %}
+        <div id="footer-container">
+          <div id="footer-menu">
+            <ul>
+              <li>
+                <a href="#">Accueil</a>
+              </li>
+              <li>
+                <a href="#">Produits</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Demande de devis</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Connexion</a>
+              </li>
+            </ul>
+          </div>
+          <div id="footer-empty"></div>
+          <div id="footer-logos">
+            <ul>
+              <li>
+                <a href="/">
+                  <img id="logo-site-footer" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="CGV">
+          <a href="#">
+            Conditions générales de vente.
+          </a>
+        </div>
+      {% endblock %}
+    </footer>
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app')}}
     {% endblock %}
-  </footer>
-  {% block javascripts %}
-  <script src="{{ asset('build/app.js') }}"></script>
-  <script src="{{ asset('build/runtime.js') }}"></script>
-  {% endblock %}
-</body>
+  </body>
 
 </html>
