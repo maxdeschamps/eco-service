@@ -33,36 +33,43 @@ class Product
      */
     private $content;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\File")
-     */
-    private $files;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=11)
      */
     private $price_ht;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=11)
      */
     private $price_ttc;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true, length=11)
      */
     private $quantity;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductFile", mappedBy="product")
+     */
+    private $productFiles;
+
+    public function __construct()
+    {
+        $this->productFiles = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,36 +112,6 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|File[]
-     */
-    public function getFiles(): Collection
-    {
-        return $this->files;
-    }
-
-    public function addFile(File $file): self
-    {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
-            $file->setCatalogue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFile(File $file): self
-    {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
-            // set the owning side to null (unless already changed)
-            if ($file->getCatalogue() === $this) {
-                $file->setCatalogue(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getAuthor(): ?User
     {
@@ -192,6 +169,37 @@ class Product
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ProductFile[]
+     */
+    public function getProductFiles(): Collection
+    {
+        return $this->productFiles;
+    }
+
+    public function addProductFile(ProductFile $productFile): self
+    {
+        if (!$this->productFiles->contains($productFile)) {
+            $this->productFiles[] = $productFile;
+            $productFile->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductFile(ProductFile $productFile): self
+    {
+        if ($this->productFiles->contains($productFile)) {
+            $this->productFiles->removeElement($productFile);
+            // set the owning side to null (unless already changed)
+            if ($productFile->getProduct() === $this) {
+                $productFile->setProduct(null);
+            }
+        }
 
         return $this;
     }

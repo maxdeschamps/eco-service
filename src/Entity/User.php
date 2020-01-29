@@ -19,7 +19,7 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
@@ -29,17 +29,17 @@ class User
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=60, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $first_name;
 
     /**
-     * @ORM\Column(type="string", length=60, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $last_name;
 
     /**
-     * @ORM\Column(type="string", length=60, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $phone;
 
@@ -55,7 +55,7 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Role")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $role;
 
