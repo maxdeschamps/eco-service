@@ -1,8 +1,8 @@
 <?php
 
-
 namespace App\DataFixtures;
 
+use App\Entity\User;
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -13,11 +13,13 @@ class ManyProductFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
-
+        $populator = new \Faker\ORM\Propel\Populator($faker);
+        
         for ($i = 0; $i < 50; $i++) {
             $produit = new Product();
-            $produit->setName($faker->word($maxNbChars = 7));
-            $produit->setSlug($faker->word($maxNbChars = 10));
+            $produit->addEntity('User', 1);
+            $produit->setName($faker->word(7));
+            $produit->setSlug($faker->word(10));
             $produit->setContent($faker->text);
             $produit->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
             $produit->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));

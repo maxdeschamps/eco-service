@@ -25,4 +25,5 @@ class ManyUserFixtures extends Fixture
 
         $manager->flush();
     }
+
 }
