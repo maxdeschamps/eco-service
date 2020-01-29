@@ -14,10 +14,13 @@ class ManyUserFixtures extends Fixture
 
         for ($i = 0; $i < 50; $i++) {
             $personne = new User();
+            $personne->setRole($manager->getRepository(Role::class)->find(1));
+            $personne->setDeliveryAddress($manager->getRepository(Address::class)->find(1));
+            $personne->setBillingAddress($manager->getRepository(Address::class)->find(1));
             $personne->setFirstName($faker->firstName);
             $personne->setLastName($faker->lastName);
             $personne->setPhone($faker->phoneNumber);
-            $personne->setPassword($faker->sha1);
+            $personne->setPassword($faker->password);
             $personne->setEmail($faker->email);
             $personne->setNewsletterAcceptance(intval($faker->boolean));
             $manager->persist($personne);
