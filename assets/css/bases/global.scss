@@ -13,8 +13,8 @@ main {
 
 .transitions-white-to-green {
   height: 25px;
-  width:100%;
-  background-image: url(/images/white-to-green.png);
+  width: 100%;
+  background-image: url("/images/white-to-green.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,8 +22,8 @@ main {
 
 .transitions-green-to-white {
   height: 25px;
-  width:100%;
-  background-image: url(/images/green-to-white.png);
+  width: 100%;
+  background-image: url("/images/green-to-white.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,13 +31,14 @@ main {
 
 .transitions-green-to-footer {
   height: 25px;
-  width:100%;
-  background-image: url(/images/green-to-footer.png);
+  width: 100%;
+  background-image: url("/images/green-to-footer.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 // HEADER MENU
+
 #header-menu {
   display: flex;
   width: 100%;
