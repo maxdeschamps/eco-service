@@ -1,12 +1,12 @@
 <?php
-// src/Controller/HelloWorldController.php
+// src/Controller/HomepageController.php
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HelloWorldController extends AbstractController
+class HomepageController extends AbstractController
 {
   /**
    * @Route("/")
@@ -14,7 +14,7 @@ class HelloWorldController extends AbstractController
   public function index()
   {
     return $this->render(
-      'helloworld/index.html.twig'
+      'homepage/index.html.twig'
       // ['project' => $project]
     );
   }
