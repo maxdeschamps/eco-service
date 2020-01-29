@@ -27,39 +27,119 @@ body {
   padding: 5% 0 10%;
   background: #ecffec;
   text-align: center;
-  width:100%;
+  width: 100%;
 
   .product-home-section-2-container {
     width: 90%;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
 
     .product-home-section-2 {
       background: white;
       width: 33.33%;
-      margin:0 2%;
+      margin: 0 2%;
 
       img {
         width: 100%;
       }
-        .product-home-infos {
-          width: 100%;
-          display: flex;
 
-          justify-content: center;
-          align-items: center;
+      .product-home-infos {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-          .product-home-title {
-            width: 50%;
-            text-align: left;
-          }
-
-          .product-home-price {
-            width: 50%;
-            text-align: right;
-          }
+        .product-home-title {
+          width: 50%;
+          text-align: left;
         }
 
+        .product-home-price {
+          width: 50%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+#section-3-home {
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5% 0 10%;
+
+  > h2 {
+    text-align: center;
+  }
+
+  #section-3-home-1 {
+    display: flex;
+    padding: 5% 0;
+
+    .text-part-left {
+      width: 45%;
+      padding-right: 10%;
+    }
+
+    .img-part-right {
+      width: 55%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  #section-3-home-2 {
+    display: flex;
+    padding: 5% 0;
+
+    .text-part-left {
+      width: 45%;
+      padding-left: 10%;
+    }
+
+    .img-part-right {
+      width: 55%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  #section-3-home-3 {
+    display: flex;
+    padding: 5% 0;
+
+    .text-part-left {
+      width: 45%;
+      padding-right: 10%;
+    }
+
+    .img-part-right {
+      width: 55%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#section-4-home {
+  background: #ecffec;
+
+  #section-4-home-container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10% 0;
+
+    .section-4-number {
+      width: 33.33%;
+      text-align: center;
     }
   }
 }
