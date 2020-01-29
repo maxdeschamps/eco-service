@@ -33,34 +33,31 @@ class Product
      */
     private $content;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\File")
-     */
-    private $files;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=11)
      */
     private $price_ht;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", length=11)
      */
     private $price_ttc;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true, length=11)
      */
     private $quantity;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $category;
 
@@ -105,36 +102,6 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|File[]
-     */
-    public function getFiles(): Collection
-    {
-        return $this->files;
-    }
-
-    public function addFile(File $file): self
-    {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
-            $file->setCatalogue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFile(File $file): self
-    {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
-            // set the owning side to null (unless already changed)
-            if ($file->getCatalogue() === $this) {
-                $file->setCatalogue(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getAuthor(): ?User
     {
