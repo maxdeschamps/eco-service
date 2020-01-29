@@ -2,21 +2,16 @@ body {
   background-color: lightgray;
   margin: 0;
   padding: 0;
-}
-
-body {
   min-height: 100vh;
-  /* 1 */
   display: flex;
-  /* 2 */
   flex-direction: column;
-  /* 3 */
+  font-family: 'gotham';
 }
 
 main {
   flex-grow: 1;
-  /* 4 */
 }
+
 // HEADER MENU
 
 #header-menu {

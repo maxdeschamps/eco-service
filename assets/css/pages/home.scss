@@ -7,10 +7,33 @@ body {
   margin: 0 auto;
   padding: 5% 0 10%;
   display: flex;
+  align-items: center;
 
   .text-part-left {
     width: 45%;
-    padding-right: 10%;
+    padding-right: 5%;
+    position: relative;
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 70px;
+      font-weight: 700;
+      font-family: 'Gotham-Bold';
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 60px;
+      font-weight: 200;
+      font-family: 'Gotham-Light';
+    }
+
+    p {
+      font-family: 'Raleway';
+      font-size: 16px;
+    }
   }
 
   .img-part-right {
@@ -24,10 +47,18 @@ body {
 
 #section-2-home {
   margin: 0 auto;
-  padding: 5% 0 10%;
+  padding: 0 0 10%;
   background: #ecffec;
   text-align: center;
   width: 100%;
+
+  h2 {
+    font-size: 60px;
+    font-weight: 100;
+    font-family: 'Gotham-Light';
+    margin: 0;
+    padding: 5%;
+  }
 
   .product-home-section-2-container {
     width: 90%;
@@ -38,6 +69,8 @@ body {
       background: white;
       width: 33.33%;
       margin: 0 2%;
+      padding: 1%;
+      border-radius: 10px;
 
       img {
         width: 100%;
@@ -52,10 +85,29 @@ body {
         .product-home-title {
           width: 50%;
           text-align: left;
+
+          p {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Raleway';
+            margin: 0;
+            padding: 0;
+          }
+
+          span {
+            font-size: 20px;
+            font-weight: 300;
+            font-family: 'Raleway';
+            margin: 0;
+            padding: 0;
+          }
         }
 
         .product-home-price {
           width: 50%;
+          font-size: 35px;
+          font-weight: 200;
+          font-family: 'Raleway';
           text-align: right;
         }
       }
@@ -79,7 +131,7 @@ body {
 
     .text-part-left {
       width: 45%;
-      padding-right: 10%;
+      padding-right: 5%;
     }
 
     .img-part-right {
@@ -97,7 +149,7 @@ body {
 
     .text-part-left {
       width: 45%;
-      padding-left: 10%;
+      padding-left: 5%;
     }
 
     .img-part-right {
@@ -115,7 +167,7 @@ body {
 
     .text-part-left {
       width: 45%;
-      padding-right: 10%;
+      padding-right: 5%;
     }
 
     .img-part-right {
