@@ -1,5 +1,5 @@
 footer {
-  background: #2ece99;
+  background: $green;
   text-decoration: none;
 
   #footer-container {
@@ -76,9 +76,8 @@ footer {
   #CGV {
     width: 100%;
     text-align: center;
-    background: #2ece99;
+    background: $green;
     min-height: 30px;
-    font-family: 'Raleway';
     font-size: 16px;
 
     a {
