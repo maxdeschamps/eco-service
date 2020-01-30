@@ -7,7 +7,7 @@ use App\Entity\Article;
 use App\Entity\File;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AerticleFileRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleFileRepository")
  */
 class ArticleFile
 {

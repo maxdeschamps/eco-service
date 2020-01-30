@@ -2,8 +2,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Article;
+use App\Entity\ArticleFile;
 use App\Entity\Category;
-use App\Entity\File;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -17,7 +17,7 @@ class ManyArticleFixtures extends Fixture
 
         for ($i = 0; $i < 50; $i++) {
             $article = new Article();
-            $article->addArticleFile($manager->getRepository(File::class)->find(1));
+            $article->addArticleFile($manager->getRepository(ArticleFile::class)->find(1));
             $article->setAuthor($manager->getRepository(User::class)->find(1));
             $article->setCategory($manager->getRepository(Category::class)->find(1));
             $article->setName($faker->word(10));
