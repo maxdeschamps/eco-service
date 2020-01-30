@@ -2,144 +2,153 @@
 
 {% block title %}Accueil{% endblock %}
 
+{% block idBlock %}homepage{% endblock %}
+
 {% block body %}
-  <div id="homepage">
-    <div id="section-1-home">
-      <div class="text-part-left">
-        <h2>Pour le recyclage</h2>
-        <h1>pensez Eco Service.</h1>
-        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
-          du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
-          spécimen de polices de texte.</p>
-      </div>
-      <div class="img-part-right">
-        <img src="https://i.pinimg.com/originals/5a/e7/de/5ae7deec44abf63cad14b25e9785ff9a.jpg">
-      </div>
-    </div>
-    <div class="transitions-white-to-green"></div>
-    <div id="section-2-home">
-      <h2>
-        Nos produits phares
-      </h2>
-      <div class="product-home-section-2-container">
-        <div class="product-home-section-2">
-          <img src="https://media.homemaison.com/SIRETEX_oct2017/l3c_bain/6ASB353GC.jpg">
-          <div class="product-home-infos">
-            <div class="product-home-title">
-              <p>
-                Gobelet recyclé Rouge
-              </p>
-              <span>
-                Catégorie 1
-              </span>
-            </div>
-            <div class="product-home-price">
-              <p>
-                50€
-              </p>
-            </div>
+  <section>
+    <article id="blocPresentation">
+      <div class="container">
+          <div class="blocHalf">
+            <h1><span>Pour le recyclage </span><br/>pensez Eco Service.</h1>
+            <p class="blocContent">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
+              du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+              spécimen de polices de texte.</p>
           </div>
-        </div>
-        <div class="product-home-section-2">
-          <img src="https://media.homemaison.com/SIRETEX_oct2017/l3c_bain/6ASB353GC.jpg">
-          <div class="product-home-infos">
-            <div class="product-home-title">
-              <p>
-                Gobelet recyclé Vert
-              </p>
-              <span>
-                Catégorie 1
-              </span>
-            </div>
-            <div class="product-home-price">
-              <p>
-                50€
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="product-home-section-2">
-          <img src="https://media.homemaison.com/SIRETEX_oct2017/l3c_bain/6ASB353GC.jpg">
-          <div class="product-home-infos">
-            <div class="product-home-title">
-              <p>
-                Gobelet recyclé Bleu
-              </p>
-              <span>
-                Catégorie 1
-              </span>
-            </div>
-            <div class="product-home-price">
-              <p>
-                50€
-              </p>
-            </div>
+
+          <div class="blocHalf">
+            <img class="fullSize" src="https://i.pinimg.com/originals/5a/e7/de/5ae7deec44abf63cad14b25e9785ff9a.jpg">
           </div>
         </div>
       </div>
-    </div>
-    <div class="transitions-green-to-white"></div>
-    <div id="section-3-home">
-      <h2>
-        Que me propose Eco-Service ?
-      </h2>
+    </article>
 
-      <div id="section-3-home-1">
-        <div class="text-part-left">
-          <h2>Des produits</h2>
-          <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
+    <svg class="wave waveTop fillLightGreen" viewBox="0 0 1440 120" aria-hidden="true">
+  		<path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+	  </svg>
+    <article id="blocProducts" class="backgroundLightGreen">
+      <div class="container">
+        <div class="blocFull">
+          <h2 class="textCenter">Nos produits phares</h2>
+          <ul class="detailList">
+            {# TODO remplacer la liste par des valeurs de la base de données #}
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé rouge</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 1</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://www.woopets.fr/assets/races/000/206/big-portrait/griffon-bruxellois.jpg">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé bleu</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 2</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://www.chiens-de-france.com/photo/eleveurs/55/10984/presentations/f976aba7-4788-3fe4-5ddf-0598e5eadba1.jpg">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé vert</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 2</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <svg class="wave waveBottom fillLightGreen" viewBox="0 0 1440 120" aria-hidden="true">
+  		<path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+	  </svg>
+
+    <article id="blocServices">
+      <h2 class="textCenter"><span>L'écologie autrement </span><br/>Que me propose Eco-Service ?</h2>
+      <div class="container">
+        <div class="blocHalf">
+          <h3>Des produits</h3>
+          <p class="blocContent">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
             du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
             spécimen de polices de texte.</p>
-          <a href="#">Acceder au catalogue</a>
+          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
         </div>
-        <div class="img-part-right">
-          <img src="https://jardinage.lemonde.fr/images/dossiers/2019-09/griffon-belge-2-091612.jpg">
-        </div>
-      </div>
-
-      <div id="section-3-home-2">
-        <div class="img-part-right">
-          <img src="https://media.ooreka.fr/public/image/3-307435-3127-full-13126785.jpg">
-        </div>
-        <div class="text-part-left">
-          <h2>Des recette DIY</h2>
-          <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
-            du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
-            spécimen de polices de texte.</p>
-          <a href="#">En savoir plus</a>
+        <div class="blocHalf">
+          <img class="fullSize" src="https://jardinage.lemonde.fr/images/dossiers/2019-09/griffon-belge-2-091612.jpg">
         </div>
       </div>
 
-      <div id="section-3-home-3">
-        <div class="text-part-left">
-          <h2>Des services</h2>
-          <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
+      <div class="container reverse">
+        <div class="blocHalf">
+          <h3>Des recettes DIY</h3>
+          <p class="blocContent">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
             du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
             spécimen de polices de texte.</p>
-          <a href="#">En savoir plus</a>
+          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au blog</a>
         </div>
-        <div class="img-part-right">
-          <img src="https://www.btanimaux.com/photos/1201846-l-500x375.jpg">
-        </div>
-      </div>
-    </div>
-    <div class="transitions-white-to-green"></div>
-    <div id="section-4-home">
-      <div id="section-4-home-container">
-        <div class="section-4-number">
-          <p class="count">95</p>
-          <span>de produit recyclés</span>
-        </div>
-        <div class="section-4-number">
-          <p class="count">95</p>
-          <span>de produit recyclés</span>
-        </div>
-        <div class="section-4-number">
-          <p class="count">95</p>
-          <span>de produit recyclés</span>
+        <div class="blocHalf">
+          <img class="fullSize" src="https://media.ooreka.fr/public/image/3-307435-3127-full-13126785.jpg">
         </div>
       </div>
-    </div>
-    <div class="transitions-green-to-footer"></div>
-  </div>
+
+      <div class="container">
+        <div class="blocHalf">
+          <h3>Des services</h3>
+          <p class="blocContent">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement
+            du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+            spécimen de polices de texte.</p>
+          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
+        </div>
+        <div class="blocHalf">
+          <img class="fullSize" src="https://www.btanimaux.com/photos/1201846-l-500x375.jpg">
+        </div>
+      </div>
+    </article>
+
+    <svg class="wave waveTop fillLightGreen" viewBox="0 0 1440 120" aria-hidden="true">
+  		<path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+	  </svg>
+    <article id="blocInformations" class="backgroundLightGreen">
+      <div class="container">
+        <ul class="detailInformations">
+          <li class="detailElement textCenter">
+            <p class="count">95</p>
+            <span>de produits recyclés</span>
+          </li>
+          <li class="detailElement textCenter">
+            <p class="count">95</p>
+            <span>de produits recyclés</span>
+          </li>
+          <li class="detailElement textCenter">
+            <p class="count">95</p>
+            <span>de produits recyclés</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </section>
 {% endblock %}
