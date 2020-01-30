@@ -1,0 +1,96 @@
+footer {
+  background: #2ece99;
+  text-decoration: none;
+
+  #footer-container {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: row;
+
+    #footer-menu {
+      width: 30%;
+      padding-left: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          vertical-align: middle;
+          margin-bottom: 10px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            transition-duration: 0.3s;
+
+            &:hover {
+              color: #3f3f3f;
+              transition-duration: 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    #footer-empty {
+      width: 40%;
+    }
+
+    #footer-logos {
+      width: 30%;
+      text-align: right;
+      padding-right: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+          list-style: none;
+
+          a {
+            #logo-site-footer {
+              width: 50%;
+            }
+
+            i {
+              margin-top: 15px;
+              color: white;
+              font-size: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #CGV {
+    width: 100%;
+    text-align: center;
+    background: #2ece99;
+    min-height: 30px;
+    font-family: 'Raleway';
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      transition-duration: 0.3s;
+      padding-bottom: 10px;
+
+      &:hover {
+        color: #3f3f3f;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+}

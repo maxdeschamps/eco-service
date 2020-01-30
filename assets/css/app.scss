@@ -1,4 +1,9 @@
-// bases
+// base
+@import 'bases/variables.scss';
 @import 'bases/fonts.scss';
-@import 'bases/global.scss'; // pages
+@import 'bases/global.scss';
+@import 'bases/menu.scss';
+@import 'bases/footer.scss';
+
+// pages
 @import 'pages/home.scss';

@@ -1,0 +1,38 @@
+#homepage {
+  article {
+    &#blocPresentation {
+      h1 {
+        font-size: 3rem;
+
+        span {
+          font-family: 'Gotham-Light';
+        }
+      }
+    }
+
+    &#blocProducts {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    &#blocServices {
+      h2 {
+        font-size: 2.5rem;
+
+        span {
+          font-weight: 'Gotham-Light';
+          font-size: 1.6rem;
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    &#blocInformations {
+      padding-bottom: 60px;
+    }
+  }
+}
