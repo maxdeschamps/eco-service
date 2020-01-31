@@ -94,7 +94,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0;
-    margin: 30px -60px;
+    margin: 15px -60px;
     list-style: none;
 
     @media screen and (max-width: $largeSize) {
@@ -108,7 +108,7 @@ main {
     li.detailElement {
       position: relative;
       width: calc(100% / 3 - 120px - 40px);
-      margin: 0 60px;
+      margin: 20px 60px;
       padding: 20px;
       background-color: white;
       border-radius: .25rem;
@@ -117,7 +117,7 @@ main {
 
       @media screen and (max-width: $largeSize) {
         width: calc(100% / 3 - 40px - 40px);
-        margin: 0 20px;
+        margin: 20px 20px;
       }
 
       @media screen and (max-width: $mediumSize) {
@@ -184,9 +184,18 @@ main {
     justify-content: space-around;
     list-style: none;
     width: 100%;
+    padding: 0;
+
+    @media screen and (max-width: $smallSize) {
+      flex-direction: column;
+    }
 
     li.detailElement {
       list-style: none;
+
+      @media screen and (max-width: $smallSize) {
+        margin: 20px 0;
+      }
 
       p.count {
         font-size: 2rem;
