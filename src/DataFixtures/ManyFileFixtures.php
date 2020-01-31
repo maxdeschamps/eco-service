@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\DataFixtures;
 
 use App\Entity\File;
@@ -17,9 +16,9 @@ class ManyFileFixtures extends Fixture
         for ($i = 0; $i < 50; $i++) {
             $file = new File();
             $file->setName($faker->word(7));
+            //$file->setUri($faker->image($dir = 'public/image',400,300));
+            $file->setOrder($faker->numberBetween(0,50));
             $file->setAlt($faker->text);
-            $file->setOrder($faker->randomNumber());
-            $file->setUri($faker->imageUrl($width = 640, $height = 480));
             $manager->persist($file);
         }
         $manager->flush();

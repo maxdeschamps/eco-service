@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 
-class ManyServicesQuotationsFixtures extends Fixture
+class ManyServiceQuotationsFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
