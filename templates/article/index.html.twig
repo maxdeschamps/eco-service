@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Tous les articles{% endblock %}
+
+{% block body %}
+  <h1>Liste des articles</h1>
+
+  <ul>
+    {% for article in articles %}
+      <li>
+        <a href="{{ path('show_article', { 'slug': article.getSlug }) }}">{{ article.getName }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

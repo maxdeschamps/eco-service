@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ service.getName }}{% endblock %}
+
+{% block body %}
+  <h1>{{ service.getName }}</h1>
+  <p>Prix HT : {{ service.getPriceHt|number_format(2, ',', '.') }} €</p>
+  <p>Prix TTC : {{ service.getPriceTtc|number_format(2, ',', '.') }} €</p>
+  <p>{{ service.getContent }}</p>
+
+  <a href="{{ path('index_service') }}">Retourner à la liste des services</a>
+{% endblock %}
