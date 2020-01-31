@@ -9,12 +9,26 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        //user
+        $manyUserFixtures = new ManyUserFixtures();
+        $manySubjectFixtures = new ManySubjectFixtures();
+        $manyRoleFixtures = new ManyRoleFixtures();
+        $manyUnityFixtures = new ManyUnityFixtures();
+        $manyCategoryFixtures = new ManyCategoryFixtures();
+        $articleFixtures = new ArticleFixtures();
+        $brandFixtures = new BrandFixtures();
+        $racquetStringerFixtures = new RacquetStringerFixtures();
+        $timeSlotStringerFixtures = new TimeSlotStringerFixtures();
+        $racquetStringersHasRopeReferenceFixtures = new TimeSlotStringerFixtures();
 
-        //category
-        // $product = new Product();
-        // $manager->persist($product);
-
-        $manager->flush();
+        $userFixtures->load($manager);
+        $sportFixtures->load($manager);
+        $tagFixtures->load($manager);
+        $addressFixtures->load($manager);
+        $shopFixtures->load($manager);
+        $articleFixtures->load($manager);
+        $brandFixtures->load($manager);
+        $racquetStringerFixtures->load($manager);
+        $timeSlotStringerFixtures->load($manager);
+        $racquetStringersHasRopeReferenceFixtures->load($manager);
     }
 }

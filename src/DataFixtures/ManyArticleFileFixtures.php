@@ -17,7 +17,7 @@ class ManyArticleFileFixtures extends Fixture
 
         for ($i = 0; $i < 50; $i++) {
             $article = new Article();
-          
+
         }
         $manager->flush();
     }
