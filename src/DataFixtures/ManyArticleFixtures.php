@@ -17,7 +17,6 @@ class ManyArticleFixtures extends Fixture
 
         for ($i = 0; $i < 50; $i++) {
             $article = new Article();
-            $article->addArticleFile($manager->getRepository(ArticleFile::class)->find(1));
             $article->setAuthor($manager->getRepository(User::class)->find(1));
             $article->setCategory($manager->getRepository(Category::class)->find(1));
             $article->setName($faker->word(10));

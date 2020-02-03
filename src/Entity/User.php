@@ -54,12 +54,6 @@ class User
     private $newsletters;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Role")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $role;
-
-    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $delivery_address;

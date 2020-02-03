@@ -19,7 +19,6 @@ class ManyServiceFixtures extends Fixture
             $service = new Service();
             $service->setUnity($manager->getRepository(Unity::class)->find(1));
             $service->setAuthor($manager->getRepository(User::class)->find(1));
-            $service->addServiceFile($manager->getRepository(File::class)->find(1));
             $service->setSlug($faker->word(10));
             $service->setContent($faker->text);
             $service->setName($faker->word(7));

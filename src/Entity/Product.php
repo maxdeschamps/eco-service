@@ -62,13 +62,13 @@ class Product
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ProductFile", mappedBy="product")
+     * @ORM\ManyToMany(targetEntity="App\Entity\File")
      */
-    private $productFiles;
+    private $files;
 
     public function __construct()
     {
-        $this->productFiles = new ArrayCollection();
+        $this->files = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -174,31 +174,26 @@ class Product
     }
 
     /**
-     * @return Collection|ProductFile[]
+     * @return Collection|File[]
      */
-    public function getProductFiles(): Collection
+    public function getFiles(): Collection
     {
-        return $this->productFiles;
+        return $this->files;
     }
 
-    public function addProductFile(ProductFile $productFile): self
+    public function addFile(File $file): self
     {
-        if (!$this->productFiles->contains($productFile)) {
-            $this->productFiles[] = $productFile;
-            $productFile->setProduct($this);
+        if (!$this->files->contains($file)) {
+            $this->files[] = $file;
         }
 
         return $this;
     }
 
-    public function removeProductFile(ProductFile $productFile): self
+    public function removeFile(File $file): self
     {
-        if ($this->productFiles->contains($productFile)) {
-            $this->productFiles->removeElement($productFile);
-            // set the owning side to null (unless already changed)
-            if ($productFile->getProduct() === $this) {
-                $productFile->setProduct(null);
-            }
+        if ($this->files->contains($file)) {
+            $this->files->removeElement($file);
         }
 
         return $this;
