@@ -5,6 +5,10 @@
   margin: 0;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+  border-bottom: solid 2px;
+  border-bottom-color: $green;
 
   #header-menu-gauche {
     width: 70%;
