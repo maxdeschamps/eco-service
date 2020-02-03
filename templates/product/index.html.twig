@@ -2,14 +2,29 @@
 
 {% block title %}Tous les produits{% endblock %}
 
-{% block body %}
-  <h1>Liste des produits</h1>
+{% block idBody %}products-tpl{% endblock %}
 
-  <ul>
-    {% for product in products %}
-      <li>
-        <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">{{ product.getName }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+{% block body %}
+  <div class="container">
+    <ul class="detailList">
+      {% for product in products %}
+        <li class="detailElement">
+          <a class="fontSize0" href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+            <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+          </a>
+          <ul class="detailContent">
+            <li class="detailContentDatas">
+              <a href="#">
+                <h3>{{ product.getName }}</h3>
+              </a>
+              <a href="#">
+                <p>{{ product.getCategory.getName }}</p>
+              </a>
+            </li>
+            <li class="detailPrice">{{ (product.getPriceTtc / 100) |number_format(2, ',', '.')}} €</li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}
