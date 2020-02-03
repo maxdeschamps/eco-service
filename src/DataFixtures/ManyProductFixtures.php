@@ -115,8 +115,8 @@ class ManyProductFixtures extends Fixture
                 $produit->setQuantity($faker->numberBetween(0, 50));
 
                 $manager->persist($produit);
-
             }
+
             for ($i = 0; $i < 50; $i++) {
                 $unity = new Unity();
                 $unity->setName($faker->word(7));
@@ -124,10 +124,13 @@ class ManyProductFixtures extends Fixture
                 $manager->persist($unity);
             }
 
+
+
             for ($i = 0; $i < 50; $i++) {
                 $service = new Service();
                 $service->setUnity($unity);
                 $service->setAuthor($personne);
+
                 $service->setSlug($faker->word(10));
                 $service->setContent($faker->text);
                 $service->setName($faker->word(7));
