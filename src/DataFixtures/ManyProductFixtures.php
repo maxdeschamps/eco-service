@@ -38,17 +38,6 @@ class ManyProductFixtures extends Fixture
         }
 
         for ($i = 0; $i < 50; $i++) {
-            $address = new Address();
-            $address->setLine1($faker->address);
-            $address->setLine2($faker->address);
-            $address->setPostalCode($faker->postcode);
-            $address->setCity($faker->city);
-            $address->setCountry($faker->country);
-
-            $manager->persist($address);
-        }
-
-        for ($i = 0; $i < 50; $i++) {
             $personne = new User();
             $personne->setFirstName($faker->firstName);
             $personne->setLastName($faker->lastName);
@@ -57,22 +46,42 @@ class ManyProductFixtures extends Fixture
             $personne->setEmail($faker->email);
             $personne->setNewsletterAcceptance(intval($faker->boolean));
 
+            $delivery_address = new Address();
+            $delivery_address->setLine1($faker->address);
+            $delivery_address->setLine2($faker->address);
+            $delivery_address->setPostalCode($faker->postcode);
+            $delivery_address->setCity($faker->city);
+            $delivery_address->setCountry($faker->country);
+
+            $personne->setDeliveryAddress($delivery_address);
+
+            if (random_int(1,100) <= 50) {
+                $personne->setBillingAddress($delivery_address);
+            } else {
+                $billing_address = new Address();
+                $billing_address->setLine1($faker->address);
+                $billing_address->setLine2($faker->address);
+                $billing_address->setPostalCode($faker->postcode);
+                $billing_address->setCity($faker->city);
+                $billing_address->setCountry($faker->country);
+
+                $personne->setBillingAddress($billing_address);
+            }
+
             $manager->persist($personne);
         }
 
-        /*
+        // for ($i = 0; $i < 50; $i++) {
+        //     $bill = new Bill();
+        //     $bill->setCustomer($personne);
+        //     $bill->setRequestDate($faker->dateTime());
+        //     $bill->setAcceptanceDate($faker->dateTime());
+        //     $bill->setEmail($faker->email);
+        //     $bill->setApproved(intval($faker->boolean));
+        //
+        //     $manager->persist($bill);
+        // }
 
-        for ($i = 0; $i < 50; $i++) {
-            $bill = new Bill();
-            $bill->setCustomer($personne);
-            $bill->setRequestDate($faker->dateTime());
-            $bill->setAcceptanceDate($faker->dateTime());
-            $bill->setEmail($faker->email);
-            $bill->setApproved(intval($faker->boolean));
-
-            $manager->persist($bill);
-        }
-        */
         for ($i = 0; $i < 50; $i++) {
             $resume = new Resume();
             $resume->setRequestDate($faker->dateTime());
@@ -81,16 +90,14 @@ class ManyProductFixtures extends Fixture
             $resume->setEmail($faker->email);
             $manager->persist($resume);
         }
-/*
-        for ($i = 0; $i < 50; $i++) {
-            $productBill = new ProductBill();
-            $productBill->setBill($bill);
-            $productBill->setQuantity($faker->numberBetween(0, 50));
-            $manager->persist($productBill);
-        }
 
+        // for ($i = 0; $i < 50; $i++) {
+        //     $productBill = new ProductBill();
+        //     $productBill->setBill($bill);
+        //     $productBill->setQuantity($faker->numberBetween(0, 50));
+        //     $manager->persist($productBill);
+        // }
 
-*/
         for ($i = 0; $i < 50; $i++) {
             $produit = new Product();
             $produit->setCategory($category);
@@ -105,13 +112,12 @@ class ManyProductFixtures extends Fixture
             $manager->persist($produit);
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $unity = new Unity();
             $unity->setName($faker->word(7));
             $unity->setSlug($faker->word(10));
             $manager->persist($unity);
         }
-
 
         for ($i = 0; $i < 50; $i++) {
             $service = new Service();
@@ -127,11 +133,8 @@ class ManyProductFixtures extends Fixture
             $manager->persist($service);
         }
 
-        /*
-
-
         for ($i = 0; $i < 50; $i++) {
-            $company = new Company();
+            $company = new Company($personne);
             $company->setFirstName($faker->firstName);
             $company->setLastName($faker->lastName);
             $company->setName($faker->word(10));
@@ -142,24 +145,23 @@ class ManyProductFixtures extends Fixture
             $manager->persist($company);
         }
 
-        for ($i = 0; $i < 50; $i++) {
-            $quotation = new Quotation();
-            $quotation->setCompany($company);
-            $quotation->setRequestDate($faker->dateTime());
-            $quotation->setAcceptanceDate($faker->dateTime());
-            $quotation->setEmail($faker->email);
-            $quotation->setApproved(intval($faker->boolean));
-            $manager->persist($quotation);
-        }
+        // for ($i = 0; $i < 50; $i++) {
+        //     $quotation = new Quotation();
+        //     $quotation->setCompany($company);
+        //     $quotation->setRequestDate($faker->dateTime());
+        //     $quotation->setAcceptanceDate($faker->dateTime());
+        //     $quotation->setEmail($faker->email);
+        //     $quotation->setApproved(intval($faker->boolean));
+        //     $manager->persist($quotation);
+        // }
 
-
-        for ($i = 0; $i < 50; $i++) {
-            $serviceQuotation = new ServiceQuotation();
-            $serviceQuotation->setQuotation($quotation);
-            $serviceQuotation->setQuantity($faker->numberBetween(0, 50));
-            $serviceQuotation->setExtra($faker->text);
-            $manager->persist($serviceQuotation);
-        }*/
+        // for ($i = 0; $i < 50; $i++) {
+        //     $serviceQuotation = new ServiceQuotation();
+        //     $serviceQuotation->setQuotation($quotation);
+        //     $serviceQuotation->setQuantity($faker->numberBetween(0, 50));
+        //     $serviceQuotation->setExtra($faker->text);
+        //     $manager->persist($serviceQuotation);
+        // }
 
         for ($i = 0; $i < 50; $i++) {
             $subject = new Subject();
