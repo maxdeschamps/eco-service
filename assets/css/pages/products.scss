@@ -1,5 +1,7 @@
 #products-tpl {
-  background-color: $lightGreen;
+  main {
+    background-color: $lightGreen;
+}
 
   .title {
     position: absolute;
@@ -35,5 +37,12 @@
     object-fit: cover;
     -o-object-position: center;
     object-position: center;
+  }
+
+  #header-menu #products-tpl {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
   }
 }
