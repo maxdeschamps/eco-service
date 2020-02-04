@@ -54,12 +54,6 @@ class User
     private $newsletters;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Role")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $role;
-
-    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $delivery_address;
@@ -249,18 +243,6 @@ class User
             $this->newsletters->removeElement($newsletter);
             $newsletter->removeSubscriber($this);
         }
-
-        return $this;
-    }
-
-    public function getRole(): ?Role
-    {
-        return $this->role;
-    }
-
-    public function setRole(?Role $role): self
-    {
-        $this->role = $role;
 
         return $this;
     }

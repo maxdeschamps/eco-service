@@ -1,17 +1,37 @@
 // Fonts
-body, p, span, b, strong, li, a, input, label, textarea, option, select, table, tr, td {
+
+a,
+b,
+body,
+input,
+label,
+li,
+option,
+p,
+select,
+span,
+strong,
+table,
+td,
+textarea,
+tr {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  color:#3f3f3f;
+  color: #3f3f3f;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Gotham-Bold';
   font-weight: 600;
-  color:#3f3f3f;
+  color: #3f3f3f;
 }
-
 // Balises
+
 body {
   margin: 0;
   padding: 0;
@@ -23,8 +43,8 @@ body {
 main {
   flex-grow: 1;
 }
-
 // Elements
+
 .container {
   display: flex;
   flex-direction: row;
@@ -37,7 +57,6 @@ main {
 
   &.reverse {
     flex-direction: row-reverse;
-
     @media screen and (max-width: $smallSize) {
       flex-direction: row;
     }
@@ -46,7 +65,6 @@ main {
   div.blocHalf {
     width: calc(50% - 50px);
     margin: 40px 0;
-
     @media screen and (max-width: $smallSize) {
       width: 100%;
       margin: 30px 0;
@@ -56,7 +74,6 @@ main {
   div.blocFull {
     width: 100%;
     margin: 40px 0;
-
     @media screen and (max-width: $smallSize) {
       margin: 30px 0;
     }
@@ -97,11 +114,9 @@ main {
     padding: 0;
     margin: 15px -60px;
     list-style: none;
-
     @media screen and (max-width: $largeSize) {
       margin: 30px -20px;
     }
-
     @media screen and (max-width: $extraSmallSize) {
       margin: 0;
     }
@@ -112,23 +127,20 @@ main {
       margin: 20px 60px;
       padding: 20px;
       background-color: white;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       list-style: none;
-      transition: .3s ease;
-
+      transition: 0.3s ease;
       @media screen and (max-width: $largeSize) {
         width: calc(100% / 3 - 40px - 40px);
-        margin: 20px 20px;
+        margin: 20px;
       }
-
       @media screen and (max-width: $mediumSize) {
         width: calc(100% / 2 - 40px - 20px);
         margin: 20px 10px;
       }
-
-      @media screen and (max-width: $extraSmallSize) {
-        width: calc(100% - 40px);
-        margin: 20px 0;
+      @media screen and (max-width: $smallSize) {
+        width: 100%;
+        margin: 20px 10px;
       }
 
       &:hover {
@@ -165,7 +177,7 @@ main {
             }
 
             p {
-              font-size: .9rem;
+              font-size: 0.9rem;
             }
           }
         }
@@ -186,14 +198,12 @@ main {
     list-style: none;
     width: 100%;
     padding: 0;
-
     @media screen and (max-width: $smallSize) {
       flex-direction: column;
     }
 
     li.detailElement {
       list-style: none;
-
       @media screen and (max-width: $smallSize) {
         margin: 20px 0;
       }
@@ -242,6 +252,12 @@ svg.wave {
     transform: rotate(180deg);
   }
 
+  &.fillGrey {
+    path {
+      fill: $grey;
+    }
+  }
+
   &.fillLightGreen {
     path {
       fill: $lightGreen;
@@ -251,6 +267,18 @@ svg.wave {
   &.fillGreen {
     path {
       fill: $green;
+    }
+  }
+
+  &.fillWhite {
+    path {
+      fill: white;
+    }
+  }
+
+  &.fillGrey {
+    path {
+      fill: $grey;
     }
   }
 }
@@ -266,7 +294,6 @@ svg.wave {
 .fontSize0 {
   font-size: 0;
 }
-
 // .transitions-white-to-green {
 //   height: 25px;
 //   width: 100%;

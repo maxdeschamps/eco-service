@@ -41,4 +41,11 @@
   .backgroundLightGreenInHomepage {
     background-color: $lightGreen;
   }
+
+  #header-menu #homepage {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
+  }
 }

@@ -3,9 +3,9 @@ footer {
   text-decoration: none;
 
   #footer-container {
-    min-height: 40vh;
     display: flex;
     flex-direction: row;
+    margin-bottom: 100px;
 
     #footer-menu {
       width: 30%;
