@@ -45,7 +45,7 @@
     background: #e8eff9;
 
     .container {
-      padding: 20px 0 100px 0;
+      padding: 20px 0 100px;
     }
   }
 
@@ -58,6 +58,36 @@
   .container {
     .blocFull {
       margin: 0;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  #header-product {
+    display: inline;
+    .ThirdBlock {
+      width:100%;
+      text-align: center;
+      margin-right: 0;
+
+      img {
+        width:49%;
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 20px;
+      }
+      p {
+        margin:0 0 3% 0;
+      }
+    }
+  }
+  #product-desc{
+    .container{
+      h2{
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }
