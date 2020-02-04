@@ -46,8 +46,6 @@ class ProductController extends AbstractController
             $request->query->getInt('limit', 5)
         );
 
-        $form = $this->createForm(ProductSearchType::class);
-
         return $this->render(
             'product/index.html.twig',
             [

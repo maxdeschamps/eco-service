@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\User;
+
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -14,7 +14,7 @@ class ManyProductFixtures extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
         $populator = new \Faker\ORM\Propel\Populator($faker);
-        
+
         for ($i = 0; $i < 50; $i++) {
             $produit = new Product();
             $produit->addEntity('User', 1);
