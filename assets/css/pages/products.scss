@@ -52,6 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: middle;
+  margin-top: 150px;
 
   .ThirdBlock {
     width: calc(100%/3);
@@ -60,7 +61,6 @@
 
     img {
       width: 100%;
-      margin: 1%;
     }
 
     h1 {
@@ -102,6 +102,7 @@
     }
   }
 }
+
 @media only screen and (max-width: $smallSize) {
   #header-product {
     display: inline;
