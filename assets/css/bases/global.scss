@@ -236,6 +236,12 @@ svg.wave {
     transform: rotate(180deg);
   }
 
+  &.fillGrey {
+    path {
+      fill: $grey;
+    }
+  }
+
   &.fillLightGreen {
     path {
       fill: $lightGreen;

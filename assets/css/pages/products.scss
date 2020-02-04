@@ -14,15 +14,50 @@
 
   .ThirdBlock {
     width: calc(100%/3);
-    margin-right: 1%;
     text-align: center;
+    margin-right: 1%;
 
     img {
       width: 100%;
+      margin: 1%;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 'Raleway';
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 3rem;
+      margin: 0 0 10%;
+    }
+
+    a {
+      padding: 10px 120px;
     }
   }
 }
 
-#product-desc {
-  background:#e8eff9;
+#fiche-produit {
+  #product-desc {
+    background: #e8eff9;
+
+    .container {
+      padding: 75px 0;
+    }
+  }
+
+  .backgroundLightGreenInHomepage {
+    background-color: $lightGreen;
+  }
+}
+
+#blocProducts {
+  .container {
+    .blocFull {
+      margin: 0;
+    }
+  }
 }

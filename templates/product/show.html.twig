@@ -1,7 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ product.getName }}
-{% endblock %}
+{% block title %}{{ product.getName }}{% endblock %}
 
 {% block idBody %}fiche-produit{% endblock %}
 
@@ -18,19 +17,15 @@
         <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
       </div>
       <div class="ThirdBlock">
-        <h1>{{ product.getName }}</h1>
-        <p>Prix HT :
-          {{ (product.getPriceHt / 100)|number_format(2, ',', '.') }}
-          €</p>
-        <p>Prix TTC :
+        <h1><span>{{ product.getName }}</span></h1>
+        <p>
           {{ (product.getPriceTtc / 100)|number_format(2, ',', '.') }}
           €</p>
-        <p>{{ product.getContent }}</p>
         <a class="btn" href="">ACHETER</a>
       </div>
     </div>
   </div>
-  <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
+  <svg class="wave waveTop fillGrey" viewbox="0 0 1440 120" aria-hidden="true">
     <path
       d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
   </svg>
