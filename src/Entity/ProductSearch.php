@@ -43,11 +43,18 @@ class ProductSearch
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getMaxPriceTtc(): ?int
     {
         return $this->max_priceTtc;
     }
 
+    /**
+     * @param mixed $max_priceTtc
+     * @return ProductSearch
+     */
     public function setMaxPriceTtc(?int $max_priceTtc): self
     {
         $this->max_priceTtc = $max_priceTtc;
