@@ -269,6 +269,18 @@ svg.wave {
       fill: $green;
     }
   }
+
+  &.fillWhite {
+    path {
+      fill: white;
+    }
+  }
+
+  &.fillGrey {
+    path {
+      fill: $grey;
+    }
+  }
 }
 
 .blocImage {

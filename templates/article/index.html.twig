@@ -5,7 +5,19 @@
 {% block idBody %}article-tpl{% endblock %}
 
 {% block body %}
-  <h1>Liste des articles</h1>
+<div class="container reverse">
+  <div class="blocHalf">
+    <h2>Le Lorem Ipsum est impression.</h2>
+    <h3>Des recettes DIY</h3>
+    <p class="blocContent">Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ?
+    Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets.
+    Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes :
+    produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
+  </div>
+  <div class="blocHalf">
+    <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
+  </div>
+</div>
 
   <ul>
     {% for article in articles %}
