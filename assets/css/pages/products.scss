@@ -1,8 +1,40 @@
 #products-tpl {
   background-color: $lightGreen;
 
+  .title {
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      color: white;
+      font-family: 'Gotham-Light';
+      font-size: 2.5rem;
+      margin-bottom: -8%;
+    }
+
+    h2 {
+      color: white;
+      font-size: 3rem;
+    }
+  }
+
   .backgroundLightGreenInHomepage {
     background-color: $lightGreen;
+  }
+
+  .container {
+    padding-top: 0px !important;
+  }
+
+  .imgPres {
+    width: 100%;
+    height: 90vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
   }
 }
 

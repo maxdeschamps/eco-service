@@ -238,6 +238,12 @@ main {
 }
 
 svg.wave {
+  &.onImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
   &.waveTop {
     margin-bottom: -5px;
   }
@@ -263,6 +269,10 @@ svg.wave {
       fill: $green;
     }
   }
+}
+
+.blocImage {
+  position: relative;
 }
 
 .textCenter {

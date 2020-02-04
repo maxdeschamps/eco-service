@@ -3,7 +3,7 @@ Projet E-commerce G4 - ING1 - Symfony
 
 ## Installation
 - Mettez-vous dans le dossier htdocs de XAMPP (ou www de Wampp)
-- git clone https://github.com/maxdeschamps/eco-service.git
+- `git clone https://github.com/maxdeschamps/eco-service.git`
 - `cd eco-service`
 - `composer install && npm install`
 - Lancez xampp/wampp/uwampp/ou quelque soit votre connerie...
