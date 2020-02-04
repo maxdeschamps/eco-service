@@ -1,0 +1,16 @@
+#contact {
+  main {
+    background-color: $lightGreen;
+  }
+
+  .backgroundLightGreenInHomepage {
+    background-color: $lightGreen;
+  }
+
+  #header-menu #contact {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
+  }
+}

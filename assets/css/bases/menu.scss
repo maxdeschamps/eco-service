@@ -5,6 +5,9 @@
   margin: 0;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0px -6px 20px 0px black;
 
   #header-menu-gauche {
     width: 70%;
@@ -26,6 +29,7 @@
         line-height: 90px;
         transition-duration: 0.3s;
         padding: 0 15px;
+        margin-left: -5px;
 
         &:hover {
           background: #3f3f3f;
@@ -36,6 +40,13 @@
               color: white;
               transition: .3s ease;
             }
+          }
+        }
+
+        &:active {
+          background: #3f3f3f;
+          span {
+            color: white;
           }
         }
 
@@ -73,6 +84,7 @@
         height: 100%;
         line-height: 90px;
         transition-duration: 0.3s;
+        margin-left: -5px;
 
         &:hover {
           background: #3f3f3f;

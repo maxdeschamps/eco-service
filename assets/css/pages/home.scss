@@ -36,7 +36,15 @@
     &#blocInformations {
       padding-bottom: 60px;
     }
-  }.backgroundLightGreenInHomepage {
-  background-color: $lightGreen;
-}
-}
+  }
+
+  .backgroundLightGreenInHomepage {
+    background-color: $lightGreen;
+  }
+
+  #header-menu #homepage {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
+  }
