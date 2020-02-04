@@ -10,9 +10,9 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
 
-        $manyProductFixtures = new ManyProductFixtures();
+        $manyFixtures = new ManyFixtures();
 
-        $manyProductFixtures->load($manager);
+        $manyFixtures->load($manager);
 
     }
 }

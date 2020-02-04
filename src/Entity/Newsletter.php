@@ -40,7 +40,7 @@ class Newsletter
     private $subscribers;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\File")
+     * @ORM\ManyToMany(targetEntity="App\Entity\File")
      */
     private $files;
 
@@ -116,14 +116,28 @@ class Newsletter
         return $this;
     }
 
-    public function getFiles(): ?File
+    /**
+     * @return Collection|File[]
+     */
+    public function getFiles(): Collection
     {
         return $this->files;
     }
 
-    public function setFiles(?File $files): self
+    public function addFile(File $file): self
     {
-        $this->files = $files;
+        if (!$this->files->contains($file)) {
+            $this->files[] = $file;
+        }
+
+        return $this;
+    }
+
+    public function removeFile(File $file): self
+    {
+        if ($this->files->contains($file)) {
+            $this->files->removeElement($file);
+        }
 
         return $this;
     }
