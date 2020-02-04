@@ -6,6 +6,7 @@ use App\Entity\Product;
 use App\Entity\ProductSearch;
 use App\Form\ProductSearchType;
 use App\Form\ProductType;
+
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,7 +32,7 @@ class ProductController extends AbstractController
      * @Route("/products", name="index_product")
      */
 
-    public function index(Request $request, PaginatorInterface $paginator, ProductRepository $productRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
         $productSearch = new ProductSearch();
         $form = $this->createForm(ProductSearchType::class, $productSearch);
@@ -39,15 +40,18 @@ class ProductController extends AbstractController
 
         $products = $this->productRepository->findAllVisibleQuery($productSearch);
 
-        $pagination = $paginator->paginate($products, $request->query->getInt('page', 1), 6);
+        $pagination = $paginator->paginate(
+            $products,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
 
         $form = $this->createForm(ProductSearchType::class);
 
         return $this->render(
             'product/index.html.twig',
             [
-                'products' => $products,
-                'pagination' => $pagination,
+                'products' => $pagination,
                 'form' => $form->createView()
             ]);
     }
