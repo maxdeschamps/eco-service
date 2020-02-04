@@ -82,4 +82,9 @@ class Bill extends Resume
 
         return $this;
     }
+    
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

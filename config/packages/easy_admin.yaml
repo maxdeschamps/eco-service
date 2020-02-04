@@ -1,0 +1,12 @@
+easy_admin:
+    entities:
+        - App\Entity\Product
+        - App\Entity\Category
+        - App\Entity\User
+        - App\Entity\Article
+        - App\Entity\Service
+        - App\Entity\Subject
+        - App\Entity\Unity
+        - App\Entity\Company
+        - App\Entity\Quotation
+        - App\Entity\Bill
