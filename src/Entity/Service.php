@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ServiceRepository")
@@ -24,7 +26,7 @@ class Service
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $slug;
 
@@ -32,11 +34,6 @@ class Service
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\File")
-     */
-    private $files;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
@@ -65,13 +62,13 @@ class Service
     private $unity;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ServiceFile", mappedBy="service")
+     * @ORM\ManyToMany(targetEntity="App\Entity\File")
      */
-    private $serviceFiles;
+    private $files;
 
     public function __construct()
     {
-        $this->serviceFiles = new ArrayCollection();
+        $this->files = new ArrayCollection();
     }
 
 
@@ -172,31 +169,26 @@ class Service
     }
 
     /**
-     * @return Collection|ServiceFile[]
+     * @return Collection|File[]
      */
-    public function getServiceFiles(): Collection
+    public function getFiles(): Collection
     {
-        return $this->serviceFiles;
+        return $this->files;
     }
 
-    public function addServiceFile(ServiceFile $serviceFile): self
+    public function addFile(File $file): self
     {
-        if (!$this->serviceFiles->contains($serviceFile)) {
-            $this->serviceFiles[] = $serviceFile;
-            $serviceFile->setService($this);
+        if (!$this->files->contains($file)) {
+            $this->files[] = $file;
         }
 
         return $this;
     }
 
-    public function removeServiceFile(ServiceFile $serviceFile): self
+    public function removeFile(File $file): self
     {
-        if ($this->serviceFiles->contains($serviceFile)) {
-            $this->serviceFiles->removeElement($serviceFile);
-            // set the owning side to null (unless already changed)
-            if ($serviceFile->getService() === $this) {
-                $serviceFile->setService(null);
-            }
+        if ($this->files->contains($file)) {
+            $this->files->removeElement($file);
         }
 
         return $this;

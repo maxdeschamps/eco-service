@@ -45,13 +45,13 @@ class Article
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ArticleFile", mappedBy="article")
+     * @ORM\ManyToMany(targetEntity="App\Entity\File")
      */
-    private $articleFiles;
+    private $files;
 
     public function __construct()
     {
-        $this->articleFiles = new ArrayCollection();
+        $this->files = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,31 +120,26 @@ class Article
     }
 
     /**
-     * @return Collection|ArticleFile[]
+     * @return Collection|File[]
      */
-    public function getArticleFiles(): Collection
+    public function getFiles(): Collection
     {
-        return $this->articleFiles;
+        return $this->files;
     }
 
-    public function addArticleFile(ArticleFile $articleFile): self
+    public function addFile(File $file): self
     {
-        if (!$this->articleFiles->contains($articleFile)) {
-            $this->articleFiles[] = $articleFile;
-            $articleFile->setArticle($this);
+        if (!$this->files->contains($file)) {
+            $this->files[] = $file;
         }
 
         return $this;
     }
 
-    public function removeArticleFile(ArticleFile $articleFile): self
+    public function removeFile(File $file): self
     {
-        if ($this->articleFiles->contains($articleFile)) {
-            $this->articleFiles->removeElement($articleFile);
-            // set the owning side to null (unless already changed)
-            if ($articleFile->getArticle() === $this) {
-                $articleFile->setArticle(null);
-            }
+        if ($this->files->contains($file)) {
+            $this->files->removeElement($file);
         }
 
         return $this;

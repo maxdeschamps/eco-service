@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FileRepository")
@@ -22,19 +24,19 @@ class File
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $uri;
 
     /**
      * @ORM\Column(type="integer", length=11)
      */
-    private $order;
+    private $orderFile;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $alt;
+    private $altFile;
 
     public function getId(): ?int
     {
@@ -65,26 +67,26 @@ class File
         return $this;
     }
 
-    public function getOrder(): ?int
+    public function getOrderFile(): ?int
     {
-        return $this->order;
+        return $this->orderFile;
     }
 
-    public function setOrder(int $order): self
+    public function setOrderFile(int $orderFile): self
     {
-        $this->order = $order;
+        $this->orderFile = $orderFile;
 
         return $this;
     }
 
-    public function getAlt(): ?string
+    public function getAltFile(): ?string
     {
-        return $this->alt;
+        return $this->altFile;
     }
 
-    public function setAlt(?string $alt): self
+    public function setAltFile(?string $altFile): self
     {
-        $this->alt = $alt;
+        $this->altFile = $altFile;
 
         return $this;
     }
