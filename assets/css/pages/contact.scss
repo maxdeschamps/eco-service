@@ -1,4 +1,12 @@
 #contact {
+  .blocImage {
+    height: 500px;
+    background-image: url("/../images/background-contact.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   #header-menu #contact {
     background: #3f3f3f;
