@@ -3,7 +3,9 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %} - E-commerce G4</title>
+    <title>
+      {% block title %}{% endblock %}
+      - E-commerce G4</title>
     <link rel="icon" href="{{ asset('images/favicon.ico') }}"/>
     {% block stylesheets %}
       <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -13,7 +15,7 @@
     {% endblock %}
   </head>
 
-<body id="{% block idBody %}{% endblock %}">
+  <body id="{% block idBody %}{% endblock %}">
     <header>
       {% block nav %}
         <div id="header-menu">
@@ -35,12 +37,7 @@
                 <a class="fontSize0" href="{{ path('index_article') }}">Blog</a>
                 <span>Blog</span>
               </li>
-              <!--
-              <li>
-                <a class="fontSize0" href="#">Demande de devis</a>
-                <span>Demande de devis</span>
-              </li>
-              -->
+              <!-- <li> <a class="fontSize0" href="#">Demande de devis</a> <span>Demande de devis</span> </li> -->
               <li id="contact">
                 <a class="fontSize0" href="{{ path('contact') }}">Contact</a>
                 <span>Contact</span>
@@ -67,6 +64,20 @@
             </ul>
           </div>
         </div>
+        <div class="responsiveMenu">
+          <a class="logoSite" href="/">
+            <img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
+          </a>
+        <input class="burger" type="checkbox">
+        <nav>
+            <a class="material-icons" href="{{ path('homepage') }}">Accueil</a>
+            <a class="material-icons" href="{{ path('index_product') }}">Produits</a>
+            <a class="material-icons" href="{{ path('index_service') }}">Services</a>
+            <a class="material-icons" href="{{ path('index_article') }}">Blog</a>
+            <a class="material-icons" href="{{ path('index_article') }}">Panier </a>
+            <a class="material-icons" href="{{ path('index_article') }}">Connexion</a>
+          </nav>
+        </div>
       {% endblock %}
     </header>
 
@@ -74,8 +85,9 @@
       {% block body %}{% endblock %}
     </main>
 
-    <svg class="wave waveTop fillGreen backgroundLightGreenInHomepage" viewBox="0 0 1440 120" aria-hidden="true">
-      <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+    <svg class="wave waveTop fillGreen backgroundLightGreenInHomepage" viewbox="0 0 1440 120" aria-hidden="true">
+      <path
+        d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
     </svg>
     <footer>
       {% block footer %}
@@ -94,11 +106,7 @@
               <li>
                 <a href="/articles">Blog</a>
               </li>
-              <!--
-              <li>
-                <a href="#">Demande de devis</a>
-              </li>
-              -->
+              <!-- <li> <a href="#">Demande de devis</a> </li> -->
               <li>
                 <a href="/contact">Contact</a>
               </li>
@@ -109,8 +117,7 @@
             <ul>
               <li>
                 <a href="/">
-                  <img id="logo-site-footer" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/" target="_blank">
