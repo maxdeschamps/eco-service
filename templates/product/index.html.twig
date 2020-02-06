@@ -25,7 +25,11 @@
             {% for product in products %}
                 <li class="detailElement">
                     <a class="fontSize0" href="{{ path('show_product', { 'slug': product.getSlug }) }}">
-                        <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+                      {% if product.files is empty %}
+                        <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+                      {% else %}
+                        <img src="{{ product.getFiles[0].getUri }}" />
+                      {% endif %}
                     </a>
                     <ul class="detailContent">
                         <li class="detailContentDatas">
