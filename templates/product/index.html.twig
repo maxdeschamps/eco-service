@@ -16,8 +16,14 @@
         </svg>
     </div>
 
-    <div class="search">
-        {{ include('product/search.html.twig') }}
+
+    <div class="container-input-small">
+        <div class="input-label">
+            <label for="category">Catégories</label>
+        </div>
+        <div class="category">
+            {{ form_widget(formProductFilterType.name) }}
+        </div>
     </div>
 
     <div class="container">

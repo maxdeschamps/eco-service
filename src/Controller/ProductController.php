@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Entity\ProductSearch;
+use App\Form\ProductFilterType;
 use App\Form\ProductSearchType;
 use App\Form\ProductType;
 
@@ -34,11 +35,10 @@ class ProductController extends AbstractController
 
     public function index(Request $request, PaginatorInterface $paginator): Response
     {
-        $productSearch = new ProductSearch();
-        $form = $this->createForm(ProductSearchType::class, $productSearch);
-        $form->handleRequest($request);
+        $formProductFilterType = $this->createForm(ProductFilterType::class);
+        $formProductFilterType->handleRequest($request);
 
-        $products = $this->productRepository->findAllVisibleQuery($productSearch);
+        $products = $this->productRepository->findAll();
 
         $pagination = $paginator->paginate(
             $products,
@@ -50,7 +50,7 @@ class ProductController extends AbstractController
             'product/index.html.twig',
             [
                 'products' => $pagination,
-                'form' => $form->createView()
+                'formProductFilterType' => $formProductFilterType->createView(),
             ]);
     }
 

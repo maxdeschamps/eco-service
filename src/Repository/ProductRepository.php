@@ -23,7 +23,7 @@ class ProductRepository extends ServiceEntityRepository
     }
 
 
-    public function findAllVisibleQuery(ProductSearch $search): Query
+   /* public function findAllVisibleQuery(ProductSearch $search): Query
     {
         $query = $this->findVisibleQuery();
 
@@ -44,7 +44,7 @@ class ProductRepository extends ServiceEntityRepository
     public function findVisibleQuery():QueryBuilder
     {
         return $this->createQueryBuilder('product');
-    }
+    }*/
     // /**
     //  * @return Product[]
     //  */

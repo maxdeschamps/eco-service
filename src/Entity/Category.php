@@ -124,6 +124,11 @@ class Category
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function removeArticle(Article $article): self
     {
         if ($this->articles->contains($article)) {
@@ -133,6 +138,7 @@ class Category
                 $article->setCategory(null);
             }
         }
+
 
         return $this;
     }
