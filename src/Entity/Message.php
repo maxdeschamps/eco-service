@@ -40,6 +40,11 @@ class Message
      */
     private $files;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
+
     public function __construct()
     {
         $this->files = new ArrayCollection();
@@ -110,5 +115,22 @@ class Message
         }
 
         return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->content;
     }
 }

@@ -1,0 +1,15 @@
+easy_admin:
+  entities:
+    File:
+      class: App\Entity\File
+      list:
+        fields:
+          - { property: 'name', label: 'Nom' }
+          - { property: 'uri', label: 'Liens' }
+          - { property: 'orderFile', label: 'Ordre' }
+          - { property: 'alt_file', label: 'Description' }
+      form:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'orderFile', label: 'Ordre', type: 'number' }
+        - { property: 'alt_file', label: 'Description' }
