@@ -59,12 +59,7 @@
     @media screen and (max-width: $largeSize) {
       width: 100%;
     }
-    @media screen and (max-width: $mediumSize) {
-      width: 100%;
-    }
-    @media screen and (max-width: $smallSize) {
-      width: 100%;
-    }
+
 
     .imgPres {
       display: inline-block;
@@ -75,9 +70,7 @@
       @media screen and (max-width: $largeSize) {
         height:200px;
       }
-      @media screen and (max-width: $mediumSize) {
-        height:200px;
-      }
+
 
       img {
         width: 100%;
@@ -95,12 +88,7 @@
     @media screen and (max-width: $largeSize) {
       width: 100%;
     }
-    @media screen and (max-width: $mediumSize) {
-      width: 100%;
-    }
-    @media screen and (max-width: $smallSize) {
-      width: 100%;
-    }
+
 
     h1 {
       text-transform: uppercase;
