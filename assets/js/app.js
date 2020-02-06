@@ -14,8 +14,11 @@ global.$ = global.jQuery = $;
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
-// bases
-require('./bases/global.js');
+$( document ).ready(function() {
+  // bases
+  require('./bases/global.js');
 
-// pages
-require('./pages/home.js');
+  // pages
+  require('./pages/home.js');
+  // require('./pages/product.js');
+});
