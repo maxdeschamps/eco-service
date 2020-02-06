@@ -306,6 +306,10 @@ figure.zoom {
 
 .textCenter {
   text-align: center;
+
+  &.marginBottom25 {
+    bottom: 25px !important;
+  }
 }
 
 .fontSize0 {
