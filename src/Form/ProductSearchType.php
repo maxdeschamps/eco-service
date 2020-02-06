@@ -2,8 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use Doctrine\ORM\Mapping\Entity;
 use app\Entity\ProductSearch;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -30,6 +32,7 @@ class ProductSearchType extends AbstractType
                     'placeholder' =>'prix maximum'
                 ]
             ])
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Rechercher',
                 'attr' => [
