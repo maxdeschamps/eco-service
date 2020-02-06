@@ -105,4 +105,9 @@ class Address
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->postal_code;
+    }
 }

@@ -1,12 +1,23 @@
 easy_admin:
+    site_name: 'Eco-Service Back Office'
     entities:
-        - App\Entity\Product
-        - App\Entity\Category
-        - App\Entity\User
-        - App\Entity\Article
-        - App\Entity\Service
-        - App\Entity\Subject
-        - App\Entity\Unity
-        - App\Entity\Company
-        - App\Entity\Quotation
-        - App\Entity\Bill
+        Product :
+            class: App\Entity\Product
+        Category :
+            class: App\Entity\Category
+        User :
+            class: App\Entity\User
+        Article:
+            class: App\Entity\Article
+        Service :
+            class: App\Entity\Service
+        Subject :
+            class: App\Entity\Subject
+        Unity :
+            class: App\Entity\Unity
+        Company :
+            class: App\Entity\Company
+        Quotation :
+            class: App\Entity\Quotation
+        Bill :
+            class: App\Entity\Bill
