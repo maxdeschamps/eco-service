@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+    Product:
+      class: App\Entity\Product
+    Category:
+      class: App\Entity\Category

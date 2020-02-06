@@ -1,0 +1,17 @@
+easy_admin:
+  design:
+    menu:
+      - label: Dashboard
+        icon: dashboard
+        route: admin_dashboard
+        default: true
+      - label: Produits
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Product', icon: 'newspaper-o', label: 'Liste des produits'}
+          - {entity: 'Category', icon: 'inbox', label: 'Catégories'}
+        - label: Produits
+          icon: 'newspaper-o'
+          children:
+            - {entity: 'Service', icon: 'inbox', label: 'Services'}
+            - {entity: 'User', icon: 'inbox', label: 'Membres'}
