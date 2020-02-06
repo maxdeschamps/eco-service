@@ -13,7 +13,7 @@ easy_admin:
       - label: Services
         icon: 'newspaper-o'
         children:
-          - {entity: 'Service', icon: 'inbox', label: 'Liste des services'}
+          - {entity: 'Service', icon: 'user', label: 'Liste des services'}
       - label: Membres
         icon: 'user'
         children:
@@ -30,4 +30,8 @@ easy_admin:
         icon: 'newspaper-o'
         children:
           - {entity: 'Message', icon: 'inbox', label: 'Liste des messages'}
+      - label: Images
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'File', icon: 'inbox', label: 'Liste des images'}
 
