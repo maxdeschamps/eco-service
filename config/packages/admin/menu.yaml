@@ -10,8 +10,15 @@ easy_admin:
         children:
           - {entity: 'Product', icon: 'newspaper-o', label: 'Liste des produits'}
           - {entity: 'Category', icon: 'inbox', label: 'Catégories'}
-        - label: Produits
-          icon: 'newspaper-o'
-          children:
-            - {entity: 'Service', icon: 'inbox', label: 'Services'}
-            - {entity: 'User', icon: 'inbox', label: 'Membres'}
+      - label: Services
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Service', icon: 'inbox', label: 'Liste des services'}
+      - label: Membres
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'User', icon: 'inbox', label: 'Liste des membres'}
+      - label: Devis
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Bill', icon: 'inbox', label: 'Liste des devis'}

@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Member.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Product.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/menu.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/eco-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eco-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Bill.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/menu.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Service.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,9 +244,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="386" y="156" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1580466558040" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580769211168">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580993583990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580769211168" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580993583990" />
   </component>
 </project>
