@@ -15,10 +15,19 @@ easy_admin:
         children:
           - {entity: 'Service', icon: 'inbox', label: 'Liste des services'}
       - label: Membres
-        icon: 'newspaper-o'
+        icon: 'user'
         children:
-          - {entity: 'User', icon: 'inbox', label: 'Liste des membres'}
+          - {entity: 'User', icon: 'user', label: 'Liste des membres'}
       - label: Devis
         icon: 'newspaper-o'
         children:
           - {entity: 'Bill', icon: 'inbox', label: 'Liste des devis'}
+      - label: Newsletters
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Newsletter', icon: 'inbox', label: 'Liste des newsletters'}
+      - label: Message
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Message', icon: 'inbox', label: 'Liste des messages'}
+

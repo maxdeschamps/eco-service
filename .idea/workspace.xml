@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Bill.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Message.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/Newsletter.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/admin/translation.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/entities/Member.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/entities/Member.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/entities/Product.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/entities/Product.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/entities/Service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/entities/Service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/admin/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/menu.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Unity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Unity.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +251,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="386" y="156" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1580466558040" />
+    <state x="269" y="37" width="742" height="606" key="find.popup" timestamp="1580998755948">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="269" y="37" width="742" height="606" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1580998755948" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580993583990">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
