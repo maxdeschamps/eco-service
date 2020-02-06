@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ product.getName }}{% endblock %}
+{% block title %}{{ product.getName }}
+{% endblock %}
 
 {% block idBody %}fiche-produit{% endblock %}
 
@@ -23,10 +24,14 @@
         </figure>
       </div>
       <div class="infos-product textCenter">
-        <h1><span>{{ product.getName }}</span></h1>
+        <h1>
+          <span>{{ product.getName }}</span></h1>
         <p>
           {{ (product.getPriceTtc / 100)|number_format(2, ',', '.') }}
           €</p>
+        <label for="qty-product">Choisissez une quantité :</label>
+        <input id="qty-product" type="number" min="1" max="{{ (product.Quantity )}}" >
+
         <a class="btn" href="">ACHETER</a>
       </div>
     </div>
