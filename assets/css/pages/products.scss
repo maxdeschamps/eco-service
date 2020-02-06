@@ -96,7 +96,9 @@
     #qty-product {
       display: block;
       margin: 0 auto;
+      margin-bottom: 5%;
       color: black;
+      width:40%;
       text-decoration: none;
       text-align: center;
       font-size: 1.1rem;
@@ -106,10 +108,11 @@
       transition-duration: 0.4s;
     }
 
-    a {
+    .btn-acheter {
       display: block;
       margin: 0 auto;
       color: black;
+      width:40%;
       text-decoration: none;
       text-align: center;
       font-size: 1.1rem;
@@ -117,6 +120,10 @@
       border: 1px solid black;
       border-radius: 10px;
       transition-duration: 0.4s;
+
+      &:hover{
+        color:white;
+      }
     }
   }
 }
