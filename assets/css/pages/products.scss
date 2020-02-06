@@ -56,12 +56,28 @@
 
   .img-product {
     width: 70%;
+    @media screen and (max-width: $largeSize) {
+      width: 100%;
+    }
+    @media screen and (max-width: $mediumSize) {
+      width: 100%;
+    }
+    @media screen and (max-width: $smallSize) {
+      width: 100%;
+    }
 
     .imgPres {
       display: inline-block;
       width: 49%;
       height: 400px;
       margin: 0;
+
+      @media screen and (max-width: $largeSize) {
+        height:200px;
+      }
+      @media screen and (max-width: $mediumSize) {
+        height:200px;
+      }
 
       img {
         width: 100%;
@@ -76,6 +92,15 @@
 
   .infos-product {
     width: 30%;
+    @media screen and (max-width: $largeSize) {
+      width: 100%;
+    }
+    @media screen and (max-width: $mediumSize) {
+      width: 100%;
+    }
+    @media screen and (max-width: $smallSize) {
+      width: 100%;
+    }
 
     h1 {
       text-transform: uppercase;
@@ -95,10 +120,9 @@
 
     #qty-product {
       display: block;
-      margin: 0 auto;
-      margin-bottom: 5%;
+      margin: 0 auto 5%;
       color: black;
-      width:40%;
+      width: 40%;
       text-decoration: none;
       text-align: center;
       font-size: 1.1rem;
@@ -112,7 +136,7 @@
       display: block;
       margin: 0 auto;
       color: black;
-      width:40%;
+      width: 40%;
       text-decoration: none;
       text-align: center;
       font-size: 1.1rem;
@@ -121,8 +145,8 @@
       border-radius: 10px;
       transition-duration: 0.4s;
 
-      &:hover{
-        color:white;
+      &:hover {
+        color: white;
       }
     }
   }
