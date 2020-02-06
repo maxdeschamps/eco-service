@@ -52,17 +52,15 @@
   display: flex;
   align-items: center;
   justify-content: middle;
-
-  .ThirdBlock {
-    width: calc(100%/3);
-    text-align: center;
-    margin-right: 1%;
-
-    img {
-      width: 100%;
-      margin: 1%;
-    }
-
+  padding-top:100px;
+.img-product {
+  width:70%;
+  img {
+    width: 48%;
+  }
+}
+  .infos-product {
+    width:30%;
     h1 {
       text-transform: uppercase;
       font-weight: 'Raleway';
