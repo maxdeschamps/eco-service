@@ -7,7 +7,10 @@
   justify-content: space-between;
   position: fixed;
   z-index: 1000;
-  box-shadow: 0px -6px 20px 0px black;
+  box-shadow: 0 -6px 20px 0 black;
+  @media screen and (max-width: $mediumSize) {
+    display: none;
+  }
 
   #header-menu-gauche {
     width: 70%;
@@ -22,7 +25,7 @@
       width: 100%;
 
       li {
-        position:relative;
+        position: relative;
         display: inline-block;
         height: 100%;
         // width:7em;
@@ -38,13 +41,14 @@
           &:hover {
             span {
               color: white;
-              transition: .3s ease;
+              transition: 0.3s ease;
             }
           }
         }
 
         &:active {
           background: #3f3f3f;
+
           span {
             color: white;
           }
@@ -96,8 +100,8 @@
           transition-duration: 0.3s;
         }
 
-        &:last-child{
-          background:white;
+        &:last-child {
+          background: white;
         }
 
         img {
@@ -105,5 +109,104 @@
         }
       }
     }
+  }
+}
+
+.responsiveMenu {
+  display: none;
+}
+@media screen and (max-width: $mediumSize) {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .material-icons {
+    font-size: 24px;
+    margin-right: 12px;
+    vertical-align: text-bottom;
+  }
+
+  .responsiveMenu {
+    display: block;
+    background: white;
+    color: #3f3f3f;
+    position: relative;
+
+    a.logoSite {
+      img {
+        height: 40px;
+        margin: 10px;
+      }
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 50px;
+      padding: 0 20px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      font-size: 20px;
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      text-transform: uppercase;
+      transition: height 0.2s;
+
+      a {
+        color: #3f3f3f;
+        text-align: center;
+        transition-duration: 0.3s;
+
+        &:hover {
+          background: #3f3f3f;
+          color: white;
+          transition-duration: 0.3s;
+        }
+
+        i {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      * {
+        display: block;
+        letter-spacing: 1px;
+        line-height: 2.5;
+        padding: 0 20px;
+        width: 100%;
+      }
+
+      input {
+        background: rgba(0,0,0,.2);
+        border: none;
+        color: #fff;
+      }
+    }
+
+    .burger {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      line-height: 40px;
+      display: block;
+
+      &:before {
+        content: 'menu';
+      }
+    }
+  }
+
+  .responsiveMenu .burger:checked:before {
+    content: 'close';
+  }
+
+  .responsiveMenu .burger:checked + nav {
+    height: calc(100vh - 50px);
   }
 }
