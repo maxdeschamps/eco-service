@@ -17,6 +17,7 @@ console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 $( document ).ready(function() {
   // bases
   require('./bases/global.js');
+  require('./bases/gestionCookies.js');
 
   // pages
   require('./pages/home.js');
