@@ -12,28 +12,38 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-  /**
-   * @Route("/utilisateurs", name="index_user")
-   */
-  public function index(EntityManagerInterface $em)
-  {
-    $repository = $em->getRepository(User::class);
-    $user = $repository->findAll();
+  // /**
+  //  * @Route("/utilisateurs", name="index_user")
+  //  */
+  // public function index(EntityManagerInterface $em)
+  // {
+  //   $repository = $em->getRepository(User::class);
+  //   $user = $repository->findAll();
+  //
+  //   return $this->render(
+  //     'user/index.html.twig',
+  //      ['user' => $user]
+  //   );
+  // }
+  //
+  // /**
+  //  * @Route("/utilisateur/{slug}", name="show_user")
+  //  */
+  // public function show(User $user)
+  // {
+  //   return $this->render(
+  //     'user/show.html.twig',
+  //     ['user' => $user]
+  //   );
+  // }
 
-    return $this->render(
-      'user/index.html.twig',
-       ['user' => $user]
-    );
-  }
-
   /**
-   * @Route("/utilisateur/{slug}", name="show_user")
+   * @Route("/mon-compte", name="profile_index")
    */
-  public function show(User $user)
+  public function profile()
   {
     return $this->render(
-      'user/show.html.twig',
-      ['user' => $user]
+      'user/index.html.twig'
     );
   }
 }

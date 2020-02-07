@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ app.user.firstName }} {{ app.user.lastName }}{% endblock %}
+
+{% block idBody %}account{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin-top: 80px;">
+    <h1>Mon compte</h1>
+
+    <p>{{ app.user.firstName }} {{ app.user.lastName }}</p>
+    <p>Email : {{ app.user.email }}</p>
+    <p>Téléphone : {{ app.user.phone }}</p>
+  </div>
+{% endblock %}
