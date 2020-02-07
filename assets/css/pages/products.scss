@@ -1,13 +1,17 @@
 #products-tpl {
   .blocImage {
-    height: 500px;
+    height: 80vh;
     background-image: url("/../images/background-products.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media screen and (max-width: $mediumSize) {
+        height: 50vh;
+    }
   }
-  
+
   main {
     background-color: $lightGreen;
   }
