@@ -6,4 +6,5 @@ easy_admin:
       - { name: 'delete', icon: 'remove', label: false }
   design:
     assets:
-      css: ['css/custom_backend.css']
+      css:
+        - 'css/custom_backend.css'
