@@ -30,9 +30,9 @@
           {{ (product.getPriceTtc / 100)|number_format(2, ',', '.') }}
           €</p>
         <label for="qty-product">Choisissez une quantité :</label>
-        <input id="qty-product" type="number" min="1" max="{{ (product.Quantity )}}" >
+        <input id="qty-product" type="number" min="1" max="{{ (product.quantity )}}" >
 
-        <a class="btn-acheter" href="">ACHETER</a>
+        <a class="btn-acheter" href="{{ path('cart_add', {'id': product.id}) }}">Ajouter au PANIER</a>
       </div>
     </div>
   </div>
