@@ -1,0 +1,14 @@
+.wrapper {
+  display: block;
+
+  .main-header {
+    height: unset;
+    padding:0;
+    width:100%;
+    .sidebar-menu{
+      li{
+        display: inline-block;
+      }
+      }
+  }
+}
