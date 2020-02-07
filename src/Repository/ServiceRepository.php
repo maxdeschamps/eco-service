@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Service;
+use App\Entity\ServiceSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Service|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +20,29 @@ class ServiceRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Service::class);
+    }
+
+    public function findAllVisibleQuery(ServiceSearch $search): Query
+    {
+        $query = $this->findVisibleQuery();
+
+        if($search->getMinPriceTtc()){
+            $query= $query
+                ->andWhere('service.price_ttc >= :min_priceTtc')
+                ->setParameter('min_priceTtc', $search->getMinPriceTtc());
+        }
+
+        if($search->getMaxPriceTtc()){
+            $query= $query
+                ->andWhere('service.price_ttc <= :max_priceTtc')
+                ->setParameter('max_priceTtc', $search->getMaxPriceTtc());
+        }
+        return $query->getQuery();
+    }
+
+    public function findVisibleQuery():QueryBuilder
+    {
+        return $this->createQueryBuilder('service');
     }
 
     // /**
