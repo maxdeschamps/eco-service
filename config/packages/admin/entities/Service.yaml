@@ -1,0 +1,27 @@
+easy_admin:
+  entities:
+    Service:
+      class: App\Entity\Service
+      list:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'priceHt', label: 'Prix HT' }
+        - { property: 'priceTtc', label: 'Prix TTC' }
+        - { property: 'quantity', label: 'Quantité' }
+        - { property: 'author', label: 'Auteur' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'unity', label: 'Unité' }
+        - { property: 'author', label: 'Auteur' }
+      form:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'priceHt', label: 'Prix HT', type: 'number' }
+        - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
+        - { property: 'slug', label: 'Slug' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'quantity', label: 'Quantité', type: 'number' }
+        - { property: 'author', label: 'Auteur' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'unity', label: 'Unité', type: 'number' }
+        - { property: 'author', label: 'Auteur' }
+

@@ -8,6 +8,15 @@
   }
 }
 
+.detailContent{
+  .fullSize{
+    a{
+      text-decoration: none;
+      text-align: justify;
+    }
+  }
+}
+
 .backgroundLightGreenInHomepage {
   background-color: $lightGreen;
 }

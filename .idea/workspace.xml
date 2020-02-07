@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/css/custom_backend.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/File.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/bases/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bases/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProductSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/menu.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +170,8 @@
       <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1X3pEx6FwqFVhJWPZ74ibedfCpi" />
@@ -189,12 +192,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
       <recent name="C:\xampp\htdocs\eco-service\eco-service\src\Repository" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\eco-service\eco-service\config\packages\admin" />
+      <recent name="C:\xampp\htdocs\eco-service\eco-service\config\packages" />
+      <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
     </key>
   </component>
   <component name="RunManager">
@@ -241,9 +246,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="386" y="156" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1580466558040" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580769211168">
+    <state x="269" y="37" width="742" height="606" key="find.popup" timestamp="1580998755948">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580769211168" />
+    <state x="269" y="37" width="742" height="606" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1580998755948" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580993583990">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580993583990" />
   </component>
 </project>
