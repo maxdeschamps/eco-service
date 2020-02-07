@@ -7,5 +7,3 @@ easy_admin:
   design:
     assets:
       css: ['css/custom_backend.css']
-
-

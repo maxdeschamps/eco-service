@@ -34,4 +34,3 @@ easy_admin:
         icon: 'newspaper-o'
         children:
           - {entity: 'File', icon: 'inbox', label: 'Liste des images'}
-
