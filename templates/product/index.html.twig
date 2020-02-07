@@ -16,11 +16,12 @@
         </svg>
     </div>
 
-    <div class="search">
-        {{ include('product/search.html.twig') }}
-    </div>
-
     <div class="container">
+
+        <div class="search">
+            {{ include('search/search.html.twig') }}
+        </div>
+
         <ul class="detailList">
             {% for product in products %}
                 <li class="detailElement">

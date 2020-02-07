@@ -22,7 +22,6 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-
     public function findAllVisibleQuery(ProductSearch $search): Query
     {
         $query = $this->findVisibleQuery();
@@ -45,6 +44,7 @@ class ProductRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('product');
     }
+    
     // /**
     //  * @return Product[]
     //  */
