@@ -10,20 +10,37 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+use Knp\Component\Pager\PaginatorInterface;
 
 class ArticleController extends AbstractController
 {
+  private $articleRepository;
+  private $entityManager;
+
+  public function __construct(ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+  {
+    $this->articleRepository = $articleRepository;
+    $this->entityManager = $entityManager;
+  }
   /**
    * @Route("/articles", name="index_article")
    */
-  public function index(EntityManagerInterface $em)
+  public function index(Request $request, PaginatorInterface $paginator)
   {
-    $repository = $em->getRepository(Article::class);
-    $articles = $repository->findAll();
+    $articles = $this->articleRepository->findAll();
+
+    $pagination = $paginator->paginate(
+        $articles,
+        $request->query->getInt('page', 1),
+        $request->query->getInt('limit', 6)
+    );
 
     return $this->render(
       'article/index.html.twig',
-       ['articles' => $articles]
+      [
+          'articles' => $pagination
+      ]
     );
   }
 
