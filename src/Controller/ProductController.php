@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
   /**
-   * @Route("/products", name="index_product")
+   * @Route("/produits", name="index_product")
    */
   public function index(EntityManagerInterface $em)
   {
@@ -28,7 +28,7 @@ class ProductController extends AbstractController
   }
 
   /**
-   * @Route("/product/{slug}", name="show_product")
+   * @Route("/produit/{slug}", name="show_product")
    */
   public function show(Product $product)
   {
@@ -39,7 +39,7 @@ class ProductController extends AbstractController
   }
 
   /**
-   * @Route("/product", name="create_product")
+   * @Route("/produit", name="create_product")
    */
   public function create(Request $request): Response
   {

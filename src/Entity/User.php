@@ -5,11 +5,14 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -17,6 +20,11 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=25, nullable=true)
+     */
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -78,7 +86,10 @@ class User
         $this->messages = new ArrayCollection();
         $this->newsletters = new ArrayCollection();
         $this->bills = new ArrayCollection();
+        // may not be needed, see section on salt below
+        // $this->salt = md5(uniqid('', true));
     }
+
 
     public function getId(): ?int
     {
@@ -312,5 +323,50 @@ class User
         }
 
         return $this;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }

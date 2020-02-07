@@ -12,8 +12,17 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  * @method User[]    findAll()
  * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserRepository extends ServiceEntityRepository
+class UserRepository extends ServiceEntityRepository implements UserLoaderInterface
 {
+    public function loadUserByUsername($username)
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.email = :email')
+            ->setParameter('email', $username)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
