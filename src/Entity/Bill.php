@@ -22,7 +22,6 @@ class Bill extends Resume
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="bills")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $customer;
 

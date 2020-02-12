@@ -16,7 +16,7 @@ easy_admin:
         - { property: 'name', label: 'Nom' }
         - { property: 'content', label: 'Contenu' }
         - { property: 'priceHt', label: 'Prix HT' }
-        - { property: 'priceTtc', label: 'Price TTC' }
+        - { property: 'priceTtc', label: 'Prix TTC' }
         - { property: 'quantity', label: 'Quantité' }
         - { property: 'category', label: 'Catégories' }
       form:

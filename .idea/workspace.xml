@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/custom_backend.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/admin/entities/File.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/admin/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/admin/menu.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/menu.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/entities/Product.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/entities/Product.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Bill.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Bill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Service.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
