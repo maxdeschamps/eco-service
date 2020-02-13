@@ -5,11 +5,14 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -17,6 +20,11 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=25, nullable=true)
+     */
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,6 +45,11 @@ class User
      * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $last_name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $companyName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
@@ -69,16 +82,30 @@ class User
     private $newsletter_acceptance;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isCompany;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Bill", mappedBy="customer")
      */
     private $bills;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Quotation", mappedBy="company")
+     */
+    private $quotations;
 
     public function __construct()
     {
         $this->messages = new ArrayCollection();
         $this->newsletters = new ArrayCollection();
         $this->bills = new ArrayCollection();
+        $this->quotations = new ArrayCollection();
+        // may not be needed, see section on salt below
+        // $this->salt = md5(uniqid('', true));
     }
+
 
     public function getId(): ?int
     {
@@ -145,6 +172,18 @@ class User
         return $this;
     }
 
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
     public function getPhone(): ?string
     {
         return $this->phone;
@@ -153,37 +192,6 @@ class User
     public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Company[]
-     */
-    public function getCompanies(): Collection
-    {
-        return $this->companies;
-    }
-
-    public function addCompany(Company $company): self
-    {
-        if (!$this->companies->contains($company)) {
-            $this->companies[] = $company;
-            $company->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCompany(Company $company): self
-    {
-        if ($this->companies->contains($company)) {
-            $this->companies->removeElement($company);
-            // set the owning side to null (unless already changed)
-            if ($company->getUser() === $this) {
-                $company->setUser(null);
-            }
-        }
 
         return $this;
     }
@@ -283,6 +291,18 @@ class User
         return $this;
     }
 
+    public function getIsCompany(): ?bool
+    {
+        return $this->isCompany;
+    }
+
+    public function setIsCompany(bool $isCompany): self
+    {
+        $this->isCompany = $isCompany;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Bill[]
      */
@@ -314,8 +334,79 @@ class User
         return $this;
     }
 
-    public function __toString()
+    /**
+     * @return Collection|Quotation[]
+     */
+    public function getQuotations(): Collection
     {
-        return $this->email;
+        return $this->quotations;
+    }
+
+    public function addQuotation(Quotation $quotation): self
+    {
+        if (!$this->quotations->contains($quotation)) {
+            $this->quotations[] = $quotation;
+            $quotation->setCompany($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuotation(Quotation $quotation): self
+    {
+        if ($this->quotations->contains($quotation)) {
+            $this->quotations->removeElement($quotation);
+            // set the owning side to null (unless already changed)
+            if ($quotation->getCompany() === $this) {
+                $quotation->setCompany(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }
