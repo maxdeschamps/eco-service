@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Table(options={"auto_increment": 0})
  * @ORM\Entity(repositoryClass="App\Repository\AddressRepository")
  */
 class Address

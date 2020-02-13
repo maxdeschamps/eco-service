@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\constraints as Assert;
 
 /**
+ * @ORM\Table(options={"auto_increment": 0})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User
@@ -55,12 +56,12 @@ class User
     private $newsletters;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $delivery_address;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $billing_address;
 
