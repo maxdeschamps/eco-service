@@ -1,0 +1,16 @@
+easy_admin:
+  entities:
+    Message:
+      class: App\Entity\Message
+      list:
+        fields:
+        - { property: 'state', label: 'Etat' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'subject', label: 'Sujet' }
+        - { property: 'author', label: 'Auteur' }
+      form:
+        fields:
+        - { property: 'state', label: 'Etat' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'subject', label: 'Sujet' }
+        - { property: 'author', label: 'Auteur' }

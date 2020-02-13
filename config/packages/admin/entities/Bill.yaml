@@ -1,0 +1,4 @@
+easy_admin:
+  entities:
+    Bill:
+      class: App\Entity\Bill

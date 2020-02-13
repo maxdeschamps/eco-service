@@ -1,0 +1,31 @@
+easy_admin:
+  entities:
+    Category:
+      class: App\Entity\Category
+      list:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'slug', label: 'Slug' }
+      form:
+        fields:
+        - { property: 'name', label: 'Nom' }
+    Product:
+      class: App\Entity\Product
+      list:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'priceHt', label: 'Prix HT' }
+        - { property: 'priceTtc', label: 'Prix TTC' }
+        - { property: 'quantity', label: 'Quantité' }
+        - { property: 'category', label: 'Catégories' }
+      form:
+        fields:
+        - { property: 'name', label: 'Nom' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'priceHt', label: 'Prix HT', type: 'number' }
+        - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
+        - { property: 'quantity', label: 'Quantité', type: 'number' }
+        - { property: 'category', label: 'Catégories' }
+        - { property: 'files', label: 'Images' }
+
