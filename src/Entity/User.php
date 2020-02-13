@@ -51,7 +51,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $companyName;
+    private $company_name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
@@ -178,6 +178,18 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+    public function getCompanyName(): ?string
+    {
+        return $this->company_name;
+    }
+
+    public function setCompanyName(?string $company_name): self
+    {
+        $this->company_name = $company_name;
+
+        return $this;
+    }
+
     public function getName(): ?string
     {
         return $this->name;
@@ -189,6 +201,7 @@ class User implements UserInterface, \Serializable
 
         return $this;
     }
+
 
     public function getPhone(): ?string
     {
@@ -374,6 +387,13 @@ class User implements UserInterface, \Serializable
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+         $this->username = $username;
+
+         return $this;
     }
 
     public function getSalt()

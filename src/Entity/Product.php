@@ -35,7 +35,6 @@ class Product
      */
     private $content;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(nullable=true)
@@ -199,10 +198,5 @@ class Product
         }
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->name;
     }
 }
