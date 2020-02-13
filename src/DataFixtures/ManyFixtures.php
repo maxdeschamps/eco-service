@@ -12,6 +12,7 @@ use App\Entity\Message;
 use App\Entity\Newsletter;
 use App\Entity\Product;
 use App\Entity\Resume;
+use App\Entity\Service;
 use App\Entity\Subject;
 use App\Entity\Unity;
 use App\Entity\User;
@@ -128,6 +129,21 @@ class ManyFixtures extends Fixture
             $manager->persist($newsletter);
             $manager->flush();
         }
+
+        for ($i = 0; $i < 15; $i++) {
+            $service = new Service();
+            $service->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $service->setUnity($manager->find(Unity::class, random_int(1, 10)));
+            $service->setSlug($faker->unique()->slug());
+            $service->setContent($faker->text);
+            $service->setName($faker->word(7));
+            $service->setQuantity($faker->numberBetween(0, 50));
+            $service->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
+            $service->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
+            $manager->persist($service);
+            $manager->flush();
+        }
+
         /*
         for ($i = 0; $i < 50; $i++) {
             $company = new Company();
@@ -181,19 +197,7 @@ class ManyFixtures extends Fixture
 
 
 /*
-        for ($i = 0; $i < 30; $i++) {
-            $service = new Service();
-            $service->setUnity($unity);
-            $service->setAuthor($personne);
 
-            $service->setSlug($faker->unique()->slug());
-            $service->setContent($faker->text);
-            $service->setName($faker->word(7));
-            $service->setQuantity($faker->numberBetween(0, 50));
-            $service->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
-            $service->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
-            $manager->persist($service);
-        }
 
 
         for ($i = 0; $i < 50; $i++) {
