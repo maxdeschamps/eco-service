@@ -27,6 +27,7 @@ Projet E-commerce G4 - ING1 - Symfony
 - Si vous êtes amené à faire plusieurs modifications du style, lancez plutôt $ npm run watch (la compilation du code se fait automatiquement dès que vous modifiez un fichier)
 
 ## Fixtures
+- `php bin/console doctrine:database:drop --force` -> supprime la bdd
 - `php bin/console doctrine:database:create` -> créé la bdd
 - `php bin/console doctrine:schema:create` -> génère le shema actuelle de la bdd, plus besoin des migrations
 - `php bin/console doctrine:fixtures:load` -> lance les fixtures afin de populer les tables de notre bdd
