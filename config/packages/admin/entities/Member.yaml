@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\User
       label: 'Membres'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Utilisateur '}
         fields:
         - { property: 'email', label: 'Mail' }
         - { property: 'firstName', label: 'Prénom' }

@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Bill
       label: 'Devis'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Devis '}
         fields:
           - { property: 'request_date', label: 'Date de demande' }
           - { property: 'approved', label: 'Approuvé' }

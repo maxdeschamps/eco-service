@@ -9,3 +9,4 @@ easy_admin:
     actions:
       - { name: 'edit', icon: 'pencil', label: false }
       - { name: 'delete', icon: 'remove', label: false }
+      - { name: 'search', label: 'Recherche...'}

@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Address
       label: 'Adresses'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter une Adresse '}
         fields:
           - { property: 'line1', label: 'Adresse 1' }
           - { property: 'line2', label: 'Adresse 2' }

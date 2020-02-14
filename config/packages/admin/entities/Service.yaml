@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Service
       label: 'Services'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Service '}
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'priceHt', label: 'Prix HT' }

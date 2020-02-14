@@ -2,6 +2,12 @@
     color: #2ece99 !important;
 }
 
+.main-header {
+    height: unset;
+    padding: 0;
+    width: 100%;
+}
+
 /* public/css/admin.css */
 :root {
     /* make the backend contents as wide as the browser window */
@@ -15,5 +21,6 @@
 }
 
 .main-sidebar {
-    padding: 20px;
+    padding: 15px;
 }
+

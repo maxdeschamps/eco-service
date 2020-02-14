@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\File
       label: 'Images'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter une Image'}
         fields:
           - { property: 'name', label: 'Nom' }
           - { property: 'uri', label: 'Liens' }

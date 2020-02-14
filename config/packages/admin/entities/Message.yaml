@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Message
       label: 'Messages'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Message '}
         fields:
         - { property: 'state', label: 'Etat' }
         - { property: 'content', label: 'Contenu' }

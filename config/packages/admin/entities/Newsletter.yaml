@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Newsletter
       label: 'Newsletters'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter une Newsletter '}
         fields:
         - { property: 'subject', label: 'Sujet' }
         - { property: 'content', label: 'Contenu' }

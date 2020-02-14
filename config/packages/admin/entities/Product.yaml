@@ -6,6 +6,8 @@ easy_admin:
       class: App\Entity\Category
       label: 'Catégories'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter une Catégorie '}
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'slug', label: 'Slug' }

@@ -109,6 +109,6 @@ class Address
 
     public function __toString()
     {
-        return $this->postal_code;
+        return $this->city.' '.$this->postal_code;
     }
 }
