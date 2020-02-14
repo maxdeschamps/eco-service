@@ -1,7 +1,10 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     Newsletter:
       class: App\Entity\Newsletter
+      label: 'Newsletters'
       list:
         fields:
         - { property: 'subject', label: 'Sujet' }

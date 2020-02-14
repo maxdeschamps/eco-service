@@ -1,0 +1,14 @@
+easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
+  entities:
+    Address:
+      class: App\Entity\Address
+      label: 'Adresses'
+      list:
+        fields:
+          - { property: 'line1', label: 'Adresse 1' }
+          - { property: 'line2', label: 'Adresse 2' }
+          - { property: 'postal_code', label: 'Code Postale' }
+          - { property: 'city', label: 'Villes' }
+          - { property: 'country', label: 'Pays'}

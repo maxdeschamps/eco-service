@@ -1,4 +1,15 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     Bill:
       class: App\Entity\Bill
+      label: 'Devis'
+      list:
+        fields:
+          - { property: 'request_date', label: 'Date de demande' }
+          - { property: 'approved', label: 'Approuvé' }
+          - { property: 'acceptance_date', label: 'Date de confirmation' }
+          - { property: 'email', label: 'Mail' }
+          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'delivery_address', label: 'Adresse de livraison'}

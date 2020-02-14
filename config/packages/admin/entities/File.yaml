@@ -1,7 +1,10 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     File:
       class: App\Entity\File
+      label: 'Images'
       list:
         fields:
           - { property: 'name', label: 'Nom' }

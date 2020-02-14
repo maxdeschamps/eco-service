@@ -1,7 +1,10 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     Category:
       class: App\Entity\Category
+      label: 'Catégories'
       list:
         fields:
         - { property: 'name', label: 'Nom' }
@@ -11,6 +14,7 @@ easy_admin:
         - { property: 'name', label: 'Nom' }
     Product:
       class: App\Entity\Product
+      label: 'Produits'
       list:
         fields:
         - { property: 'name', label: 'Nom' }

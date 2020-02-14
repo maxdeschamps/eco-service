@@ -1,7 +1,10 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     Message:
       class: App\Entity\Message
+      label: 'Messages'
       list:
         fields:
         - { property: 'state', label: 'Etat' }

@@ -1,7 +1,10 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     Service:
       class: App\Entity\Service
+      label: 'Services'
       list:
         fields:
         - { property: 'name', label: 'Nom' }
@@ -23,5 +26,4 @@ easy_admin:
         - { property: 'author', label: 'Auteur' }
         - { property: 'content', label: 'Contenu' }
         - { property: 'unity', label: 'Unité', type: 'number' }
-        - { property: 'author', label: 'Auteur' }
 
