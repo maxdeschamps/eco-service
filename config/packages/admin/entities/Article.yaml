@@ -10,17 +10,17 @@ easy_admin:
           - { name: 'new', label: 'Ajouter un Article '}
         fields:
           - { property: 'author', label: 'Auteur' }
-          - { property: 'category', label: 'Category' }
+          - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
           - { property: 'slug', label: 'Slug' }
           - { property: 'content', label: 'Contenu'}
-        form:
-          actions:
-            - { name: 'edit', label: 'Modifier' }
-            - { name: 'delete', label: 'Supprimer' }
-          fields:
-            - { property: 'author', label: 'Auteur' }
-            - { property: 'category', label: 'Category' }
-            - { property: 'name', label: 'Nom' }
-            - { property: 'slug', label: 'Slug' }
-            - { property: 'content', label: 'Contenu'}
+      form:
+        actions:
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'delete', label: 'Supprimer' }
+        fields:
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'category', label: 'Categorie' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
+          - { property: 'content', label: 'Contenu'}
