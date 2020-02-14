@@ -28,7 +28,9 @@ easy_admin:
         - { property: 'quantity', label: 'Quantité' }
         - { property: 'category', label: 'Catégories' }
       form:
-        list:
+        actions:
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'delete', label: 'Supprimer' }
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'content', label: 'Contenu' }

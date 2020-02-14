@@ -18,6 +18,9 @@ easy_admin:
         - { property: 'unity', label: 'Unité' }
         - { property: 'author', label: 'Auteur' }
       form:
+        actions:
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'delete', label: 'Supprimer' }
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'priceHt', label: 'Prix HT', type: 'number' }
@@ -27,5 +30,5 @@ easy_admin:
         - { property: 'quantity', label: 'Quantité', type: 'number' }
         - { property: 'author', label: 'Auteur' }
         - { property: 'content', label: 'Contenu' }
-        - { property: 'unity', label: 'Unité', type: 'number' }
+        - { property: 'unity', label: 'Unité' }
 
