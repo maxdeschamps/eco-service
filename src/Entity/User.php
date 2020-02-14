@@ -108,11 +108,6 @@ class User implements UserInterface, \Serializable
         // $this->salt = md5(uniqid('', true));
     }
 
-    public function __toString()
-    {
-        return $this->email;
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -434,5 +429,10 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
+    public function __toString()
+    {
+        return $this->username;
     }
 }

@@ -11,7 +11,7 @@
 /* public/css/admin.css */
 :root {
     /* make the backend contents as wide as the browser window */
-    --body-max-width: 100%;
+    --body-max-width: 90%;
     /* change the background color of the <body> */
     --body-bg: #f5f5f5;
     /* make the base font size smaller */
@@ -21,6 +21,6 @@
 }
 
 .main-sidebar {
-    padding: 15px;
+    padding: 10px;
 }
 

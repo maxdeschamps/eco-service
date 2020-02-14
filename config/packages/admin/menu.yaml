@@ -2,40 +2,41 @@ easy_admin:
   design:
     menu:
       - label: Dashboard
-        icon: dashboard
+        icon: 'home'
         route: admin_dashboard
         default: true
       - label: Produits
-        icon: 'newspaper-o'
+        icon: 'shopping-basket'
         children:
-          - {entity: 'Product', icon: 'newspaper-o', label: 'Liste des produits'}
-          - {entity: 'Category', icon: 'inbox', label: 'Catégories'}
+          - {entity: 'Product', icon: 'th-list', label: 'Liste des produits'}
+          - {entity: 'Category', icon: 'tags', label: 'Catégories'}
+          - { entity: 'Product', icon: 'plus-circle', label: 'Ajouter un produit', params: { action: 'new' } }
       - label: Services
         icon: 'newspaper-o'
         children:
-          - {entity: 'Service', icon: 'user', label: 'Liste des services'}
+          - {entity: 'Service', icon: 'newspaper-o', label: 'Liste des services'}
       - label: Membres
-        icon: 'user'
+        icon: 'user-circle-o'
         children:
-          - {entity: 'User', icon: 'user', label: 'Liste des membres'}
+          - {entity: 'User', icon: 'th-list', label: 'Liste des membres'}
       - label: Devis
-        icon: 'newspaper-o'
+        icon: 'file-text-o'
         children:
-          - {entity: 'Bill', icon: 'inbox', label: 'Liste des devis'}
+          - {entity: 'Bill', icon: 'th-list', label: 'Liste des devis'}
       - label: Newsletters
-        icon: 'newspaper-o'
+        icon: 'info-circle'
         children:
-          - {entity: 'Newsletter', icon: 'inbox', label: 'Liste des newsletters'}
-      - label: Message
-        icon: 'newspaper-o'
+          - {entity: 'Newsletter', icon: 'th-list', label: 'Liste des newsletters'}
+      - label: Messages
+        icon: 'comment'
         children:
-          - {entity: 'Message', icon: 'inbox', label: 'Liste des messages'}
+          - {entity: 'Message', icon: 'th-list', label: 'Liste des messages'}
       - label: Images
+        icon: 'file-text-o'
+        children:
+          - {entity: 'File', icon: 'th-list', label: 'Liste des images'}
+      - label: Articles
         icon: 'newspaper-o'
         children:
-          - {entity: 'File', icon: 'inbox', label: 'Liste des images'}
-      - label: Adresse
-        icon: 'newspaper-o'
-        children:
-          - {entity: 'Address', icon: 'inbox', label: 'Liste des adresses'}
+          - {entity: 'Article', icon: 'th-list', label: 'Liste des articles'}
 

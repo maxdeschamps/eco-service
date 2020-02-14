@@ -1,0 +1,23 @@
+easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
+  entities:
+    Article:
+      class: App\Entity\Article
+      label: 'Articles'
+      list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Article '}
+        fields:
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'category', label: 'Category' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
+          - { property: 'content', label: 'Contenu'}
+        form:
+          fields:
+            - { property: 'author', label: 'Auteur' }
+            - { property: 'category', label: 'Category' }
+            - { property: 'name', label: 'Nom' }
+            - { property: 'slug', label: 'Slug' }
+            - { property: 'content', label: 'Contenu'}

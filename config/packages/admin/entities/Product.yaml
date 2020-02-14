@@ -18,6 +18,8 @@ easy_admin:
       class: App\Entity\Product
       label: 'Produits'
       list:
+        actions:
+          - { name: 'new', label: 'Ajouter un Produit '}
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'content', label: 'Contenu' }
@@ -26,6 +28,7 @@ easy_admin:
         - { property: 'quantity', label: 'Quantité' }
         - { property: 'category', label: 'Catégories' }
       form:
+        list:
         fields:
         - { property: 'name', label: 'Nom' }
         - { property: 'content', label: 'Contenu' }
