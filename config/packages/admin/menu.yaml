@@ -5,38 +5,44 @@ easy_admin:
         icon: 'home'
         route: admin_dashboard
         default: true
-      - label: Produits
-        icon: 'shopping-basket'
-        children:
-          - {entity: 'Product', icon: 'th-list', label: 'Liste des produits'}
-          - {entity: 'Category', icon: 'tags', label: 'Catégories'}
-          - { entity: 'Product', icon: 'plus-circle', label: 'Ajouter un produit', params: { action: 'new' } }
-      - label: Services
-        icon: 'newspaper-o'
-        children:
-          - {entity: 'Service', icon: 'newspaper-o', label: 'Liste des services'}
       - label: Membres
         icon: 'user-circle-o'
         children:
           - {entity: 'User', icon: 'th-list', label: 'Liste des membres'}
-      - label: Devis
-        icon: 'file-text-o'
+      - label: Produits
+        icon: 'shopping-basket'
         children:
-          - {entity: 'Bill', icon: 'th-list', label: 'Liste des devis'}
-      - label: Newsletters
-        icon: 'info-circle'
+          - { entity: 'Product', icon: 'th-list', label: 'Liste des produits' }
+          - { entity: 'Category', icon: 'tags', label: 'Catégories' }
+          - { entity: 'Product', icon: 'plus-circle', label: 'Ajouter un produit', params: { action: 'new' } }
+      - label: Services
+        icon: 'cubes'
         children:
-          - {entity: 'Newsletter', icon: 'th-list', label: 'Liste des newsletters'}
-      - label: Messages
-        icon: 'comment'
-        children:
-          - {entity: 'Message', icon: 'th-list', label: 'Liste des messages'}
-      - label: Images
-        icon: 'file-text-o'
-        children:
-          - {entity: 'File', icon: 'th-list', label: 'Liste des images'}
+          - { entity: 'Service', icon: 'th-list', label: 'Liste des services'}
+          - { entity: 'Service', icon: 'plus-circle', label: 'Ajouter un service', params: { action: 'new' } }
       - label: Articles
         icon: 'newspaper-o'
         children:
-          - {entity: 'Article', icon: 'th-list', label: 'Liste des articles'}
+          - { entity: 'Article', icon: 'th-list', label: 'Liste des articles' }
+          - { entity: 'Article', icon: 'plus-circle', label: 'Ajouter un article', params: { action: 'new' } }
+      - label: Devis
+        icon: 'file-text-o'
+        children:
+          - { entity: 'Bill', icon: 'th-list', label: 'Liste des devis' }
+          - { entity: 'Bill', icon: 'plus-circle', label: 'Ajouter un devis', params: { action: 'new' } }
+      - label: Messages
+        icon: 'comment'
+        children:
+          - { entity: 'Message', icon: 'th-list', label: 'Liste des messages' }
+          - { entity: 'Message', icon: 'plus-circle', label: 'Ajouter un message', params: { action: 'new' } }
+      - label: Newsletters
+        icon: 'envelope'
+        children:
+          - { entity: 'Newsletter', icon: 'th-list', label: 'Liste des newsletters' }
+          - { entity: 'Newsletter', icon: 'plus-circle', label: 'Ajouter une newsletter', params: { action: 'new' } }
+      - label: Images
+        icon: 'image'
+        children:
+          - { entity: 'File', icon: 'th-list', label: 'Liste des images'}
+          - { entity: 'File', icon: 'plus-circle', label: 'Ajouter une image', params: { action: 'new' } }
 
