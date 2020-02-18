@@ -15,10 +15,10 @@ easy_admin:
         - { property: 'author', label: 'Auteur' }
       form:
         actions:
-          - { name: 'edit', label: 'Modifier' }
           - { name: 'delete', label: 'Supprimer' }
         fields:
-        - { property: 'state', label: 'Etat' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'subject', label: 'Sujet' }
-        - { property: 'author', label: 'Auteur' }
+          - { property: 'state', label: 'Etat' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'subject', label: 'Sujet' }
+          - { property: 'author', label: 'Auteur' }
+        disabled_actions: ['edit']

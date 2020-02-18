@@ -9,26 +9,26 @@ easy_admin:
         actions:
           - { name: 'new', label: 'Ajouter un Service '}
         fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'priceHt', label: 'Prix HT' }
-        - { property: 'priceTtc', label: 'Prix TTC' }
-        - { property: 'quantity', label: 'Quantité' }
-        - { property: 'author', label: 'Auteur' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'unity', label: 'Unité' }
-        - { property: 'author', label: 'Auteur' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'priceHt', label: 'Prix HT' }
+          - { property: 'priceTtc', label: 'Prix TTC' }
+          - { property: 'quantity', label: 'Quantité' }
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'unity', label: 'Unité' }
+          - { property: 'author', label: 'Auteur' }
       form:
         actions:
-          - { name: 'edit', label: 'Modifier' }
           - { name: 'delete', label: 'Supprimer' }
         fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'priceHt', label: 'Prix HT', type: 'number' }
-        - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
-        - { property: 'slug', label: 'Slug' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'quantity', label: 'Quantité', type: 'number' }
-        - { property: 'author', label: 'Auteur' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'unity', label: 'Unité' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'priceHt', label: 'Prix HT', type: 'number' }
+          - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
+          - { property: 'slug', label: 'Slug' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'quantity', label: 'Quantité', type: 'number' }
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'unity', label: 'Unité' }
+        disabled_actions: ['edit']
 

@@ -16,7 +16,6 @@ easy_admin:
           - { property: 'content', label: 'Contenu'}
       form:
         actions:
-          - { name: 'edit', label: 'Modifier' }
           - { name: 'delete', label: 'Supprimer' }
         fields:
           - { property: 'author', label: 'Auteur' }
@@ -24,3 +23,4 @@ easy_admin:
           - { property: 'name', label: 'Nom' }
           - { property: 'slug', label: 'Slug' }
           - { property: 'content', label: 'Contenu'}
+        disabled_actions: ['edit']

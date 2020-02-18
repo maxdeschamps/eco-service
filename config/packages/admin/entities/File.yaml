@@ -15,9 +15,9 @@ easy_admin:
           - { property: 'alt_file', label: 'Description' }
       form:
         actions:
-          - { name: 'edit', label: 'Modifier' }
           - { name: 'delete', label: 'Supprimer' }
         fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'orderFile', label: 'Ordre', type: 'number' }
-        - { property: 'alt_file', label: 'Description' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'orderFile', label: 'Ordre', type: 'number' }
+          - { property: 'alt_file', label: 'Description' }
+        disabled_actions: ['edit']

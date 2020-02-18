@@ -17,7 +17,6 @@ easy_admin:
           - { property: 'delivery_address', label: 'Adresse de livraison'}
         form:
           actions:
-            - { name: 'edit', label: 'Modifier' }
             - { name: 'delete', label: 'Supprimer' }
           fields:
             - { property: 'request_date', label: 'Date de demande' }
@@ -26,3 +25,4 @@ easy_admin:
             - { property: 'email', label: 'Mail' }
             - { property: 'billing_address', label: 'Adresse du devis'}
             - { property: 'delivery_address', label: 'Adresse de livraison'}
+          disabled_actions: ['edit']

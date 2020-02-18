@@ -16,13 +16,13 @@ easy_admin:
         - { property: 'newsletterAcceptance', label: 'Newsletter', type: 'toggle'}
       form:
         actions:
-          - { name: 'edit', label: 'Modifier' }
           - { name: 'delete', label: 'Supprimer' }
         fields:
-        - { property: 'delivery_address', label: 'Adresse de livraison' }
-        - { property: 'billing_address', label: 'Address du devis' }
-        - { property: 'email', label: 'Mail', type: 'email' }
-        - { property: 'firstName', label: 'Prénom' }
-        - { property: 'lastName', label: 'Nom' }
-        - { property: 'phone', label: 'Téléphone', type: 'tel' }
-        - { property: 'newsletterAcceptance', label: 'Newsletter',  type: 'checkbox' }
+          - { property: 'delivery_address', label: 'Adresse de livraison' }
+          - { property: 'billing_address', label: 'Address du devis' }
+          - { property: 'email', label: 'Mail', type: 'email' }
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'lastName', label: 'Nom' }
+          - { property: 'phone', label: 'Téléphone', type: 'tel' }
+          - { property: 'newsletterAcceptance', label: 'Newsletter',  type: 'checkbox' }
+        disabled_actions: ['edit']
