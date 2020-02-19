@@ -16,7 +16,11 @@
                     <h3>{{ countBills }}</h3>
                     <p style="color:white">Devis</p>
                 </div>
-                <a href="{{ path('easyadmin', {entity: 'Bill', action: 'list'}) }}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <a href="{{ path('easyadmin', {entity: 'Bill', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-md-3">
@@ -24,11 +28,14 @@
             <div class="small-box bg-green">
                 <div class="inner">
                     <h3>{{ countProducts }}</h3>
-
                     <p style="color:white">Produits</p>
                 </div>
+                <div class="icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
 
-                <a href="{{ path('easyadmin', {entity: 'Product', action: 'list'}) }}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ path('easyadmin', {entity: 'Product', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-md-3">
@@ -36,10 +43,14 @@
             <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>{{ countUsers }}</h3>
-
                     <p style="color:white">Membres</p>
                 </div>
-                <a href="{{ path('easyadmin', {entity: 'User', action: 'list'}) }}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <a href="{{ path('easyadmin', {entity: 'User', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <div class="col-md-3">
@@ -47,10 +58,13 @@
             <div class="small-box bg-red">
                 <div class="inner">
                     <h3>{{ countMessages }}</h3>
-
                     <p style="color:white">Messages</p>
+                    <div class="icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
                 </div>
-                <a href="{{ path('easyadmin', {entity: 'Message', action: 'list'}) }}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ path('easyadmin', {entity: 'Message', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </div>

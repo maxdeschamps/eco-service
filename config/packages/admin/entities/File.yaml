@@ -18,6 +18,7 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
         fields:
           - { property: 'name', label: 'Nom' }
+          - { property: 'uri', label: 'Lien' }
           - { property: 'orderFile', label: 'Ordre', type: 'number' }
           - { property: 'alt_file', label: 'Description' }
         disabled_actions: ['edit']
