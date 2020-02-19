@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mise à jour du profil{% endblock title %}
+
+{% block body %}
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="blocFull">
+      <h1>Mise à jour du profil</h1>
+      
+      {{ form_start(form) }}
+      {{ form_widget(form) }}
+      <input type="submit" value="Enregistrer" />
+      {{ form_end(form) }}
+    </div>
+  </div>
+
+{% endblock %}
