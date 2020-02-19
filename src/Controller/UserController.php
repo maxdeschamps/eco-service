@@ -3,7 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Repository\ProductRepository;
+use App\Form\UserType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,31 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-  // /**
-  //  * @Route("/utilisateurs", name="index_user")
-  //  */
-  // public function index(EntityManagerInterface $em)
-  // {
-  //   $repository = $em->getRepository(User::class);
-  //   $user = $repository->findAll();
-  //
-  //   return $this->render(
-  //     'user/index.html.twig',
-  //      ['user' => $user]
-  //   );
-  // }
-  //
-  // /**
-  //  * @Route("/utilisateur/{slug}", name="show_user")
-  //  */
-  // public function show(User $user)
-  // {
-  //   return $this->render(
-  //     'user/show.html.twig',
-  //     ['user' => $user]
-  //   );
-  // }
-
   /**
    * @Route("/mon-compte", name="profile_index")
    */
@@ -45,5 +21,30 @@ class UserController extends AbstractController
     return $this->render(
       'user/index.html.twig'
     );
+  }
+
+  /**
+   * @Route("/mon-compte/editer", name="profile_update")
+   */
+  public function updateUserAccountForm(Request $request)
+  {
+    $user = $this->getUser();
+
+    $form = $this->createForm(UserType::class, $user);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      $entityManager = $this->getDoctrine()->getManager();
+      $entityManager->persist($user);
+      $entityManager->flush();
+
+      return $this->redirectToRoute('profile_index');
+    }
+
+    return $this->render('user/update.html.twig', [
+      'user' => $user,
+      'form' => $form->createView(),
+    ]);
+
   }
 }

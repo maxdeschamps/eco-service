@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Form\AddressType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -14,60 +15,57 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class RegistrationFormType extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Email'
+              'label' => 'Email'
             ])
-            ->add('plainPassword', PasswordType::class, [
+            ->add('password', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'label' => 'Mot de passe',
                 'mapped' => false,
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer votre mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Votre mot de passe doit contenir {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 30,
-                    ]),
-                ],
+                  new NotBlank([
+                    'message' => 'Veuillez entrer votre mot de passe',
+                  ]),
+                  new Length([
+                    'min' => 6,
+                    'minMessage' => 'Votre mot de passe doit contenir {{ limit }} caractères',
+                    // max length allowed by Symfony for security reasons
+                    'max' => 30,
+                  ]),
+                ]
             ])
-            ->add('firstName', TextType::class, [
-                'label' => 'Prénom'
+            ->add('first_name', TextType::class, [
+              'label' => 'Prénom'
             ])
             ->add('lastName', TextType::class, [
-                'label' => 'Nom'
+              'label' => 'Nom'
             ])
             ->add('phone', TextType::class, [
-                'label' => 'Téléphone'
+              'label' => 'Téléphone'
             ])
             ->add('isCompany', CheckboxType::class, [
-                'label' => 'Vous êtes une société ?',
-                'required' => false
+              'label' => 'Vous êtes une société ?',
+              'required' => false
             ])
             ->add('companyName', TextType::class, [
-                'label' => 'Nom de la société',
-                'required' => false
+              'label' => 'Nom de la société',
+              'required' => false
             ])
             ->add('newsletterAcceptance', CheckboxType::class, [
-                'label' => 'Recevoir la newsletter',
-                'required' => false
+              'label' => 'Recevoir la newsletter',
+              'required' => false
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'label' => 'En cochant cette case, vous acceptez nos conditions d\'utilisation',
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter nos conditions',
-                    ]),
-                ],
+            ->add('delivery_address', AddressType::class, [
+              'label' => 'Adresse de livraison'
+            ])
+            ->add('billing_address', AddressType::class, [
+              'label' => 'Adresse de facturation'
             ])
         ;
     }
