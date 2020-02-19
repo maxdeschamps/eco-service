@@ -107,12 +107,6 @@
     font-size: 90px;
     color: rgba(0,0,0,0.15);
 }
-.ion-bag:before {
-    content: "\f110";
-}
-.ion-stats-bars:before {
-    content: "\f2b5";
-}
 
 .small-box>.small-box-footer {
     position: relative;
