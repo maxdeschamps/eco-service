@@ -426,5 +426,12 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized, array('allowed_classes' => false));
+
+    }
+  
+    public function __toString()
+    {
+        return $this->email;
+
     }
 }

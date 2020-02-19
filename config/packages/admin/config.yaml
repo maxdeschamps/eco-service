@@ -1,0 +1,11 @@
+easy_admin:
+  site_name: 'Eco-Service <em style="font-size:80%">Back Office</em>'
+  list:
+    actions:
+      - { name: 'edit', icon: 'pencil', label: false }
+      - { name: 'delete', icon: 'remove', label: false }
+  design:
+    assets:
+      css: ['css/custom_backend.css']
+
+

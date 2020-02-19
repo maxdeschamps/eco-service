@@ -1,0 +1,37 @@
+easy_admin:
+  design:
+    menu:
+      - label: Dashboard
+        icon: dashboard
+        route: admin_dashboard
+        default: true
+      - label: Produits
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Product', icon: 'newspaper-o', label: 'Liste des produits'}
+          - {entity: 'Category', icon: 'inbox', label: 'Catégories'}
+      - label: Services
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Service', icon: 'user', label: 'Liste des services'}
+      - label: Membres
+        icon: 'user'
+        children:
+          - {entity: 'User', icon: 'user', label: 'Liste des membres'}
+      - label: Devis
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Bill', icon: 'inbox', label: 'Liste des devis'}
+      - label: Newsletters
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Newsletter', icon: 'inbox', label: 'Liste des newsletters'}
+      - label: Message
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'Message', icon: 'inbox', label: 'Liste des messages'}
+      - label: Images
+        icon: 'newspaper-o'
+        children:
+          - {entity: 'File', icon: 'inbox', label: 'Liste des images'}
+

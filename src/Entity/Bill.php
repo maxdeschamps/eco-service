@@ -5,7 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\constraints as Assert;
+use App\Entity\Resume;
+// use Symfony\Component\Validator\constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BillRepository")

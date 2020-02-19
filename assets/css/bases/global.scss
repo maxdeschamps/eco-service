@@ -1,5 +1,9 @@
 // Fonts
 
+::selection {
+  background-color: $lightGreenDarken;
+}
+
 a,
 b,
 body,
@@ -166,6 +170,7 @@ main {
 
         li.detailContentDatas {
           list-style: none;
+          width:60%;
 
           a {
             color: black;
@@ -183,8 +188,10 @@ main {
         }
 
         li.detailPrice {
+          text-align: right;
           list-style: none;
           font-size: 1.5rem;
+          width:40%;
         }
       }
     }
@@ -287,8 +294,9 @@ figure.zoom {
   & img:hover {
     opacity: 0;
   }
+
   img {
-    transition: opacity .5s;
+    transition: opacity 0.5s;
     display: block;
     width: 100%;
   }
@@ -306,11 +314,16 @@ figure.zoom {
 
 .textCenter {
   text-align: center;
+
+  &.marginBottom25 {
+    bottom: 25px !important;
+  }
 }
 
 .fontSize0 {
   font-size: 0;
 }
+
 // .transitions-white-to-green {
 //   height: 25px;
 //   width: 100%;

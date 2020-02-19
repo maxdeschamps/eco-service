@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ product.getName }}{% endblock %}
+{% block title %}{{ product.getName }}
+{% endblock %}
 
 {% block idBody %}fiche-produit{% endblock %}
 
@@ -8,28 +9,30 @@
 
   <div class="container">
     <div id="header-product">
-      <div class="ThirdBlock">
-        <figure class="zoom" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+      <div class="img-product">
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
           <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
         </figure>
-        <figure class="zoom" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ce2ece60-9b32-11e6-95ab-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg" alt="">
+        </figure>
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
           <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
         </figure>
-      </div>
-      <div class="ThirdBlock">
-        <figure class="zoom" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
-          <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
-        </figure>
-        <figure class="zoom" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
-          <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ce2ece60-9b32-11e6-95ab-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg" alt="">
         </figure>
       </div>
-      <div class="ThirdBlock">
-        <h1><span>{{ product.getName }}</span></h1>
+      <div class="infos-product textCenter">
+        <h1>
+          <span>{{ product.getName }}</span></h1>
         <p>
           {{ (product.getPriceTtc / 100)|number_format(2, ',', '.') }}
           €</p>
-        <a class="btn" href="">ACHETER</a>
+        <label for="qty-product">Choisissez une quantité :</label>
+        <input id="qty-product" type="number" min="1" max="{{ (product.Quantity )}}" >
+
+        <a class="btn-acheter" href="">ACHETER</a>
       </div>
     </div>
   </div>

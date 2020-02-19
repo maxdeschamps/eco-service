@@ -1,0 +1,16 @@
+{% block body %}
+    <div class ="jumbotron">
+        <div class ="container">
+            {{form_start(form)}}
+            <div class ="form-row">
+                <div class ="col">
+                    Prix minimum:{{ form_row(form.min_priceTtc) }}
+                </div>
+                <div class ="col">
+                    Prix maximum:{{ form_row(form.max_priceTtc) }}
+                </div>
+            </div>
+            {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

@@ -1,13 +1,14 @@
 // base
-@import 'bases/variables.scss';
-@import 'bases/fonts.scss';
-@import 'bases/global.scss';
-@import 'bases/menu.scss';
-@import 'bases/footer.scss';
+@import 'bases/variables';
+@import 'bases/fonts';
+@import 'bases/global';
+@import 'bases/menu';
+@import 'bases/footer';
 
 // pages
-@import 'pages/home.scss';
-@import 'pages/products.scss';
-@import 'pages/service.scss';
-@import 'pages/article.scss';
-@import 'pages/contact.scss';
+@import 'pages/home';
+@import 'pages/products';
+@import 'pages/service';
+@import 'pages/article';
+@import 'pages/contact';
+@import 'pages/rgpd';

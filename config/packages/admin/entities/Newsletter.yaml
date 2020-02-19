@@ -1,0 +1,15 @@
+easy_admin:
+  entities:
+    Newsletter:
+      class: App\Entity\Newsletter
+      list:
+        fields:
+        - { property: 'subject', label: 'Sujet' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'author', label: 'Auteur' }
+      form:
+        fields:
+        - { property: 'subject', label: 'Sujet' }
+        - { property: 'content', label: 'Contenu' }
+        - { property: 'author', label: 'Auteur' }
+

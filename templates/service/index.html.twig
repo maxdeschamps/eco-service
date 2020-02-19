@@ -5,23 +5,53 @@
 {% block idBody %}service-tpl{% endblock %}
 
 {% block body %}
-<div class="blocImage textCenter">
-  <div class="title">
-    <h1>Retrouvez nos services</h1>
-    <h2>afin d'ameliorer votre vie.</h2>
+  <div id="listeService">
+    <div class="container reverse">
+      <div class="blocHalf">
+        <h1><span>Retrouvez tous nos</span></h1>
+        <h1>SERVICES ECO SERVICE</h1>
+        <p class="blocContent">Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ? Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets. Nous vous proposons, pour vous aider dans cette
+          démarche, de multiples recettes : produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
+      </div>
+      <div class="blocHalf">
+        <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
+      </div>
+    </div>
   </div>
-  <img class="imgPres" src="{{ asset('images/background-service.jpg') }}" />
-  <svg class="wave waveTop fillGrey onImage" viewBox="0 0 1440 120" aria-hidden="true">
-    <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+  <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
+    <path
+      d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
   </svg>
-</div>
-  <h1>Liste des services</h1>
+  <div class="backgroundLightGreen">
+    <div class="search">
+          {{ include('search/search.html.twig') }}
+    </div>
 
-  <ul>
-    {% for service in services %}
-      <li>
-        <a href="{{ path('show_service', { 'slug': service.getSlug }) }}">{{ service.getName }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <div class="container">
+      <ul class="detailList">
+        {% for service in services %}
+          <li class="detailElement">
+            <a class="fontSize0" href="{{ path('show_service', { 'slug': service.slug }) }}">{{ service.name }}</a>
+            <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+          </a>
+          <ul class="detailContent">
+            <li class="fullSize">
+              <a href="#">
+                <h3>{{ service.name }}</h3>
+              </a>
+              <a href="#">
+                <p>{{ service.content }}</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="paginationContainer">
+    <div class="textCenter marginBottom25">
+      {{ knp_pagination_render(services) }}
+    </div>
+  </div>
+</div>
 {% endblock %}
