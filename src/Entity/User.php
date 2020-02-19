@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\constraints as Assert;
 
 /**
+ * @ORM\Table(options={"auto_increment": 0})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
@@ -47,6 +49,11 @@ class User implements UserInterface, \Serializable
     private $last_name;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $company_name;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
     private $phone;
@@ -62,12 +69,12 @@ class User implements UserInterface, \Serializable
     private $newsletters;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $delivery_address;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      */
     private $billing_address;
 
@@ -77,19 +84,34 @@ class User implements UserInterface, \Serializable
     private $newsletter_acceptance;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_company;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Bill", mappedBy="customer")
      */
     private $bills;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Quotation", mappedBy="company")
+     */
+    private $quotations;
 
     public function __construct()
     {
         $this->messages = new ArrayCollection();
         $this->newsletters = new ArrayCollection();
         $this->bills = new ArrayCollection();
+        $this->quotations = new ArrayCollection();
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
     }
 
+    public function __toString()
+    {
+        return $this->email;
+    }
 
     public function getId(): ?int
     {
@@ -156,6 +178,30 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCompanyName(): ?string
+    {
+        return $this->company_name;
+    }
+
+    public function setCompanyName(string $company_name): self
+    {
+        $this->company_name = $company_name;
+
+        return $this;
+    }
+
     public function getPhone(): ?string
     {
         return $this->phone;
@@ -164,37 +210,6 @@ class User implements UserInterface, \Serializable
     public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Company[]
-     */
-    public function getCompanies(): Collection
-    {
-        return $this->companies;
-    }
-
-    public function addCompany(Company $company): self
-    {
-        if (!$this->companies->contains($company)) {
-            $this->companies[] = $company;
-            $company->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCompany(Company $company): self
-    {
-        if ($this->companies->contains($company)) {
-            $this->companies->removeElement($company);
-            // set the owning side to null (unless already changed)
-            if ($company->getUser() === $this) {
-                $company->setUser(null);
-            }
-        }
 
         return $this;
     }
@@ -294,6 +309,18 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+    public function getIsCompany(): ?bool
+    {
+        return $this->is_company;
+    }
+
+    public function setIsCompany(bool $is_company): self
+    {
+        $this->is_company = $is_company;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Bill[]
      */
@@ -319,6 +346,37 @@ class User implements UserInterface, \Serializable
             // set the owning side to null (unless already changed)
             if ($bill->getCustomer() === $this) {
                 $bill->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Quotation[]
+     */
+    public function getQuotations(): Collection
+    {
+        return $this->quotations;
+    }
+
+    public function addQuotation(Quotation $quotation): self
+    {
+        if (!$this->quotations->contains($quotation)) {
+            $this->quotations[] = $quotation;
+            $quotation->setCompany($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuotation(Quotation $quotation): self
+    {
+        if ($this->quotations->contains($quotation)) {
+            $this->quotations->removeElement($quotation);
+            // set the owning side to null (unless already changed)
+            if ($quotation->getCompany() === $this) {
+                $quotation->setCompany(null);
             }
         }
 

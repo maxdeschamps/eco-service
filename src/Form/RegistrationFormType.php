@@ -48,6 +48,14 @@ class RegistrationFormType extends AbstractType
             ->add('phone', TextType::class, [
                 'label' => 'Téléphone'
             ])
+            ->add('isCompany', CheckboxType::class, [
+                'label' => 'Vous êtes une société ?',
+                'required' => false
+            ])
+            ->add('companyName', TextType::class, [
+                'label' => 'Nom de la société',
+                'required' => false
+            ])
             ->add('newsletterAcceptance', CheckboxType::class, [
                 'label' => 'Recevoir la newsletter',
                 'required' => false
