@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin-top: 60px;">
+    <div class="blocFull">
+      <h1>S'inscrire</h1>
+
+      {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.firstName) }}
+        {{ form_row(registrationForm.lastName) }}
+        {{ form_row(registrationForm.phone) }}
+        {{ form_row(registrationForm.isCompany) }}
+        {{ form_row(registrationForm.companyName) }}
+        {{ form_row(registrationForm.newsletterAcceptance) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="btn">S'inscrire</button>
+      {{ form_end(registrationForm) }}
+
+      <a href="{{ path('app_login') }}">Se connecter</a>
+    </div>
+  </div>
+{% endblock %}

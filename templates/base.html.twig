@@ -52,7 +52,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ path('app_login') }}">
                   <i class="fas fa-user-alt"></i>
                 </a>
               </li>
@@ -75,7 +75,7 @@
             <a class="material-icons" href="{{ path('index_service') }}">Services</a>
             <a class="material-icons" href="{{ path('index_article') }}">Blog</a>
             <a class="material-icons" href="{{ path('index_article') }}">Panier </a>
-            <a class="material-icons" href="{{ path('index_article') }}">Connexion</a>
+            <a class="material-icons" href="{{ path('app_login') }}">Connexion</a>
           </nav>
         </div>
       {% endblock %}
