@@ -28,51 +28,8 @@ class ProductController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-  /**
-   * @Route("/produits", name="index_product")
-   */
-  public function index(EntityManagerInterface $em)
-  {
-    $repository = $em->getRepository(Product::class);
-    $products = $repository->findAll();
-
-    return $this->render(
-      'product/index.html.twig',
-       ['products' => $products]
-    );
-  }
-
-  /**
-   * @Route("/produit/{slug}", name="show_product")
-   */
-  public function show(Product $product)
-  {
-    return $this->render(
-      'product/show.html.twig',
-      ['product' => $product]
-    );
-  }
-
-  /**
-   * @Route("/produit", name="create_product")
-   */
-  public function create(Request $request): Response
-  {
-    $product = new Product();
-    $form = $this->createForm(ProductType::class, $product);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-      $entityManager = $this->getDoctrine()->getManager();
-      $entityManager->persist($product);
-      $entityManager->flush();
-
-      return $this->redirectToRoute('index_product');
-      
-    }
-  }
     /**
-     * @Route("/products", name="index_product")
+     * @Route("/produits", name="index_product")
      */
     public function index(Request $request, PaginatorInterface $paginator): Response
     {
@@ -99,7 +56,7 @@ class ProductController extends AbstractController
 
 
     /**
-     * @Route("/product/{slug}", name="show_product")
+     * @Route("/produit/{slug}", name="show_product")
      */
     public function show(Product $product)
     {
