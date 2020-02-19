@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ORM\Table(options={"auto_increment": 0})
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  */
 class Category
