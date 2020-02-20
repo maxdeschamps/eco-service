@@ -19,13 +19,13 @@
 }
 
 .datagrid td.actions .fa{
-    color:white !important;
+    color: #3f3f3f !important;
 }
 
 
 .datagrid td {
-    background: #3f3f3f !important;
-    color: white !important;
+    background: #e3e7ed85 !important;
+    color: black !important;
 }
 
 /* public/css/admin.css */
@@ -179,4 +179,8 @@
 
 .sidebar-menu a {
     color: white;
+}
+
+body{
+    background: black;
 }
