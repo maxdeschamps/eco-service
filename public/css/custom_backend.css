@@ -1,5 +1,5 @@
 .main-header {
-height: 55px !important;
+    height: 55px !important;
 }
 
 .main-header {
@@ -9,21 +9,26 @@ height: 55px !important;
     background: #ecffec;
 }
 
-.content-header{
-    background: red !important;
+.content-header {
+    background: white !important;
 }
 
-.datagrid thead th{
-    background: green !important;
+.datagrid thead th {
+    background: #e3e7ed85 !important;
+    color: black;
 }
 
-.
+.datagrid td.actions .fa{
+    color:white !important;
+}
+
+
 .datagrid td {
-    background: blue !important;
+    background: #3f3f3f !important;
     color: white !important;
 }
 
-    /* public/css/admin.css */
+/* public/css/admin.css */
 :root {
     /* make the backend contents as wide as the browser window */
     --body-max-width: 90%;
@@ -33,6 +38,10 @@ height: 55px !important;
     --font-size-base: 13px;
     /* remove all border radius to make corners straight */
     --border-radius: 0px;
+}
+
+.btn-primary{
+    background: #3f3f3f !important;
 }
 
 .main-sidebar {
