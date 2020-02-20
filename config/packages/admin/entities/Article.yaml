@@ -1,8 +1,12 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer lArticle %%entity_id%%'
+    title: 'Editer lArticle (#%%entity_id%%)'
   new:
     title: 'Ajouter un Article'
   entities:
@@ -26,5 +30,5 @@ easy_admin:
           - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
           - { property: 'slug', label: 'Slug' }
-          - { property: 'content', label: 'Contenu'}
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor'}
         disabled_actions: ['edit']

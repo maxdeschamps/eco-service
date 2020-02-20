@@ -2,7 +2,7 @@ easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer le Devis %%entity_id%%'
+    title: 'Editer le Devis (#%%entity_id%%)'
   new:
     title: 'Ajouter un Devis'
   entities:

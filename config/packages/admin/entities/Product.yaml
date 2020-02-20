@@ -1,4 +1,8 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   edit:
@@ -24,6 +28,7 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
         fields:
           - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }

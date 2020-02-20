@@ -1,8 +1,12 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer une Image %%entity_id%%'
+    title: 'Editer une Image (#%%entity_id%%)'
   new:
     title: 'Ajouter une Image'
   entities:
@@ -24,5 +28,5 @@ easy_admin:
           - { property: 'name', label: 'Nom' }
           - { property: 'uri', label: 'Lien' }
           - { property: 'orderFile', label: 'Ordre', type: 'number' }
-          - { property: 'alt_file', label: 'Description' }
+          - { property: 'alt_file', label: 'Description', type: 'fos_ckeditor' }
         disabled_actions: ['edit']

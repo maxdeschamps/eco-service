@@ -1,8 +1,12 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer le Service %%entity_id%%'
+    title: 'Editer le Service (#%%entity_id%%)'
   new:
     title: 'Ajouter un Service'
   entities:
@@ -25,11 +29,11 @@ easy_admin:
         actions:
           - { name: 'delete', label: 'Supprimer' }
         fields:
-          - { property: 'name', label: 'Nom' }
+          - { property: 'name', label: 'Nom'}
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
           - { property: 'slug', label: 'Slug' }
-          - { property: 'content', label: 'Contenu' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'author', label: 'Auteur' }
           - { property: 'content', label: 'Contenu' }

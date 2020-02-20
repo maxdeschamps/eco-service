@@ -1,8 +1,12 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer la Newsletter %%entity_id%%'
+    title: 'Editer la Newsletter (#%%entity_id%%)'
   new:
     title: 'Ajouter une Newsletter'
   entities:
@@ -21,7 +25,7 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
         fields:
           - { property: 'subject', label: 'Sujet' }
-          - { property: 'content', label: 'Contenu' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'author', label: 'Auteur' }
         disabled_actions: ['edit']
 
