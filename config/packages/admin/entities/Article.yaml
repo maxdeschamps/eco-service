@@ -1,6 +1,10 @@
 easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
+  edit:
+    title: 'Editer lArticle %%entity_id%%'
+  new:
+    title: 'Ajouter un Article'
   entities:
     Article:
       class: App\Entity\Article

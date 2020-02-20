@@ -1,19 +1,11 @@
 easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
+  edit:
+    title: 'Editer le Produit (#%%entity_id%%)'
+  new:
+    title: 'Ajouter un Produit'
   entities:
-    Category:
-      class: App\Entity\Category
-      label: 'Catégories'
-      list:
-        actions:
-          - { name: 'new', label: 'Ajouter une Catégorie '}
-        fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'slug', label: 'Slug' }
-      form:
-        fields:
-        - { property: 'name', label: 'Nom' }
     Product:
       class: App\Entity\Product
       label: 'Produits'
@@ -32,11 +24,11 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
         fields:
           - { property: 'name', label: 'Nom' }
-          - { property: 'content', label: 'Contenu' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'category', label: 'Catégories' }
-          - { property: 'files', label: 'Images' }
+          - { property: 'files', label: 'Images'}
         disabled_actions: ['edit']
 

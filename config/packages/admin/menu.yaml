@@ -13,8 +13,10 @@ easy_admin:
         icon: 'shopping-basket'
         children:
           - { entity: 'Product', icon: 'th-list', label: 'Liste des produits' }
-          - { entity: 'Category', icon: 'tags', label: 'Catégories' }
           - { entity: 'Product', icon: 'plus-circle', label: 'Ajouter un produit', params: { action: 'new' } }
+          - { entity: 'Category', icon: 'tags', label: 'Catégories' }
+          - { entity: 'Category', icon: 'plus-circle', label: 'Ajouter une catégorie', params: { action: 'new' } }
+
       - label: Services
         icon: 'cubes'
         children:

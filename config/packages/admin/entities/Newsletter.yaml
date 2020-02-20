@@ -1,6 +1,10 @@
 easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
+  edit:
+    title: 'Editer la Newsletter %%entity_id%%'
+  new:
+    title: 'Ajouter une Newsletter'
   entities:
     Newsletter:
       class: App\Entity\Newsletter

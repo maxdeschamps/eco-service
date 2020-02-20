@@ -1,0 +1,24 @@
+easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
+  edit:
+    title: 'Editer la Catégorie %%entity_label%% '
+  new:
+    title: 'Ajouter la Catégorie'
+  entities:
+    Category:
+      class: App\Entity\Category
+      label: 'Catégories'
+      list:
+        actions:
+          - { name: 'new', label: 'Ajouter une Catégorie '}
+        fields:
+          - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+        fields:
+          - { property: 'name', label: 'Nom' }
+        disabled_actions: ['edit']
+
