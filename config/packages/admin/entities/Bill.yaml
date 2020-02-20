@@ -1,17 +1,18 @@
 easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
-  edit:
-    title: 'Editer le Devis (#%%entity_id%%)'
-  new:
-    title: 'Ajouter un Devis'
   entities:
     Bill:
       class: App\Entity\Bill
+      new:
+        title: 'Ajouter un Devis'
+      edit:
+        title: 'Modifier le Devis (#%%entity_id%%)'
       label: 'Devis'
       list:
         actions:
-          - { name: 'new', label: 'Ajouter un Devis '}
+          - { name: 'new', label: 'Ajouter un Devis'}
+          - { name: 'show', icon: 'search', label: false}
         fields:
           - { property: 'request_date', label: 'Date de demande' }
           - { property: 'approved', label: 'Approuvé' }
@@ -31,3 +32,16 @@ easy_admin:
             - { property: 'billing_address', label: 'Adresse du devis'}
             - { property: 'delivery_address', label: 'Adresse de livraison'}
           disabled_actions: ['edit']
+      show:
+        title: 'Devis (#%%entity_id%%)'
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'request_date', label: 'Date de demande' }
+          - { property: 'approved', label: 'Approuvé' }
+          - { property: 'acceptance_date', label: 'Date de confirmation' }
+          - { property: 'email', label: 'Mail' }
+          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'delivery_address', label: 'Adresse de livraison'}

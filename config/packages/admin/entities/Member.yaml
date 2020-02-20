@@ -1,13 +1,13 @@
 easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
-  edit:
-    title: 'Editer un Utilisateur (#%%entity_id%%)'
-  new:
-    title: 'Ajouter un Utilisateur'
   entities:
     User:
       class: App\Entity\User
+      edit:
+        title: 'Editer un Utilisateur (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Utilisateur'
       label: 'Membres'
       list:
         actions:

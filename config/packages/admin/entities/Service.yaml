@@ -5,13 +5,13 @@ easy_admin:
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
-  edit:
-    title: 'Editer le Service (#%%entity_id%%)'
-  new:
-    title: 'Ajouter un Service'
   entities:
     Service:
       class: App\Entity\Service
+      edit:
+        title: 'Editer le Service (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Service'
       label: 'Services'
       list:
         actions:

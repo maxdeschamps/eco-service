@@ -36,7 +36,6 @@ easy_admin:
         icon: 'comment'
         children:
           - { entity: 'Message', icon: 'th-list', label: 'Liste des messages' }
-          - { entity: 'Message', icon: 'plus-circle', label: 'Ajouter un message', params: { action: 'new' } }
       - label: Newsletters
         icon: 'envelope'
         children:

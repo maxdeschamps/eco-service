@@ -5,17 +5,17 @@ easy_admin:
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
-  edit:
-    title: 'Editer lArticle (#%%entity_id%%)'
-  new:
-    title: 'Ajouter un Article'
   entities:
     Article:
+      edit:
+        title: 'Editer un Article (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Article'
       class: App\Entity\Article
       label: 'Articles'
       list:
         actions:
-          - { name: 'new', label: 'Ajouter un Article '}
+          - { name: 'new', label: 'Publier un Article '}
         fields:
           - { property: 'author', label: 'Auteur' }
           - { property: 'category', label: 'Categorie' }

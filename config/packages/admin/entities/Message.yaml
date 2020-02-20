@@ -5,23 +5,34 @@ easy_admin:
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
-  edit:
-    title: 'Editer le Message (#%%entity_id%%)'
-  new:
-    title: 'Ajouter un Message'
   entities:
     Message:
       class: App\Entity\Message
+      edit:
+        title: 'Editer le Message (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Message'
+      disabled_actions: ['new', 'edit']
       label: 'Messages'
       list:
         actions:
-          - { name: 'new', label: 'Ajouter un Message '}
+          - { name: 'show', icon: 'search', label: false}
         fields:
-        - { property: 'state', label: 'Etat' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'subject', label: 'Sujet' }
-        - { property: 'author', label: 'Auteur' }
-      form:
+          - { property: 'state', label: 'Etat' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'subject', label: 'Sujet' }
+          - { property: 'author', label: 'Auteur' }
+#      form:
+#        actions:
+#          - { name: 'delete', label: 'Supprimer' }
+#          - { name: 'list', label: 'Retourner vers la liste' }
+#        fields:
+#          - { property: 'state', label: 'Etat' }
+#          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
+#          - { property: 'subject', label: 'Sujet' }
+#          - { property: 'author', label: 'Auteur' }
+      show:
+        title: 'Message (#%%entity_id%%)'
         actions:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }

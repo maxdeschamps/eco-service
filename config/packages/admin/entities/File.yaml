@@ -3,15 +3,15 @@ easy_admin:
     form_theme:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
-  edit:
-    title: 'Editer une Image (#%%entity_id%%)'
   list:
     title: 'Liste des %%entity_label%%'
-  new:
-    title: 'Ajouter une Image'
   entities:
     File:
       class: App\Entity\File
+      edit:
+        title: 'Editer une Image (#%%entity_id%%)'
+      new:
+        title: 'Ajouter une Image'
       label: 'Images'
       list:
         actions:
