@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/config/packages/admin/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/custom_backend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom_backend.css" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/admin/entities/Bill.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/admin/entities/Bill.yaml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
-    <ignored path="$PROJECT_DIR$/public/build/" />
-    <ignored path="$PROJECT_DIR$/node_modules/" />
-    <ignored path="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle/" />
-    <ignored path="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +22,7 @@
       <executable />
     </execution>
   </component>
+<<<<<<< Updated upstream
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -103,6 +105,11 @@
       </list>
     </option>
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+>>>>>>> Stashed changes
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
@@ -256,6 +263,7 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
     </include_path>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectFrameBounds">
     <option name="x" value="224" />
     <option name="y" value="127" />
@@ -330,6 +338,9 @@
       <pane id="Scope" />
     </panes>
   </component>
+=======
+  <component name="ProjectId" id="1X3pEx6FwqFVhJWPZ74ibedfCpi" />
+>>>>>>> Stashed changes
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -360,18 +371,6 @@
       <recent name="C:\xampp\htdocs\eco-service\eco-service\src\Repository" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -397,6 +396,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< Updated upstream
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="46084000" />
   </component>
@@ -448,6 +448,8 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout-to-restore>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -477,6 +479,7 @@
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580993583990" />
   </component>
+<<<<<<< Updated upstream
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
@@ -779,4 +782,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> Stashed changes
 </project>
