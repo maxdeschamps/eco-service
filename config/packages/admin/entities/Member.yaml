@@ -21,6 +21,7 @@ easy_admin:
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'delivery_address', label: 'Adresse de livraison' }
           - { property: 'billing_address', label: 'Address du devis' }

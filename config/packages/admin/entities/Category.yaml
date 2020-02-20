@@ -2,7 +2,7 @@ easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
   edit:
-    title: 'Editer la Catégorie (#%%entity_label%%) '
+    title: 'Editer la Catégorie (#%%entity_label%%)'
   new:
     title: 'Ajouter la Catégorie'
   entities:
@@ -18,6 +18,7 @@ easy_admin:
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'name', label: 'Nom' }
         disabled_actions: ['edit']

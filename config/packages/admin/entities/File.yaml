@@ -3,10 +3,10 @@ easy_admin:
     form_theme:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
-  list:
-    title: 'Liste des %%entity_label%%'
   edit:
     title: 'Editer une Image (#%%entity_id%%)'
+  list:
+    title: 'Liste des %%entity_label%%'
   new:
     title: 'Ajouter une Image'
   entities:
@@ -24,6 +24,7 @@ easy_admin:
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'name', label: 'Nom' }
           - { property: 'uri', label: 'Lien' }

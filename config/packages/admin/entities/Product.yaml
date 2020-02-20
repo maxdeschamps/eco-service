@@ -26,6 +26,7 @@ easy_admin:
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'name', label: 'Nom' }
           - { property: 'slug', label: 'Slug' }

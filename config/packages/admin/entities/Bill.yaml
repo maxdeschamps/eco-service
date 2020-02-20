@@ -22,6 +22,7 @@ easy_admin:
         form:
           actions:
             - { name: 'delete', label: 'Supprimer' }
+            - { name: 'list', label: 'Retourner vers la liste' }
           fields:
             - { property: 'request_date', label: 'Date de demande' }
             - { property: 'approved', label: 'Approuvé' }
