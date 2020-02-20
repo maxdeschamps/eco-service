@@ -35,7 +35,7 @@ easy_admin:
       - label: Messages
         icon: 'comment'
         children:
-          - { entity: 'Message', icon: 'th-list', label: 'Liste des messages' }
+          - { entity: 'Message', icon: 'th-list', label: 'Liste des messages'}
       - label: Newsletters
         icon: 'envelope'
         children:
