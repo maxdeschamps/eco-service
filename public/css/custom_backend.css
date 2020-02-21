@@ -247,6 +247,10 @@ body.show .form-horizontal{
 }
 
 
+.field-file .custom-file label.custom-file-label{
+    color: black;
+}
+
 
 
 

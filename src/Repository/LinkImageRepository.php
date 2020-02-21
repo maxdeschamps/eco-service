@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\LinkFile;
+use App\Entity\LinkImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method LinkFile|null find($id, $lockMode = null, $lockVersion = null)
- * @method LinkFile|null findOneBy(array $criteria, array $orderBy = null)
- * @method LinkFile[]    findAll()
- * @method LinkFile[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method LinkImage|null find($id, $lockMode = null, $lockVersion = null)
+ * @method LinkImage|null findOneBy(array $criteria, array $orderBy = null)
+ * @method LinkImage[]    findAll()
+ * @method LinkImage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LinkFileRepository extends ServiceEntityRepository
+class LinkImageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, LinkFile::class);
+        parent::__construct($registry, LinkImage::class);
     }
 
     // /**

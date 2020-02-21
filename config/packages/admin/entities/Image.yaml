@@ -6,8 +6,8 @@ easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
   entities:
-    File:
-      class: App\Entity\File
+    Image:
+      class: App\Entity\Image
       edit:
         title: 'Editer une Image (#%%entity_id%%)'
       new:
@@ -17,17 +17,15 @@ easy_admin:
         actions:
           - { name: 'new', label: 'Ajouter une Image'}
         fields:
-          - { property: 'name', label: 'Nom' }
-          - { property: 'uri', label: 'Liens' }
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
           - { property: 'orderFile', label: 'Ordre' }
-          - { property: 'alt_file', label: 'Description' }
+          - { property: 'updatedAt', label: 'Modifier le' }
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-          - { property: 'name', label: 'Nom' }
-          - { property: 'uri', label: 'Lien' }
-          - { property: 'orderFile', label: 'Ordre', type: 'number' }
-          - { property: 'alt_file', label: 'Description', type: 'fos_ckeditor' }
+          - { property: 'imageFile', label: 'Image', type: 'file' }
+          - { property: 'orderFile', label: 'Ordre' }
+          - { property: 'updatedAt', label: 'Date', type: 'date' }
         disabled_actions: ['edit']

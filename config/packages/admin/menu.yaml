@@ -44,6 +44,6 @@ easy_admin:
       - label: Images
         icon: 'image'
         children:
-          - { entity: 'File', icon: 'th-list', label: 'Liste des images'}
-          - { entity: 'File', icon: 'plus-circle', label: 'Ajouter une image', params: { action: 'new' } }
+          - { entity: 'Image', icon: 'th-list', label: 'Liste des images'}
+          - { entity: 'Image', icon: 'plus-circle', label: 'Ajouter une image', params: { action: 'new' } }
 

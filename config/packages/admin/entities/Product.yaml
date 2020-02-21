@@ -35,6 +35,6 @@ easy_admin:
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'category', label: 'Catégories' }
-          - { property: 'files', label: 'Images'}
+          - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
 

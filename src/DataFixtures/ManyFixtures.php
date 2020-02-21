@@ -123,9 +123,8 @@ class ManyFixtures extends Fixture
         for ($i = 0; $i < 15; $i++) {
             $file = new File();
             $file->setName($faker->word(7));
-            $file->setUri($faker->imageUrl());
             $file->setOrderFile($faker->numberBetween(0,50));
-            $file->setAltFile($faker->text);
+            $file->setImage($faker->image());
             $manager->persist($file);
             $manager->flush();
         }

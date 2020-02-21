@@ -9,6 +9,7 @@
         "easycorp/easyadmin-bundle": "^2.3",
         "friendsofsymfony/ckeditor-bundle": "^2.2",
         "fzaninotto/faker": "^1.9",
+        "vich/uploader-bundle": "^1.8",
         "knplabs/knp-paginator-bundle": "^5.1",
         "ocramius/package-versions": "^1.4",
         "php-http/guzzle6-adapter": "^1.1",

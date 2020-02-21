@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\ServiceFile;
+use App\Entity\ProductImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method ServiceFile|null find($id, $lockMode = null, $lockVersion = null)
- * @method ServiceFile|null findOneBy(array $criteria, array $orderBy = null)
- * @method ServiceFile[]    findAll()
- * @method ServiceFile[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ProductImage|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ProductImage|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ProductImage[]    findAll()
+ * @method ProductImage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ServiceFileRepository extends ServiceEntityRepository
+class ProductImageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ServiceFile::class);
+        parent::__construct($registry, ProductImage::class);
     }
 
     // /**
-    //  * @return ServiceFile[] Returns an array of ServiceFile objects
+    //  * @return ProductFile[] Returns an array of ProductFile objects
     //  */
     /*
     public function findByExampleField($value)
