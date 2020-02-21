@@ -223,7 +223,10 @@ body{
 }
 
 
-
+#navigation-toggler{
+    color:white;
+    margin-left: 10px;
+}
 
 h1 {
     color:white;
