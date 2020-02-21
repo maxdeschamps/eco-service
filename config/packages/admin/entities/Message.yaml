@@ -38,7 +38,7 @@ easy_admin:
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'state', label: 'Etat' }
-          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
+          - { property: 'content', label: 'Contenu' }
           - { property: 'subject', label: 'Sujet' }
           - { property: 'author', label: 'Auteur' }
         disabled_actions: ['edit']

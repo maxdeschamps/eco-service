@@ -212,7 +212,6 @@ body{
 }
 
 .content-footer{
-    background: #191c20;
     border-top: none;
 
 }
@@ -230,6 +229,21 @@ body{
 
 h1 {
     color:white;
+}
+
+.content-body form{
+    background: #191c20;
+    color: white;
+    border-bottom: solid 15px #2e2f32;
+}
+.form-group label{
+    color:white;
+}
+
+body.show .form-horizontal{
+    background: #191c20;
+    color: white;
+    border-bottom: solid 15px #2e2f32;
 }
 
 
