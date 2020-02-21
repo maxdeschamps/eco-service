@@ -6,32 +6,41 @@
     height: unset;
     padding: 0;
     width: 100%;
-    background: #ecffec;
+    background: #191c20;
 }
 
-.content-header {
-    background: white !important;
+.main-header #header-logo a{
+    color:white;
+}
+
+.datagrid thead span{
+    color:white;
 }
 
 .datagrid thead th {
-    background: #e3e7ed85 !important;
-    color: black;
+    background: #191c20 !important;
+    color: white !important;
 }
-
+.datagrid thead a{
+    color:white;
+}
 .datagrid td.actions .fa{
-    color: #3f3f3f !important;
+    color: white !important;
 }
 
+.datagrid td, .datagrid th{
+    border-bottom: solid 15px #2e2f32;
+}
 
 .datagrid td {
-    background: #e3e7ed85 !important;
-    color: black !important;
+    background: #191c20 !important;
+    color: #a3a3a3 !important;
 }
 
 /* public/css/admin.css */
 :root {
     /* make the backend contents as wide as the browser window */
-    --body-max-width: 90%;
+    --body-max-width: 100%;
     /* change the background color of the <body> */
     --body-bg: #f5f5f5;
     /* make the base font size smaller */
@@ -45,8 +54,7 @@
 }
 
 .main-sidebar {
-    padding: 10px;
-    background: #3f3f3f;
+    background: #191c20;
 }
 
 .box {
@@ -163,8 +171,19 @@
     display: flex;
 }
 
-.content-header {
-    border-bottom: 3px solid #d2d6de;
+
+.sidebar-menu a {
+    color: #a3a3a3;
+    padding: 10px;
+}
+
+body{
+    background: #2e2f32;
+}
+
+.sidebar-menu a:hover{
+    color:white;
+    background: #121417;
 }
 
 .treeview-menu a .fa {
@@ -175,12 +194,42 @@
 .sidebar-menu .fa {
     color: white;
     filter: opacity(100%);
+    background: #0d0d0d;
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    margin-right: 1.25rem;
+    font-size: 0.8125rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
 }
 
-.sidebar-menu a {
-    color: white;
+.content-body {
+    background: #191c20;
+    border-bottom: solid 15px #2e2f32;
 }
 
-body{
-    background: black;
+.content-footer{
+    background: #191c20;
+    border-top: none;
+
 }
+.content-header {
+    background: #191c20 !important;
+    color:white;
+    border-bottom: solid 15px #2e2f32;
+}
+
+
+
+
+h1 {
+    color:white;
+}
+
+
+
+
+

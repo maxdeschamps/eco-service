@@ -1,7 +1,7 @@
 easy_admin:
   site_name: '<img src="">Eco-Service'
   design:
-    brand_color: '#81b9ba'
+    brand_color: 'white'
     assets:
       css:
         - 'css/custom_backend.css'
