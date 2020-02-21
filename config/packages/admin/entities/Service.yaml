@@ -22,7 +22,7 @@ easy_admin:
           - { property: 'priceTtc', label: 'Prix TTC' }
           - { property: 'quantity', label: 'Quantité' }
           - { property: 'author', label: 'Auteur' }
-          - { property: 'content', label: 'Contenu' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'unity', label: 'Unité' }
           - { property: 'author', label: 'Auteur' }
       form:
