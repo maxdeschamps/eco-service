@@ -21,5 +21,6 @@ easy_admin:
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
         disabled_actions: ['edit']
 

@@ -17,6 +17,7 @@ easy_admin:
         - { property: 'firstName', label: 'Prénom' }
         - { property: 'lastName', label: 'Nom' }
         - { property: 'phone', label: 'Téléphone' }
+        - { property: 'company_name', label: 'Nom de société' }
         - { property: 'newsletterAcceptance', label: 'Newsletter', type: 'toggle'}
       form:
         actions:
@@ -26,6 +27,9 @@ easy_admin:
           - { property: 'delivery_address', label: 'Adresse de livraison' }
           - { property: 'billing_address', label: 'Address du devis' }
           - { property: 'email', label: 'Mail', type: 'email' }
+          - { property: 'password', label: 'Mot de passe', type: 'password' }
+          - { property: 'is_company', label: 'Société ?', type: 'checkbox' }
+          - { property: 'company_name', label: 'Nom de société' }
           - { property: 'firstName', label: 'Prénom' }
           - { property: 'lastName', label: 'Nom' }
           - { property: 'phone', label: 'Téléphone', type: 'tel' }

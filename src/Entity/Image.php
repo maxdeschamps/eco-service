@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
- * @ORM\Entity(repositoryClass="ImageRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
  * @Vich\Uploadable
  */
 class Image
@@ -97,4 +97,9 @@ class Image
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->image;
+        // TODO: Implement __toString() method.
+    }
 }

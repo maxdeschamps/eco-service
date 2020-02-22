@@ -23,6 +23,7 @@ easy_admin:
           - { property: 'priceTtc', label: 'Prix TTC' }
           - { property: 'quantity', label: 'Quantité' }
           - { property: 'category', label: 'Catégories' }
+          - { property: 'images', label: 'Image' }
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
