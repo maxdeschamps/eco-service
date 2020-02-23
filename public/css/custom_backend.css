@@ -256,10 +256,6 @@ body.show .form-horizontal{
     color:white;
 }
 
-i.fa, i.fas{
-    color:black;
-}
-
 .input-file-container:hover{
     color: black;
 }

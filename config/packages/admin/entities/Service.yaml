@@ -7,11 +7,11 @@ easy_admin:
     title: 'Liste des %%entity_label%%'
   entities:
     Service:
-      class: App\Entity\Service
       edit:
         title: 'Editer le Service (#%%entity_id%%)'
       new:
         title: 'Ajouter un Service'
+      class: App\Entity\Service
       label: 'Services'
       list:
         actions:
@@ -22,7 +22,7 @@ easy_admin:
           - { property: 'priceTtc', label: 'Prix TTC' }
           - { property: 'quantity', label: 'Quantité' }
           - { property: 'author', label: 'Auteur' }
-          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
+          - { property: 'content', label: 'Contenu' }
           - { property: 'unity', label: 'Unité' }
           - { property: 'author', label: 'Auteur' }
       form:
@@ -37,7 +37,6 @@ easy_admin:
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'author', label: 'Auteur' }
-          - { property: 'content', label: 'Contenu' }
           - { property: 'unity', label: 'Unité' }
         disabled_actions: ['edit']
 
