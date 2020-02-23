@@ -6,14 +6,12 @@ use App\Entity\Address;
 use App\Entity\Article;
 use App\Entity\Bill;
 use App\Entity\Category;
-use App\Entity\Company;
-use App\Entity\File;
+use App\Entity\Image;
 use App\Entity\Message;
 use App\Entity\Newsletter;
 use App\Entity\Product;
 use App\Entity\ProductBill;
 use App\Entity\Quotation;
-use App\Entity\Resume;
 use App\Entity\Service;
 use App\Entity\ServiceQuotation;
 use App\Entity\Subject;
@@ -121,11 +119,11 @@ class ManyFixtures extends Fixture
 
 
         for ($i = 0; $i < 15; $i++) {
-            $file = new File();
-            $file->setName($faker->word(7));
-            $file->setOrderFile($faker->numberBetween(0,50));
-            $file->setImage($faker->image());
-            $manager->persist($file);
+            $image = new Image();
+            $image->setUpdatedAt($faker->dateTime($max = 'now', $timezone = null));
+            $image->setOrderFile($faker->numberBetween(0,50));
+            $image->setImage($faker->imageUrl($width= 640, $height= 480, 'cats'));
+            $manager->persist($image);
             $manager->flush();
         }
 
