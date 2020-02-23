@@ -25,7 +25,6 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-          - { property: 'imageFile', label: 'Image', type: 'file' }
+          - { property: 'imageFile', label: 'Image', type: 'vich_image' }
           - { property: 'orderFile', label: 'Ordre' }
-          - { property: 'updatedAt', label: 'Date', type: 'date' }
         disabled_actions: ['edit']

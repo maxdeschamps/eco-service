@@ -252,5 +252,18 @@ body.show .form-horizontal{
 }
 
 
+.form-group label, .form-group legend.col-form-label{
+    color:white;
+}
 
+i.fa, i.fas{
+    color:black;
+}
+
+.input-file-container:hover{
+    color: black;
+}
+.input-file-container{
+    color: black;
+}
 
