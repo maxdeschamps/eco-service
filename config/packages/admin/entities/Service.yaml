@@ -25,6 +25,7 @@ easy_admin:
           - { property: 'content', label: 'Contenu' }
           - { property: 'unity', label: 'Unité' }
           - { property: 'author', label: 'Auteur' }
+          - { property: 'images', label: 'Images'}
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
@@ -38,5 +39,6 @@ easy_admin:
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'author', label: 'Auteur' }
           - { property: 'unity', label: 'Unité' }
+          - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
 
