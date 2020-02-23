@@ -2,20 +2,19 @@ easy_admin:
   list:
     title: 'Liste des %%entity_label%%'
   entities:
-    Bill:
+    Quotation:
       disabled_actions: ['new']
-      class: App\Entity\Bill
+      class: App\Entity\Quotation
       edit:
-        title: 'Modifier le Devis (#%%entity_id%%)'
-      label: 'Devis'
+        title: 'Modifier la Facture (#%%entity_id%%)'
+      label: 'Facture'
       list:
         actions:
-#         - { name: 'new', label: 'Ajouter un Devis'}
-          - { name: 'show', icon: 'search', label: false}
-        disabled_actions: ['new']
+          - { name: 'show', icon: 'search', label: false }
         fields:
           - { property: 'request_date', label: 'Date de demande' }
           - { property: 'approved', label: 'Approuvé' }
+          - { property: 'company_id', label: 'Entreprise' }
           - { property: 'acceptance_date', label: 'Date de confirmation' }
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}
@@ -26,6 +25,7 @@ easy_admin:
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'request_date', label: 'Date de demande' }
+          - { property: 'company_id', label: 'Entreprise' }
           - { property: 'approved', label: 'Approuvé' }
           - { property: 'acceptance_date', label: 'Date de confirmation' }
           - { property: 'email', label: 'Mail' }
@@ -33,7 +33,7 @@ easy_admin:
           - { property: 'delivery_address', label: 'Adresse de livraison' }
         disabled_actions: ['edit']
       show:
-        title: 'Devis (#%%entity_id%%)'
+        title: 'Facture (#%%entity_id%%)'
         actions:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'edit', label: 'Modifier' }
@@ -41,6 +41,7 @@ easy_admin:
         fields:
           - { property: 'request_date', label: 'Date de demande', type: 'date' }
           - { property: 'approved', label: 'Approuvé' }
+          - { property: 'company_id', label: 'Entreprise' }
           - { property: 'acceptance_date', label: 'Date de confirmation', type: 'date' }
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}

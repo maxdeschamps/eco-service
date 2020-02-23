@@ -3,6 +3,7 @@ easy_admin:
     title: 'Liste des %%entity_label%%'
   entities:
     User:
+      disabled_actions: ['new']
       class: App\Entity\User
       edit:
         title: 'Editer un Utilisateur (#%%entity_id%%)'

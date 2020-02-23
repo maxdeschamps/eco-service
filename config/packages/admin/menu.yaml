@@ -16,7 +16,6 @@ easy_admin:
           - { entity: 'Product', icon: 'plus-circle', label: 'Ajouter un produit', params: { action: 'new' } }
           - { entity: 'Category', icon: 'tags', label: 'Catégories' }
           - { entity: 'Category', icon: 'plus-circle', label: 'Ajouter une catégorie', params: { action: 'new' } }
-
       - label: Services
         icon: 'cubes'
         children:
@@ -31,7 +30,11 @@ easy_admin:
         icon: 'file-text-o'
         children:
           - { entity: 'Bill', icon: 'th-list', label: 'Liste des devis' }
-          - { entity: 'Bill', icon: 'plus-circle', label: 'Ajouter un devis', params: { action: 'new' } }
+#         - { entity: 'Bill', icon: 'plus-circle', label: 'Ajouter un devis', params: { action: 'new' } }
+      - label: Factures
+        icon: 'file-text-o'
+        children:
+          - { entity: 'Quotation', icon: 'th-list', label: 'Liste des factures' }
       - label: Messages
         icon: 'comment'
         children:
@@ -41,6 +44,11 @@ easy_admin:
         children:
           - { entity: 'Newsletter', icon: 'th-list', label: 'Liste des newsletters' }
           - { entity: 'Newsletter', icon: 'plus-circle', label: 'Ajouter une newsletter', params: { action: 'new' } }
+      - label: Adresses
+        icon: 'envelope'
+        children:
+          - { entity: 'Address', icon: 'th-list', label: 'Liste des adresses' }
+          - { entity: 'Address', icon: 'plus-circle', label: 'Ajouter une adresse', params: { action: 'new' } }
       - label: Images
         icon: 'image'
         children:
