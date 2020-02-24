@@ -9,6 +9,7 @@
                 <h2>Détail du Devis</h2>
                 <p>Adresse de livraison: {{ bill.getDeliveryAddress }}</p>
                 <p>Adresse du devis: {{ bill.getBillingAddress }}</p>
+                <p>Date de demande: {{ bill.requestDate|date("m/d/Y") }}</p>
                 <p>Date de confirmation: {{ bill.acceptanceDate|date("m/d/Y") }}</p>
                 <p>Approuvé ?: {{ bill.approved }}</p>
                 <p>Nom et Prénom: {{ bill.getCustomer }}</p>

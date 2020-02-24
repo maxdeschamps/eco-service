@@ -16,7 +16,7 @@ easy_admin:
         actions:
           - { name: 'new', label: 'Ajouter un Devis'}
           - { name: 'show', icon: 'search', label: false}
-          - { name: 'downloadBill', icon: 'download', label: false }
+          - { name: 'downloadBill', target: "_blank", icon: 'download', label: false }
         #disabled_actions: ['new']
         fields:
           - { property: 'request_date', label: 'Date de demande' }
