@@ -26,15 +26,16 @@ easy_admin:
         children:
           - { entity: 'Article', icon: 'th-list', label: 'Liste des articles' }
           - { entity: 'Article', icon: 'plus-circle', label: 'Ajouter un article', params: { action: 'new' } }
+          - { entity: 'Category', icon: 'th-list', label: 'Liste des catégories' }
+
       - label: Devis
         icon: 'file-text-o'
         children:
-          - { entity: 'Bill', icon: 'th-list', label: 'Liste des devis' }
-#         - { entity: 'Bill', icon: 'plus-circle', label: 'Ajouter un devis', params: { action: 'new' } }
+          - { entity: 'Quotation', icon: 'th-list', label: 'Liste des devis' }
       - label: Factures
         icon: 'file-text-o'
         children:
-          - { entity: 'Quotation', icon: 'th-list', label: 'Liste des factures' }
+          - { entity: 'Bill', icon: 'th-list', label: 'Liste des factures' }
       - label: Messages
         icon: 'comment'
         children:

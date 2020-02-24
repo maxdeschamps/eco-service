@@ -19,6 +19,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'delivery_address', label: 'Adresse de livraison'}
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }

@@ -16,7 +16,7 @@ easy_admin:
         fields:
           - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
           - { property: 'orderFile', label: 'Ordre' }
-          - { property: 'updatedAt', label: 'Modifier le' }
+          - { property: 'updatedAt', label: 'Ajouté le' }
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
