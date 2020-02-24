@@ -24,6 +24,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse de facturation'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'product_bills', label: 'Produits'}
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
@@ -36,6 +37,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse de facturation' }
           - { property: 'delivery_address', label: 'Adresse de livraison' }
+          - { property: 'product_bills', label: 'Produits'}
         disabled_actions: ['edit']
       show:
         title: 'Facture (#%%entity_id%%)'
@@ -51,3 +53,4 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse de facturation'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'product_bills', label: 'Produits'}
