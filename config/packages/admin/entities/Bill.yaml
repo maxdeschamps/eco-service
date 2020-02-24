@@ -1,18 +1,22 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@VichUploader/Form/fields.html.twig'
   list:
     title: 'Liste des %%entity_label%%'
   entities:
     Bill:
-      disabled_actions: ['new']
+      #disabled_actions: ['new']
       class: App\Entity\Bill
       edit:
         title: 'Modifier le Devis (#%%entity_id%%)'
       label: 'Devis'
       list:
         actions:
-#         - { name: 'new', label: 'Ajouter un Devis'}
+          - { name: 'new', label: 'Ajouter un Devis'}
           - { name: 'show', icon: 'search', label: false}
-        disabled_actions: ['new']
+        #disabled_actions: ['new']
         fields:
           - { property: 'request_date', label: 'Date de demande' }
           - { property: 'approved', label: 'Approuvé' }
@@ -20,6 +24,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'invoice', label: 'Devis', template: 'bill/invoice.html.twig', base_path: '%app.path.bill_invoices%' }
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
@@ -31,6 +36,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis' }
           - { property: 'delivery_address', label: 'Adresse de livraison' }
+          - { property: 'invoiceFile', type: 'vich_file', label: 'Devis' }
         disabled_actions: ['edit']
       show:
         title: 'Devis (#%%entity_id%%)'
