@@ -21,7 +21,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
-          - { property: 'customer', label: 'Client'}
+          - { property: 'company', label: 'Entreprise'}
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
@@ -33,7 +33,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis' }
           - { property: 'delivery_address', label: 'Adresse de livraison' }
-          - { property: 'customer', label: 'Client'}
+          - { property: 'company', label: 'Entreprise'}
         disabled_actions: ['edit']
       show:
         title: 'Devis (#%%entity_id%%)'
