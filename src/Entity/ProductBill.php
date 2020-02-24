@@ -19,11 +19,6 @@ class ProductBill
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Product")
-     */
-    private $product;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $quantity;
@@ -33,6 +28,12 @@ class ProductBill
      */
     private $bill;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="productBills")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $product;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -41,32 +42,6 @@ class ProductBill
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Product[]
-     */
-    public function getProduct(): Collection
-    {
-        return $this->product;
-    }
-
-    public function addProduct(Product $product): self
-    {
-        if (!$this->product->contains($product)) {
-            $this->product[] = $product;
-        }
-
-        return $this;
-    }
-
-    public function removeProduct(Product $product): self
-    {
-        if ($this->product->contains($product)) {
-            $this->product->removeElement($product);
-        }
-
-        return $this;
     }
 
     public function getQuantity(): ?int
@@ -89,6 +64,18 @@ class ProductBill
     public function setBill(?Bill $bill): self
     {
         $this->bill = $bill;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
 
         return $this;
     }
