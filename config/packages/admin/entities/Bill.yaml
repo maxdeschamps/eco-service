@@ -22,7 +22,7 @@ easy_admin:
           - { property: 'customer', label: 'Client' }
           - { property: 'acceptance_date', label: 'Date de confirmation' }
           - { property: 'email', label: 'Mail' }
-          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'billing_address', label: 'Adresse de facturation'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
       form:
         actions:
@@ -34,7 +34,7 @@ easy_admin:
           - { property: 'approved', label: 'Approuvé' }
           - { property: 'acceptance_date', label: 'Date de confirmation' }
           - { property: 'email', label: 'Mail' }
-          - { property: 'billing_address', label: 'Adresse du devis' }
+          - { property: 'billing_address', label: 'Adresse de facturation' }
           - { property: 'delivery_address', label: 'Adresse de livraison' }
         disabled_actions: ['edit']
       show:
@@ -49,5 +49,5 @@ easy_admin:
           - { property: 'customer', label: 'Client' }
           - { property: 'acceptance_date', label: 'Date de confirmation', type: 'date' }
           - { property: 'email', label: 'Mail' }
-          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'billing_address', label: 'Adresse de facturation'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}

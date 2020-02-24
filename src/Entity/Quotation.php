@@ -185,4 +185,10 @@ class Quotation
 
         return $this;
     }
+
+
+    public function __toString()
+    {
+        return $this->company->getCompanyName();
+    }
 }
