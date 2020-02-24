@@ -49,7 +49,7 @@ class ServiceQuotation
     {
         return $this->id;
     }
-    
+
     public function getQuantity(): ?int
     {
         return $this->quantity;
@@ -96,5 +96,10 @@ class ServiceQuotation
         $this->service = $service;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->service->getName();
     }
 }

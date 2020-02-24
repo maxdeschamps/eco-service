@@ -189,6 +189,6 @@ class Quotation
 
     public function __toString()
     {
-        return $this->company->getCompanyName();
+        return 'Devis #' . $this->id . ' du ' . $this->request_date->format('d/m/Y');
     }
 }

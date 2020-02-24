@@ -79,8 +79,9 @@ class ProductBill
 
         return $this;
     }
+    
     public function __toString()
     {
-        return "";
+        return $this->product->getName();
     }
 }
