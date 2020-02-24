@@ -12,6 +12,7 @@ easy_admin:
       label: 'Images'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter une Image'}
         fields:
           - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }

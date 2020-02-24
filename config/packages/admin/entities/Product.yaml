@@ -26,6 +26,7 @@ easy_admin:
           - { property: 'images', label: 'Image' }
       form:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:

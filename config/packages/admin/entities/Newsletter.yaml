@@ -15,6 +15,7 @@ easy_admin:
       label: 'Newsletters'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter une Newsletter '}
         fields:
         - { property: 'subject', label: 'Sujet' }

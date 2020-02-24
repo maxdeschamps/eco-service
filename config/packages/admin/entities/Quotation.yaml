@@ -10,6 +10,7 @@ easy_admin:
       label: 'Devis'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter un Devis'}
           - { name: 'show', icon: 'search', label: false}
           - { name: 'downloadBill', target: "_blank", icon: 'download', label: false }

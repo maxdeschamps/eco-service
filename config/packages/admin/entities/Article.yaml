@@ -15,6 +15,7 @@ easy_admin:
       label: 'Articles'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Publier un Article '}
         fields:
           - { property: 'author', label: 'Auteur' }

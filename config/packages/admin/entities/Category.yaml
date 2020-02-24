@@ -11,6 +11,7 @@ easy_admin:
       label: 'Catégories'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter une Catégorie '}
         fields:
           - { property: 'name', label: 'Nom' }

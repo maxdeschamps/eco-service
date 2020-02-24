@@ -12,7 +12,8 @@ easy_admin:
       label: 'Membres'
       list:
         actions:
-          - { name: 'new', label: 'Ajouter un Utilisateur '}
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Ajouter un Utilisateur'}
         fields:
         - { property: 'email', label: 'Mail' }
         - { property: 'firstName', label: 'Prénom' }
