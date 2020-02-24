@@ -32,3 +32,6 @@ Projet E-commerce G4 - ING1 - Symfony
 - `php bin/console doctrine:database:create` -> créé la bdd
 - `php bin/console doctrine:schema:create` -> génère le shema actuelle de la bdd, plus besoin des migrations
 - `php bin/console doctrine:fixtures:load` -> lance les fixtures afin de populer les tables de notre bdd
+
+## DOMPDF
+ - composer require dompdf/dompdf
