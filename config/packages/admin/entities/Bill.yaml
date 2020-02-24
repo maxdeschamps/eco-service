@@ -7,7 +7,7 @@ easy_admin:
     title: 'Liste des factures'
   entities:
     Bill:
-      #disabled_actions: ['new']
+      disabled_actions: ['new']
       class: App\Entity\Bill
 
       edit:
