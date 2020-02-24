@@ -42,12 +42,12 @@ class Product
     private $author;
 
     /**
-     * @ORM\Column(type="integer", length=11)
+     * @ORM\Column(type="decimal", length=11)
      */
     private $price_ht;
 
     /**
-     * @ORM\Column(type="integer", length=11)
+     * @ORM\Column(type="decimal", length=11)
      */
     private $price_ttc;
 
