@@ -16,6 +16,7 @@ easy_admin:
         actions:
           - { name: 'new', label: 'Ajouter un Devis'}
           - { name: 'show', icon: 'search', label: false}
+          - { name: 'downloadBill', icon: 'download', label: false }
         #disabled_actions: ['new']
         fields:
           - { property: 'request_date', label: 'Date de demande' }
@@ -24,7 +25,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
-          - { property: 'invoice', label: 'Devis', template: 'bill/invoice.html.twig', base_path: '%app.path.bill_invoices%' }
+          - { property: 'customer', label: 'Client'}
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
@@ -36,7 +37,7 @@ easy_admin:
           - { property: 'email', label: 'Mail' }
           - { property: 'billing_address', label: 'Adresse du devis' }
           - { property: 'delivery_address', label: 'Adresse de livraison' }
-          - { property: 'invoiceFile', type: 'vich_file', label: 'Devis' }
+          - { property: 'customer', label: 'Client'}
         disabled_actions: ['edit']
       show:
         title: 'Devis (#%%entity_id%%)'

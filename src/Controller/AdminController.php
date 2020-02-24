@@ -6,10 +6,13 @@ use App\Entity\Bill;
 use App\Entity\Message;
 use App\Entity\Product;
 use App\Entity\User;
-use App\Repository\BillRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class AdminController extends BaseAdminController
 {
@@ -42,6 +45,40 @@ class AdminController extends BaseAdminController
             'countUsers' => $countUsers,
             'countMessages' => $countMessages
         ]);
+    }
+
+    public function downloadBillAction(){
+        $id = $this->request->query->get('id');
+        $bill = $this->em->getRepository(Bill::class)->find($id);
+
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        $html = $this->render('/bill/invoice.html.twig', [
+            'title' => "Détail du devis",
+            'bill'=> $bill
+        ]);
+
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $output = $dompdf->output();
+
+        $publicDirectory = $this->get('kernel')->getProjectDir() . '/public/uploads/fichiers/devis';
+        $pdfFilepath =  $publicDirectory . '/bill.pdf';
+
+        file_put_contents($pdfFilepath, $output);
+
+        $dompdf->stream("bill.pdf", [
+            "Attachment" => false
+        ]);
+
     }
 }
 

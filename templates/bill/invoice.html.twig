@@ -1,1 +1,19 @@
-<a href="{{ field_options.base_path ~ '/' ~ value }}">Voir le (PDF)</a>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+            <div class="">
+                <h2>Détail du Devis</h2>
+                <p>Adresse de livraison: {{ bill.getDeliveryAddress }}</p>
+                <p>Adresse du devis: {{ bill.getBillingAddress }}</p>
+                <p>Date de confirmation: {{ bill.acceptanceDate|date("m/d/Y") }}</p>
+                <p>Approuvé ?: {{ bill.approved }}</p>
+                <p>Nom et Prénom: {{ bill.getCustomer }}</p>
+                <p>Email: {{ bill.email }}</p>
+            </div>
+        </div>
+    </body>
+</html>

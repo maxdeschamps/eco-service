@@ -6,12 +6,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\constraints as Assert;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BillRepository")
- * @Vich\Uploadable
  */
 class Bill
 {
@@ -64,17 +61,6 @@ class Bill
      */
     private $product_bills;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @var string
-     */
-    private $invoice;
-
-    /**
-     * @Vich\UploadableField(mapping="bill_invoices", fileNameProperty="invoice")
-     * @var File
-     */
-    private $invoiceFile;
 
     public function __construct()
     {
@@ -96,26 +82,6 @@ class Bill
         $this->request_date = $request_date;
 
         return $this;
-    }
-
-    public function getInvoice()
-    {
-        return $this->invoice;
-    }
-
-    public function setInvoice($invoice)
-    {
-        $this->invoice = $invoice;
-    }
-
-    public function getInvoiceFile()
-    {
-        return $this->invoiceFile;
-    }
-
-    public function setInvoiceFile($invoiceFile)
-    {
-        $this->invoiceFile = $invoiceFile;
     }
 
     public function getAcceptanceDate(): ?\DateTimeInterface
