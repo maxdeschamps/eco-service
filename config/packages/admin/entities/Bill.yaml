@@ -3,8 +3,6 @@ easy_admin:
     form_theme:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@VichUploader/Form/fields.html.twig'
-  list:
-    title: 'Liste des factures'
   entities:
     Bill:
       disabled_actions: ['new']

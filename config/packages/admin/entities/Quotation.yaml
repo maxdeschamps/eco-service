@@ -1,6 +1,4 @@
 easy_admin:
-  list:
-    title: 'Liste des %%entity_label%%'
   entities:
     Quotation:
       disabled_actions: ['new']
@@ -12,7 +10,6 @@ easy_admin:
         actions:
           - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter un Devis'}
-          - { name: 'show', icon: 'search', label: false}
           - { name: 'downloadQuotation', target: "_blank", icon: 'download', label: false }
         #disabled_actions: ['new']
         fields:
