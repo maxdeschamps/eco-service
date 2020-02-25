@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Bill;
 use App\Entity\Message;
 use App\Entity\Product;
+use App\Entity\Quotation;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Dompdf\Dompdf;
@@ -48,7 +49,7 @@ class AdminController extends BaseAdminController
 
     public function downloadBillAction(){
         $id = $this->request->query->get('id');
-        $bill = $this->em->getRepository(Bill::class)->find($id);
+        $quotation = $this->em->getRepository(Quotation::class)->find($id);
 
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
@@ -57,7 +58,7 @@ class AdminController extends BaseAdminController
 
         $html = $this->render('/bill/invoice.html.twig', [
             'title' => "Détail du devis",
-            'bill'=> $bill
+            'quotation'=> $quotation
         ]);
 
         $dompdf->loadHtml($html);
