@@ -25,8 +25,15 @@ class ProductBill
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Bill", inversedBy="product_bills")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $bill;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $product;
 
     public function __construct()
     {
@@ -73,7 +80,7 @@ class ProductBill
 
         return $this;
     }
-    
+
     public function __toString()
     {
         return $this->product->getName();
