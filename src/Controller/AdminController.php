@@ -47,7 +47,7 @@ class AdminController extends BaseAdminController
         ]);
     }
 
-    public function downloadBillAction(){
+    public function downloadQuotationAction(){
         $id = $this->request->query->get('id');
         $quotation = $this->em->getRepository(Quotation::class)->find($id);
 
@@ -56,9 +56,42 @@ class AdminController extends BaseAdminController
 
         $dompdf = new Dompdf($pdfOptions);
 
-        $html = $this->render('/bill/invoice.html.twig', [
+        $html = $this->render('/quotation/invoice.html.twig', [
             'title' => "Détail du devis",
             'quotation'=> $quotation
+        ]);
+
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $output = $dompdf->output();
+
+        $publicDirectory = $this->get('kernel')->getProjectDir() . '/public/uploads/fichiers/devis';
+        $pdfFilepath =  $publicDirectory . '/bill.pdf';
+
+        file_put_contents($pdfFilepath, $output);
+
+        $dompdf->stream("bill.pdf", [
+            "Attachment" => false
+        ]);
+
+    }
+
+    public function downloadBillAction(){
+        $id = $this->request->query->get('id');
+        $bill = $this->em->getRepository(Bill::class)->find($id);
+
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        $dompdf = new Dompdf($pdfOptions);
+
+        $html = $this->render('/bill/bill.html.twig', [
+            'title' => "Détail du devis",
+            'bill'=> $bill
         ]);
 
         $dompdf->loadHtml($html);

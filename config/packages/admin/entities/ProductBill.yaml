@@ -4,7 +4,7 @@ easy_admin:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
-    title: 'Liste des produits des facture'
+    title: 'Liste des produits de la facture'
   entities:
     Product:
       class: App\Entity\ProductBill

@@ -6,7 +6,7 @@ easy_admin:
   list:
     title: 'Liste des services du devis'
   entities:
-    Product:
+    Service:
       class: App\Entity\ServiceQuotation
       edit:
         title: 'Editer le Service du devis (#%%entity_id%%)'

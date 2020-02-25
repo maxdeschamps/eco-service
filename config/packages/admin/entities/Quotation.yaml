@@ -13,7 +13,7 @@ easy_admin:
           - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter un Devis'}
           - { name: 'show', icon: 'search', label: false}
-          - { name: 'downloadBill', target: "_blank", icon: 'download', label: false }
+          - { name: 'downloadQuotation', target: "_blank", icon: 'download', label: false }
         #disabled_actions: ['new']
         fields:
           - { property: 'company', label: 'Entreprise' }

@@ -9,13 +9,13 @@ easy_admin:
     Bill:
       disabled_actions: ['new']
       class: App\Entity\Bill
-
       edit:
         title: 'Modifier la Facture (#%%entity_id%%)'
       label: 'Facture'
       list:
         actions:
           - { name: 'show', icon: 'search', label: false }
+          - { name: 'downloadBill', target: "_blank", icon: 'download', label: false }
         fields:
           - { property: 'request_date', label: 'Date de demande' }
           - { property: 'approved', label: 'Approuvé' }
