@@ -15,6 +15,7 @@ easy_admin:
       label: 'Produits'
       list:
         actions:
+          - { name: 'show', icon: 'search', label: false }
           - { name: 'new', label: 'Ajouter un Produit '}
         fields:
           - { property: 'name', label: 'Nom' }
@@ -26,7 +27,6 @@ easy_admin:
           - { property: 'images', label: 'Image' }
       form:
         actions:
-          - { name: 'show', icon: 'search', label: false }
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:

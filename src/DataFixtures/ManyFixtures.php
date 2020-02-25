@@ -23,6 +23,12 @@ use Faker;
 
 class ManyFixtures extends Fixture
 {
+    private static $images = [
+        'img-homepage-1.jpg',
+        'img-homepage-2.jpg',
+        'img-homepage-3.jpg',
+    ];
+
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
@@ -120,9 +126,8 @@ class ManyFixtures extends Fixture
 
         for ($i = 0; $i < 15; $i++) {
             $image = new Image();
-            $image->setUpdatedAt($faker->dateTime($max = 'now', $timezone = null));
             $image->setOrderFile($faker->numberBetween(0,50));
-            $image->setImage($faker->imageUrl($width= 640, $height= 480, 'cats'));
+            $image->setImage($faker->randomElement(self::$images));
             $manager->persist($image);
             $manager->flush();
         }
@@ -156,6 +161,7 @@ class ManyFixtures extends Fixture
             $service->setQuantity($faker->numberBetween(0, 50));
             $service->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
             $service->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
+            $service->setQuantity($faker->numberBetween(0, 50));
             $manager->persist($service);
             $manager->flush();
         }
@@ -163,6 +169,7 @@ class ManyFixtures extends Fixture
         for ($i = 0; $i < 15; $i++) {
             $productBill = new ProductBill();
             $productBill->setBill($manager->find(Bill::class, random_int(1, 10)));
+            $productBill->setProduct($manager->find(Product::class, random_int(1, 10)));
             $productBill->setQuantity($faker->numberBetween(0, 50));
             $manager->persist($productBill);
             $manager->flush();
@@ -184,6 +191,7 @@ class ManyFixtures extends Fixture
         for ($i = 0; $i < 15; $i++) {
             $serviceQuotation = new ServiceQuotation();
             $serviceQuotation->setQuotation($manager->find(Quotation::class, random_int(1, 10)));
+            $serviceQuotation->setService($manager->find(Service::class, random_int(1, 10)));
             $serviceQuotation->setQuantity($faker->numberBetween(0, 50));
             $serviceQuotation->setExtra($faker->text);
             $manager->persist($serviceQuotation);
