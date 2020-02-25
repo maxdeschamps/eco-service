@@ -5,10 +5,22 @@ easy_admin:
         icon: 'home'
         route: admin_dashboard
         default: true
+      - label: Devis
+        icon: 'file-text-o'
+        children:
+          - { entity: 'Quotation', icon: 'th-list', label: 'Liste des devis' }
+      - label: Factures
+        icon: 'file-text-o'
+        children:
+          - { entity: 'Bill', icon: 'th-list', label: 'Liste des factures' }
       - label: Membres
         icon: 'user-circle-o'
         children:
           - {entity: 'User', icon: 'th-list', label: 'Liste des membres'}
+      # - label: Adresses
+      #   icon: 'envelope'
+      #   children:
+      #     - { entity: 'Address', icon: 'th-list', label: 'Liste des adresses' }
       - label: Produits
         icon: 'shopping-basket'
         children:
@@ -27,15 +39,7 @@ easy_admin:
           - { entity: 'Article', icon: 'th-list', label: 'Liste des articles' }
           - { entity: 'Article', icon: 'plus-circle', label: 'Ajouter un article', params: { action: 'new' } }
           - { entity: 'Category', icon: 'th-list', label: 'Liste des catégories' }
-
-      - label: Devis
-        icon: 'file-text-o'
-        children:
-          - { entity: 'Quotation', icon: 'th-list', label: 'Liste des devis' }
-      - label: Factures
-        icon: 'file-text-o'
-        children:
-          - { entity: 'Bill', icon: 'th-list', label: 'Liste des factures' }
+          - { entity: 'Category', icon: 'plus-circle', label: 'Ajouter une catégorie', params: { action: 'new' } }
       - label: Messages
         icon: 'comment'
         children:
@@ -45,14 +49,8 @@ easy_admin:
         children:
           - { entity: 'Newsletter', icon: 'th-list', label: 'Liste des newsletters' }
           - { entity: 'Newsletter', icon: 'plus-circle', label: 'Ajouter une newsletter', params: { action: 'new' } }
-      - label: Adresses
-        icon: 'envelope'
-        children:
-          - { entity: 'Address', icon: 'th-list', label: 'Liste des adresses' }
-          - { entity: 'Address', icon: 'plus-circle', label: 'Ajouter une adresse', params: { action: 'new' } }
       - label: Images
         icon: 'image'
         children:
           - { entity: 'Image', icon: 'th-list', label: 'Liste des images'}
           - { entity: 'Image', icon: 'plus-circle', label: 'Ajouter une image', params: { action: 'new' } }
-
