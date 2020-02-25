@@ -25,7 +25,6 @@ class AdminController extends BaseAdminController
         $bills = $repository->findAll();
         $countBills=count($bills);
 
-
         $repository = $em->getRepository(Product::class);
         $products = $repository->findAll();
         $countProducts=count($products);
@@ -54,7 +53,6 @@ class AdminController extends BaseAdminController
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
 
-        // Instantiate Dompdf with our options
         $dompdf = new Dompdf($pdfOptions);
 
         $html = $this->render('/bill/invoice.html.twig', [

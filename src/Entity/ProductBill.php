@@ -28,12 +28,6 @@ class ProductBill
      */
     private $bill;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="productBills")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $product;
-
     public function __construct()
     {
         $this->product = new ArrayCollection();
