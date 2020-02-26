@@ -19,7 +19,7 @@
     <div class="container">
 
         <div class="search">
-            {% include 'product/_filter.html.twig' with {form: form} only %}
+            {% include 'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
         </div>
 
         <ul class="detailList">
