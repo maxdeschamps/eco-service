@@ -41,18 +41,17 @@ class CartController extends AbstractController
     }
 
     /**
-    * @Route("/panier/add/{id}", name="cart_add")
+    * @Route("/panier/add/{id}/{qte}", name="cart_add")
     */
-    public function add($id, SessionInterface $session)
+    public function add($id, $qte, SessionInterface $session)
     {
       $panier = $session->get('panier', []);
 
       if(!empty($panier[$id]))
-      {
-        $panier[$id]++;
-      }
+        $panier[$id]+=$qte;
       else {
-        $panier[$id] = 1;
+        $panier[$id] = 0;
+        $panier[$id]+=$qte;
       }
       $session->set('panier', $panier);
 
@@ -70,11 +69,30 @@ class CartController extends AbstractController
       if(!empty($panier[$id]))
       {
         unset($panier[$id]);
+        $this->addFlash('success', 'Article supprimé avec succès !');
       }
       $session->set('panier', $panier);
 
       return $this->redirectToRoute("cart_index");
 
     }
+
+    // /**
+    // * @Route("/panier/editQuantity/{id}", name="cart_editQuanity")
+    // */
+    // public function editQuantity($id, SessionInterface $Session)
+    // {
+    //   $panier = $session->get('panier', []);
+    //
+    //   if (!empty($panier[$id]))
+    //   {
+    //     $panier[$id] = $request->query->get('quantity');
+    //     $this->addFlash('success', 'Quantité modifié avec succès !');
+    //   }
+    //   $session->set('panier', $panier);
+    //
+    //   return $this->redirectToRoute("cart_index");
+    //
+    // }
 
 }
