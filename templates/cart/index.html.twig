@@ -23,10 +23,10 @@
           {% for item in items %}
             <tr>
               <td>{{ item.product.name }}</td>
-              <td>{{ (item.product.priceTtc / 100)|number_format(2, ',', ' ') }} €</td>
-              <td>{{ (item.product.priceHt / 100)|number_format(2, ',', ' ') }} €</td>
+              <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }} €</td>
+              <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }} €</td>
               <td>{{ item.quantity }}</td>
-              <td>{{ (item.product.priceTtc * item.quantity / 100)|number_format(2, ',', ' ') }} €</td>
+              <td>{{ (item.product.priceTtc * item.quantity)|number_format(2, ',', ' ') }} €</td>
               <td>
                 <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
                   <i class="fas fa-trash"></i>

@@ -37,17 +37,16 @@ class Service
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal")
      */
     private $price_ht;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="decimal")
      */
     private $price_ttc;
 
@@ -62,15 +61,19 @@ class Service
     private $unity;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\File")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Image")
      */
-    private $files;
+    private $images;
 
     public function __construct()
     {
-        $this->files = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
     public function getName(): ?string
     {
@@ -169,26 +172,26 @@ class Service
     }
 
     /**
-     * @return Collection|File[]
+     * @return Collection|Image[]
      */
-    public function getFiles(): Collection
+    public function getImages(): Collection
     {
-        return $this->files;
+        return $this->images;
     }
 
-    public function addFile(File $file): self
+    public function addImage(Image $image): self
     {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
         }
 
         return $this;
     }
 
-    public function removeFile(File $file): self
+    public function removeImage(Image $image): self
     {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
         }
 
         return $this;

@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -41,17 +42,18 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\File")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Image")
      */
-    private $files;
+    private $images;
 
     public function __construct()
     {
-        $this->files = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,28 +122,33 @@ class Article
     }
 
     /**
-     * @return Collection|File[]
+     * @return Collection|Image[]
      */
-    public function getFiles(): Collection
+    public function getImages(): Collection
     {
-        return $this->files;
+        return $this->images;
     }
 
-    public function addFile(File $file): self
+    public function addImage(Image $image): self
     {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
         }
 
         return $this;
     }
 
-    public function removeFile(File $file): self
+    public function removeImage(Image $image): self
     {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

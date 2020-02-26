@@ -35,7 +35,6 @@ class Product
      */
     private $content;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(nullable=true)
@@ -43,12 +42,12 @@ class Product
     private $author;
 
     /**
-     * @ORM\Column(type="integer", length=11)
+     * @ORM\Column(type="decimal", length=11)
      */
     private $price_ht;
 
     /**
-     * @ORM\Column(type="integer", length=11)
+     * @ORM\Column(type="decimal", length=11)
      */
     private $price_ttc;
 
@@ -64,13 +63,13 @@ class Product
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\File")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Image")
      */
-    private $files;
+    private $images;
 
     public function __construct()
     {
-        $this->files = new ArrayCollection();
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -176,28 +175,35 @@ class Product
     }
 
     /**
-     * @return Collection|File[]
+     * @return Collection|Image[]
      */
-    public function getFiles(): Collection
+    public function getImages(): Collection
     {
-        return $this->files;
+        return $this->images;
     }
 
-    public function addFile(File $file): self
+    public function addImage(Image $image): self
     {
-        if (!$this->files->contains($file)) {
-            $this->files[] = $file;
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
         }
 
         return $this;
     }
 
-    public function removeFile(File $file): self
+    public function removeImage(Image $image): self
     {
-        if ($this->files->contains($file)) {
-            $this->files->removeElement($file);
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
         }
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+        // TODO: Implement __toString() method.
+    }
+
 }

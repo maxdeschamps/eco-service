@@ -30,7 +30,7 @@ class CartController extends AbstractController
       $total = 0;
 
       foreach ($panierWithData as $item) {
-        $totalItem = $item['product']->getPriceTtc() * $item['quantity'] / 100;
+        $totalItem = $item['product']->getPriceTtc() * $item['quantity'];
         $total += $totalItem;
       }
 

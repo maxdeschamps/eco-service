@@ -19,11 +19,6 @@ class ServiceQuotation
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Service")
-     */
-    private $service;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $quantity;
@@ -39,6 +34,12 @@ class ServiceQuotation
      */
     private $quotation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Service")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $service;
+
     public function __construct()
     {
         $this->service = new ArrayCollection();
@@ -47,32 +48,6 @@ class ServiceQuotation
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Service[]
-     */
-    public function getService(): Collection
-    {
-        return $this->service;
-    }
-
-    public function addService(Service $service): self
-    {
-        if (!$this->service->contains($service)) {
-            $this->service[] = $service;
-        }
-
-        return $this;
-    }
-
-    public function removeService(Service $service): self
-    {
-        if ($this->service->contains($service)) {
-            $this->service->removeElement($service);
-        }
-
-        return $this;
     }
 
     public function getQuantity(): ?int
@@ -109,5 +84,22 @@ class ServiceQuotation
         $this->quotation = $quotation;
 
         return $this;
+    }
+
+    public function getService(): ?Service
+    {
+        return $this->service;
+    }
+
+    public function setService(?Service $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->service->getName();
     }
 }

@@ -19,19 +19,21 @@ class ProductBill
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Product")
-     */
-    private $product;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $quantity;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Bill", inversedBy="product_bills")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $bill;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $product;
 
     public function __construct()
     {
@@ -41,32 +43,6 @@ class ProductBill
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Product[]
-     */
-    public function getProduct(): Collection
-    {
-        return $this->product;
-    }
-
-    public function addProduct(Product $product): self
-    {
-        if (!$this->product->contains($product)) {
-            $this->product[] = $product;
-        }
-
-        return $this;
-    }
-
-    public function removeProduct(Product $product): self
-    {
-        if ($this->product->contains($product)) {
-            $this->product->removeElement($product);
-        }
-
-        return $this;
     }
 
     public function getQuantity(): ?int
@@ -91,5 +67,22 @@ class ProductBill
         $this->bill = $bill;
 
         return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->product->getName();
     }
 }

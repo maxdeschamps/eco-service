@@ -20,5 +20,6 @@ $( document ).ready(function() {
 
   // pages
   require('./pages/home.js');
+  require('./pages/product.js');
   // require('./pages/product.js');
 });

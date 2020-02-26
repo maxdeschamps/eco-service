@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Table(options={"auto_increment": 0})
  * @ORM\Entity(repositoryClass="App\Repository\AddressRepository")
  */
 class Address
@@ -104,5 +105,10 @@ class Address
         $this->country = $country;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->line1.' '.$this->postal_code.' '.$this->city;
     }
 }
