@@ -48,7 +48,7 @@ class AdminController extends BaseAdminController
         if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('success', 'Votre email à bien été envoyé');
-            return $this->render('admin/index.html.twig', [
+            return $this->redirectToRoute('admin_dashboard', [
                 'controller_name' => 'AdminController',
                 'countBills' => $countBills,
                 'countProducts' => $countProducts,
