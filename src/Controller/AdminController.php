@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\Bill;
+use App\Entity\Contact;
 use App\Entity\Message;
 use App\Entity\Product;
 use App\Entity\Quotation;
 use App\Entity\User;
+use App\Form\ContactType;
+use App\Notifications\ContactNotification;
 use Doctrine\ORM\EntityManagerInterface;
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -20,34 +23,52 @@ class AdminController extends BaseAdminController
     /**
      * @Route("/dashboard", name="admin_dashboard")
      */
-    public function index(EntityManagerInterface $em)
+    public function index(EntityManagerInterface $em, ContactNotification $notification, Request $request): Response
     {
         $repository = $em->getRepository(Bill::class);
         $bills = $repository->findAll();
-        $countBills=count($bills);
+        $countBills = count($bills);
 
         $repository = $em->getRepository(Product::class);
         $products = $repository->findAll();
-        $countProducts=count($products);
+        $countProducts = count($products);
 
         $repository = $em->getRepository(User::class);
         $users = $repository->findAll();
-        $countUsers=count($users);
+        $countUsers = count($users);
 
         $repository = $em->getRepository(Message::class);
         $messages = $repository->findAll();
-        $countMessages=count($messages);
+        $countMessages = count($messages);
+
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $notification->notify($contact);
+            $this->addFlash('success', 'Votre email à bien été envoyé');
+            return $this->render('admin/index.html.twig', [
+                'controller_name' => 'AdminController',
+                'countBills' => $countBills,
+                'countProducts' => $countProducts,
+                'countUsers' => $countUsers,
+                'countMessages' => $countMessages,
+            ]);
+    }
 
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'countBills' => $countBills,
             'countProducts' => $countProducts,
             'countUsers' => $countUsers,
-            'countMessages' => $countMessages
+            'countMessages' => $countMessages,
+            'form' => $form->createView()
         ]);
     }
 
-    public function downloadQuotationAction(){
+    public function downloadQuotationAction()
+    {
         $id = $this->request->query->get('id');
         $quotation = $this->em->getRepository(Quotation::class)->find($id);
 
@@ -58,7 +79,7 @@ class AdminController extends BaseAdminController
 
         $html = $this->render('/quotation/invoice.html.twig', [
             'title' => "Détail du devis",
-            'quotation'=> $quotation
+            'quotation' => $quotation
         ]);
 
         $dompdf->loadHtml($html);
@@ -70,7 +91,7 @@ class AdminController extends BaseAdminController
         $output = $dompdf->output();
 
         $publicDirectory = $this->get('kernel')->getProjectDir() . '/public/uploads/fichiers/devis';
-        $pdfFilepath =  $publicDirectory . '/bill.pdf';
+        $pdfFilepath = $publicDirectory . '/bill.pdf';
 
         file_put_contents($pdfFilepath, $output);
 
@@ -80,7 +101,8 @@ class AdminController extends BaseAdminController
 
     }
 
-    public function downloadBillAction(){
+    public function downloadBillAction()
+    {
         $id = $this->request->query->get('id');
         $bill = $this->em->getRepository(Bill::class)->find($id);
 
@@ -91,7 +113,7 @@ class AdminController extends BaseAdminController
 
         $html = $this->render('/bill/bill.html.twig', [
             'title' => "Détail du devis",
-            'bill'=> $bill
+            'bill' => $bill
         ]);
 
         $dompdf->loadHtml($html);
@@ -103,7 +125,7 @@ class AdminController extends BaseAdminController
         $output = $dompdf->output();
 
         $publicDirectory = $this->get('kernel')->getProjectDir() . '/public/uploads/fichiers/devis';
-        $pdfFilepath =  $publicDirectory . '/bill.pdf';
+        $pdfFilepath = $publicDirectory . '/bill.pdf';
 
         file_put_contents($pdfFilepath, $output);
 
