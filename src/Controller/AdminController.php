@@ -45,7 +45,7 @@ class AdminController extends BaseAdminController
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('success', 'Votre email à bien été envoyé');
             return $this->render('admin/index.html.twig', [
@@ -54,9 +54,9 @@ class AdminController extends BaseAdminController
                 'countProducts' => $countProducts,
                 'countUsers' => $countUsers,
                 'countMessages' => $countMessages,
+                'form' => $form->createView()
             ]);
-    }
-
+        }
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'countBills' => $countBills,

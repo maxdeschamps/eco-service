@@ -6,6 +6,16 @@ use Twig\Environment;
 
 class ContactNotification {
 
+    /**
+     * @var \Swift_Mailer
+     */
+    private $mailer;
+
+    /**
+     * @var Environment
+     */
+    private $renderer;
+
     public function __construct(\Swift_Mailer $mailer, Environment $renderer)
     {
         $this->mailer = $mailer;
@@ -17,7 +27,7 @@ class ContactNotification {
             ->setFrom($contact->getEmail())
             ->setTo('eco-service@gmail.com')
             ->setReplyTo($contact->getEmail())
-            ->setBody($this->render('emails/contact.html.twig', [
+            ->setBody($this->renderer->render('emails/contact.html.twig', [
               'contact' => $contact
         ]), 'text/html');
 
