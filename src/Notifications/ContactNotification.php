@@ -23,9 +23,9 @@ class ContactNotification {
     }
 
     public function notify(Contact $contact){
-        $message = (new \Swift_Message('Admin: '. $contact->getFirstname()))
+        $message = (new \Swift_Message('Eco-Service[Admin]: '. $contact->getSubject()))
             ->setFrom($contact->getEmail())
-            ->setTo('eco-service@gmail.com')
+            ->setTo('eco-service@site.fr')
             ->setReplyTo($contact->getEmail())
             ->setBody($this->renderer->render('emails/contact.html.twig', [
               'contact' => $contact

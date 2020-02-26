@@ -66,14 +66,16 @@
     </div>
     <div class="container">
         <div id="contactForm" class="mt-4">
+            <h2 class="mt-4" style="color:white; text-align: center">Contacter un Utilisateur</h2>
             {{ form_start(form) }}
             <div class="row">
-                <div class="col-md-6">{{ form_row(form.firstname) }}</div>
-                <div class="col-md-6">{{ form_row(form.lastname) }}</div>
+                <div class="col-md-12">{{ form_row(form.subject) }}</div>
             </div>
             <div class="row">
-                <div class="col-md-6">{{ form_row(form.phone) }}</div>
-                <div class="col-md-6">{{ form_row(form.email) }}</div>
+                <div class="col-md-12">{{ form_row(form.email) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.message) }}</div>
             </div>
             {{ form_rest(form) }}
             <div class="form-group">

@@ -8,33 +8,16 @@ class Contact {
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=2, max=100)
-     */
-    private $firstname;
-
-
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     * @Assert\Length(min=2, max=100)
-     */
-    private $lastname;
-
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
-     * @Assert\Regex(
-     *     pattern="/[0-9]{10}/"
-     * )
-     */
-    private $phone;
-
-    /**
-     * @var string|null
-     * @Assert\NotBlank()
      * @Assert\Email()
      */
     private $email;
+
+    /**
+     * @var string|null
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5)
+     */
+    private $subject;
 
     /**
      * @var string|null
@@ -43,58 +26,21 @@ class Contact {
      */
     private $message;
 
-
     /**
      * @return string|null
      */
-    public function getFirstname(): ?string
+    public function getSubject(): ?string
     {
-        return $this->firstname;
+        return $this->subject;
     }
 
     /**
-     * @param string|null $firstname
+     * @param string|null $subject
      * @return Contact
      */
-    public function setFirstname(?string $firstname): Contact
+    public function setSubject(?string $subject): Contact
     {
-        $this->firstname = $firstname;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
-
-    /**
-     * @param string|null $lastname
-     * @return Contact
-     */
-    public function setLastname(?string $lastname): Contact
-    {
-        $this->lastname = $lastname;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getPhone(): ?string
-    {
-        return $this->phone;
-    }
-
-    /**
-     * @param string|null $phone
-     * @return Contact
-     */
-    public function setPhone(?string $phone): Contact
-    {
-        $this->phone = $phone;
+        $this->subject = $subject;
         return $this;
     }
 
