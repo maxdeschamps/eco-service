@@ -6,6 +6,7 @@ use App\Entity\Product;
 use App\Entity\ProductSearch;
 use App\Form\ProductSearchType;
 use App\Form\ProductType;
+use App\Data\SearchData;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -31,13 +32,14 @@ class ProductController extends AbstractController
     /**
      * @Route("/produits", name="index_product")
      */
-    public function index(Request $request, PaginatorInterface $paginator): Response
+    public function index(Request $request, PaginatorInterface $paginator, ProductRepository $repository): Response
     {
-        $productSearch = new ProductSearch();
-        $form = $this->createForm(ProductSearchType::class, $productSearch);
+        $data = new SearchData();
+        $form = $this->createForm(ProductSearchType::class, $data);
         $form->handleRequest($request);
+        [$min, $max] = $repository->finMinMax($data);
 
-        $products = $this->productRepository->findAllVisibleQuery($productSearch);
+        $products = $repository->findAllVisibleQuery($data);
 
         $pagination = $paginator->paginate(
             $products,
@@ -49,7 +51,9 @@ class ProductController extends AbstractController
           'product/index.html.twig',
           [
               'products' => $pagination,
-              'form' => $form->createView()
+              'form' => $form->createView(),
+              'min' => $min,
+              'max' =>$max
           ]
         );
     }

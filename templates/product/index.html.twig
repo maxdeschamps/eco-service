@@ -19,7 +19,11 @@
     <div class="container">
 
         <div class="search">
-            {{ include('search/search.html.twig') }}
+            {% include 'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
+        </div>
+        <div class="trie">
+          {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
+          {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
         </div>
 
         <ul class="detailList">

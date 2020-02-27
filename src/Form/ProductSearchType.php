@@ -12,42 +12,56 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use  App\Data\SearchData;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ProductSearchType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('min_priceTtc',IntegerType::class,[
-                'required' =>false,
-                'label' =>false,
-                'attr' =>[
-                    'placeholder' =>'prix minimum'
-                ]
-            ])
-            ->add('max_priceTtc', IntegerType::class,[
-                'required' =>false,
-                'label' =>false,
-                'attr' =>[
-                    'placeholder' =>'prix maximum'
-                ]
-            ])
+  public function buildForm(FormBuilderInterface $builder, array $options)
+  {
+    $builder
+      ->add('q', TextType::class, [
+        'label' => false,
+        'required' => false,
+        'attr' => [
+          'placeholder' => 'Rechercher'
+        ]
+      ])
+      ->add('categories', EntityType::class, [
+        'label' => false,
+        'required' => false,
+        'class' => Category::class,
+        'expanded' => true,
+        'multiple' => true
+      ])
+      ->add('min', NumberType::class, [
+        'label' => false,
+        'required' => false,
+        'attr' => [
+          'placeholder' => 'Prix minimum'
+        ]
+      ])
+      ->add('max', NumberType::class, [
+        'label' => false,
+        'required' => false,
+        'attr' => [
+          'placeholder' => 'Prix maximum'
+        ]
+      ])
+      ;
+  }
 
-            ->add('submit', SubmitType::class, [
-                'label' => 'Rechercher',
-                'attr' => [
-                    'class' => 'btn btn-success'
-                ]
-            ])
-        ;
-    }
+  public function configureOptions(OptionsResolver $resolver)
+  {
+    $resolver-> setDefaults([
+      'data_class' => SearchData::class,
+      'method' => 'GET',
+      'csrf_protection' => false
+    ]);
+  }
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => ProductSearch::class,
-            'method' =>'get',
-            'csrf_protection' =>false
-        ]);
-    }
+  public function getBlockPrefix()
+  {
+    return '';
+  }
 }
