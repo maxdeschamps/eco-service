@@ -65,4 +65,30 @@ class ProductController extends AbstractController
             ['product' => $product]
         );
     }
+<<<<<<< HEAD
+
+    /**
+     * @Route("/produit", name="create_product")
+     */
+    public function create(Request $request): Response
+    {
+        $product = new Product();
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($product);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('index_product');
+        }
+
+        return $this->render('product/create.html.twig', [
+            'product' => $product,
+            'form' => $form->createView(),
+        ]);
+    }
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 }

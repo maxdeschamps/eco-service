@@ -86,7 +86,11 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="boolean")
      */
+<<<<<<< HEAD
+    private $isCompany;
+=======
     private $is_company;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Bill", mappedBy="customer")
@@ -106,11 +110,14 @@ class User implements UserInterface, \Serializable
         $this->quotations = new ArrayCollection();
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
+<<<<<<< HEAD
+=======
     }
 
     public function __toString()
     {
         return $this->email;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     }
 
     public function getId(): ?int
@@ -178,6 +185,16 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+<<<<<<< HEAD
+    public function getCompanyName(): ?string
+    {
+        return $this->company_name;
+    }
+
+    public function setCompanyName(?string $company_name): self
+    {
+        $this->company_name = $company_name;
+=======
     public function getName(): ?string
     {
         return $this->name;
@@ -186,10 +203,21 @@ class User implements UserInterface, \Serializable
     public function setName(string $name): self
     {
         $this->name = $name;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
         return $this;
     }
 
+<<<<<<< HEAD
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+=======
     public function getCompanyName(): ?string
     {
         return $this->company_name;
@@ -198,9 +226,12 @@ class User implements UserInterface, \Serializable
     public function setCompanyName(string $company_name): self
     {
         $this->company_name = $company_name;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
         return $this;
     }
+
+<<<<<<< HEAD
 
     public function getPhone(): ?string
     {
@@ -209,6 +240,15 @@ class User implements UserInterface, \Serializable
 
     public function setPhone(?string $phone): self
     {
+=======
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
         $this->phone = $phone;
 
         return $this;
@@ -311,12 +351,21 @@ class User implements UserInterface, \Serializable
 
     public function getIsCompany(): ?bool
     {
+<<<<<<< HEAD
+        return $this->isCompany;
+    }
+
+    public function setIsCompany(bool $isCompany): self
+    {
+        $this->isCompany = $isCompany;
+=======
         return $this->is_company;
     }
 
     public function setIsCompany(bool $is_company): self
     {
         $this->is_company = $is_company;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
         return $this;
     }
@@ -388,6 +437,16 @@ class User implements UserInterface, \Serializable
         return $this->username;
     }
 
+<<<<<<< HEAD
+    public function setUsername(string $username): self
+    {
+         $this->username = $username;
+
+         return $this;
+    }
+
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     public function getSalt()
     {
         // you *may* need a real salt depending on your encoder
@@ -426,6 +485,14 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
         ) = unserialize($serialized, array('allowed_classes' => false));
+<<<<<<< HEAD
+    }
 
+    public function __toString()
+    {
+        return $this->first_name.' '.$this->last_name;
+=======
+
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     }
 }

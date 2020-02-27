@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\ArticleFile;
+use App\Entity\ServiceImage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method ArticleFile|null find($id, $lockMode = null, $lockVersion = null)
- * @method ArticleFile|null findOneBy(array $criteria, array $orderBy = null)
- * @method ArticleFile[]    findAll()
- * @method ArticleFile[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ServiceImage|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ServiceImage|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ServiceImage[]    findAll()
+ * @method ServiceImage[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ArticleFileRepository extends ServiceEntityRepository
+class ServiceImageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ArticleFile::class);
+        parent::__construct($registry, ServiceImage::class);
     }
 
     // /**
-    //  * @return ArticleFile[] Returns an array of ArticleFile objects
+    //  * @return ServiceFile[] Returns an array of ServiceFile objects
     //  */
     /*
     public function findByExampleField($value)

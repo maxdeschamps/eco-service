@@ -6,12 +6,12 @@ use App\Entity\Address;
 use App\Entity\Article;
 use App\Entity\Bill;
 use App\Entity\Category;
-use App\Entity\Company;
-use App\Entity\File;
+use App\Entity\Image;
 use App\Entity\Message;
 use App\Entity\Newsletter;
 use App\Entity\Product;
-use App\Entity\Resume;
+use App\Entity\ProductBill;
+use App\Entity\Quotation;
 use App\Entity\Service;
 use App\Entity\Subject;
 use App\Entity\Unity;
@@ -22,6 +22,12 @@ use Faker;
 
 class ManyFixtures extends Fixture
 {
+    private static $images = [
+        'img-homepage-1.jpg',
+        'img-homepage-2.jpg',
+        'img-homepage-3.jpg',
+    ];
+
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
@@ -49,15 +55,40 @@ class ManyFixtures extends Fixture
             $user->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
             $user->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
             $user->setLastName($faker->word(7));
+<<<<<<< HEAD
+            $user->setUsername($faker->word(7));
+            $user->setCompanyName($faker->word(7));
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
             $user->setNewsletterAcceptance($faker->boolean);
             $user->setPhone($faker->phoneNumber);
             $user->setEmail($faker->email);
             $user->setFirstName($faker->word(7));
             $user->setPassword($faker->password);
+<<<<<<< HEAD
+            $user->setIsCompany($faker->boolean);
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
             $manager->persist($user);
             $manager->flush();
         }
 
+<<<<<<< HEAD
+        for ($i = 0; $i < 10; $i++) {
+            $bill = new Bill();
+            $bill->setCustomer($manager->find(User::class, random_int(1, 10)));
+            $bill->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
+            $bill->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
+            $bill->setRequestDate($faker->dateTime());
+            $bill->setAcceptanceDate($faker->dateTime());
+            $bill->setEmail($faker->email);
+            $bill->setApproved(intval($faker->boolean));
+            $manager->persist($bill);
+            $manager->flush();
+        }
+
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
         for ($i = 0; $i < 15; $i++) {
             $produit = new Product();
             $produit->setCategory($manager->find(Category::class, random_int(1, 10)));
@@ -98,6 +129,84 @@ class ManyFixtures extends Fixture
             $article->setContent($faker->text);
             $manager->persist($article);
             $manager->flush();
+<<<<<<< HEAD
+        }
+
+
+        for ($i = 0; $i < 15; $i++) {
+            $image = new Image();
+            $image->setOrderFile($faker->numberBetween(0,50));
+            $image->setImage($faker->randomElement(self::$images));
+            $manager->persist($image);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $message = new Message();
+            $message->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $message->setSubject($manager->find(Subject::class, random_int(1, 10)));
+            $message->setState($faker->word(100));
+            $message->setContent($faker->word(100));
+            $manager->persist($message);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $newsletter = new Newsletter();
+            $newsletter->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $newsletter->setSubject($faker->word(25));
+            $newsletter->setContent($faker->text);
+            $manager->persist($newsletter);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $service = new Service();
+            $service->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $service->setUnity($manager->find(Unity::class, random_int(1, 10)));
+            $service->setSlug($faker->unique()->slug());
+            $service->setContent($faker->text);
+            $service->setName($faker->word(7));
+            $service->setQuantity($faker->numberBetween(0, 50));
+            $service->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
+            $service->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
+            $service->setQuantity($faker->numberBetween(0, 50));
+            $manager->persist($service);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $productBill = new ProductBill();
+            $productBill->setBill($manager->find(Bill::class, random_int(1, 10)));
+            $productBill->setProduct($manager->find(Product::class, random_int(1, 10)));
+            $productBill->setQuantity($faker->numberBetween(0, 50));
+            $manager->persist($productBill);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $quotation = new Quotation();
+            $quotation->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
+            $quotation->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
+            $quotation->setCompany($manager->find(User::class, random_int(1, 10)));
+            $quotation->setRequestDate($faker->dateTime());
+            $quotation->setAcceptanceDate($faker->dateTime());
+            $quotation->setEmail($faker->email);
+            $quotation->setApproved(intval($faker->boolean));
+            $manager->persist($quotation);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $serviceQuotation = new ServiceQuotation();
+            $serviceQuotation->setQuotation($manager->find(Quotation::class, random_int(1, 10)));
+            $serviceQuotation->setService($manager->find(Service::class, random_int(1, 10)));
+            $serviceQuotation->setQuantity($faker->numberBetween(0, 50));
+            $serviceQuotation->setExtra($faker->text);
+            $manager->persist($serviceQuotation);
+            $manager->flush();
+        }
+=======
         }
 
 
@@ -221,5 +330,6 @@ class ManyFixtures extends Fixture
 
 
 */
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     }
 }
