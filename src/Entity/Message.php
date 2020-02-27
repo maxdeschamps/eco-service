@@ -45,11 +45,6 @@ class Message
      */
     private $content;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $content;
-
     public function __construct()
     {
         $this->images = new ArrayCollection();

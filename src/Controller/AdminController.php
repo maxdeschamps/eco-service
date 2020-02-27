@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 use App\Entity\Bill;
 use App\Entity\Contact;
 use App\Entity\Message;
@@ -18,17 +17,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-=======
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
->>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
 class AdminController extends BaseAdminController
 {
     /**
      * @Route("/dashboard", name="admin_dashboard")
      */
-<<<<<<< HEAD
     public function index(EntityManagerInterface $em, ContactNotification $notification, Request $request): Response
     {
         $repository = $em->getRepository(Bill::class);
@@ -140,13 +134,4 @@ class AdminController extends BaseAdminController
         ]);
 
     }
-=======
-    public function index()
-    {
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
-    }
->>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 }
-

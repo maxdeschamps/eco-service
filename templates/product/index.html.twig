@@ -17,7 +17,7 @@
     </div>
 
     <div class="container">
-
+      <div class="blocFull">
         <div class="search">
             {% include 'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
         </div>
@@ -25,7 +25,9 @@
           {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
           {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
         </div>
+      </div>
 
+      <div class="blocFull">
         <ul class="detailList">
             {% for product in products %}
                 <li class="detailElement">
@@ -50,10 +52,14 @@
                 </li>
             {% endfor %}
         </ul>
+      </div>
     </div>
-    <div class="paginationContainer">
+
+    <div class="blocFull">
+      <div class="paginationContainer">
         <div class="textCenter marginBottom25">
-            {{ knp_pagination_render(products) }}
+          {{ knp_pagination_render(products) }}
         </div>
+      </div>
     </div>
 {% endblock %}

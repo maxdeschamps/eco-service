@@ -203,11 +203,7 @@ class Product
     public function __toString()
     {
         return $this->name;
-<<<<<<< HEAD
         // TODO: Implement __toString() method.
     }
 
-=======
-    }
->>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 }
