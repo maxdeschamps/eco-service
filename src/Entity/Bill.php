@@ -5,8 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+<<<<<<< HEAD
 use Symfony\Component\Validator\constraints as Assert;
 use \DateTime;
+=======
+use App\Entity\Resume;
+// use Symfony\Component\Validator\constraints as Assert;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BillRepository")
@@ -41,13 +46,21 @@ class Bill
     private $email;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
      * @ORM\JoinColumn(nullable=true)
      */
     private $delivery_address;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
      * @ORM\JoinColumn(nullable=true)
      */
     private $billing_address;
@@ -187,8 +200,15 @@ class Bill
 
         return $this;
     }
+<<<<<<< HEAD
     public function __toString()
     {
         return 'Facture #' . $this->id . ' du ' . $this->request_date->format('d/m/Y');
+=======
+
+    public function __toString()
+    {
+        return $this->name;
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     }
 }

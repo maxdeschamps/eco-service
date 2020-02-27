@@ -16,13 +16,21 @@
   <div class="blocHalf">
     <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
   </div>
-</div>
 
-  <ul>
-    {% for article in articles %}
-      <li>
-        <a href="{{ path('show_article', { 'slug': article.getSlug }) }}">{{ article.getName }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="blocFull">
+    <ul>
+      {% for article in articles %}
+        <li>
+          <a href="{{ path('show_article', { 'slug': article.getSlug }) }}">{{ article.getName }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="paginationContainer">
+      <div class="textCenter marginBottom25">
+        {{ knp_pagination_render(articles) }}
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

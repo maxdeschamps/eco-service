@@ -13,7 +13,6 @@ use App\Entity\Product;
 use App\Entity\ProductBill;
 use App\Entity\Quotation;
 use App\Entity\Service;
-use App\Entity\ServiceQuotation;
 use App\Entity\Subject;
 use App\Entity\Unity;
 use App\Entity\User;
@@ -56,18 +55,25 @@ class ManyFixtures extends Fixture
             $user->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
             $user->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
             $user->setLastName($faker->word(7));
+<<<<<<< HEAD
             $user->setUsername($faker->word(7));
             $user->setCompanyName($faker->word(7));
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
             $user->setNewsletterAcceptance($faker->boolean);
             $user->setPhone($faker->phoneNumber);
             $user->setEmail($faker->email);
             $user->setFirstName($faker->word(7));
             $user->setPassword($faker->password);
+<<<<<<< HEAD
             $user->setIsCompany($faker->boolean);
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
             $manager->persist($user);
             $manager->flush();
         }
 
+<<<<<<< HEAD
         for ($i = 0; $i < 10; $i++) {
             $bill = new Bill();
             $bill->setCustomer($manager->find(User::class, random_int(1, 10)));
@@ -81,6 +87,8 @@ class ManyFixtures extends Fixture
             $manager->flush();
         }
 
+=======
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
         for ($i = 0; $i < 15; $i++) {
             $produit = new Product();
             $produit->setCategory($manager->find(Category::class, random_int(1, 10)));
@@ -121,6 +129,7 @@ class ManyFixtures extends Fixture
             $article->setContent($faker->text);
             $manager->persist($article);
             $manager->flush();
+<<<<<<< HEAD
         }
 
 
@@ -197,5 +206,130 @@ class ManyFixtures extends Fixture
             $manager->persist($serviceQuotation);
             $manager->flush();
         }
+=======
+        }
+
+
+        for ($i = 0; $i < 15; $i++) {
+            $file = new File();
+            $file->setName($faker->word(7));
+            $file->setUri($faker->imageUrl());
+            $file->setOrderFile($faker->numberBetween(0,50));
+            $file->setAltFile($faker->text);
+            $manager->persist($file);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $message = new Message();
+            $message->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $message->setSubject($manager->find(Subject::class, random_int(1, 10)));
+            $message->setState($faker->word(100));
+            $message->setContent($faker->word(100));
+            $manager->persist($message);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $newsletter = new Newsletter();
+            $newsletter->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $newsletter->setSubject($faker->word(25));
+            $newsletter->setContent($faker->text);
+            $manager->persist($newsletter);
+            $manager->flush();
+        }
+
+        for ($i = 0; $i < 15; $i++) {
+            $service = new Service();
+            $service->setAuthor($manager->find(User::class, random_int(1, 10)));
+            $service->setUnity($manager->find(Unity::class, random_int(1, 10)));
+            $service->setSlug($faker->unique()->slug());
+            $service->setContent($faker->text);
+            $service->setName($faker->word(7));
+            $service->setQuantity($faker->numberBetween(0, 50));
+            $service->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
+            $service->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
+            $manager->persist($service);
+            $manager->flush();
+        }
+
+        /*
+        for ($i = 0; $i < 50; $i++) {
+            $company = new Company();
+            $company->setFirstName($faker->firstName);
+            $company->setLastName($faker->lastName);
+            $company->setName($faker->word(10));
+            $company->setPhone($faker->phoneNumber);
+            $company->setPassword($faker->password);
+            $company->setEmail($faker->email);
+            $company->setNewsletterAcceptance(intval($faker->boolean));
+            $manager->persist($company);
+            $manager->flush();
+        }
+
+
+
+        for ($i = 0; $i < 10; $i++) {
+            $resume = new Resume();
+            $resume->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
+            $resume->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
+            $resume->setRequestDate($faker->dateTime());
+            $resume->setAcceptanceDate($faker->dateTime());
+            $resume->setApproved(intval($faker->boolean));
+            $resume->setEmail($faker->email);
+            $manager->persist($resume);
+            $manager->flush();
+        }
+
+
+        for ($i = 0; $i < 10; $i++) {
+            $bill = new Bill();
+            $bill->setCustomer($manager->find(User::class, random_int(1, 10)));
+            $bill->setDeliveryAddress($manager->find(Address::class, random_int(1, 10)));
+            $bill->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
+            $bill->setRequestDate($faker->dateTime());
+            $bill->setAcceptanceDate($faker->dateTime());
+            $bill->setEmail($faker->email);
+            $bill->setApproved(intval($faker->boolean));
+            $manager->persist($bill);
+            $manager->flush();
+
+        }
+
+
+        for ($i = 0; $i < 50; $i++) {
+            $productBill = new ProductBill();
+            $productBill->setBill($bill);
+            $productBill->setQuantity($faker->numberBetween(0, 50));
+            $manager->persist($productBill);
+        }
+
+
+/*
+
+
+
+        for ($i = 0; $i < 50; $i++) {
+            $quotation = new Quotation();
+            $quotation->setCompany($company);
+            $quotation->setRequestDate($faker->dateTime());
+            $quotation->setAcceptanceDate($faker->dateTime());
+            $quotation->setEmail($faker->email);
+            $quotation->setApproved(intval($faker->boolean));
+            $manager->persist($quotation);
+        }
+
+
+        for ($i = 0; $i < 50; $i++) {
+            $serviceQuotation = new ServiceQuotation();
+            $serviceQuotation->setQuotation($quotation);
+            $serviceQuotation->setQuantity($faker->numberBetween(0, 50));
+            $serviceQuotation->setExtra($faker->text);
+            $manager->persist($serviceQuotation);
+        }
+
+
+*/
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
     }
 }

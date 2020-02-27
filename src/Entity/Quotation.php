@@ -39,13 +39,21 @@ class Quotation
     private $email;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
      * @ORM\JoinColumn(nullable=true)
      */
     private $delivery_address;
 
     /**
+<<<<<<< HEAD
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+=======
+     * @ORM\OneToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+>>>>>>> f934b38db53d7f0c9ad66a0549e2f828e6fbb4cf
      * @ORM\JoinColumn(nullable=true)
      */
     private $billing_address;

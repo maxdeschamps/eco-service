@@ -3,37 +3,48 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Repository\ProductRepository;
+use App\Form\UserType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
   /**
-   * @Route("/utilisateurs", name="index_user")
+   * @Route("/mon-compte", name="profile_index")
    */
-  public function index(EntityManagerInterface $em)
+  public function profile()
   {
-    $repository = $em->getRepository(User::class);
-    $user = $repository->findAll();
-
     return $this->render(
-      'user/index.html.twig',
-       ['user' => $user]
+      'user/index.html.twig'
     );
   }
 
   /**
-   * @Route("/utilisateur/{slug}", name="show_user")
+   * @Route("/mon-compte/editer", name="profile_update")
    */
-  public function show(User $user)
+  public function updateUserAccountForm(Request $request)
   {
-    return $this->render(
-      'user/show.html.twig',
-      ['user' => $user]
-    );
+    $user = $this->getUser();
+
+    $form = $this->createForm(UserType::class, $user);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      $entityManager = $this->getDoctrine()->getManager();
+      $entityManager->persist($user);
+      $entityManager->flush();
+
+      return $this->redirectToRoute('profile_index');
+    }
+
+    return $this->render('user/update.html.twig', [
+      'user' => $user,
+      'form' => $form->createView(),
+    ]);
+
   }
 }
