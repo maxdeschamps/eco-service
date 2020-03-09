@@ -1,0 +1,91 @@
+#registrationForm {
+  .backgroundLightGreen {
+    padding: 10% 0;
+
+    .containerForm {
+      background: white;
+      border-radius: 10px;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 5%;
+      @media screen and (max-width: $mediumSize) {
+        width: 90%;
+        background: $lightGreen;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style: none;
+          text-align: center;
+          display: block;
+          max-width: calc(100%/3);
+          min-width:: calc(100%/3);
+          @media screen and (max-width: $mediumSize) {
+            width: calc(100%/2);
+            max-width: calc(100%/2);
+            min-width:: calc(100%/2);
+          }
+
+          label {
+            display: block;
+            margin-top: 30px;
+            @media screen and (max-width: $mediumSize) {
+              margin-top: 10px;
+            }
+          }
+
+          input {
+            border: 0;
+            border-bottom: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            @media screen and (max-width: $mediumSize) {
+              background: $lightGreen;
+            }
+          }
+        }
+      }
+
+      .newsletterCGV {
+        padding: 30px 0;
+
+        [type="checkbox"]:checked,
+        [type="checkbox"]:not(:checked) {
+          border: 1px solid black;
+          border-radius: 10px;
+        }
+      }
+
+      a,
+      button {
+        font-size: 17px;
+        text-transform: uppercase;
+        background: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px 30px;
+        transition: 0.3s;
+        text-decoration: none;
+        @media screen and (max-width: $mediumSize) {
+          color: black;
+        }
+
+        &:hover {
+          background: black;
+          color: white;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    .bite {
+      color: $grey;
+    }
+  }
+}

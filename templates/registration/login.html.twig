@@ -2,8 +2,10 @@
 
 {% block title %}Se connecter{% endblock %}
 
+
 {% block body %}
-  <div class="container" style="margin-top: 60px;">
+
+  <div class="container backgroundLightGreen" >
     <div class="blocFull">
       <h1>Se connecter</h1>
 
@@ -11,19 +13,17 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
       {% endif %}
 
-      <form method="post">
+        <form method="post">
           {% if error %}
-              <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
           {% endif %}
 
           <label for="inputEmail" class="sr-only">Email</label>
-          <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+          <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required="required" autofocus="autofocus">
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
 
-          <input type="hidden" name="_csrf_token"
-                 value="{{ csrf_token('authenticate') }}"
-          >
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
           {#
               Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -36,10 +36,9 @@
           #}
 
           <button class="btn btn-lg btn-primary" type="submit">
-              Sign in
+            Sign in
           </button>
-      </form>
-
+        </form>
     </div>
   </div>
 {% endblock %}

@@ -2,26 +2,50 @@
 
 {% block title %}S'inscrire{% endblock %}
 
-{% block body %}
-  <div class="container" style="margin-top: 60px;">
-    <div class="blocFull">
-      <h1>S'inscrire</h1>
+{% block idBody %}registrationForm{% endblock %}
 
-      {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.lastName) }}
-        {{ form_row(registrationForm.phone) }}
-        {{ form_row(registrationForm.isCompany) }}
-        {{ form_row(registrationForm.companyName) }}
+{% block body %}
+  <div class="blocFull backgroundLightGreen">
+    <div class="containerForm">
+      <h1>S'inscrire</h1>
+      <div>
+        <ul>
+          <li>
+            {{ form_row(registrationForm.lastName) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.firstName) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.email) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.phone) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.password.first) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.password.second) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.isCompany) }}
+          </li>
+          <li>
+            {{ form_row(registrationForm.companyName) }}
+          </li>
+          <li>
+        </ul>
+      </div>
+      <div class="newsletterCGV">
         {{ form_row(registrationForm.newsletterAcceptance) }}
         {{ form_row(registrationForm.agreeTerms) }}
+      </div>
+      <div>
+        <a href="" class="btn">S'inscrire</a>
+        {{ form_end(registrationForm) }}
 
-        <button class="btn">S'inscrire</button>
-      {{ form_end(registrationForm) }}
-
-      <a href="{{ path('app_login') }}">Se connecter</a>
+        <a href="{{ path('app_login') }}">Se connecter</a>
+      </div>
     </div>
-  </div>
-{% endblock %}
+  {% endblock %}
