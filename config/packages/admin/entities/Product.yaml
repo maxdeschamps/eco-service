@@ -1,31 +1,42 @@
 easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
-    Category:
-      class: App\Entity\Category
-      list:
-        fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'slug', label: 'Slug' }
-      form:
-        fields:
-        - { property: 'name', label: 'Nom' }
     Product:
       class: App\Entity\Product
+      edit:
+        title: 'Editer le Produit (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Produit'
+      label: 'Produits'
       list:
+        actions:
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Ajouter un Produit '}
         fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'priceHt', label: 'Prix HT' }
-        - { property: 'priceTtc', label: 'Price TTC' }
-        - { property: 'quantity', label: 'Quantité' }
-        - { property: 'category', label: 'Catégories' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'content', label: 'Contenu' }
+          - { property: 'priceHt', label: 'Prix HT' }
+          - { property: 'priceTtc', label: 'Prix TTC' }
+          - { property: 'quantity', label: 'Quantité' }
+          - { property: 'category', label: 'Catégories' }
+          - { property: 'images', label: 'Image' }
       form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-        - { property: 'name', label: 'Nom' }
-        - { property: 'content', label: 'Contenu' }
-        - { property: 'priceHt', label: 'Prix HT', type: 'number' }
-        - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
-        - { property: 'quantity', label: 'Quantité', type: 'number' }
-        - { property: 'category', label: 'Catégories' }
-        - { property: 'files', label: 'Images' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'slug', label: 'Slug' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
+          - { property: 'priceHt', label: 'Prix HT', type: 'number' }
+          - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
+          - { property: 'quantity', label: 'Quantité', type: 'number' }
+          - { property: 'category', label: 'Catégories' }
+          - { property: 'images', label: 'Images'}
+        disabled_actions: ['edit']
 
