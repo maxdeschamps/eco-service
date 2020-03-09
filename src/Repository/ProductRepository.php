@@ -3,8 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Entity\ProductSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
+use App\Data\SearchData;
 
 /**
  * @method Product|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +21,56 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);
+    }
+
+    public function findAllVisibleQuery(SearchData $search): Query
+    {
+        $query = $this->getSearchQuery($search)->getQuery();
+        return $query;
+    }
+
+    public function finMinMax(SearchData $search): array
+    {
+      $results = $this->getSearchQuery($search, true)
+        ->select('MIN(product.price_ttc) as min', 'MAX(product.price_ttc) as max')
+        ->getQuery()
+        ->getScalarResult();
+
+      return [(int)$results[0]['min'], (int)$results[0]['max']];
+    }
+
+    private function getSearchQuery(SearchData $search, $ignorePrice = false): QueryBuilder
+    {
+      $query = $this
+      ->createQueryBuilder('product')
+      ->select('category', 'product')
+      ->join('product.category', 'category');
+
+      if (!empty($search->q)) {
+        $query = $query
+          ->andWhere('product.name LIKE :q')
+          ->setParameter('q', "%{$search->q}%");
+      }
+
+      if (!empty($search->min) && $ignorePrice === false) {
+        $query = $query
+          ->andWhere('product.price_ttc >= :min')
+          ->setParameter('min', $search->min);
+      }
+
+      if (!empty($search->max) && $ignorePrice === false) {
+        $query = $query
+          ->andWhere('product.price_ttc <= :max')
+          ->setParameter('max', $search->max);
+      }
+
+      if (!empty($search->categories)) {
+        $query = $query
+          ->andWhere('category.id IN (:categories)')
+          ->setParameter('categories', $search->categories);
+      }
+
+      return $query;
     }
 
     // /**

@@ -1,5 +1,9 @@
 // Fonts
 
+::selection {
+  background-color: $lightGreenDarken;
+}
+
 a,
 b,
 body,
@@ -124,6 +128,7 @@ main {
     li.detailElement {
       position: relative;
       width: calc(100% / 3 - 120px - 40px);
+      min-width: 240px;
       margin: 20px 60px;
       padding: 20px;
       background-color: white;
@@ -166,6 +171,7 @@ main {
 
         li.detailContentDatas {
           list-style: none;
+          width:60%;
 
           a {
             color: black;
@@ -183,8 +189,10 @@ main {
         }
 
         li.detailPrice {
+          text-align: right;
           list-style: none;
           font-size: 1.5rem;
+          width:40%;
         }
       }
     }
@@ -283,17 +291,40 @@ svg.wave {
   }
 }
 
+figure.zoom {
+  & img:hover {
+    opacity: 0;
+  }
+
+  img {
+    transition: opacity 0.5s;
+    display: block;
+    width: 100%;
+  }
+  background-position: 50% 50%;
+  background-size: 125%;
+  position: relative;
+  width: 500px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
 .blocImage {
   position: relative;
 }
 
 .textCenter {
   text-align: center;
+
+  &.marginBottom25 {
+    bottom: 25px !important;
+  }
 }
 
 .fontSize0 {
   font-size: 0;
 }
+
 // .transitions-white-to-green {
 //   height: 25px;
 //   width: 100%;

@@ -1,14 +1,14 @@
-$( document ).ready(function() {
-  var counterOn = true;
+var counterOn = true;
 
-  function isScrolledIntoView(elem) {
-      var docViewTop = $(window).scrollTop();
-      var docViewBottom = docViewTop + $(window).height();
-      var elemTop = $(elem).offset().top;
-      return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
-  }
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = $(elem).offset().top;
+    return ((elemTop <= docViewBottom) && (elemTop >= docViewTop));
+}
 
-  $(window).scroll(function() {
+$(window).scroll(function() {
+  if (document.getElementsByClassName('count').length > 0) {
     if (isScrolledIntoView($('.count')) && counterOn) {
       counterOn = false;
       $('.count').each(function () {
@@ -23,5 +23,5 @@ $( document ).ready(function() {
         });
       });
     }
-  });
+  }
 });

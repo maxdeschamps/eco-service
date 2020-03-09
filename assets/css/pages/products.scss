@@ -1,7 +1,20 @@
 #products-tpl {
+  .blocImage {
+    height: 80vh;
+    background-image: url("/../images/background-products.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: $mediumSize) {
+        height: 50vh;
+    }
+  }
+
   main {
     background-color: $lightGreen;
-}
+  }
 
   .title {
     position: absolute;
@@ -13,7 +26,6 @@
       color: white;
       font-family: 'Gotham-Light';
       font-size: 2.5rem;
-      margin-bottom: -8%;
     }
 
     h2 {
@@ -27,7 +39,7 @@
   }
 
   .container {
-    padding-top: 0px !important;
+    padding-top: 0 !important;
   }
 
   .imgPres {
@@ -41,6 +53,7 @@
 
   #header-menu #products-tpl {
     background: #3f3f3f;
+
     span {
       color: white;
     }
@@ -52,16 +65,43 @@
   display: flex;
   align-items: center;
   justify-content: middle;
+  padding-top: 100px;
 
-  .ThirdBlock {
-    width: calc(100%/3);
-    text-align: center;
-    margin-right: 1%;
-
-    img {
+  .img-product {
+    width: 70%;
+    @media screen and (max-width: $largeSize) {
       width: 100%;
-      margin: 1%;
     }
+
+
+    .imgPres {
+      display: inline-block;
+      width: 49%;
+      height: 400px;
+      margin: 0;
+
+      @media screen and (max-width: $largeSize) {
+        height:200px;
+      }
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+
+  .infos-product {
+    width: 30%;
+    @media screen and (max-width: $largeSize) {
+      width: 100%;
+    }
+
 
     h1 {
       text-transform: uppercase;
@@ -72,11 +112,43 @@
 
     p {
       font-size: 3rem;
-      margin: 0 0 10%;
+      margin: 0 0 5%;
     }
 
-    a {
-      padding: 10px 120px;
+    label {
+      margin: 0 0 2%;
+    }
+
+    #qty-product {
+      display: block;
+      margin: 0 auto 5%;
+      color: black;
+      width: 40%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 10px 30px;
+      border: 1px solid black;
+      border-radius: 10px;
+      transition-duration: 0.4s;
+    }
+
+    .btn-acheter {
+      display: block;
+      margin: 0 auto;
+      color: black;
+      width: 40%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 10px 30px;
+      border: 1px solid black;
+      border-radius: 10px;
+      transition-duration: 0.4s;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -105,27 +177,30 @@
 @media only screen and (max-width: $smallSize) {
   #header-product {
     display: inline;
+
     .ThirdBlock {
-      width:100%;
+      width: 100%;
       text-align: center;
       margin-right: 0;
 
       img {
-        width:49%;
+        width: 49%;
         margin: 0;
       }
 
       h1 {
         margin-top: 20px;
       }
+
       p {
-        margin:0 0 3% 0;
+        margin: 0 0 3%;
       }
     }
   }
-  #product-desc{
-    .container{
-      h2{
+
+  #product-desc {
+    .container {
+      h2 {
         width: 100%;
         text-align: center;
       }
