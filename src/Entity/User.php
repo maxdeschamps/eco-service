@@ -49,7 +49,7 @@ class User implements UserInterface, \Serializable
     private $last_name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $company_name;
 
