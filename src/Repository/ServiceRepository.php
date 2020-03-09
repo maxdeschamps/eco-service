@@ -3,7 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Service;
-use App\Entity\ServiceSearch;
+use App\Data\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
@@ -22,33 +22,16 @@ class ServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Service::class);
     }
 
-    public function findAllVisibleQuery(ServiceSearch $search): Query
+    public function findAllVisibleQuery(SearchData $search): Query
     {
-        $query = $this->findVisibleQuery();
-
-        if($search->getMinPriceTtc()){
-            $query= $query
-                ->andWhere('service.price_ttc >= :min_priceTtc')
-                ->setParameter('min_priceTtc', $search->getMinPriceTtc());
-        }
-
-        if($search->getMaxPriceTtc()){
-            $query= $query
-                ->andWhere('service.price_ttc <= :max_priceTtc')
-                ->setParameter('max_priceTtc', $search->getMaxPriceTtc());
-        }
-        return $query->getQuery();
-    }
-
-    public function findVisibleQuery():QueryBuilder
-    {
-        return $this->createQueryBuilder('service');
+        $query = $this->getSearchQuery($search)->getQuery();
+        return $query;
     }
 
     public function finMinMax(SearchData $search): array
     {
       $results = $this->getSearchQuery($search, true)
-        ->select('MIN(product.price_ttc) as min', 'MAX(product.price_ttc) as max')
+        ->select('MIN(service.price_ttc) as min', 'MAX(service.price_ttc) as max')
         ->getQuery()
         ->getScalarResult();
 
@@ -63,19 +46,19 @@ class ServiceRepository extends ServiceEntityRepository
 
       if (!empty($search->q)) {
         $query = $query
-          ->andWhere('product.name LIKE :q')
+          ->andWhere('service.name LIKE :q')
           ->setParameter('q', "%{$search->q}%");
       }
 
       if (!empty($search->min) && $ignorePrice === false) {
         $query = $query
-          ->andWhere('product.price_ttc >= :min')
+          ->andWhere('service.price_ttc >= :min')
           ->setParameter('min', $search->min);
       }
 
       if (!empty($search->max) && $ignorePrice === false) {
         $query = $query
-          ->andWhere('product.price_ttc <= :max')
+          ->andWhere('service.price_ttc <= :max')
           ->setParameter('max', $search->max);
       }
 

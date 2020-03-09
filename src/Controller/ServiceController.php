@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Service;
-use App\Entity\ServiceSearch;
 use App\Form\ServiceSearchType;
 use App\Form\ServiceType;
 use App\Data\SearchData;
