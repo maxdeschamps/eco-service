@@ -18,7 +18,7 @@
 <div id="contactForm" class="mt-4">
   {{ form_start(form) }}
     <div class="row">
-      <div class="col">{{ form_row(form.author) }}</div>
+      <div class="col">{{ form_row(form.email) }}</div>
       <div class="col">{{ form_row(form.subject) }}</div>
     </div>
     <div class="row">
@@ -26,8 +26,9 @@
     </div>
   {{ form_rest(form) }}   
     <div class="form-group">
+      {{ form_row(form.agreeTerms) }}
       <button class="btn btn-primary">Envoyer</button>
     </div>
-  {{ form_end(end) }}
+  {{ form_end(form) }}
 </div>
 {% endblock %}
