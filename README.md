@@ -35,3 +35,8 @@ Projet E-commerce G4 - ING1 - Symfony
 
 ## DOMPDF
  - composer require dompdf/dompdf
+ 
+ ## CKEDITOR
+ - composer dump-autoload
+ - composer require friendsofsymfony/ckeditor-bundle
+ - php bin/console ckeditor:install

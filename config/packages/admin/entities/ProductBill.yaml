@@ -1,0 +1,28 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+  list:
+    title: 'Liste des produits de la facture'
+  entities:
+    Product:
+      class: App\Entity\ProductBill
+      show:
+        title: 'Produit de la facture'
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'edit', label: 'Modifier' }
+        fields:
+          - { property: 'product', label: 'Produit' }
+          - { property: 'quantity', label: 'Quantité' }
+      edit:
+        title: 'Editer le Produit de la facture'
+      label: 'Produits de la facture'
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+        fields:
+          - { property: 'product', label: 'Produit' }
+          - { property: 'quantity', label: 'Quantité' }
+        disabled_actions: ['new']

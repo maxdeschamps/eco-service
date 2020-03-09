@@ -1,0 +1,28 @@
+easy_admin:
+  design:
+  list:
+    title: 'Liste des %%entity_label%%'
+  entities:
+    Image:
+      class: App\Entity\Image
+      edit:
+        title: 'Editer une Image (#%%entity_id%%)'
+      new:
+        title: 'Ajouter une Image'
+      label: 'Images'
+      list:
+        actions:
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Ajouter une Image'}
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+          - { property: 'orderFile', label: 'Ordre' }
+          - { property: 'updatedAt', label: 'Ajouté le' }
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'imageFile', label: 'Image', type: 'vich_image' }
+          - { property: 'orderFile', label: 'Ordre' }
+        disabled_actions: ['edit']

@@ -1,0 +1,23 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+  list:
+    title: 'Liste des services du devis'
+  entities:
+    Service:
+      class: App\Entity\ServiceQuotation
+      edit:
+        title: 'Editer le Service du devis (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Service au devis'
+      label: 'Services'
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+        fields:
+          - { property: 'service', label: 'Service' }
+          - { property: 'quantity', label: 'Quantité' }
+          - { property: 'extra', label: 'Texte supplémentaire' }
+        disabled_actions: ['edit']

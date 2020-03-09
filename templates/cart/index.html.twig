@@ -13,7 +13,8 @@
         <thead>
           <tr>
             <th>Produits</th>
-            <th>Prix</th>
+            <th>Prix HT</th>
+            <th>Prix TTC</th>
             <th>Quantité</th>
             <th>total</th>
             <th></th>
@@ -23,8 +24,8 @@
           {% for item in items %}
             <tr>
               <td>{{ item.product.name }}</td>
-              <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }} €</td>
               <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }} €</td>
+              <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }} €</td>
               <td>{{ item.quantity }}</td>
               <td>{{ (item.product.priceTtc * item.quantity)|number_format(2, ',', ' ') }} €</td>
               <td>
