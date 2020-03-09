@@ -1120,6 +1120,7 @@ footer #CGV a:hover {
 #registrationForm .backgroundLightGreen .containerForm ul li label {
   display: block;
   margin-top: 30px;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 900px) {
@@ -1133,6 +1134,7 @@ footer #CGV a:hover {
   border-bottom: 1px solid black;
   margin-top: 10px;
   margin-bottom: 30px;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 900px) {
@@ -1153,6 +1155,7 @@ footer #CGV a:hover {
 
 #registrationForm .backgroundLightGreen .containerForm a,
 #registrationForm .backgroundLightGreen .containerForm button {
+  cursor: pointer;
   font-size: 17px;
   text-transform: uppercase;
   background: white;
@@ -1179,4 +1182,102 @@ footer #CGV a:hover {
 
 #registrationForm .backgroundLightGreen .bite {
   color: #e8eff9;
+}
+
+#loginPage .backgroundLightGreen {
+  padding: 10% 0;
+  min-height: 50vh;
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  #loginPage .backgroundLightGreen {
+    min-height: 70vh;
+    margin: auto 0;
+  }
+}
+
+#loginPage .backgroundLightGreen .containerForm {
+  background: white;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5%;
+}
+
+@media screen and (max-width: 900px) {
+  #loginPage .backgroundLightGreen .containerForm {
+    width: 90%;
+    background: #e8f9f3;
+  }
+}
+
+#loginPage .backgroundLightGreen .containerForm label {
+  display: inline-block;
+  margin: 10px 0;
+  text-align: left;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 900px) {
+  #loginPage .backgroundLightGreen .containerForm label {
+    margin-top: 10px;
+  }
+}
+
+#loginPage .backgroundLightGreen .containerForm input {
+  border: 0;
+  border-bottom: 1px solid black;
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 900px) {
+  #loginPage .backgroundLightGreen .containerForm input {
+    background: #e8f9f3;
+  }
+}
+
+#loginPage .backgroundLightGreen .containerForm .mdpLost {
+  width: 50%;
+  text-align: right;
+  padding: 20px 0;
+}
+
+#loginPage .backgroundLightGreen .containerForm a {
+  margin: 15px;
+}
+
+#loginPage .backgroundLightGreen .containerForm a,
+#loginPage .backgroundLightGreen .containerForm button {
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 900px) {
+  #loginPage .backgroundLightGreen .containerForm a,
+  #loginPage .backgroundLightGreen .containerForm button {
+    color: black;
+  }
+}
+
+#loginPage .backgroundLightGreen .containerForm a:hover,
+#loginPage .backgroundLightGreen .containerForm button:hover {
+  background: black;
+  color: white;
+  transition: 0.3s;
+}
+
+bite {
+  color: red;
 }

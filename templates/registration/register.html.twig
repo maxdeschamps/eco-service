@@ -8,6 +8,8 @@
   <div class="blocFull backgroundLightGreen">
     <div class="containerForm">
       <h1>S'inscrire</h1>
+
+      {{ form_start(registrationForm) }}
       <div>
         <ul>
           <li>
@@ -23,10 +25,11 @@
             {{ form_row(registrationForm.phone) }}
           </li>
           <li>
-            {{ form_row(registrationForm.password.first) }}
+            {{ form_row(registrationForm.plainPassword) }}
+            {#{ form_row(registrationForm.password.first) }#}
           </li>
           <li>
-            {{ form_row(registrationForm.password.second) }}
+            {#{ form_row(registrationForm.password.second) }#}
           </li>
           <li>
             {{ form_row(registrationForm.isCompany) }}
@@ -42,10 +45,11 @@
         {{ form_row(registrationForm.agreeTerms) }}
       </div>
       <div>
-        <a href="" class="btn">S'inscrire</a>
-        {{ form_end(registrationForm) }}
+        <button type="submit" class="btn">S'inscrire</button>
 
         <a href="{{ path('app_login') }}">Se connecter</a>
       </div>
+
+      {{ form_end(registrationForm) }}
     </div>
   {% endblock %}
