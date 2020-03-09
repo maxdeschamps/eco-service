@@ -1,5 +1,87 @@
 {% extends '@EasyAdmin/default/layout.html.twig' %}
 
+{% set _content_title = 'Dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+{%- endblock %}
+{% block content_header %}
+    <h1 class="title">{{ _content_title }}</h1>
+{% endblock %}
 {% block main %}
-    Dashboard
+    <div class="container">
+        <div class="col-md-3">
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>{{ countBills }}</h3>
+                    <p style="color:white">Devis</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <a href="{{ path('easyadmin', {entity: 'Bill', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{ countProducts }}</h3>
+                    <p style="color:white">Produits</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+
+                <a href="{{ path('easyadmin', {entity: 'Product', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>{{ countUsers }}</h3>
+                    <p style="color:white">Membres</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <a href="{{ path('easyadmin', {entity: 'User', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>{{ countMessages }}</h3>
+                    <p style="color:white">Messages</p>
+                    <div class="icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <a href="{{ path('easyadmin', {entity: 'Message', action: 'list'}) }}" class="small-box-footer">Plus
+                    d'infos <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="contactForm" class="mt-4">
+            <h2 class="mt-4" style="color:white; text-align: center">Contacter un Utilisateur</h2>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.subject) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.email) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.message) }}</div>
+            </div>
+            {{ form_rest(form) }}
+            <div class="form-group">
+                <button class="btn btn-primary">Contacter</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}
