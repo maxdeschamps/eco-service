@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use App\Data\SearchData;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class ServiceSearchType extends AbstractType
+class ArticleSearchType extends AbstractType
 {
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
@@ -26,19 +26,12 @@ class ServiceSearchType extends AbstractType
           'placeholder' => 'Rechercher'
         ]
       ])
-      ->add('min', NumberType::class, [
+      ->add('categories', EntityType::class, [
         'label' => false,
         'required' => false,
-        'attr' => [
-          'placeholder' => 'Prix minimum'
-        ]
-      ])
-      ->add('max', NumberType::class, [
-        'label' => false,
-        'required' => false,
-        'attr' => [
-          'placeholder' => 'Prix maximum'
-        ]
+        'class' => Category::class,
+        'expanded' => true,
+        'multiple' => true
       ])
       ;
   }

@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
+use App\Data\SearchData;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +20,35 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Article::class);
+    }
+
+    public function findAllVisibleQuery(SearchData $search): Query
+    {
+        $query = $this->getSearchQuery($search)->getQuery();
+        return $query;
+    }
+
+    private function getSearchQuery(SearchData $search): QueryBuilder
+    {
+      $query = $this
+      ->createQueryBuilder('article')
+      ->select('category', 'article')
+      ->join('article.category', 'category');
+
+      if (!empty($search->q)) {
+        $query = $query
+          ->andWhere('article.name LIKE :q')
+          ->setParameter('q', "%{$search->q}%");
+      }
+
+      if (!empty($search->categories)) {
+        $query = $query
+          ->andWhere('article.id IN (:categories)')
+          ->setParameter('categories', $search->categories);
+      }
+
+      //dd($query);
+      return $query;
     }
 
     // /**

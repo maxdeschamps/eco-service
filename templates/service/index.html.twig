@@ -24,8 +24,7 @@
   </svg>
   <div class="backgroundLightGreen">
     <div class="search">
-          {!{ include('search/search.html.twig') }}
-
+          {% include 'service/_filter.html.twig' with {form: form, min: min, max: max} only %}
     </div>
 
     <div class="container">

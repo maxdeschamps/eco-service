@@ -18,6 +18,9 @@
   </div>
 
   <div class="blocFull">
+    <div class="search">
+        {% include 'article/_filter.html.twig' with {form: form} only %}
+    </div>
     <ul>
       {% for article in articles %}
         <li>
