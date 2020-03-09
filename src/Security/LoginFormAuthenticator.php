@@ -69,7 +69,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+            throw new CustomUserMessageAuthenticationException('L\'email n\'a pas été trouvé.');
         }
 
         return $user;
@@ -86,7 +86,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // redirect to some "app_homepage" route - of wherever you want
         return new RedirectResponse($this->urlGenerator->generate('homepage'));
     }
 

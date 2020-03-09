@@ -33,6 +33,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/mon-compte, roles: ROLE_USER }
+        # - { path: ^/mon-compte$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/connexion$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/inscription$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
