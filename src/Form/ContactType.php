@@ -17,7 +17,6 @@ class ContactType extends AbstractType
             ->add('email',TextType::class)
             ->add('subject', TextType::class)
             ->add('message', TextareaType::class);
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
