@@ -10,6 +10,7 @@
     {% block stylesheets %}
       <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@master/css/tarteaucitron.css">
       {{ encore_entry_link_tags('app')}}
       <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css' rel='stylesheet' type='text/css'>
     {% endblock %}
@@ -89,6 +90,7 @@
       <path
         d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
     </svg>
+
     <footer>
       {% block footer %}
         <div id="footer-container">
@@ -135,6 +137,39 @@
       {% endblock %}
     </footer>
 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@master/tarteaucitron.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@master/tarteaucitron.services.js"></script>
+    <script type="text/javascript">
+      tarteaucitron.init({
+    	  "privacyUrl": "", /* Privacy policy url */
+
+    	  "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+    	  "cookieName": "tarteaucitron", /* Cookie name */
+
+    	  "orientation": "bottom", /* Banner position (top - bottom) */
+    	  "showAlertSmall": true, /* Show the small banner on bottom right */
+    	  "cookieslist": true, /* Show the cookie list */
+
+    	  "adblocker": false, /* Show a Warning if an adblocker is detected */
+    	  "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+    	  "highPrivacy": true, /* Disable auto consent */
+    	  "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+    	  "removeCredit": false, /* Remove credit link */
+    	  "moreInfoLink": true, /* Show more info link */
+    	  "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+
+    	  //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+
+    	  "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
+      });
+    </script>
+    <script type="text/javascript">
+      tarteaucitron.user.gajsUa = 'UA-000000-2';
+      tarteaucitron.user.googleFonts = 'families';
+      (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
+    </script>
     {% block javascripts %}
       {{ encore_entry_script_tags('app')}}
     {% endblock %}
