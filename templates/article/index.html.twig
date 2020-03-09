@@ -18,6 +18,12 @@
   </div>
 
   <div class="blocFull">
+    <div class="search">
+        {% include 'article/_filter.html.twig' with {form: form} only %}
+    </div>
+  </div>
+  
+  <div class="blocFull">
     <ul class="detailList">
       {% for article in articles %}
         <li class="detailElement">
