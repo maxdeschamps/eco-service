@@ -1309,9 +1309,21 @@ bite {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1100px) {
+  #update .containerGrey .container .blockFull form .formContainer {
+    max-width: 70%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   #update .containerGrey .container .blockFull form .formContainer {
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #update .containerGrey .container .blockFull form .formContainer {
+    max-width: 90%;
   }
 }
 

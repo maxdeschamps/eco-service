@@ -20,8 +20,15 @@
           .formContainer {
             max-width: 30%;
             margin: 0 auto;
+
+            @media screen and (max-width: $largeSize) {
+              max-width: 70%;
+            }
             @media screen and (max-width: $mediumSize) {
               max-width: 80%;
+            }
+            @media screen and (max-width: $extraSmallSize) {
+              max-width: 90%;
             }
 
             h5 {
