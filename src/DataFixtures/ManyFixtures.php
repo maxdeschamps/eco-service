@@ -134,10 +134,10 @@ class ManyFixtures extends Fixture
 
         for ($i = 0; $i < 15; $i++) {
             $message = new Message();
-            $message->setAuthor($manager->find(User::class, random_int(1, 10)));
             $message->setSubject($manager->find(Subject::class, random_int(1, 10)));
             $message->setState($faker->word(100));
             $message->setContent($faker->word(100));
+            $message->setEmail($faker->email);
             $manager->persist($message);
             $manager->flush();
         }

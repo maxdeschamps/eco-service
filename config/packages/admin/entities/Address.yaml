@@ -1,0 +1,42 @@
+easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
+  entities:
+    Address:
+      class: App\Entity\Address
+      edit:
+        title: 'Modifier Adresse (#%%entity_id%%)'
+      label: 'Adresses'
+      list:
+        actions:
+          - { name: 'show', icon: 'search', label: false}
+        disabled_actions: ['new']
+        fields:
+          - { property: 'line1', label: 'Adresse 1' }
+          - { property: 'line2', label: 'Adresse 2' }
+          - { property: 'postal_code', label: 'Code Postal' }
+          - { property: 'city', label: 'Ville' }
+          - { property: 'country', label: 'Pays' }
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'line1', label: 'Adresse 1' }
+          - { property: 'line2', label: 'Adresse 2' }
+          - { property: 'postal_code', label: 'Code Postal' }
+          - { property: 'city', label: 'Ville' }
+          - { property: 'country', label: 'Pays' }
+        disabled_actions: ['edit']
+      show:
+        title: 'Adresse (#%%entity_id%%)'
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'line1', label: 'Adresse 1' }
+          - { property: 'line2', label: 'Adresse 2' }
+          - { property: 'postal_code', label: 'Code Postal' }
+          - { property: 'city', label: 'Ville' }
+          - { property: 'country', label: 'Pays' }
