@@ -51,26 +51,28 @@
         margin: 15px;
       }
 
-      a,
-      button {
-        cursor: pointer;
-        font-size: 17px;
-        text-transform: uppercase;
-        background: white;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 10px 30px;
-        transition: 0.3s;
-        text-decoration: none;
-        margin-top: 70px;
-        @media screen and (max-width: $mediumSize) {
-          color: black;
-        }
-
-        &:hover {
-          background: black;
-          color: white;
+      .btnInscriptionConnexion {
+        a,
+        button {
+          cursor: pointer;
+          font-size: 17px;
+          text-transform: uppercase;
+          background: white;
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px 30px;
           transition: 0.3s;
+          text-decoration: none;
+          margin-top: 70px;
+          @media screen and (max-width: $mediumSize) {
+            color: black;
+          }
+
+          &:hover {
+            background: black;
+            color: white;
+            transition: 0.3s;
+          }
         }
       }
     }

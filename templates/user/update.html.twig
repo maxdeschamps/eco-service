@@ -2,17 +2,65 @@
 
 {% block title %}Mise à jour du profil{% endblock title %}
 
+{% block idBody %}update{% endblock %}
+
 {% block body %}
-
-  <div class="container" style="margin-top: 50px;">
-    <div class="blocFull">
-      <h1>Mise à jour du profil</h1>
-
-      {{ form_start(form) }}
-      {{ form_widget(form) }}
-      <input type="submit" value="Enregistrer" />
-      {{ form_end(form) }}
+  <div class="containerGrey">
+    <div class="container">
+      <div class="blockFull">
+        <h1 class="updateH1">Compte :</h1>
+        {{ form_start(form) }}
+        <div class="formContainer">
+          <div>
+            {{ form_row(form.email) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.phone) }}
+            {{ form_row(form.isCompany) }}
+            {{ form_row(form.companyName) }}
+            {{ form_row(form.newsletterAcceptance) }}
+          </div>
+          <div>
+            <h5>Modifier l'adresse de livraison :</h1>
+            {{ form_row(form.deliveryAddress.line1) }}
+            {{ form_row(form.deliveryAddress.line2) }}
+            {{ form_row(form.deliveryAddress.postal_code) }}
+            {{ form_row(form.deliveryAddress.city) }}
+            {{ form_row(form.deliveryAddress.country) }}
+          </div>
+          <div>
+            <h5>Modifier l'adresse de paiement</h1>
+            {{ form_row(form.billingAddress.line1) }}
+            {{ form_row(form.billingAddress.line2) }}
+            {{ form_row(form.billingAddress.postal_code) }}
+            {{ form_row(form.billingAddress.city) }}
+            {{ form_row(form.billingAddress.country) }}
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <input class="btnEnvoyer" type="submit" value="Sauvegarder"/>
+        </div>
+        {{ form_end(form) }}
+      </div>
     </div>
   </div>
-
+  <svg class="wave waveTop fillLightGreen" viewBox="0 0 1440 120" aria-hidden="true">
+    <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+  </svg>
+  <div class="backgroundLightGreen">
+    <div class="container">
+      <div class="blockFull">
+        <h1 class="updateH1">Mes demandes de devis :</h1>
+        <div class="formContainer">
+          <div>
+            <h5>Modifier l'adresse de livraison :</h1>
+          </div>
+          <div>
+            <h5>Modifier l'adresse de paiement</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

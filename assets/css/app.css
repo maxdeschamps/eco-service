@@ -1250,8 +1250,8 @@ footer #CGV a:hover {
   margin: 15px;
 }
 
-#loginPage .backgroundLightGreen .containerForm a,
-#loginPage .backgroundLightGreen .containerForm button {
+#loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion a,
+#loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion button {
   cursor: pointer;
   font-size: 17px;
   text-transform: uppercase;
@@ -1265,14 +1265,14 @@ footer #CGV a:hover {
 }
 
 @media screen and (max-width: 900px) {
-  #loginPage .backgroundLightGreen .containerForm a,
-  #loginPage .backgroundLightGreen .containerForm button {
+  #loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion a,
+  #loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion button {
     color: black;
   }
 }
 
-#loginPage .backgroundLightGreen .containerForm a:hover,
-#loginPage .backgroundLightGreen .containerForm button:hover {
+#loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion a:hover,
+#loginPage .backgroundLightGreen .containerForm .btnInscriptionConnexion button:hover {
   background: black;
   color: white;
   transition: 0.3s;
@@ -1280,4 +1280,114 @@ footer #CGV a:hover {
 
 bite {
   color: red;
+}
+
+#update {
+  background: #e8eff9;
+}
+
+#update .containerGrey {
+  padding: 10% 0;
+}
+
+#update .containerGrey .container {
+  background: white;
+  border-radius: 10px;
+}
+
+#update .containerGrey .container .blockFull {
+  width: 100%;
+}
+
+#update .containerGrey .container .blockFull .updateH1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#update .containerGrey .container .blockFull form .formContainer {
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  #update .containerGrey .container .blockFull form .formContainer {
+    max-width: 80%;
+  }
+}
+
+#update .containerGrey .container .blockFull form .formContainer h5 {
+  padding-top: 20px;
+}
+
+#update .containerGrey .container .blockFull form .formContainer div textarea {
+  resize: none;
+  overflow-y: auto;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+#update .containerGrey .container .blockFull form .formContainer div div {
+  display: flex;
+}
+
+#update .containerGrey .container .blockFull form .formContainer div div label {
+  width: 50%;
+  display: inline-block;
+  margin: 10px 0;
+  text-align: left;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 900px) {
+  #update .containerGrey .container .blockFull form .formContainer div div label {
+    margin-top: 10px;
+  }
+}
+
+#update .containerGrey .container .blockFull form .formContainer div div input {
+  border: 0;
+  border-bottom: 1px solid black;
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 900px) {
+  #update .containerGrey .container .blockFull form .formContainer div div input {
+    background: #e8f9f3;
+  }
+}
+
+#update .containerGrey .container .blockFull .btnEnvoyer {
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 900px) {
+  #update .containerGrey .container .blockFull .btnEnvoyer {
+    color: black;
+  }
+}
+
+#update .containerGrey .container .blockFull .btnEnvoyer:hover {
+  background: black;
+  color: white;
+  transition: 0.3s;
+}
+
+#update .backgroundLightGreen .container {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#update .backgroundLightGreen .container .blockFull {
+  width: 100%;
 }
