@@ -358,6 +358,23 @@ input, select, textarea {
   }
 }
 
+/*Pagination*/
+.pagination {
+  margin-bottom: 25px;
+  
+  .page, .next, .last {
+    a {
+      padding: 0 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .current {
+    text-decoration: underline;
+  }
+}
+
 // .transitions-white-to-green {
 //   height: 25px;
 //   width: 100%;
