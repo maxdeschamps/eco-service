@@ -25,12 +25,6 @@ class Message
     private $subject;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="messages")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $author;
-
-    /**
      * @ORM\Column(type="string", length=100)
      */
     private $state;
@@ -68,18 +62,6 @@ class Message
     public function setSubject(?Subject $subject): self
     {
         $this->subject = $subject;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?User
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(?User $author): self
-    {
-        $this->author = $author;
 
         return $this;
     }
