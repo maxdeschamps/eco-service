@@ -22,8 +22,10 @@
             {% include 'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
         </div>
         <div class="trie">
+            <div class="title-filter">Trié par:
           {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
           {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+            </div>
         </div>
       </div>
 

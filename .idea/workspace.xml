@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="102dd941-7f44-4ada-afc5-30770eca3999" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/fichiers/devis/bill.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/fichiers/devis/bill.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bill/bill.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bill/bill.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quotation/invoice.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quotation/invoice.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/pages/rgpd.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProductSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/product/_filter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/_filter.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/_filter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/_filter.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,12 +190,6 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="224" />
-    <option name="y" value="127" />
-    <option name="width" value="1158" />
-    <option name="height" value="1027" />
   </component>
   <component name="ProjectId" id="1X3pEx6FwqFVhJWPZ74ibedfCpi" />
   <component name="ProjectViewState">
