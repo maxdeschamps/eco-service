@@ -39,6 +39,16 @@ class Quotation
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $num_tva;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $ref;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
@@ -69,6 +79,24 @@ class Quotation
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumTva()
+    {
+        return $this->num_tva;
+    }
+
+    /**
+     * @param mixed $num_tva
+     * @return Quotation
+     */
+    public function setNumTva($num_tva)
+    {
+        $this->num_tva = $num_tva;
+        return $this;
     }
 
     public function getRequestDate(): ?\DateTimeInterface
@@ -156,6 +184,25 @@ class Quotation
     }
 
     /**
+     * @return mixed
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    /**
+     * @param mixed $ref
+     * @return Quotation
+     */
+    public function setRef($ref)
+    {
+        $this->ref = $ref;
+        return $this;
+    }
+
+
+    /**
      * @return Collection|ServiceQuotation[]
      */
     public function getServiceQuotations(): Collection
@@ -189,6 +236,6 @@ class Quotation
 
     public function __toString()
     {
-        return 'Devis #' . $this->id . ' du ' . $this->request_date->format('d/m/Y');
+        return 'Devis #' . $this->ref . ' du ' . $this->request_date->format('d/m/Y');
     }
 }
