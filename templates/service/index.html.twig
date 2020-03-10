@@ -26,20 +26,25 @@
     <div class="search">
           {% include 'service/_filter.html.twig' with {form: form, min: min, max: max} only %}
     </div>
+    <div class="trie">
+      {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
+      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+    </div>
 
     <div class="container">
       <ul class="detailList">
         {% for service in services %}
           <li class="detailElement">
-            <a class="fontSize0" href="{{ path('show_service', { 'slug': service.slug }) }}">{{ service.name }}</a>
-            <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+            <a class="fontSize0" href="{{ path('show_service', { 'slug': service.slug }) }}">
+              <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+            </a>
           </a>
           <ul class="detailContent">
             <li class="fullSize">
-              <a href="#">
+              <a href="{{ path('show_service', { 'slug': service.slug }) }}">
                 <h3>{{ service.name }}</h3>
               </a>
-              <a href="#">
+              <a href="{{ path('show_service', { 'slug': service.slug }) }}">
                 <p>{{ service.content }}</p>
               </a>
             </li>
