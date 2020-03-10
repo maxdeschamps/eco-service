@@ -100,7 +100,8 @@
                 <br/>
                 <br/>
                 Eco-Service, 24 rue Joannes Masset<br><br>
-                Téléphone: 04 84 25 01 28
+                <span>TÉLÉPHONE:</span>
+               04 84 25 01 28
                 <br>
                 <br>
             </td>
@@ -119,24 +120,30 @@
         </tr>
         <tr>
             <td class="text-left">
-                <span>FACTURÉ À</span>
-                {{ bill.getCustomer }}
+                <span>FACTURÉ À</span><br>
+                {{ bill.getCustomer }}<br>
+                {{ bill.getBillingAddress }}
             </td>
             <br>
-            <td class="text-right"></td>
+            <td class="text-right">
+                <span>ENVOYÉ À</span><br>
+                {{ bill.getCustomer }}<br>
+                {{ bill.getDeliveryAddress }}
+            </td>
+            <br>
         </tr>
     </table>
     <table class="content">
         <thead>
         <tr class="ligne1Content">
             <td class="text-left couleurgris taille2">
-                <b>DESIGNATION</b>
+                <b>DÉSIGNATION</b>
             </td>
             <td class="text-center couleurmoinsgris taille2">
-                <b>PRIX UNITE</b>
+                <b>PRIX UNITÉ</b>
             </td>
             <td class="text-center couleurgris taille2">
-                <b>QUANTITE</b>
+                <b>QUANTITÉ</b>
             </td>
             <td class="text-center couleurmoinsgris taille2">
                 <b>TOTAL HT</b>
@@ -159,22 +166,22 @@
                     {{ productBill.quantity }}
                 </td>
                 <td class="text-center taille2 couleurmoinsgris">
-                    {{ (productBill.quantity * productBill.product.priceht)|number_format(2, ',', ' ') }} €
+                    {{ (productBill.quantity * productBill.product.priceHt)|number_format(2, ',', ' ') }} €
                 </td>
                 <td class="text-center couleurverte taille2 colorwhite">
-                    {{ (productBill.quantity * productBill.product.pricettc)|number_format(2, ',', ' ') }} €
+                    {{ (productBill.quantity * productBill.product.priceTtc)|number_format(2, ',', ' ') }} €
             </tr>
         {% endfor %}
-        </tbody>
-        <tfoot>
         <tr>
             <td colspan="4" class="text-right">
                 <h3>TOTAL TTC À PAYER</h3>
             </td>
             <td class="text-center">
-                <h3> €</h3>
+                <h3> {{ totalBillTtc|number_format(2, ',', ' ') }}€</h3>
             </td>
         </tr>
+        </tbody>
+        <tfoot>
         <tr>
             <td colspan="5">
                 <span>CONDITIONS ET MOYENS DE PAIEMENT:</span>
