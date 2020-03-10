@@ -27,11 +27,6 @@ class Category
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=100, unique=true)
-     */
-    private $slug;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
      */
     private $products;
@@ -60,18 +55,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }

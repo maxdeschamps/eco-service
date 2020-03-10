@@ -25,10 +25,6 @@ security:
                 # where to redirect after logout
                 # target: app_any_route
 
-            # guard:
-            #     authenticators:
-            #         - App\Security\LoginFormAuthenticator
-
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
