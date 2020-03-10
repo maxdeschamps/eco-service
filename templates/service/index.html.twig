@@ -24,8 +24,11 @@
   </svg>
   <div class="backgroundLightGreen">
     <div class="search">
-          {!{ include('search/search.html.twig') }}
-
+          {% include 'service/_filter.html.twig' with {form: form, min: min, max: max} only %}
+    </div>
+    <div class="trie">
+      {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
+      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
     </div>
 
     <div class="container">

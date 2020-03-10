@@ -1,20 +1,193 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <div class="container">
-            <div class="">
-                <h2>Détail du Devis</h2>
-                <p>Adresse de livraison: {{ quotation.getDeliveryAddress }}</p>
-                <p>Adresse du devis: {{ quotation.getBillingAddress }}</p>
-                <p>Date de demande: {{ quotation.requestDate|date("m/d/Y") }}</p>
-                <p>Date de confirmation: {{ quotation.acceptanceDate|date("m/d/Y") }}</p>
-                <p>Approuvé ?: {{ quotation.approved }}</p>
-                <p>Companie: {{ quotation.getCompany }}</p>
-                <p>Email: {{ quotation.email }}</p>
-            </div>
-        </div>
-    </body>
-</html>
+<page backtop="0mm" backright="10mm" backbottom="20mm" backleft="10mm">
+    <style type="text/css">
+        <!--
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px
+        }
+
+
+        .header td {
+            width: 50%;
+            vertical-align: top
+        }
+
+
+        .text-left {
+            text-align: left
+        }
+
+
+        .text-right {
+            text-align: right
+        }
+
+
+        .text-center {
+            text-align: center
+        }
+
+
+        .content td {
+            border: solid 1px #CFD1D2;
+            padding: 5px;
+        }
+
+
+        .content th {
+            border: solid 1px #000000;
+            padding: 5px;
+            background-color: #000000;
+            color: #FFFFFF
+        }
+
+
+        .ligne1Content {
+            background-color: #57B223
+        }
+
+
+        .couleurgris {
+            background-color: #DDDDDD;
+            height: auto;
+        }
+
+        .couleurverte {
+            background-color: #57B223
+        }
+
+
+        .couleurmoinsgris {
+            background: #EEEEEE;
+        }
+
+        .taille2 {
+            width: 15%;
+        }
+
+        .taille2 {
+            height: auto;
+        }
+
+
+        span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #57B223;
+        }
+
+
+        h1, h2, h3 {
+            color: #57B223;
+        }
+
+
+        .colorwhite {
+            color: white
+        }
+    </style>
+    <table class="header">
+        <tr>
+            <td class="text-lef">
+                <h1>Devis</h1>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-left">
+                <span>DE</span>
+                <br/>
+                <br/>
+                Eco-Service, 24 rue Joannes Masset<br><br>
+                <span>TÉLÉPHONE:</span>
+                04 84 25 01 28
+                <br>
+                <br>
+            </td>
+            <td class="text-right">
+                <span>DEVIS N°:</span>
+                {{ quotation.getRef }}
+                <br/>
+                <br/>
+                <span>DATE: </span>
+                {{ quotation.acceptanceDate|date("m/d/Y") }}
+                <br/>
+                <br/>
+                <span>N° TVA:</span>
+                {{ quotation.getNumTva }}
+            </td>
+        </tr>
+        <tr>
+            <td class="text-left">
+                <span>FACTURÉ À</span><br>
+                {{ quotation.getCompany }}<br>
+                {{ quotation.getBillingAddress }}
+            </td>
+            <br>
+            <td class="text-right">
+                <span>ENVOYÉ À</span><br>
+                {{ quotation.getCompany }}<br>
+                {{ quotation.getDeliveryAddress }}
+            </td>
+        </tr>
+    </table>
+    <table class="content">
+        <thead>
+        <tr class="ligne1Content">
+            <td class="text-left couleurgris taille2">
+                <b>DÉSIGNATION</b>
+            </td>
+            <td class="text-center couleurmoinsgris taille2">
+                <b>PRIX UNITÉ</b>
+            </td>
+            <td class="text-center couleurgris taille2">
+                <b>QUANTITÉ</b>
+            </td>
+            <td class="text-center couleurmoinsgris taille2">
+                <b>TOTAL HT</b>
+            </td>
+            <td class="text-center couleurverte taille2 colorwhite">
+                <b>TOTAL TTC</b>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for serviceQuotation in quotation.serviceQuotations %}
+            <tr class="couleurgris">
+                <td class="text-left couleurgris taille2">
+                    {{ serviceQuotation.service.name }}
+                </td>
+                <td class="text-center taille2 couleurmoinsgris">
+                    {{ serviceQuotation.service.pricettc |number_format(2, ',', ' ') }} €
+                </td>
+                <td class="text-center couleurgris taille2">
+                    {{ serviceQuotation.quantity }}
+                </td>
+                <td class="text-center taille2 couleurmoinsgris">
+                    {{ (serviceQuotation.quantity * serviceQuotation.service.priceHt)|number_format(2, ',', ' ') }} €
+                </td>
+                <td class="text-center couleurverte taille2 colorwhite">
+                    {{ (serviceQuotation.quantity * serviceQuotation.service.priceTtc)|number_format(2, ',', ' ') }} €
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="4" class="text-right">
+                <h3>TOTAL TTC À PAYER</h3>
+            </td>
+            <td class="text-center">
+                <h3> {{ totalQuotation|number_format(2, ',', ' ') }}€</h3>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5">
+                <span>CONDITIONS ET MOYENS DE PAIEMENT:</span>
+                <br/>
+                Virement ou carte bleu
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</page>

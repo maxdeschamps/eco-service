@@ -18,12 +18,34 @@
   </div>
 
   <div class="blocFull">
+    <div class="search">
+        {% include 'article/_filter.html.twig' with {form: form} only %}
+    </div>
+    <div class="trie">
+      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+    </div>
     <ul>
       {% for article in articles %}
-        <li>
-          <a href="{{ path('show_article', { 'slug': article.getSlug }) }}">{{ article.getName }}</a>
+        <li class="detailElement">
+            <a class="fontSize0" href="{{ path('show_product', { 'slug': article.getSlug }) }}">{{ article.getName }}></a>
+              {% if article.images is empty %}
+                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+              {% else %}
+                <img src="{{ article.getImages[0].getUri }}" />
+              {% endif %}
+            </a>
+            <ul class="detailContent">
+                <li class="detailContentDatas">
+                    <a href="#">
+                        <h3>{{ article.name }}</h3>
+                    </a>
+                    <a href="#">
+                        <p>{{ article.category.name }}</p>
+                    </a>
+                </li>
+            </ul>
         </li>
-      {% endfor %}
+    {% endfor %}
     </ul>
 
     <div class="paginationContainer">

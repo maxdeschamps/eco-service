@@ -75,6 +75,8 @@ class ManyFixtures extends Fixture
             $bill->setBillingAddress($manager->find(Address::class, random_int(1, 10)));
             $bill->setRequestDate($faker->dateTime());
             $bill->setAcceptanceDate($faker->dateTime());
+            $bill->setRef($faker->randomNumber($nbDigits = NULL, $strict = false));
+            $bill->setNumTva($faker->randomNumber($nbDigits = NULL, $strict = false));
             $bill->setEmail($faker->email);
             $bill->setApproved(intval($faker->boolean));
             $manager->persist($bill);
@@ -88,8 +90,8 @@ class ManyFixtures extends Fixture
             $produit->setName($faker->word(7));
             $produit->setSlug($faker->unique()->slug());
             $produit->setContent($faker->text);
-            $produit->setPriceHt($faker->numberBetween($min = 1000, $max = 30000));
-            $produit->setPriceTtc($faker->numberBetween($min = 1000, $max = 30000));
+            $produit->setPriceHt($faker->numberBetween($min = 50, $max = 500));
+            $produit->setPriceTtc($faker->numberBetween($min = 50, $max = 500));
             $produit->setQuantity($faker->numberBetween(0, 50));
             $manager->persist($produit);
             $manager->flush();
@@ -134,10 +136,10 @@ class ManyFixtures extends Fixture
 
         for ($i = 0; $i < 15; $i++) {
             $message = new Message();
-            $message->setAuthor($manager->find(User::class, random_int(1, 10)));
             $message->setSubject($manager->find(Subject::class, random_int(1, 10)));
             $message->setState($faker->word(100));
             $message->setContent($faker->word(100));
+            $message->setEmail($faker->email);
             $manager->persist($message);
             $manager->flush();
         }
@@ -183,6 +185,8 @@ class ManyFixtures extends Fixture
             $quotation->setRequestDate($faker->dateTime());
             $quotation->setAcceptanceDate($faker->dateTime());
             $quotation->setEmail($faker->email);
+            $quotation->setNumTva($faker->randomNumber($nbDigits = NULL, $strict = false));
+            $quotation->setRef($faker->randomNumber($nbDigits = NULL, $strict = false));
             $quotation->setApproved(intval($faker->boolean));
             $manager->persist($quotation);
             $manager->flush();

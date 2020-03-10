@@ -41,6 +41,16 @@ class Bill
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $num_tva;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $ref;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
@@ -62,6 +72,42 @@ class Bill
      */
     private $product_bills;
 
+
+    /**
+     * @return mixed
+     */
+    public function getNumTva()
+    {
+        return $this->num_tva;
+    }
+
+    /**
+     * @param mixed $num_tva
+     * @return Bill
+     */
+    public function setNumTva($num_tva)
+    {
+        $this->num_tva = $num_tva;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    /**
+     * @param mixed $ref
+     * @return Bill
+     */
+    public function setRef($ref)
+    {
+        $this->ref = $ref;
+        return $this;
+    }
 
     public function __construct()
     {
@@ -189,6 +235,6 @@ class Bill
     }
     public function __toString()
     {
-        return 'Facture #' . $this->id . ' du ' . $this->request_date->format('d/m/Y');
+        return 'Facture #' . $this->ref . ' du ' . $this->request_date->format('d/m/Y');
     }
 }

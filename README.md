@@ -24,7 +24,7 @@ Projet E-commerce G4 - ING1 - Symfony
 - Quand vous avez terminé vos modifications de style, enregistrez le app.scss en version minifiée
   Exemple : Pour Atom, allez dans le menu Packages > SASS Autocompile > Output style > Compressed (la valeur doit être cochée). Tous vos fichiers scss seront enregistrés dans le format scss, et aussi dans le format min.css
 - `npm run dev`
-- Si vous êtes amené à faire plusieurs modifications du style, lancez plutôt $ npm run watch (la compilation du code se fait automatiquement dès que vous modifiez un fichier)
+- Si vous êtes amené à faire plusieurs modifications du style, lancez plutôt `npm run watch` (la compilation du code se fait automatiquement dès que vous modifiez un fichier)
 
 ## Fixtures
 - Dans le dossier Migration dans src/migrations supprimer les migrations
@@ -34,9 +34,9 @@ Projet E-commerce G4 - ING1 - Symfony
 - `php bin/console doctrine:fixtures:load` -> lance les fixtures afin de populer les tables de notre bdd
 
 ## DOMPDF
- - composer require dompdf/dompdf
+ - `composer require dompdf/dompdf`
  
  ## CKEDITOR
- - composer dump-autoload
- - composer require friendsofsymfony/ckeditor-bundle
- - php bin/console ckeditor:install
+ - `composer dump-autoload`
+ - `composer require friendsofsymfony/ckeditor-bundle`
+ - `php bin/console ckeditor:install`
