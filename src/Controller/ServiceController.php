@@ -26,6 +26,7 @@ class ServiceController extends AbstractController
         $this->serviceRepository = $serviceRepository;
         $this->entityManager = $entityManager;
     }
+
     /**
      * @Route("/services", name="index_service")
      */
