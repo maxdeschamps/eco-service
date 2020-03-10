@@ -1,7 +1,12 @@
 {{ form_start(form, {attr: {class: 'filter'}}) }}
-  {{ form_row(form.q) }}
 
-  <h4>Categories</h4>
+<div class="title-filter">
+  <div class="rechercher">
+    <h4>Rechercher : </h4>
+
+    {{ form_row(form.q) }}
+  </div>
+
   {{ form_row(form.categories) }}
 
   <h4>Prix</h4>
@@ -16,5 +21,6 @@
   <div id="price-slider" data-min="{{ min }}" data-max="{{ max }}"></div>
 
   <button type="submit" class="btn">Filtrer</button>
+</div>
 
 {{ form_end(form) }}

@@ -23,16 +23,16 @@ class ProductSearchType extends AbstractType
       ->add('q', TextType::class, [
         'label' => false,
         'required' => false,
-        'attr' => [
-          'placeholder' => 'Rechercher'
-        ]
       ])
       ->add('categories', EntityType::class, [
         'label' => false,
         'required' => false,
         'class' => Category::class,
-        'expanded' => true,
-        'multiple' => true
+        'expanded' => false,
+        'multiple' => false,
+        'attr' => [
+          'placeholder' => 'Categories'
+        ]
       ])
       ->add('min', NumberType::class, [
         'label' => false,

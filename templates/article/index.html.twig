@@ -21,6 +21,9 @@
     <div class="search">
         {% include 'article/_filter.html.twig' with {form: form} only %}
     </div>
+    <div class="trie">
+      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+    </div>
     <ul>
       {% for article in articles %}
         <li>
