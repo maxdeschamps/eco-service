@@ -27,7 +27,7 @@
     <ul>
       {% for article in articles %}
         <li class="detailElement">
-            <a class="fontSize0" href="{{ path('show_product', { 'slug': article.getSlug }) }}">{{ article.getName }}></a>
+            <a class="fontSize0" href="{{ path('show_product', { 'id': article.getId }) }}">{{ article.getName }}></a>
               {% if article.images is empty %}
                 <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
               {% else %}

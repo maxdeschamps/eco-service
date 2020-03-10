@@ -34,11 +34,9 @@ easy_admin:
           - { property: 'name', label: 'Nom'}
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
-          - { property: 'slug', label: 'Slug' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'author', label: 'Auteur' }
           - { property: 'unity', label: 'Unité' }
           - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
-

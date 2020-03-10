@@ -31,7 +31,6 @@ easy_admin:
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
           - { property: 'name', label: 'Nom' }
-          - { property: 'slug', label: 'Slug' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
@@ -39,4 +38,3 @@ easy_admin:
           - { property: 'category', label: 'Catégories' }
           - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
-

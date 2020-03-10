@@ -22,23 +22,8 @@ class UserController extends AbstractController
    */
   public function profile()
   {
-    if ($this->denyAccessUnlessGranted('ROLE_USER')) {
-      if ($this->getLoggedUser()->getIsCompany() == 0) {
-        $repository = $em->getRepository(Bill::class);
-        $summary = $repository->findAll();
-      } else {
-        $repository = $em->getRepository(Quotation::class);
-        $summary = $repository->findAll();
-      }
-    } else {
-      $summary = [];
-    }
-
     return $this->render(
-      'user/index.html.twig',
-      [
-        'summaries' => $summary,
-      ]
+      'user/index.html.twig'
     );
   }
 

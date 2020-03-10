@@ -57,7 +57,7 @@ class ServiceController extends AbstractController
     }
 
     /**
-     * @Route("/service/{slug}", name="show_service")
+     * @Route("/service/{id}", name="show_service")
      */
     public function show(Service $service)
     {
