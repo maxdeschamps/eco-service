@@ -46,4 +46,62 @@
     -o-object-position: center;
     object-position: center;
   }
+
+  .blocFull {
+    text-align: center;
+    background-color: $lightGreen;
+    border-radius: 10px;
+  }
+
+  input, select {
+    background-color: $lightGreen;
+  }
+
+  textarea {
+    border: 1px solid black;
+    border-radius: 10px;
+    resize: none;
+    overflow-y: auto;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .input-message {
+    width: 75%;
+    margin: 0 auto 25px auto;
+
+    .input-message-label {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .blockUser {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 45px;
+
+    @media screen and (max-width: $mediumSize) {
+      flex-direction: column;
+    }
+  }
+
+  .input-user {
+    @media screen and (max-width: $mediumSize) {
+      padding: 10px;
+    }
+  }
+
+  .terms {
+    label {
+      padding-right: 10px;
+    }
+  }
+
+  button {
+    padding: 4px 40px;
+    margin: 0 0 25px 0;
+  }
 }
