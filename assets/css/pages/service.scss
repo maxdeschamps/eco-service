@@ -20,3 +20,159 @@
 .backgroundLightGreenInHomepage {
   background-color: $lightGreen;
 }
+
+#header-service {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: middle;
+  padding-top: 100px;
+
+  .img-service {
+    width: 70%;
+    @media screen and (max-width: $largeSize) {
+      width: 100%;
+    }
+
+
+    .imgPres {
+      display: inline-block;
+      width: 49%;
+      height: 400px;
+      margin: 0;
+
+      @media screen and (max-width: $largeSize) {
+        height:200px;
+      }
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+      }
+    }
+  }
+
+  .infos-service {
+    width: 30%;
+    @media screen and (max-width: $largeSize) {
+      width: 100%;
+    }
+
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 'Raleway';
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 3rem;
+      margin: 0 0 5%;
+    }
+
+    .text-error {
+      font-size: 1rem;
+      text-align: center;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    label {
+      margin: 0 0 2%;
+    }
+
+    #qty-service {
+      display: block;
+      margin: 0 auto 5%;
+      color: black;
+      width: 40%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 10px 30px;
+      border: 1px solid black;
+      border-radius: 10px;
+      transition-duration: 0.4s;
+    }
+
+    .btn-acheter {
+      display: block;
+      margin: 0 auto;
+      color: black;
+      width: 40%;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 10px 30px;
+      border: 1px solid black;
+      border-radius: 10px;
+      transition-duration: 0.4s;
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}
+
+#fiche-service {
+  #service-desc {
+    background: #e8eff9;
+
+    .container {
+      padding: 20px 0 100px;
+    }
+  }
+
+  .backgroundLightGreenInHomepage {
+    background-color: $lightGreen;
+  }
+}
+
+#blocServices {
+  .container {
+    .blocFull {
+      margin: 0;
+    }
+  }
+}
+@media only screen and (max-width: $smallSize) {
+  #header-service {
+    display: inline;
+
+    .ThirdBlock {
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+
+      img {
+        width: 49%;
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 0 0 3%;
+      }
+    }
+  }
+
+  #service-desc {
+    .container {
+      h2 {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

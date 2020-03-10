@@ -27,8 +27,8 @@
           {% include 'service/_filter.html.twig' with {form: form, min: min, max: max} only %}
     </div>
     <div class="trie">
-      {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
-      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+      {{ knp_pagination_sortable(services, 'Prix', 'product.price_ttc') }}
+      {{ knp_pagination_sortable(services, 'Nom', 'product.name') }}
     </div>
 
     <div class="container">
