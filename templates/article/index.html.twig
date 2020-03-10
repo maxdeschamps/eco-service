@@ -22,7 +22,7 @@
         {% include 'article/_filter.html.twig' with {form: form} only %}
     </div>
     <div class="trie">
-      {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+      {{ knp_pagination_sortable(articles, 'Nom', 'article.name') }}
     </div>
     <ul>
       {% for article in articles %}

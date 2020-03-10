@@ -35,5 +35,26 @@
 
       <a href="{{ path('profile_update') }}">Modifier le profil</a>
     </div>
+
+    <div class="blocFull">
+      {% if app.user.isCompany == 0 %}
+        <h2>Mes factures</h2>
+
+        {% if summaries is empty %}
+          <p>Aucune facture trouvée.</p>
+        {% endif %}
+      {% else %}
+        <h2>Mes demandes de devis</h2>
+
+        {% if summaries is empty %}
+          <p>Aucun devis trouvé.</p>
+        {% endif %}
+      {% endif %}
+      <ul>
+        {% for summary in summaries %}
+
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 {% endblock %}
