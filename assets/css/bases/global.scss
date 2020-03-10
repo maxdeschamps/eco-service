@@ -325,6 +325,56 @@ figure.zoom {
   font-size: 0;
 }
 
+button {
+  cursor: pointer;
+  font-size: 17px;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  transition: 0.3s;
+  text-decoration: none;
+  margin-top: 70px;
+  @media screen and (max-width: $mediumSize) {
+    color: black;
+  }
+
+  &:hover {
+    background: black;
+    color: white;
+    transition: 0.3s;
+  }
+}
+
+input, select, textarea {
+  border: 0;
+  border-bottom: 1px solid black;
+  margin: 10px 0;
+  font-size: 17px;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+/*Pagination*/
+.pagination {
+  margin-bottom: 25px;
+  
+  .page, .next, .last {
+    a {
+      padding: 0 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .current {
+    text-decoration: underline;
+  }
+}
+
 // .transitions-white-to-green {
 //   height: 25px;
 //   width: 100%;
