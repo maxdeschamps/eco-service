@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ma facture #{{ bill.ref }}{% endblock %}
+
+{% block idBody %}{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin-top: 50px;">
+    <div class="blocFull">
+      <h1>Ma facture #{{ bill.ref }}</h1>
+
+      <ul>
+        {% for productBill in bill.productBills %}
+          <li>
+            <a href="{{ path('show_product', { 'id': productBill.product.id }) }}">{{ productBill.product.name }} ({{ (productBill.product.priceTtc)|number_format(2, ',', ' ') }} €)</a>
+            <span>x {{ productBill.quantity }}</span>
+            <span>-- {{ (productBill.product.priceTtc * productBill.quantity)|number_format(2, ',', ' ') }} €</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p>Total: {{ total|number_format(2, ',', ' ') }} €</p>
+    </div>
+  </div>
+{% endblock %}
