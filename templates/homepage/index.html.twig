@@ -35,7 +35,7 @@
           <ul class="detailList">
             {% for product in products %}
               <li class="detailElement">
-                <a class="fontSize0" href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
                   {% if product.images is empty %}
                     <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
                   {% else %}
@@ -44,10 +44,10 @@
                 </a>
                 <ul class="detailContent">
                   <li class="detailContentDatas">
-                    <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
                       <h3>{{ product.name }}</h3>
                     </a>
-                    <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
                       <p>{{ product.category.name }}</p>
                     </a>
                   </li>

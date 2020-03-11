@@ -325,6 +325,10 @@ figure.zoom {
   font-size: 0;
 }
 
+.displayBlock {
+  display: inline-block;
+}
+
 button:not(#tarteaucitronManager):not(#tarteaucitronCookiesNumber) {
   cursor: pointer;
   font-size: 17px;

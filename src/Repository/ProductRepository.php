@@ -73,25 +73,25 @@ class ProductRepository extends ServiceEntityRepository
       return $query;
     }
 
-    public function findLastsProduits()
+    public function findLastsProducts()
     {
       $qb = $this->createQueryBuilder('product')
           ->orderBy("product.id", 'DESC')
           ->setMaxResults(3);
-       
+
        return $qb
-          ->getQuery()  
+          ->getQuery()
           ->getResult();
     }
 
-    public function findLastsProduitsByCategory(Product $product)
+    public function findLastsProductsByCategory(Product $product)
     {
       $qb = $this->createQueryBuilder('product')
-          ->andWhere('product.category.id = (:category)')
+          ->andWhere('product.category = (:category)')
           ->orderBy("product.id", 'DESC')
           ->setMaxResults(3)
           ->setParameter('category', $product->getCategory()->getId());
-       
+
        return $qb
           ->getQuery()
           ->getResult();

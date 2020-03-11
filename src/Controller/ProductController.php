@@ -70,13 +70,13 @@ class ProductController extends AbstractController
         // On récupère tous les produits
         $products = $em
                 ->getRepository(Product::class)
-                ->findLastsProduitsByCategory($product);
+                ->findLastsProductsByCategory($product);
 
         return $this->render('product/show.html.twig',
             [
             'products' => $products,
             'product' => $product
-            ] 
+            ]
         );
     }
 }
