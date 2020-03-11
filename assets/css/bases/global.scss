@@ -321,6 +321,16 @@ figure.zoom {
   }
 }
 
+.textCenter {
+  &.marginBottom25 a{
+    color:black !important;
+  }
+}
+
+.textCenter .marginBottom25 a {
+  color:black !important;
+}
+
 .fontSize0 {
   font-size: 0;
 }
@@ -346,6 +356,7 @@ button:not(#tarteaucitronManager):not(#tarteaucitronCookiesNumber) {
     transition: 0.3s;
   }
 }
+
 
 input, select, textarea {
   border: 0;
