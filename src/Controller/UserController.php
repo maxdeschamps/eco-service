@@ -63,7 +63,7 @@ class UserController extends AbstractController
   /**
    * @Route("/ma-facture/{id}", name="show_bill")
    */
-  public function showSummary(Bill $summary)
+  public function showBill(Bill $summary)
   {
     return $this->render(
       'user/show.html.twig',
@@ -74,7 +74,7 @@ class UserController extends AbstractController
   /**
    * @Route("/mon-devis/{id}", name="show_quotation")
    */
-  public function showSummary(Quotation $summary)
+  public function showQuotation(Quotation $summary)
   {
     return $this->render(
       'user/show.html.twig',
