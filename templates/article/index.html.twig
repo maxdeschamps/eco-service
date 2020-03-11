@@ -37,7 +37,7 @@
             <ul class="detailList">
               {% for article in articles %}
                 <li class="detailElement">
-                    <a class="fontSize0" href="{{ path('show_product', { 'id': article.getId }) }}">
+                    <a class="fontSize0" href="{{ path('show_article', { 'id': article.getId }) }}">
                       {% if article.images is empty %}
                         <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
                       {% else %}
@@ -47,7 +47,7 @@
                     </a>
                     <ul class="detailContent">
                         <li class="detailContentDatas">
-                            <a href="#">
+                            <a href="{{ path('show_article', { 'id': article.getId }) }}">
                                 <h3>{{ article.name }}</h3>
                             </a>
                             <a href="#">

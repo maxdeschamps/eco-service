@@ -57,20 +57,12 @@ class ProductController extends AbstractController
         );
     }
 
-
     /**
      * @Route("/produit/{id}", name="show_product")
      */
     public function show(Product $product)
     {
-        $em=$this
-        ->getDoctrine()
-        ->getManager();
-
-        // On récupère tous les produits
-        $products = $em
-                ->getRepository(Product::class)
-                ->findLastsProductsByCategory($product);
+        $products = $this->productRepository->findLastsProductsByCategory($product);
 
         return $this->render('product/show.html.twig',
             [

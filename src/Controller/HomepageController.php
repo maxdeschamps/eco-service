@@ -18,14 +18,10 @@ class HomepageController extends AbstractController
   public function index()
   {
 
-    $em=$this
-    ->getDoctrine()
-    ->getManager();
+    $em=$this->getDoctrine()->getManager();
 
     // On récupère tous les produits
-    $products = $em
-            ->getRepository(Product::class)
-            ->findLastsProducts();
+    $products = $em->getRepository(Product::class)->findLastsProducts();
 
     return $this->render('homepage/index.html.twig',
       [
