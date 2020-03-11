@@ -61,9 +61,14 @@ class ServiceController extends AbstractController
      */
     public function show(Service $service)
     {
+        $services = $this->serviceRepository->findLastsServices();
+
         return $this->render(
             'service/show.html.twig',
-            ['service' => $service]
+            [
+              'service' => $service,
+              'services' => $services
+            ]
         );
     }
 }

@@ -63,9 +63,20 @@ class ProductController extends AbstractController
      */
     public function show(Product $product)
     {
-        return $this->render(
-            'product/show.html.twig',
-            ['product' => $product]
+        $em=$this
+        ->getDoctrine()
+        ->getManager();
+
+        // On récupère tous les produits
+        $products = $em
+                ->getRepository(Product::class)
+                ->findLastsProductsByCategory($product);
+
+        return $this->render('product/show.html.twig',
+            [
+            'products' => $products,
+            'product' => $product
+            ]
         );
     }
 }
