@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="102dd941-7f44-4ada-afc5-30770eca3999" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/eco-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eco-service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bases/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bases/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/product/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +196,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../speedcodingSure/speedcoding" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SpeedCodindReality/speedcoding" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -204,7 +205,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -239,7 +240,8 @@
       <workItem from="1580765101490" duration="5010000" />
       <workItem from="1582035923722" duration="2424000" />
       <workItem from="1582039692811" duration="17917000" />
-      <workItem from="1583913125786" duration="864000" />
+      <workItem from="1583913125786" duration="1165000" />
+      <workItem from="1583914372959" duration="5199000" />
     </task>
     <servers />
   </component>
@@ -251,6 +253,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="435" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1583773319275" />
+    <state x="321" y="78" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583914282421">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="321" y="78" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.680@0.0.1280.680" timestamp="1583914282421" />
     <state x="303" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580466797535">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -259,21 +265,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="97" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1580832735876" />
-    <state x="421" y="97" key="FileChooserDialogImpl" timestamp="1580832661796">
+    <state x="277" y="119" key="EditFileWatcherDialog" timestamp="1583920004253">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="97" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580832661796" />
+    <state x="277" y="119" key="EditFileWatcherDialog/0.0.1280.680@0.0.1280.680" timestamp="1583920004253" />
+    <state x="421" y="97" key="FileChooserDialogImpl" timestamp="1583914761735">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="97" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583914761735" />
     <state x="386" y="156" key="NewPhpClassDialog" timestamp="1580466558040">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="386" y="156" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1580466558040" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1583920022464">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1583920022464" />
     <state x="269" y="37" width="742" height="606" key="find.popup" timestamp="1580998755948">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="269" y="37" width="742" height="606" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1580998755948" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583858764792">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583918716535">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1583858764792" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1583918716535" />
   </component>
 </project>
