@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Quotation;
+use App\Entity\Bill;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -14,6 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
 {
+
   /**
    * @Route("/mon-compte", name="profile_index")
    */
@@ -55,5 +58,22 @@ class UserController extends AbstractController
   public function logout()
   {
       throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+  }
+
+  /**
+   * @Route("/ma-commande/{id}", name="show_summary")
+   */
+  public function showSummary(?Quotation $quotation, ?Bill $bill)
+  {
+    if (isset($quotation)) {
+      $summary = $quotation;
+    } else {
+      $summaray = $bill;
+    }
+
+    return $this->render(
+      'user/show.html.twig',
+      ['summary' => $summary]
+    );
   }
 }

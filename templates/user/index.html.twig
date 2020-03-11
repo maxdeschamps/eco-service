@@ -35,5 +35,39 @@
 
       <a href="{{ path('profile_update') }}">Modifier le profil</a>
     </div>
+
+    <div class="blocFull">
+      {% if app.user.isCompany == 0 %}
+        <h2>Mes factures</h2>
+
+        {% if app.user.bills is empty %}
+          <p>Aucune facture trouvée.</p>
+        {% else %}
+          <ul>
+            {% for bill in app.user.bills %}
+              <li>
+                <p>{{ bill.ref }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        
+      {% else %}
+        <h2>Mes demandes de devis</h2>
+
+        {% if app.user.quotations is empty %}
+          <p>Aucun devis trouvé.</p>
+        {% else %}
+          <ul>
+            {% for quotation in app.user.quotations %}
+              <li>
+                <p>{{ quotation.ref }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+
+    </div>
   </div>
 {% endblock %}

@@ -335,7 +335,7 @@ figure.zoom {
   font-size: 0;
 }
 
-button {
+button:not(#tarteaucitronManager):not(#tarteaucitronCookiesNumber) {
   cursor: pointer;
   font-size: 17px;
   text-transform: uppercase;
@@ -366,6 +366,23 @@ input, select, textarea {
 
   &:focus {
     outline: 0;
+  }
+}
+
+/*Pagination*/
+.pagination {
+  margin-bottom: 25px;
+
+  .page, .next, .last {
+    a {
+      padding: 0 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .current {
+    text-decoration: underline;
   }
 }
 
