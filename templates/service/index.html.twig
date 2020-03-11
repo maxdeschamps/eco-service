@@ -35,16 +35,16 @@
       <ul class="detailList">
         {% for service in services %}
           <li class="detailElement">
-            <a class="fontSize0" href="{{ path('show_service', { 'slug': service.slug }) }}">
+            <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
               <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
             </a>
           </a>
           <ul class="detailContent">
             <li class="fullSize">
-              <a href="{{ path('show_service', { 'slug': service.slug }) }}">
+              <a href="{{ path('show_service', { 'id': service.id }) }}">
                 <h3>{{ service.name }}</h3>
               </a>
-              <a href="{{ path('show_service', { 'slug': service.slug }) }}">
+              <a href="{{ path('show_service', { 'id': service.id }) }}">
                 <p>{{ service.content }}</p>
               </a>
             </li>
