@@ -22,6 +22,8 @@ easy_admin:
           - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
           - { property: 'content', label: 'Contenu'}
+          - { property: 'ingredients', label: 'Ingrédients'}
+          - { property: 'steps', label: 'Étapes'}
           - { property: 'images', label: 'Images'}
       form:
         actions:
@@ -32,5 +34,7 @@ easy_admin:
           - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor'}
+          - { property: 'ingredients', label: 'Ingrédients', type: 'fos_ckeditor'}
+          - { property: 'steps', label: 'Étapes', type: 'fos_ckeditor'}
           - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
