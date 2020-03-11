@@ -1,0 +1,115 @@
+#account {
+  .bodyAccount {
+    padding: 10% 0;
+    background: $lightGreen;
+    @media screen and (max-width: $largeSize) {
+      padding: 10% 2%;
+    }
+
+    .fullH1 {
+      width: 100%;
+      text-align: center;
+    }
+
+    .containerBtnProfil {
+      display: flex;
+      align-items: center;
+      min-height: 70px;
+
+      .updateProfil {
+        cursor: pointer;
+        font-size: 17px;
+        text-transform: uppercase;
+        background: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px 30px;
+        transition: 0.3s;
+        text-decoration: none;
+        margin: 0 auto;
+        @media screen and (max-width: $mediumSize) {
+          color: black;
+        }
+
+        &:hover {
+          background: black;
+          color: white;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    .container {
+      margin-top: 5px;
+      padding: 0;
+      @media screen and (max-width: $largeSize) {
+        width: 100%;
+
+        .adresseResponsive {
+          margin-top: 5px;
+        }
+      }
+
+      .blocFull {
+        margin: 0;
+      }
+
+      .devisFacture {
+        background: white;
+        border-radius: 10px;
+        border: 1px solid black;
+        width: 100%;
+        padding: 10px;
+
+        .listeFactureDevis {
+          ul {
+            padding: 0;
+
+            li {
+              display: flex;
+              box-sizing: border-box;
+              list-style: none;
+              width: 100%;
+              background: white;
+              border: 1px solid black;
+              border-radius: 10px;
+              padding: 20px 10px;
+              margin: 10px 0;
+
+              a {
+                width: 50%;
+                @media screen and (max-width: $mediumSize) {
+                  color: black;
+                }
+              }
+
+              a:nth-child(n+2) {
+                text-align: right;
+                padding-right: 15px;
+                @media screen and (max-width: $mediumSize) {
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .alignementFlex {
+      display: flex;
+    }
+
+    .adresse {
+      background: white;
+      border: 1px solid black;
+      border-radius: 10px;
+      width: 48%;
+      padding: 10px;
+      @media screen and (max-width: $largeSize) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

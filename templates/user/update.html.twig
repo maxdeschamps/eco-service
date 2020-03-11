@@ -2,17 +2,47 @@
 
 {% block title %}Mise à jour du profil{% endblock title %}
 
+{% block idBody %}update{% endblock %}
+
 {% block body %}
-
-  <div class="container" style="margin-top: 50px;">
-    <div class="blocFull">
-      <h1>Mise à jour du profil</h1>
-
-      {{ form_start(form) }}
-      {{ form_widget(form) }}
-      <input type="submit" value="Enregistrer" />
-      {{ form_end(form) }}
+  <div class="containerGrey">
+    <div class="container">
+      <div class="blockFull">
+        <h1 class="updateH1">Compte :</h1>
+        {{ form_start(form) }}
+        <div class="formContainer">
+          <div>
+            {{ form_row(form.email) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.phone) }}
+            {{ form_row(form.isCompany) }}
+            {{ form_row(form.companyName) }}
+            {{ form_row(form.newsletterAcceptance) }}
+          </div>
+          <div>
+            <h5>Modifier l'adresse de livraison :</h5>
+            {{ form_row(form.deliveryAddress.line1) }}
+            {{ form_row(form.deliveryAddress.line2) }}
+            {{ form_row(form.deliveryAddress.postal_code) }}
+            {{ form_row(form.deliveryAddress.city) }}
+            {{ form_row(form.deliveryAddress.country) }}
+          </div>
+          <div>
+            <h5>Modifier l'adresse de paiement</h5>
+            {{ form_row(form.billingAddress.line1) }}
+            {{ form_row(form.billingAddress.line2) }}
+            {{ form_row(form.billingAddress.postal_code) }}
+            {{ form_row(form.billingAddress.city) }}
+            {{ form_row(form.billingAddress.country) }}
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <input class="btnEnvoyer" type="submit" value="Sauvegarder"/>
+        </div>
+        {{ form_end(form) }}
+      </div>
     </div>
   </div>
-
 {% endblock %}

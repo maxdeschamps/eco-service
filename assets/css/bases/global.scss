@@ -327,6 +327,11 @@ figure.zoom {
   }
 }
 
+.bouton-fb {
+  color:black;
+  font-size: 30px;
+}
+
 .textCenter .marginBottom25 a {
   color:black !important;
 }
@@ -375,7 +380,7 @@ input, select, textarea {
 
 /*Pagination*/
 .pagination {
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 
   .page, .next, .last {
     a {
