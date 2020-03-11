@@ -25,13 +25,15 @@
       </div>
       <div class="infos-service textCenter">
         <h1><span>{{ service.getName }}</span></h1>
-        <p>{{ (service.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
+        <p>{{ (service.getPriceTtc)|number_format(2, ',', ' ') }} € <span class="displayBlock">/ {{ service.getUnity.getName }}</span></p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 1 %}
-          <label for="qty-service">Choisissez une quantité :</label>
-          <input id="qty-service" value="1" name="nbQuant" type="number" min="1" max="{{ (service.quantity )}}" >
+          <div class="add-to-cart">
+            <label for="qty-service">Choisissez une quantité :</label>
+            <input id="qty-service" value="1" name="nbQuant" type="number" min="1" max="{{ (service.quantity )}}" >
 
-          <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+            <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+          </div>
         {% else %}
           <p class="text-error">Vous devez avoir un compte entreprise pour pouvoir ajouter ce service à votre panier</p>
         {% endif %}
@@ -61,55 +63,24 @@
         <div class="blocFull">
           <h2 class="textCenter">Vous aimerez aussi</h2>
           <ul class="detailList">
-            {# TODO remplacer la liste par des valeurs de la base de données #}
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+            {% for service in services %}
+              <li class="detailElement">
+                <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
+                  <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+                </a>
               </a>
               <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé rouge</h3>
+                <li class="fullSize">
+                  <a href="{{ path('show_service', { 'id': service.id }) }}">
+                    <h3>{{ service.name }}</h3>
                   </a>
-                  <a href="#">
-                    <p>Catégorie 1</p>
-                  </a>
-                </li>
-                <li class="detailPrice">50,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://www.woopets.fr/assets/races/000/206/big-portrait/griffon-bruxellois.jpg">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé bleu</h3>
-                  </a>
-                  <a href="#">
-                    <p>Catégorie 2</p>
+                  <a href="{{ path('show_service', { 'id': service.id }) }}">
+                    <p>{{ service.content }}</p>
                   </a>
                 </li>
-                <li class="detailPrice">50,00 €</li>
               </ul>
             </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://www.chiens-de-france.com/photo/eleveurs/55/10984/presentations/f976aba7-4788-3fe4-5ddf-0598e5eadba1.jpg">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé vert</h3>
-                  </a>
-                  <a href="#">
-                    <p>Catégorie 2</p>
-                  </a>
-                </li>
-                <li class="detailPrice">50,00 €</li>
-              </ul>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>

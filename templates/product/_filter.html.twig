@@ -1,12 +1,15 @@
 {{ form_start(form, {attr: {class: 'filter'}}) }}
 
 <div class="title-filter">
-    <div class="rechercher">
-        <h4>Rechercher : </h4>
-        {{ form_widget(form.q) }}
-    </div>
+  <div class="categories">
+    <h4>Categorie : </h4>
     {{ form_widget(form.categories) }}
-    {#  <div id="price-slider" data-min="{{ min }}" data-max="{{ max }}"></div>#}
-    <button type="submit" class="btn">Filtrer</button>
+  </div>
+  <div class="rechercher">
+    <h4>Rechercher : </h4>
+    {{ form_widget(form.q) }}
+  </div>
+  {#  <div id="price-slider" data-min="{{ min }}" data-max="{{ max }}"></div>#}
+  <button type="submit" class="btn">Filtrer</button>
 </div>
 {{ form_end(form) }}

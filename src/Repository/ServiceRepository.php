@@ -65,6 +65,17 @@ class ServiceRepository extends ServiceEntityRepository
       return $query;
     }
 
+    public function findLastsServices()
+    {
+      $qb = $this->createQueryBuilder('service')
+          ->orderBy("service.id", 'DESC')
+          ->setMaxResults(3);
+
+       return $qb
+          ->getQuery()
+          ->getResult();
+    }
+
     // /**
     //  * @return Service[] Returns an array of Service objects
     //  */
