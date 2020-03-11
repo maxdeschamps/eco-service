@@ -31,57 +31,30 @@
     <article id="blocProducts" class="backgroundLightGreen">
       <div class="container">
         <div class="blocFull">
-          <h2 class="textCenter">Nos produits phares</h2>
+          <h2 class="textCenter">Nos derniers produits</h2>
           <ul class="detailList">
-            {# TODO remplacer la liste par des valeurs de la base de données #}
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/gourde-inox.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gourde isotherme en inox</h3>
-                  </a>
-                  <a href="#">
-                    <p>Alimentaire</p>
-                  </a>
-                </li>
-                <li class="detailPrice">25,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/coton.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Lot de cotons réutilisables</h3>
-                  </a>
-                  <a href="#">
-                    <p>Cosmétiques</p>
-                  </a>
-                </li>
-                <li class="detailPrice">17,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/toothbrush.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>4 brosses à dents en bambou</h3>
-                  </a>
-                  <a href="#">
-                    <p>Hygiène</p>
-                  </a>
-                </li>
-                <li class="detailPrice">16,50 €</li>
-              </ul>
-            </li>
+            {% for product in products %}
+              <li class="detailElement">
+                <a class="fontSize0" href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                  {% if product.images is empty %}
+                    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+                  {% else %}
+                    <img src="{{ product.getImages[0].getUri }}" />
+                  {% endif %}
+                </a>
+                <ul class="detailContent">
+                  <li class="detailContentDatas">
+                    <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                      <h3>{{ product.name }}</h3>
+                    </a>
+                    <a href="{{ path('show_product', { 'slug': product.getSlug }) }}">
+                      <p>{{ product.category.name }}</p>
+                    </a>
+                  </li>
+                  <li class="detailPrice">{{ (product.priceTtc)|number_format(2, ',', ' ') }} €</li>
+                </ul>
+              </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -104,7 +77,7 @@
             Si vous ne les possédez pas déjà, le fait de vous en procurer sera de toute évidence une source d’économies et un
             pas de plus vers le zéro déchet (ou presque),
             puisque nombre de ces indispensables sont à usage presque indéfini.</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
+          <a class="btn" href="{{ path('index_product') }}">Accéder au catalogue</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-2.jpg') }}">
@@ -118,7 +91,7 @@
           Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets.
           Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes :
           produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au blog</a>
+          <a class="btn" href="{{ path('index_article') }}">Accéder au blog</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-3.jpg') }}">
@@ -131,7 +104,7 @@
           <p class="blocContent">Votre société désire adopter une démarche plus éco-responsable ? <br>
             Recyclages, enlèvement de déchets, matériel : découvrez nos nombreux services dans le catalogue et
             faites appel à nous en réalisant votre devis en ligne. Vous serez par la suite mis en relation avec un commercial.</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
+          <a class="btn" href="{{ path('index_service') }}">Accéder au catalogue</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-4.jpg') }}">

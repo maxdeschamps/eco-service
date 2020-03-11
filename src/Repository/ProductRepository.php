@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Query;
@@ -70,6 +71,30 @@ class ProductRepository extends ServiceEntityRepository
       }
 
       return $query;
+    }
+
+    public function findLastsProduits()
+    {
+      $qb = $this->createQueryBuilder('product')
+          ->orderBy("product.id", 'DESC')
+          ->setMaxResults(3);
+       
+       return $qb
+          ->getQuery()  
+          ->getResult();
+    }
+
+    public function findLastsProduitsByCategory(Product $product)
+    {
+      $qb = $this->createQueryBuilder('product')
+          ->andWhere('product.category.id = (:category)')
+          ->orderBy("product.id", 'DESC')
+          ->setMaxResults(3)
+          ->setParameter('category', $product->getCategory()->getId());
+       
+       return $qb
+          ->getQuery()
+          ->getResult();
     }
 
     // /**
