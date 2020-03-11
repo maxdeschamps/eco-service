@@ -42,7 +42,7 @@ class AdminController extends BaseAdminController
         $messages = $repository->findAll();
         $countMessages = count($messages);
 
-        $contact = new Contact();
+        /*$contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
@@ -56,15 +56,15 @@ class AdminController extends BaseAdminController
                 'countUsers' => $countUsers,
                 'countMessages' => $countMessages,
                 'form' => $form->createView()
-            ]);
-        }
+            ]);*/
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'countBills' => $countBills,
             'countProducts' => $countProducts,
             'countUsers' => $countUsers,
-            'countMessages' => $countMessages,
-            'form' => $form->createView()
+            'countMessages' => $countMessages
+//            'form' => $form->createView()
         ]);
     }
 
@@ -120,6 +120,8 @@ class AdminController extends BaseAdminController
             $totalItem = $item->getProduct()->getPriceTtc() * $item->getQuantity();
             $total += $totalItem;
         }
+
+
 
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');

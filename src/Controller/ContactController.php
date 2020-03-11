@@ -15,25 +15,25 @@ use Knp\Component\Pager\PaginatorInterface;
 
 class ContactController extends AbstractController
 {
-  /**
-   * @Route("/contact", name="contact")
-   */
-  public function index(Request $request, ContactNotification $notification): Response
-  {
-      $contact = new Message();
-      $form = $this->createForm(MessageType::class, $contact);
-      $form->handleRequest($request);
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function index(Request $request, ContactNotification $notification): Response
+    {
+        $contact = new Message();
+        $form = $this->createForm(MessageType::class, $contact);
+        $form->handleRequest($request);
 
-      if ($form->isSubmitted() && $form->isValid()) {
-          $notification->notify($contact);
-          $this->addFlash('success', 'Votre email à bien été envoyé');
-          return $this->redirectToRoute('contact');
-      }
-    return $this->render(
-      'contact/index.html.twig',
-      [
-          'form' => $form->createView()
-      ]
-    );
-  }
+        if ($form->isSubmitted() && $form->isValid()) {
+            $notification->notify($contact);
+            $this->addFlash('success', 'Votre email à bien été envoyé');
+            return $this->redirectToRoute('contact');
+        }
+        return $this->render(
+            'contact/index.html.twig',
+            [
+                'form' => $form->createView()
+            ]
+        );
+    }
 }

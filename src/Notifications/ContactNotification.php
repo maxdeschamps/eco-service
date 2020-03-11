@@ -22,13 +22,13 @@ class ContactNotification {
         $this->renderer = $renderer;
     }
 
-    public function notify(Message $contact){
-        $message = (new \Swift_Message('Eco-Service[Admin]: '. $contact->getSubject()))
-            ->setFrom($contact->getEmail())
+    public function notify(Message $messages){
+        $message = (new \Swift_Message('Eco-Service[Admin]: '. $messages->getSubject()))
+            ->setFrom($messages->getEmail())
             ->setTo('eco-service@site.fr')
-            ->setReplyTo($contact->getEmail())
+            ->setReplyTo($messages->getEmail())
             ->setBody($this->renderer->render('contact/index.html.twig', [
-              'contact' => $contact
+              'messages' => $messages
         ]), 'text/html');
 
         $this->mailer->send($message);
