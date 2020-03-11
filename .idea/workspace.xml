@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="102dd941-7f44-4ada-afc5-30770eca3999" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/eco-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eco-service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/pages/rgpd.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProductSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProductSearchType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/_filter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/_filter.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/_filter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/_filter.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +228,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac87d355-6476-45a3-8f5e-c10dda58c4a5" name="Default Changelist" comment="" />
+      <changelist id="102dd941-7f44-4ada-afc5-30770eca3999" name="Default Changelist" comment="" />
       <created>1580284524215</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -246,6 +239,7 @@
       <workItem from="1580765101490" duration="5010000" />
       <workItem from="1582035923722" duration="2424000" />
       <workItem from="1582039692811" duration="17917000" />
+      <workItem from="1583913125786" duration="864000" />
     </task>
     <servers />
   </component>
@@ -277,9 +271,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="269" y="37" width="742" height="606" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1580998755948" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580993583990">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583858764792">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580993583990" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1583858764792" />
   </component>
 </project>
