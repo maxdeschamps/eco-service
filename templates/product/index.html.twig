@@ -5,66 +5,74 @@
 {% block idBody %}products-tpl{% endblock %}
 
 {% block body %}
-<div class="blocImage textCenter">
-  <div class="title">
-    <h1>Retrouvez nos produits</h1>
-    <h2>100% recyclés</h2>
+  <div class="blocImage textCenter">
+    <div class="title">
+      <h1>Retrouvez nos produits</h1>
+      <h2>100% recyclés</h2>
+    </div>
+    {# <img class="imgPres" src="{{ asset('images/background-products.jpg') }}"/> #}
+    <svg class="wave waveTop fillLightGreen onImage" viewbox="0 0 1440 120" aria-hidden="true">
+      <path
+        d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+    </svg>
   </div>
-  {# <img class="imgPres" src="{{ asset('images/background-products.jpg') }}"/> #}
-  <svg class="wave waveTop fillLightGreen onImage" viewBox="0 0 1440 120" aria-hidden="true">
-    <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
-  </svg>
-</div>
 
-<div class="container">
-  <div class="blocFull">
-    <div class="search">
-      <div class="trie">
-        <div class="title-filter">
-          <h4>Trier par : </h4>
+  <div class="container">
+    <div class="blocFull">
+      <div class="search">
+        <div class="trie">
+          <div class="title-filter">
+            <h4>Trier par :
+            </h4>
+          </div>
+          <div class="input-filter">
+            {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
+            {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
+          </div>
         </div>
-        <div class="input-filter">
-          {{ knp_pagination_sortable(products, 'Prix', 'product.price_ttc') }}
-          {{ knp_pagination_sortable(products, 'Nom', 'product.name') }}
-        </div>
+        {% include 'product/_filter.html.twig' with {
+          form : form,
+          min: min,
+          max: max
+        }
+        only %}
       </div>
-      {% include 'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
+    </div>
+
+    <div class="blocFull">
+      <ul class="detailList">
+        {% for product in products %}
+          <li class="detailElement">
+            <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
+              {% if product.images is empty %}
+                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg"/>
+              {% else %}
+                <img src="{{ product.getImages[0].getUri }}"/>
+              {% endif %}
+            </a>
+            <ul class="detailContent">
+              <li class="detailContentDatas">
+                <a href="#">
+                  <h3>{{ product.name }}</h3>
+                </a>
+                <a href="#">
+                  <p>{{ product.category.name }}</p>
+                </a>
+              </li>
+              <li class="detailPrice">{{ (product.priceTtc)|number_format(2, ',', ' ') }}
+                €</li>
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 
   <div class="blocFull">
-    <ul class="detailList">
-      {% for product in products %}
-      <li class="detailElement">
-        <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
-          {% if product.images is empty %}
-          <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
-          {% else %}
-          <img src="{{ product.getImages[0].getUri }}" />
-          {% endif %}
-        </a>
-        <ul class="detailContent">
-          <li class="detailContentDatas">
-            <a href="#">
-              <h3>{{ product.name }}</h3>
-            </a>
-            <a href="#">
-              <p>{{ product.category.name }}</p>
-            </a>
-          </li>
-          <li class="detailPrice">{{ (product.priceTtc)|number_format(2, ',', ' ') }} €</li>
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-
-<div class="blocFull">
-  <div class="paginationContainer">
-    <div class="textCenter marginBottom25">
-      {{ knp_pagination_render(products) }}
+    <div class="paginationContainer">
+      <div class="textCenter marginBottom25">
+        {{ knp_pagination_render(products) }}
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

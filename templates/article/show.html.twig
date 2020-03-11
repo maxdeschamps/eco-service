@@ -1,10 +1,46 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ article.getName }}{% endblock %}
+{% block idBody %}showArticle{% endblock %}
+
+{% block title %}{{ article.getName }}
+{% endblock %}
 
 {% block body %}
-  <h1>{{ article.getName }}</h1>
+  <div class="blocImage">
+    <div class="title">
+      <h1>{{ article.getName }}</h1>
+    </div>
+  </div>
+  <div class="prerequis">
+    <div class="containerPrerequis">
+      <div>
+        <h2>Difficulté</h2>
+        <p>{{ article.getdifficulty }}
+          /100</p>
+      </div>
+      <div>
+        <h2>Temps estimé</h2>
+        <p>{{ article.getestimatedTime }}h</p>
+      </div>
+    </div>
+    <div class="ingredients">
+      <h2>Ingrédients</h2 >
+      {{ article.getingredients }}
+    </div>
+  </div>
 
+  <div class="conteneurEtapes">
+    <h1>Éxplications par étapes</h1>
+    <div class="etape">
+      <h2>{{ article.getSteps}}</h2>
+      <p>{{ article.getContent }}</p>
+      <hr>
+    </div>
+    <div class="etape">
+      <h2>{{ article.getSteps}}</h2>
+      <p>{{ article.getContent }}</p>
+      <hr>
+    </div>
+  </div>
 
-  <a href="{{ path('index_article') }}">Retourner à la liste des articles</a>
 {% endblock %}
