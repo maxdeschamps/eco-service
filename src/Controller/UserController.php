@@ -60,14 +60,20 @@ class UserController extends AbstractController
       throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
   }
 
-  // /**
-  //  * @Route("/mes-commandes/{ref}", name="show_summary")
-  //  */
-  // public function showSummary(Service $service)
-  // {
-  //   return $this->render(
-  //     'service/show.html.twig',
-  //     ['service' => $service]
-  //   );
-  // }
+  /**
+   * @Route("/ma-commande/{id}", name="show_summary")
+   */
+  public function showSummary(?Quotation $quotation, ?Bill $bill)
+  {
+    if (isset($quotation)) {
+      $summary = $quotation;
+    } else {
+      $summaray = $bill;
+    }
+
+    return $this->render(
+      'user/show.html.twig',
+      ['summary' => $summary]
+    );
+  }
 }
