@@ -321,11 +321,30 @@ figure.zoom {
   }
 }
 
+.textCenter {
+  &.marginBottom25 a{
+    color:black !important;
+  }
+}
+
+.bouton-fb {
+  color:black;
+  font-size: 30px;
+}
+
+.textCenter .marginBottom25 a {
+  color:black !important;
+}
+
 .fontSize0 {
   font-size: 0;
 }
 
-button {
+.displayBlock {
+  display: inline-block;
+}
+
+button:not(#tarteaucitronManager):not(#tarteaucitronCookiesNumber) {
   cursor: pointer;
   font-size: 17px;
   text-transform: uppercase;
@@ -347,6 +366,7 @@ button {
   }
 }
 
+
 input, select, textarea {
   border: 0;
   border-bottom: 1px solid black;
@@ -361,7 +381,7 @@ input, select, textarea {
 /*Pagination*/
 .pagination {
   margin-bottom: 25px;
-  
+
   .page, .next, .last {
     a {
       padding: 0 5px;

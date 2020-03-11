@@ -28,13 +28,20 @@
         <p>{{ (product.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 0 %}
-          <label for="qty-product">Choisissez une quantité :</label>
-          <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
+          <div class="add-to-cart">
+            <label for="qty-product">Choisissez une quantité :</label>
+            <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
 
-          <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+            <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+          </div>
         {% else %}
           <p class="text-error">Vous devez avoir un compte client pour pouvoir ajouter ce produit à votre panier</p>
         {% endif %}
+        <a class="bouton-fb" target="popup" rel="noopener"
+           onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}&amp;src=sdkpreparse','popup','width=600,height=600'); return false;"
+           href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}&amp;src=sdkpreparse">
+          <i class="fab fa-facebook"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -61,55 +68,28 @@
         <div class="blocFull">
           <h2 class="textCenter">Vous aimerez aussi</h2>
           <ul class="detailList">
-            {# TODO remplacer la liste par des valeurs de la base de données #}
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé rouge</h3>
-                  </a>
-                  <a href="#">
-                    <p>Catégorie 1</p>
-                  </a>
-                </li>
-                <li class="detailPrice">50,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://www.woopets.fr/assets/races/000/206/big-portrait/griffon-bruxellois.jpg">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé bleu</h3>
-                  </a>
-                  <a href="#">
-                    <p>Catégorie 2</p>
-                  </a>
-                </li>
-                <li class="detailPrice">50,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="https://www.chiens-de-france.com/photo/eleveurs/55/10984/presentations/f976aba7-4788-3fe4-5ddf-0598e5eadba1.jpg">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gobelet recyclé vert</h3>
-                  </a>
-                  <a href="#">
-                    <p>Catégorie 2</p>
-                  </a>
-                </li>
-                <li class="detailPrice">50,00 €</li>
-              </ul>
-            </li>
+            {% for product in products %}
+              <li class="detailElement">
+                <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
+                  {% if product.images is empty %}
+                    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+                  {% else %}
+                    <img src="{{ product.getImages[0].getUri }}" />
+                  {% endif %}
+                </a>
+                <ul class="detailContent">
+                  <li class="detailContentDatas">
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                      <h3>{{ product.name }}</h3>
+                    </a>
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                      <p>{{ product.category.name }}</p>
+                    </a>
+                  </li>
+                  <li class="detailPrice">{{ (product.priceTtc)|number_format(2, ',', ' ') }} €</li>
+                </ul>
+              </li>
+            {% endfor %}
           </ul>
         </div>
       </div>

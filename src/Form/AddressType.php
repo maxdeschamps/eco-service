@@ -15,19 +15,19 @@ class AddressType extends AbstractType
     {
         $builder
             ->add('line1', TextareaType::class, [
-              'label' => '1ère ligne'
+              'label' => '1ère ligne :',
             ])
             ->add('line2', TextareaType::class, [
-              'label' => '2ème ligne'
+              'label' => '2ème ligne :'
             ])
             ->add('postal_code', TextType::class, [
-              'label' => 'Code postal'
+              'label' => 'Code postal :'
             ])
             ->add('city', TextType::class, [
-              'label' => 'Ville'
+              'label' => 'Ville :'
             ])
             ->add('country', TextType::class, [
-              'label' => 'Pays'
+              'label' => 'Pays :'
             ])
         ;
     }
