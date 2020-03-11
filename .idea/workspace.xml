@@ -38,8 +38,6 @@
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/api-platform/core" />
@@ -198,6 +196,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -209,14 +208,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
-      <recent name="C:\xampp\htdocs\eco-service\eco-service\src\Repository" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\eco-service\eco-service\config\packages\admin" />
       <recent name="C:\xampp\htdocs\eco-service\eco-service\config\packages" />
       <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\eco-service\eco-service\public\image" />
+      <recent name="C:\xampp\htdocs\eco-service\eco-service\src\Repository" />
     </key>
   </component>
   <component name="RunManager">
@@ -260,6 +259,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="435" y="58" key="#com.intellij.ide.util.MemberChooser" timestamp="1583773319275">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="435" y="58" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1583773319275" />
     <state x="303" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580466797535">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

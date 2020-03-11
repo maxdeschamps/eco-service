@@ -1,0 +1,36 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+  list:
+    title: 'Liste des %%entity_label%%'
+  entities:
+    Article:
+      edit:
+        title: 'Editer un Article (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Article'
+      class: App\Entity\Article
+      label: 'Articles'
+      list:
+        actions:
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Publier un Article '}
+        fields:
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'category', label: 'Categorie' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'content', label: 'Contenu'}
+          - { property: 'images', label: 'Images'}
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'category', label: 'Categorie' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor'}
+          - { property: 'images', label: 'Images'}
+        disabled_actions: ['edit']

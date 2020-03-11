@@ -1,0 +1,54 @@
+easy_admin:
+  entities:
+    Quotation:
+      disabled_actions: ['new']
+      class: App\Entity\Quotation
+      edit:
+        title: 'Modifier le Devis (#%%entity_id%%)'
+      label: 'Devis'
+      list:
+        actions:
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Ajouter un Devis'}
+          - { name: 'downloadQuotation', target: "_blank", icon: 'download', label: false }
+        #disabled_actions: ['new']
+        fields:
+          - { property: 'company', label: 'Entreprise' }
+          - { property: 'request_date', label: 'Date de demande' }
+          - { property: 'approved', label: 'Approuvé' }
+          - { property: 'acceptance_date', label: 'Date de confirmation' }
+          - { property: 'email', label: 'Mail' }
+          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'company', label: 'Entreprise'}
+          - { property: 'service_quotations', label: 'Services du devis'}
+      form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'company', label: 'Entreprise' }
+          - { property: 'request_date', label: 'Date de demande' }
+          - { property: 'approved', label: 'Approuvé' }
+          - { property: 'acceptance_date', label: 'Date de confirmation' }
+          - { property: 'email', label: 'Mail' }
+          - { property: 'billing_address', label: 'Adresse du devis' }
+          - { property: 'delivery_address', label: 'Adresse de livraison' }
+          - { property: 'company', label: 'Entreprise'}
+          - { property: 'service_quotations', label: 'Services du devis'}
+        disabled_actions: ['edit']
+      show:
+        title: 'Devis (#%%entity_id%%)'
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'edit', label: 'Modifier' }
+          - { name: 'list', label: 'Retourner vers la liste' }
+        fields:
+          - { property: 'company', label: 'Entreprise' }
+          - { property: 'request_date', label: 'Date de demande', type: 'date' }
+          - { property: 'approved', label: 'Approuvé' }
+          - { property: 'acceptance_date', label: 'Date de confirmation', type: 'date' }
+          - { property: 'email', label: 'Mail' }
+          - { property: 'billing_address', label: 'Adresse du devis'}
+          - { property: 'delivery_address', label: 'Adresse de livraison'}
+          - { property: 'service_quotations', label: 'Services du devis'}

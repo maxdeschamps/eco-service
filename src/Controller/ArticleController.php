@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Form\ArticleSearchType;
+use App\Data\SearchData;
+
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,9 +29,13 @@ class ArticleController extends AbstractController
   /**
    * @Route("/articles", name="index_article")
    */
-  public function index(Request $request, PaginatorInterface $paginator)
+  public function index(Request $request, PaginatorInterface $paginator,  ArticleRepository $repository)
   {
-    $articles = $this->articleRepository->findAll();
+    $data = new SearchData();
+    $form = $this->createForm(ArticleSearchType::class, $data);
+    $form->handleRequest($request);
+
+    $articles = $repository->findAllVisibleQuery($data);
 
     $pagination = $paginator->paginate(
         $articles,
@@ -39,13 +46,14 @@ class ArticleController extends AbstractController
     return $this->render(
       'article/index.html.twig',
       [
-          'articles' => $pagination
+          'articles' => $pagination,
+          'form' => $form->createView(),
       ]
     );
   }
 
   /**
-   * @Route("/article/{slug}", name="show_article")
+   * @Route("/article/{id}", name="show_article")
    */
   public function show(Article $article)
   {

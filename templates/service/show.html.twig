@@ -1,12 +1,118 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ service.getName }}{% endblock %}
+{% block title %}{{ service.getName }}
+{% endblock %}
+
+{% block idBody %}fiche-service{% endblock %}
 
 {% block body %}
-  <h1>{{ service.getName }}</h1>
-  <p>Prix HT : {{ service.getPriceHt|number_format(2, ',', '.') }} €</p>
-  <p>Prix TTC : {{ service.getPriceTtc|number_format(2, ',', '.') }} €</p>
-  <p>{{ service.getContent }}</p>
 
-  <a href="{{ path('index_service') }}">Retourner à la liste des services</a>
+  <div class="container">
+    <div id="header-service">
+      <div class="img-service">
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
+        </figure>
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ce2ece60-9b32-11e6-95ab-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg" alt="">
+        </figure>
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp" alt="">
+        </figure>
+        <figure class="zoom imgPres" style="background-image: url(https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp); background-position: 98.8% 45.1957%;">
+          <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/ce2ece60-9b32-11e6-95ab-00163ed833e7/260663710/the-test-fun-for-friends-screenshot.jpg" alt="">
+        </figure>
+      </div>
+      <div class="infos-service textCenter">
+        <h1><span>{{ service.getName }}</span></h1>
+        <p>{{ (service.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
+
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 1 %}
+          <label for="qty-service">Choisissez une quantité :</label>
+          <input id="qty-service" value="1" name="nbQuant" type="number" min="1" max="{{ (service.quantity )}}" >
+
+          <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+        {% else %}
+          <p class="text-error">Vous devez avoir un compte entreprise pour pouvoir ajouter ce service à votre panier</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <svg class="wave waveTop fillGrey" viewbox="0 0 1440 120" aria-hidden="true">
+    <path
+      d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+  </svg>
+
+  <div id="service-desc">
+    <div class="container">
+      <div class="blocFull">
+        <h2>Description</h2>
+        <p>
+          {{ service.content }}
+        </p>
+      </div>
+    </div>
+    <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
+      <path
+        d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+    </svg>
+    <article id="blocServices" class="backgroundLightGreen">
+      <div class="container">
+        <div class="blocFull">
+          <h2 class="textCenter">Vous aimerez aussi</h2>
+          <ul class="detailList">
+            {# TODO remplacer la liste par des valeurs de la base de données #}
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé rouge</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 1</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://www.woopets.fr/assets/races/000/206/big-portrait/griffon-bruxellois.jpg">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé bleu</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 2</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+            <li class="detailElement">
+              <a class="fontSize0" href="#">
+                <img src="https://www.chiens-de-france.com/photo/eleveurs/55/10984/presentations/f976aba7-4788-3fe4-5ddf-0598e5eadba1.jpg">
+              </a>
+              <ul class="detailContent">
+                <li class="detailContentDatas">
+                  <a href="#">
+                    <h3>Gobelet recyclé vert</h3>
+                  </a>
+                  <a href="#">
+                    <p>Catégorie 2</p>
+                  </a>
+                </li>
+                <li class="detailPrice">50,00 €</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
 {% endblock %}

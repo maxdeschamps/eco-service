@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\ProductRepository;
 
 class AdminController extends BaseAdminController
 {
@@ -72,6 +73,13 @@ class AdminController extends BaseAdminController
         $id = $this->request->query->get('id');
         $quotation = $this->em->getRepository(Quotation::class)->find($id);
 
+        $total = 0;
+
+        foreach ($quotation->getServiceQuotations() as $item) {
+            $totalItem = $item->getService()->getPriceTtc() * $item->getQuantity();
+            $total += $totalItem;
+        }
+
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
 
@@ -79,7 +87,8 @@ class AdminController extends BaseAdminController
 
         $html = $this->render('/quotation/invoice.html.twig', [
             'title' => "Détail du devis",
-            'quotation' => $quotation
+            'quotation' => $quotation,
+            'totalQuotation' => $total
         ]);
 
         $dompdf->loadHtml($html);
@@ -105,6 +114,14 @@ class AdminController extends BaseAdminController
     {
         $id = $this->request->query->get('id');
         $bill = $this->em->getRepository(Bill::class)->find($id);
+        $total = 0;
+
+        foreach ($bill->getProductBills() as $item) {
+            $totalItem = $item->getProduct()->getPriceTtc() * $item->getQuantity();
+            $total += $totalItem;
+        }
+
+
 
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
@@ -113,7 +130,8 @@ class AdminController extends BaseAdminController
 
         $html = $this->render('/bill/bill.html.twig', [
             'title' => "Détail du devis",
-            'bill' => $bill
+            'bill' => $bill,
+            'totalBillTtc' => $total
         ]);
 
         $dompdf->loadHtml($html);
@@ -134,4 +152,4 @@ class AdminController extends BaseAdminController
         ]);
 
     }
-}
+  }

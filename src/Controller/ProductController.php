@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Product;
-use App\Entity\ProductSearch;
 use App\Form\ProductSearchType;
 use App\Form\ProductType;
 use App\Data\SearchData;
@@ -60,7 +59,7 @@ class ProductController extends AbstractController
 
 
     /**
-     * @Route("/produit/{slug}", name="show_product")
+     * @Route("/produit/{id}", name="show_product")
      */
     public function show(Product $product)
     {

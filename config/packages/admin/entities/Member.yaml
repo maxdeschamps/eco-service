@@ -1,20 +1,39 @@
 easy_admin:
+  list:
+    title: 'Liste des %%entity_label%%'
   entities:
     User:
+      disabled_actions: ['new']
       class: App\Entity\User
+      edit:
+        title: 'Editer un Utilisateur (#%%entity_id%%)'
+      new:
+        title: 'Ajouter un Utilisateur'
+      label: 'Membres'
       list:
+        actions:
+          - { name: 'show', icon: 'search', label: false }
+          - { name: 'new', label: 'Ajouter un Utilisateur'}
         fields:
         - { property: 'email', label: 'Mail' }
         - { property: 'firstName', label: 'Prénom' }
         - { property: 'lastName', label: 'Nom' }
         - { property: 'phone', label: 'Téléphone' }
+        - { property: 'company_name', label: 'Nom de société' }
         - { property: 'newsletterAcceptance', label: 'Newsletter', type: 'toggle'}
       form:
+        actions:
+          - { name: 'delete', label: 'Supprimer' }
+          - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-        - { property: 'delivery_address', label: 'Adresse de livraison' }
-        - { property: 'billing_address', label: 'Address du devis' }
-        - { property: 'email', label: 'Mail', type: 'email' }
-        - { property: 'firstName', label: 'Prénom' }
-        - { property: 'lastName', label: 'Nom' }
-        - { property: 'phone', label: 'Téléphone', type: 'tel' }
-        - { property: 'newsletterAcceptance', label: 'Newsletter',  type: 'checkbox' }
+          - { property: 'delivery_address', label: 'Adresse de livraison' }
+          - { property: 'billing_address', label: 'Address du devis' }
+          - { property: 'email', label: 'Mail', type: 'email' }
+          - { property: 'password', label: 'Mot de passe', type: 'password' }
+          - { property: 'is_company', label: 'Société ?', type: 'checkbox' }
+          - { property: 'company_name', label: 'Nom de société' }
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'lastName', label: 'Nom' }
+          - { property: 'phone', label: 'Téléphone', type: 'tel' }
+          - { property: 'newsletterAcceptance', label: 'Newsletter',  type: 'checkbox' }
+        disabled_actions: ['edit']

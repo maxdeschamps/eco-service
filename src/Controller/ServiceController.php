@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Service;
-use App\Entity\ServiceSearch;
 use App\Form\ServiceSearchType;
 use App\Form\ServiceType;
+use App\Data\SearchData;
 
 use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,16 +26,18 @@ class ServiceController extends AbstractController
         $this->serviceRepository = $serviceRepository;
         $this->entityManager = $entityManager;
     }
+
     /**
      * @Route("/services", name="index_service")
      */
-     public function index(Request $request, PaginatorInterface $paginator): Response
+     public function index(Request $request, PaginatorInterface $paginator, ServiceRepository $repository): Response
      {
-         $serviceSearch = new ServiceSearch();
-         $form = $this->createForm(ServiceSearchType::class, $serviceSearch);
+         $data = new SearchData();
+         $form = $this->createForm(ServiceSearchType::class, $data);
          $form->handleRequest($request);
+         [$min, $max] = $repository->finMinMax($data);
 
-         $services = $this->serviceRepository->findAllVisibleQuery($serviceSearch);
+         $services = $repository->findAllVisibleQuery($data);
 
          $pagination = $paginator->paginate(
              $services,
@@ -47,13 +49,15 @@ class ServiceController extends AbstractController
            'service/index.html.twig',
            [
                'services' => $pagination,
-               'form' => $form->createView()
+               'form' => $form->createView(),
+               'min' => $min,
+               'max' =>$max
            ]
          );
     }
 
     /**
-     * @Route("/service/{slug}", name="show_service")
+     * @Route("/service/{id}", name="show_service")
      */
     public function show(Service $service)
     {
