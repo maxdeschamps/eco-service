@@ -53,9 +53,15 @@
                 </a>
               </li>
               <li>
-                <a href="{{ path('app_login') }}">
-                  <i class="fas fa-user-alt"></i>
-                </a>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  <a class="material-icons" href="{{ path('profile_index') }}">
+                    <i class="fas fa-user-alt"></i>
+                  </a>
+                {% else %}
+                  <a href="{{ path('app_login') }}">
+                    <i class="fas fa-user-alt"></i>
+                  </a>
+                {% endif %}
               </li>
               <li>
                 <a href="/">
@@ -77,7 +83,12 @@
             <a class="material-icons" href="{{ path('index_article') }}">Blog</a>
             <a class="material-icons" href="{{ path('contact') }}">Contact</a>
             <a class="material-icons" href="{{ path('index_article') }}">Panier </a>
-            <a class="material-icons" href="{{ path('app_login') }}">Connexion</a>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+              <a class="material-icons" href="{{ path('profile_index') }}">Mon compte</a>
+              <a class="material-icons" href="{{ path('app_logout') }}">Déconnexion</a>
+            {% else %}
+              <a class="material-icons" href="{{ path('app_login') }}">Connexion</a>
+            {% endif %}
           </nav>
         </div>
       {% endblock %}
