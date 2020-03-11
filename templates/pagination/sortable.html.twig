@@ -1,4 +1,5 @@
-<a{% for attr, value  in options | merge({class: 'filter'}) %} {{ attr }}="{{ value }}"{% endfor %}>
+<a{% for attr, value  in options | merge({class: 'filter-icons'}) %} {{ attr }}="{{ value }}"{% endfor %}>
+    {{ title }}
     <span class="float-right">
         {% if sorted %}
             {% if direction == 'desc' %}
@@ -10,5 +11,4 @@
             <i class="fa fa-sort"></i>
         {% endif %}
     </span>
-    {{ title }}
 </a>

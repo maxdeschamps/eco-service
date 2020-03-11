@@ -30,9 +30,6 @@ class ProductSearchType extends AbstractType
                 'class' => Category::class,
                 'expanded' => false,
                 'multiple' => false,
-                'attr' => [
-                    'placeholder' => 'Categories'
-                ]
             ]);
            /* ->add('min', NumberType::class, [
                 'label' => false,
