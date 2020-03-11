@@ -39,6 +39,7 @@ class Message
      */
     private $content;
 
+
     /**
      * @ORM\Column(type="string", length=255)
      */

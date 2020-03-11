@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Message;
 use App\Form\MessageType;
+use App\Notifications\ContactNotification;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,22 +18,21 @@ class ContactController extends AbstractController
   /**
    * @Route("/contact", name="contact")
    */
-  public function index(Request $request)
+  public function index(Request $request, ContactNotification $notification): Response
   {
-    $contact = new Message();
-    $form = $this->createForm(MessageType::class, $contact);
-    $form->handleRequest($request);
+      $contact = new Message();
+      $form = $this->createForm(MessageType::class, $contact);
+      $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid())
-    {
-      $this->addFlash('success', 'Votre message à a bien été envoyé');
-      return $this->redirectToRoute('contact');
-    }
-
+      if ($form->isSubmitted() && $form->isValid()) {
+          $notification->notify($contact);
+          $this->addFlash('success', 'Votre email à bien été envoyé');
+          return $this->redirectToRoute('contact');
+      }
     return $this->render(
       'contact/index.html.twig',
       [
-        'form' => $form->createView()
+          'form' => $form->createView()
       ]
     );
   }

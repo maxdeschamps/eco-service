@@ -121,8 +121,6 @@ class AdminController extends BaseAdminController
             $total += $totalItem;
         }
 
-
-
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
 
