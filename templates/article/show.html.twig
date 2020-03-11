@@ -25,14 +25,14 @@
     </div>
     <div class="ingredients">
       <h2>Ingrédients</h2 >
-      {{ article.getingredients }}
+      {{ article.getingredients | raw }}
     </div>
   </div>
 
   <div class="conteneurEtapes">
-    <h1>Éxplications par étapes</h1>
+    <h1>Explications par étapes</h1>
     <div class="etape">
-      {{ article.getSteps}}
+      {{ article.getSteps | raw }}
     </div>
   </div>
 
