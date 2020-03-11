@@ -26,10 +26,15 @@
       <div class="infos-product textCenter">
         <h1><span>{{ product.getName }}</span></h1>
         <p>{{ (product.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
-        <label for="qty-product">Choisissez une quantité :</label>
-        <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
 
-        <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 0 %}
+          <label for="qty-product">Choisissez une quantité :</label>
+          <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
+
+          <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+        {% else %}
+          <p class="text-error">Vous devez avoir un compte client pour pouvoir ajouter ce produit à votre panier</p>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -40,13 +45,12 @@
 
   <div id="product-desc">
     <div class="container">
-      <h2>Description</h2>
-      <p>
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux
-        de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à
-        la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-      </p>
-
+      <div class="blocFull">
+        <h2>Description</h2>
+        <p>
+          {{ product.content }}
+        </p>
+      </div>
     </div>
     <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
       <path
@@ -55,7 +59,7 @@
     <article id="blocProducts" class="backgroundLightGreen">
       <div class="container">
         <div class="blocFull">
-          <h2 class="textCenter">Nos derniers produits</h2>
+          <h2 class="textCenter">Vous aimerez aussi</h2>
           <ul class="detailList">
             {% for product in products %}
               <li class="detailElement">

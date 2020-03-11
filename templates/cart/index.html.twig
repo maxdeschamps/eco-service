@@ -1,55 +1,59 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Votre panier{% endblock %}
+
+{% block idBody %}cart{% endblock %}
 
 {% block body %}
 
-    <div class="bg-light p-3" style="margin-top: 150px">
+  <div class="container">
+    <div class="blocFull">
+
+      <div class="bg-light p-3" style="margin-top: 150px">
         <h1>Votre panier</h1>
-    </div>
+      </div>
 
-    {% if items | length > 0 %}
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Produits</th>
-            <th>Prix HT</th>
-            <th>Prix TTC</th>
-            <th>Quantité</th>
-            <th>total</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in items %}
+      {% if items | length > 0 %}
+        <table class="table">
+          <thead>
             <tr>
-              <td>{{ item.product.name }}</td>
-              <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }} €</td>
-              <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }} €</td>
-              <td>{{ item.quantity }}</td>
-              <td>{{ (item.product.priceTtc * item.quantity)|number_format(2, ',', ' ') }} €</td>
-              <td>
-                <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
-                  <i class="fas fa-trash"></i>
-                </a>
-              </td>
+              <th>Produits</th>
+              <th>Prix HT</th>
+              <th>Prix TTC</th>
+              <th>Quantité</th>
+              <th>total</th>
+              <th></th>
             </tr>
-          {% endfor %}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3" class="text-right">Total : </td>
-            <td>{{ total|number_format(2, ',', ' ') }} €</td>
-            <td> </td>
-          </tr>
-        </tfoot>
-      </table>
-    {% else %}
-      <p>Surprise, c'est vide !</p>
-    {% endif %}
-
-
-
-
+          </thead>
+          <tbody>
+            {% for item in items %}
+              <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }}€</td>
+                <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }}€</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ (item.product.priceTtc * item.quantity)|number_format(2, ',', ' ') }}€</td>
+                <td>
+                  <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="totalPanier">
+          <div>
+            <p>
+              <b>Total :</b>
+              {{ total|number_format(2, ',', ' ') }}€</p>
+          </div>
+          <button class="btn">Passer à l'étape suivante</button>
+        </div>
+      {% else %}
+        <p style="text-align:center;">Surprise, c'est vide !</p>
+      {% endif %}
+    </div>
+  </div>
 
 {% endblock %}

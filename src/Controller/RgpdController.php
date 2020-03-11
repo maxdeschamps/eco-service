@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RgpdController extends AbstractController
 {
   /**
-   * @Route("/RGPD", name="rgpd_index")
+   * @Route("/informations-legales", name="rgpd_index")
    */
   public function index()
   {

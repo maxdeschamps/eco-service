@@ -30,8 +30,8 @@ class ArticleSearchType extends AbstractType
         'label' => false,
         'required' => false,
         'class' => Category::class,
-        'expanded' => true,
-        'multiple' => true
+        'expanded' => false,
+        'multiple' => false
       ])
       ;
   }

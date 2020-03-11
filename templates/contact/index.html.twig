@@ -15,20 +15,59 @@
     <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
   </svg>
 </div>
-<div id="contactForm" class="mt-4">
-  {{ form_start(form) }}
-    <div class="row">
-      <div class="col">{{ form_row(form.email) }}</div>
-      <div class="col">{{ form_row(form.subject) }}</div>
+<div id="contactForm">
+  <div class="container">
+    <div class="blocFull">
+      <h1>Contact</h1>
+      {{ form_start(form) }}
+      <div class="blockUser">
+        <div class="input-user">
+          <div class="input-user-label">
+            {{ form_label(form.lastName) }}
+          </div>
+          <div class="input-user-widget">
+            {{ form_widget(form.lastName) }}
+          </div>
+        </div>
+        <div class="input-user">
+          <div class="input-user-label">
+            {{ form_label(form.firstName) }}
+          </div>
+          <div class="input-user-widget">
+            {{ form_widget(form.firstName) }}
+          </div>
+        </div>
+        <div class="input-user">
+          <div class="input-user-label">
+            {{ form_label(form.email) }}
+          </div>
+          <div class="input-user-widget">
+            {{ form_widget(form.email) }}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-message">
+        <div class="input-message-label">
+          <div class="label-message">
+            {{ form_label(form.content) }}
+          </div>
+          <div class="input-subject">
+            {{ form_row(form.subject) }}
+          </div>
+        </div>
+        <div class="input-message-widget">
+          {{ form_widget(form.content) }}
+        </div>
+      </div>
+
+      <div class="terms">
+          {{ form_label(form.agreeTerms) }}
+          {{ form_widget(form.agreeTerms) }}
+      </div>
+      <button>Envoyer</button>
+      {{ form_end(form) }}
     </div>
-    <div class="row">
-      <div class="col">{{ form_row(form.content) }}</div>
-    </div>
-  {{ form_rest(form) }}   
-    <div class="form-group">
-      {{ form_row(form.agreeTerms) }}
-      <button class="btn btn-primary">Envoyer</button>
-    </div>
-  {{ form_end(form) }}
+  </div>
 </div>
 {% endblock %}

@@ -21,13 +21,13 @@
     <div class="search">
         {% include 'article/_filter.html.twig' with {form: form} only %}
     </div>
-  </div>
-  
-  <div class="blocFull">
-    <ul class="detailList">
+    <div class="trie">
+      {{ knp_pagination_sortable(articles, 'Nom', 'article.name') }}
+    </div>
+    <ul>
       {% for article in articles %}
         <li class="detailElement">
-            <a class="fontSize0" href="{{ path('show_product', { 'slug': article.getSlug }) }}">{{ article.getName }}></a>
+            <a class="fontSize0" href="{{ path('show_product', { 'id': article.getId }) }}">{{ article.getName }}></a>
               {% if article.images is empty %}
                 <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
               {% else %}
