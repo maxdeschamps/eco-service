@@ -60,7 +60,9 @@
             <ul>
               {% for bill in app.user.bills %}
                 <li>
-                  <p>{{ bill.ref }}</p>
+                  <a href="{{ path('show_bill', { 'id': bill.getId }) }}">
+                    {{ bill.ref }}
+                  </a>
                 </li>
               {% endfor %}
             </ul>
@@ -75,7 +77,9 @@
             <ul>
               {% for quotation in app.user.quotations %}
                 <li>
-                  <p>{{ quotation.ref }}</p>
+                  <a href="{{ path('show_quotation', { 'id': quotation.getId }) }}">
+                    {{ quotation.ref }}
+                  </a>
                 </li>
               {% endfor %}
             </ul>
