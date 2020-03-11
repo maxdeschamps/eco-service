@@ -1,73 +1,91 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ app.user.firstName }} {{ app.user.lastName }}{% endblock %}
+{% block title %}{{ app.user.firstName }}
+  {{ app.user.lastName }}
+{% endblock %}
 
 {% block idBody %}account{% endblock %}
 
 {% block body %}
-  <div class="container" style="margin-top: 50px;">
-    <div class="blocFull">
-      <h1>Mon compte</h1>
+  <div class="bodyAccount">
+    <div class="container">
+      <div class="fullH1">
+        <h1>Mon compte</h1>
+      </div>
+      <div class="adresse" style="width:100%; text-align:center;">
+        <h2>Mes informations</h2>
 
-      <p>{{ app.user.firstName }} {{ app.user.lastName }}</p>
-      <p>Email : {{ app.user.email }}</p>
-      <p>Téléphone : {{ app.user.phone }}</p>
-
-      <h2>Adresse de livraison</h2>
-      {% if app.user.deliveryAddress is not empty %}
-        <address>
-          {{ app.user.deliveryAddress.line1 }}<br/>
-          {{ app.user.deliveryAddress.line2 }}<br/>
-          {{ app.user.deliveryAddress.postalCode }} {{ app.user.deliveryAddress.city }}<br/>
-          {{ app.user.deliveryAddress.country }}<br/>
-        </address>
-      {% endif %}
-
-      <h2>Adresse de facturation</h2>
-      {% if app.user.billingAddress is not empty %}
-        <address>
-          {{ app.user.billingAddress.line1 }}<br/>
-          {{ app.user.billingAddress.line2 }}<br/>
-          {{ app.user.billingAddress.postalCode }} {{ app.user.billingAddress.city }}<br/>
-          {{ app.user.billingAddress.country }}<br/>
-        </address>
-      {% endif %}
-
-      <a href="{{ path('profile_update') }}">Modifier le profil</a>
+        <p>{{ app.user.firstName }}
+          {{ app.user.lastName }}</p>
+        <p>Email :
+          {{ app.user.email }}</p>
+        <p>Téléphone :
+          {{ app.user.phone }}</p>
+      </div>
     </div>
-
-    <div class="blocFull">
-      {% if app.user.isCompany == 0 %}
-        <h2>Mes factures</h2>
-
-        {% if app.user.bills is empty %}
-          <p>Aucune facture trouvée.</p>
-        {% else %}
-          <ul>
-            {% for bill in app.user.bills %}
-              <li>
-                <p>{{ bill.ref }}</p>
-              </li>
-            {% endfor %}
-          </ul>
+    <div class="container alignementFlex">
+      <div class="adresse">
+        <h2>Adresse de livraison</h2>
+        {% if app.user.deliveryAddress is not empty %}
+          <address>
+            {{ app.user.deliveryAddress.line1 }}<br/>
+            {{ app.user.deliveryAddress.line2 }}<br/>
+            {{ app.user.deliveryAddress.postalCode }}
+            {{ app.user.deliveryAddress.city }}<br/>
+            {{ app.user.deliveryAddress.country }}<br/>
+          </address>
         {% endif %}
-        
-      {% else %}
-        <h2>Mes demandes de devis</h2>
-
-        {% if app.user.quotations is empty %}
-          <p>Aucun devis trouvé.</p>
-        {% else %}
-          <ul>
-            {% for quotation in app.user.quotations %}
-              <li>
-                <p>{{ quotation.ref }}</p>
-              </li>
-            {% endfor %}
-          </ul>
+      </div>
+      <div class="adresse adresseResponsive">
+        <h2>Adresse de facturation</h2>
+        {% if app.user.billingAddress is not empty %}
+          <address>
+            {{ app.user.billingAddress.line1 }}<br/>
+            {{ app.user.billingAddress.line2 }}<br/>
+            {{ app.user.billingAddress.postalCode }}
+            {{ app.user.billingAddress.city }}<br/>
+            {{ app.user.billingAddress.country }}<br/>
+          </address>
         {% endif %}
-      {% endif %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="adresse">
+        {% if app.user.isCompany == 0 %}
+          <h2>Mes factures</h2>
 
+          {% if app.user.bills is empty %}
+            <p>Aucune facture trouvée.</p>
+          {% else %}
+            <ul>
+              {% for bill in app.user.bills %}
+                <li>
+                  <p>{{ bill.ref }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+        {% else %}
+          <h2>Mes demandes de devis</h2>
+
+          {% if app.user.quotations is empty %}
+            <p>Aucun devis trouvé.</p>
+          {% else %}
+            <ul>
+              {% for quotation in app.user.quotations %}
+                <li>
+                  <p>{{ quotation.ref }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="containerBtnProfil">
+      <a class="updateProfil" href="{{ path('profile_update') }}">Modifier le profil</a>
     </div>
   </div>
+</div>
 {% endblock %}

@@ -61,16 +61,21 @@ class UserController extends AbstractController
   }
 
   /**
-   * @Route("/ma-commande/{id}", name="show_summary")
+   * @Route("/ma-facture/{id}", name="show_bill")
    */
-  public function showSummary(?Quotation $quotation, ?Bill $bill)
+  public function showBill(Bill $summary)
   {
-    if (isset($quotation)) {
-      $summary = $quotation;
-    } else {
-      $summaray = $bill;
-    }
+    return $this->render(
+      'user/show.html.twig',
+      ['summary' => $summary]
+    );
+  }
 
+  /**
+   * @Route("/mon-devis/{id}", name="show_quotation")
+   */
+  public function showQuotation(Quotation $summary)
+  {
     return $this->render(
       'user/show.html.twig',
       ['summary' => $summary]
