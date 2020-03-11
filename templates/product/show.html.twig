@@ -35,7 +35,7 @@
         {% else %}
           <p class="text-error">Vous devez avoir un compte client pour pouvoir ajouter ce produit à votre panier</p>
         {% endif %}
-        <a class="fb-xfbml-parse-ignore" target="popup" rel="noopener"
+        <a class="bouton-fb" target="popup" rel="noopener"
            onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}&amp;src=sdkpreparse','popup','width=600,height=600'); return false;"
            href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}&amp;src=sdkpreparse">
           <i class="fab fa-facebook"></i>
