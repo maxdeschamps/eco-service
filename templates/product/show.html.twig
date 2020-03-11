@@ -28,10 +28,12 @@
         <p>{{ (product.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 0 %}
-          <label for="qty-product">Choisissez une quantité :</label>
-          <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
+          <div class="add-to-cart">
+            <label for="qty-product">Choisissez une quantité :</label>
+            <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
 
-          <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+            <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+          </div>
         {% else %}
           <p class="text-error">Vous devez avoir un compte client pour pouvoir ajouter ce produit à votre panier</p>
         {% endif %}
