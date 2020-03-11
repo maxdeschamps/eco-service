@@ -22,23 +22,6 @@ class ServiceSearchType extends AbstractType
       ->add('q', TextType::class, [
         'label' => false,
         'required' => false,
-        'attr' => [
-          'placeholder' => 'Rechercher'
-        ]
-      ])
-      ->add('min', NumberType::class, [
-        'label' => false,
-        'required' => false,
-        'attr' => [
-          'placeholder' => 'Prix minimum'
-        ]
-      ])
-      ->add('max', NumberType::class, [
-        'label' => false,
-        'required' => false,
-        'attr' => [
-          'placeholder' => 'Prix maximum'
-        ]
       ])
       ;
   }

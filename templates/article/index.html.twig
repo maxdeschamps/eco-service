@@ -27,12 +27,17 @@
                 d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
     </svg>
     <div class="backgroundLightGreen">
-        <div class="search">
-            {% include 'article/_filter.html.twig' with {form: form} only %}
-        </div>
+      <div class="search">
         <div class="trie">
-            {{ knp_pagination_sortable(articles, 'Nom', 'article.name') }}
+          <div class="title-filter">
+            <h4>Trier par : </h4>
+          </div>
+          <div class="input-filter">
+            {{ knp_pagination_sortable(articles, 'Nom', 'service.name') }}
+          </div>
         </div>
+        {% include 'article/_filter.html.twig' with {form: form} only %}
+      </div>
         <div class="container">
             <ul class="detailList">
               {% for article in articles %}
@@ -44,25 +49,42 @@
                         <img src="{{ article.getImages[0].getUri }}" />
                       {% endif %}
 
-                    </a>
-                    <ul class="detailContent">
-                        <li class="detailContentDatas">
-                            <a href="#">
-                                <h3>{{ article.name }}</h3>
-                            </a>
-                            <a href="#">
-                                <p>{{ article.category.name }}</p>
-                            </a>
-                        </li>
-                      </ul>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="paginationContainer">
-            <div class="textCenter marginBottom25">
-                {{ knp_pagination_render(articles) }}
-            </div>
-        </div>
+  <div class="blocFull">
+    <div class="search">
+        {% include 'article/_filter.html.twig' with {form: form} only %}
     </div>
+    <div class="trie">
+      {{ knp_pagination_sortable(articles, 'Nom', 'article.name') }}
+    </div>
+    <ul>
+      {% for article in articles %}
+        <li class="detailElement">
+            <a class="fontSize0" href="{{ path('show_product', { 'id': article.getId }) }}">{{ article.getName }}></a>
+              {% if article.images is empty %}
+                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+              {% else %}
+                <img src="{{ article.getImages[0].getUri }}" />
+              {% endif %}
+            </a>
+            <ul class="detailContent">
+                <li class="detailContentDatas">
+                    <a href="#">
+                        <h3>{{ article.name }}</h3>
+                    </a>
+                    <a href="#">
+                        <p>{{ article.category.name }}</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <div class="paginationContainer">
+      <div class="textCenter marginBottom25">
+        {{ knp_pagination_render(articles) }}
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
