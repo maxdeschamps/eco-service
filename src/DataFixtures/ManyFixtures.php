@@ -117,7 +117,7 @@ class ManyFixtures extends Fixture
             $article->setName($faker->word(10));
             $article->setIngredients($faker->word(100));
             $article->setSteps($faker->word(100));
-            $article->setDurability($faker->numberBetween(0,80));
+            $article->setDifficulty($faker->numberBetween(0,80)); 
             $article->setEstimatedTime($faker->numberBetween(0,100));
             $article->setContent($faker->text);
             $manager->persist($article);
