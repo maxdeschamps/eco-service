@@ -45,9 +45,9 @@
       <li class="detailElement">
         <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
           {% if product.images is empty %}
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+            <img src="{{ asset('images/img-homepage-1.jpg') }}" />
           {% else %}
-          <img src="{{ product.getImages[0].getUri }}" />
+            <img src="{{ asset('images/produits/' ~ product.images[0].image) }}" />
           {% endif %}
         </a>
         <ul class="detailContent">

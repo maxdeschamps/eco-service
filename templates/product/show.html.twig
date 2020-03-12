@@ -10,18 +10,11 @@
   <div class="container">
     <div id="header-product">
       <div class="img-product">
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
+        {% for image in product.images %}
+          <figure class="zoom imgPres" style="background-image: url('{{ asset('images/produits/' ~ image.image) }}'); background-position: 98.8% 45.1957%;">
+            <img src="{{ asset('images/produits/' ~ image.image) }}" />
+          </figure>
+        {% endfor %}
       </div>
       <div class="infos-product textCenter">
         <h1><span>{{ product.getName }}</span></h1>
@@ -55,7 +48,7 @@
       <div class="blocFull">
         <h2>Description</h2>
         <p>
-          {{ product.content }}
+          {{ product.content | raw }}
         </p>
       </div>
     </div>
@@ -72,9 +65,9 @@
               <li class="detailElement">
                 <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
                   {% if product.images is empty %}
-                    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg" />
+                    <img src="{{ asset('images/img-homepage-1.jpg') }}" />
                   {% else %}
-                    <img src="{{ product.getImages[0].getUri }}" />
+                    <img src="{{ asset('images/produits/' ~ product.images[0].image) }}" />
                   {% endif %}
                 </a>
                 <ul class="detailContent">

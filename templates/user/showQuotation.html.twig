@@ -2,24 +2,43 @@
 
 {% block title %}Mon devis #{{ quotation.ref }}{% endblock %}
 
-{% block idBody %}{% endblock %}
+{% block idBody %}quotation-tpl{% endblock %}
 
 {% block body %}
   <div class="container" style="margin-top: 50px;">
     <div class="blocFull">
       <h1>Mon devis #{{ quotation.ref }}</h1>
 
-      <ul>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Services</th>
+            <th>Prix TTC</th>
+            <th>Quantité</th>
+            <th>total</th>
+          </tr>
+        </thead>
+        <tbody>
         {% for serviceQuotation in quotation.serviceQuotations %}
-          <li>
-            <a href="{{ path('show_service', { 'id': serviceQuotation.service.id }) }}">{{ serviceQuotation.service.name }} ({{ (serviceQuotation.service.priceTtc)|number_format(2, ',', ' ') }} €)</a>
-            <span>x {{ serviceQuotation.quantity }}</span>
-            <span>-- {{ (serviceQuotation.service.priceTtc * serviceQuotation.quantity)|number_format(2, ',', ' ') }} €</span>
-          </li>
+          <tr>
+            <td><a href="{{ path('show_service', { 'id': serviceQuotation.service.id }) }}">{{ serviceQuotation.service.name }}</a></td>
+            <td>{{ (serviceQuotation.service.priceTtc)|number_format(2, ',', ' ') }} €</td>
+            <td><span>{{ serviceQuotation.quantity }}</span></td>
+            <td><span>{{ (serviceQuotation.service.priceTtc * serviceQuotation.quantity)|number_format(2, ',', ' ') }} €</span></td>
+          </tr>
         {% endfor %}
-      </ul>
+      </tbody>
+    </table>
 
-      <p>Total: {{ total|number_format(2, ',', ' ') }} €</p>
+    <div class="totalPanier">
+      <div>
+        <p>
+          <b>Total :</b>
+          {{ total|number_format(2, ',', ' ') }} €
+        </p>
+      </div>
+      <a class="btn" href="{{ path('profile_index') }}">Revenir à la liste des devis</a>
+    </diV>
     </div>
   </div>
 {% endblock %}
