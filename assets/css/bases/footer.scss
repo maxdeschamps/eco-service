@@ -6,6 +6,10 @@ footer {
     display: flex;
     flex-direction: row;
     margin-bottom: 100px;
+    @media screen and (max-width: $mediumSize) {
+      display: block;
+      margin-bottom:20px;
+    }
 
     #footer-menu {
       width: 30%;
@@ -13,6 +17,10 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: $mediumSize) {
+        width: 100%;
+        padding: 0;
+      }
 
       ul {
         margin: 0;
@@ -22,7 +30,7 @@ footer {
           list-style: none;
           vertical-align: middle;
           margin-bottom: 10px;
-
+          text-align: center;
           a {
             text-decoration: none;
             color: #fff;
@@ -48,6 +56,10 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: $mediumSize) {
+        width: 100%;
+        padding: 0;
+      }
 
       ul {
         margin: 0;
@@ -57,16 +69,19 @@ footer {
         li {
           list-style: none;
 
-          a {
-            #logo-site-footer {
-              width: 50%;
+          .logoFooter {
+            img {
+              width: 45%;
+              @media screen and (max-width: $mediumSize) {
+                width: 25%;
+              }
             }
+          }
 
-            i {
-              margin-top: 15px;
-              color: white;
-              font-size: 40px;
-            }
+          i {
+            margin-top: 15px;
+            color: white;
+            font-size: 40px;
           }
         }
       }
