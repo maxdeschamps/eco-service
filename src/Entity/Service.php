@@ -45,11 +45,6 @@ class Service
     private $price_ttc;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $quantity;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Unity")
      */
     private $unity;

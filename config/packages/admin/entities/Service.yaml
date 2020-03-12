@@ -20,7 +20,6 @@ easy_admin:
           - { property: 'name', label: 'Nom' }
           - { property: 'priceHt', label: 'Prix HT' }
           - { property: 'priceTtc', label: 'Prix TTC' }
-          - { property: 'quantity', label: 'Quantité' }
           - { property: 'author', label: 'Auteur' }
           - { property: 'content', label: 'Contenu' }
           - { property: 'unity', label: 'Unité' }
@@ -35,7 +34,6 @@ easy_admin:
           - { property: 'priceHt', label: 'Prix HT', type: 'number' }
           - { property: 'priceTtc', label: 'Prix TTC', type: 'number' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
-          - { property: 'quantity', label: 'Quantité', type: 'number' }
           - { property: 'author', label: 'Auteur' }
           - { property: 'unity', label: 'Unité' }
           - { property: 'images', label: 'Images'}
