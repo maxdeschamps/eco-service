@@ -26,11 +26,6 @@ class Message
     private $subject;
 
     /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $state;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Image")
      */
     private $images;
@@ -73,18 +68,6 @@ class Message
     public function setSubject(?Subject $subject): self
     {
         $this->subject = $subject;
-
-        return $this;
-    }
-
-    public function getState(): ?string
-    {
-        return $this->state;
-    }
-
-    public function setState(string $state): self
-    {
-        $this->state = $state;
 
         return $this;
     }
