@@ -24,7 +24,7 @@
           {% if product.quantity > 0 %}
             <div class="add-to-cart">
               <label for="qty-product">Choisissez une quantité :</label>
-              <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
+              <input id="qty-product" value="1" name="nbQuant" type="number" step="1" min="1" max="{{ (product.quantity )}}" >
 
               <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
             </div>

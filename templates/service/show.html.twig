@@ -21,17 +21,12 @@
         <p>{{ (service.getPriceTtc)|number_format(2, ',', ' ') }} € <span class="displayBlock">/ {{ service.getUnity.getName }}</span></p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 1 %}
-            {% if service.quantity > 0 %}
-              <div class="add-to-cart">
-
-                <label for="qty-service">Choisissez une quantité :</label>
-                <input id="qty-service" value="1" name="nbQuant" type="number" min="1" max="{{ (service.quantity )}}" >
-
-                <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
-              </div>
-            {% else %}
-              <p class="text-error">Ce service n'est malheureusement plus disponible :( ...</p>
-            {% endif %}
+          <div class="add-to-cart">
+            <label for="qty-service">Choisissez une quantité :</label>
+            <input id="qty-service" value="1" name="nbQuant" type="number" min="1" step="1" >
+            
+            <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+          </div>
         {% else %}
           <p class="text-error">Vous devez avoir un compte entreprise pour pouvoir ajouter ce service à votre panier</p>
         {% endif %}
