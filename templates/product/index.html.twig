@@ -37,18 +37,18 @@
                 {% for product in products %}
                     <li class="detailElement">
                         <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
-          {% if product.images is empty %}
-            <img src="{{ asset('images/img-homepage-1.jpg') }}" />
-          {% else %}
-            <img src="{{ asset('uploads/images/produits/' ~ product.images[0].image) }}" />
-          {% endif %}
+                          {% if product.images is empty %}
+                            <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+                          {% else %}
+                            <img src="{{ asset('uploads/images/produits/' ~ product.images[0].image) }}" />
+                          {% endif %}
                         </a>
                         <ul class="detailContent">
                             <li class="detailContentDatas">
-                                <a href="#">
+                                <a href="{{ path('show_product', { 'id': product.getId }) }}">
                                     <h3>{{ product.name }}</h3>
                                 </a>
-                                <a href="#">
+                                <a href="{{ path('index_product') }}?categories={{ product.category.id }}&q=">
                                     <p>{{ product.category.name }}</p>
                                 </a>
                             </li>

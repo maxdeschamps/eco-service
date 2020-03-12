@@ -68,6 +68,12 @@
                   <span><i class="fas fa-user-alt"></i></span>
                 {% endif %}
               </li>
+              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li>
+                  <a class="fontSize0" href="{{ path('app_logout') }}">Déconnexion</a>
+                  <span><i class="fas fa-sign-out-alt"></i></span>
+                </li>
+              {% endif %}
               <li>
                 <a class="fontSize0" href="{{ path('homepage') }}">Accueil</a>
                 <span><img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service"></span>

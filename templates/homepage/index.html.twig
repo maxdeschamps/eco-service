@@ -45,7 +45,7 @@
                     <a href="{{ path('show_product', { 'id': product.getId }) }}">
                       <h3>{{ product.name }}</h3>
                     </a>
-                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                    <a href="{{ path('index_product') }}?categories={{ product.category.id }}&q=">
                       <p>{{ product.category.name }}</p>
                     </a>
                   </li>
