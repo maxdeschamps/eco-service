@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 class PaymentController extends AbstractController
 {
     /**
-     * @Route("/payment", name="payment")
+     * @Route("/paiement", name="payment")
      */
     public function index(Request $request, EntityManagerInterface $manager)
     {
@@ -32,6 +32,20 @@ class PaymentController extends AbstractController
             'cart/payment.html.twig',
             [
                 'form' => $form->createView()
+            ]
+        );
+    }
+
+    /**
+     * @Route("/detail-paiement", name="payment-details")
+     */
+    public function detailPayment(Request $request, EntityManagerInterface $manager)
+    {
+
+        return $this->render(
+            '#',
+            [
+
             ]
         );
     }
