@@ -19,5 +19,4 @@ easy_admin:
         fields:
           - { property: 'service', label: 'Service' }
           - { property: 'quantity', label: 'Quantité' }
-          - { property: 'extra', label: 'Texte supplémentaire' }
         disabled_actions: ['edit']

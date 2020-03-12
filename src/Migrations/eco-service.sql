@@ -85,7 +85,3 @@ INSERT INTO `service` (`id`, `author_id`, `unity_id`, `name`, `content`, `price_
 
 
 -- --------------------------------------------------------
-
-
-
-

@@ -24,11 +24,6 @@ class ServiceQuotation
     private $quantity;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $extra;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Quotation", inversedBy="service_quotations")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -58,18 +53,6 @@ class ServiceQuotation
     public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
-
-        return $this;
-    }
-
-    public function getExtra(): ?string
-    {
-        return $this->extra;
-    }
-
-    public function setExtra(?string $extra): self
-    {
-        $this->extra = $extra;
 
         return $this;
     }

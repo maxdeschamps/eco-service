@@ -50,35 +50,27 @@
               <li>
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                   {% if app.user.isCompany == 0 %}
-                    <a href="{{ path('cart_index') }}">
-                      <i class="fas fa-shopping-cart"></i>
-                    </a>
+                    <a class="fontSize0" href="{{ path('cart_index') }}">Panier</a>
                   {% else %}
-                    <a href="{{ path('cart_company_index') }}">
-                      <i class="fas fa-shopping-cart"></i>
-                    </a>
+                    <a class="fontSize0" href="{{ path('cart_company_index') }}">Panier</a>
                   {% endif %}
                 {% else %}
-                  <a href="{{ path('cart_index') }}">
-                    <i class="fas fa-shopping-cart"></i>
-                  </a>
+                  <a class="fontSize0" href="{{ path('cart_index') }}">Panier</a>
                 {% endif %}
+                <span><i class="fas fa-shopping-cart"></i></span>
               </li>
               <li>
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                  <a class="material-icons" href="{{ path('profile_index') }}">
-                    <i class="fas fa-user-alt"></i>
-                  </a>
+                  <a class="fontSize0" href="{{ path('profile_index') }}">Profil</a>
+                  <span><i class="fas fa-user-alt"></i></span>
                 {% else %}
-                  <a href="{{ path('app_login') }}">
-                    <i class="fas fa-user-alt"></i>
-                  </a>
+                  <a class="fontSize0" href="{{ path('app_login') }}">Profil</a>
+                  <span><i class="fas fa-user-alt"></i></span>
                 {% endif %}
               </li>
               <li>
-                <a href="/">
-                  <img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
-                </a>
+                <a class="fontSize0" href="{{ path('homepage') }}">Accueil</a>
+                <span><img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service"></span>
               </li>
             </ul>
           </div>
@@ -145,7 +137,7 @@
           <div id="footer-logos">
             <ul>
               <li>
-                <a class="logoFooter" href="/">
+                <a class="logoFooter" href="{{ path('homepage') }}">
                   <img src="{{ asset('images/logo-eco-service.png') }}">
                   </a>
               </li>

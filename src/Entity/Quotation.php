@@ -49,6 +49,11 @@ class Quotation
     private $ref;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $extra;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
      */
@@ -200,7 +205,18 @@ class Quotation
         $this->ref = $ref;
         return $this;
     }
+    
+    public function getExtra(): ?string
+    {
+        return $this->extra;
+    }
 
+    public function setExtra(?string $extra): self
+    {
+        $this->extra = $extra;
+
+        return $this;
+    }
 
     /**
      * @return Collection|ServiceQuotation[]
