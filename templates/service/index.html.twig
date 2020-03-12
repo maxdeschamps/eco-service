@@ -5,64 +5,62 @@
 {% block idBody %}service-tpl{% endblock %}
 
 {% block body %}
-<div id="listeService">
-  <div class="container reverse">
-    <div class="blocHalf">
-      <h1><span>Retrouvez tous nos</span></h1>
-      <h1>SERVICES ECO SERVICE</h1>
-      <div class="blocContent">
-        <p>Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ? Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets. </p>
-        <p>Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes : produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
-      </div>
-      <div class="blocHalf">
-        <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
-      </div>
-    </div>
-  </div>
-  <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
-    <path
-    d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
-  </svg>
-  <div class="backgroundLightGreen">
-    <div class="search">
-      <div class="trie">
-        <div class="title-filter">
-          <h4>Trier par : </h4>
+    <div id="listeService">
+        <div class="container reverse">
+            <div class="blocHalf">
+                <h1><span>Retrouvez tous nos</span></h1>
+                <h1>SERVICES ECO SERVICE</h1>
+                <div class="blocContent">
+                    <p>Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ? Des produits d'entretien aux
+                        cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets. </p>
+                    <p>Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes : produit
+                        démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
+                </div>
+                <div class="blocHalf">
+                    <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
+                </div>
+            </div>
         </div>
-        <div class="input-filter">
-          {{ knp_pagination_sortable(services, 'Prix', 'service.price_ttc') }}
-          {{ knp_pagination_sortable(services, 'Nom', 'service.name') }}
-        </div>
-      </div>
-      {% include 'service/_filter.html.twig' with {form: form} only %}
-    </div>
+        <svg class="wave waveTop fillLightGreen" viewbox="0 0 1440 120" aria-hidden="true">
+            <path
+                    d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
+        </svg>
+        <div class="backgroundLightGreen">
+            <div class="search">
+                <div class="trie">
+                    <div class="title-filter">
+                        <h4>Trier par : </h4>
+                    </div>
+                    <div class="input-filter">
+                        {{ knp_pagination_sortable(services, 'Prix', 'service.price_ttc') }}
+                        {{ knp_pagination_sortable(services, 'Nom', 'service.name') }}
+                    </div>
+                </div>
+                {% include 'service/_filter.html.twig' with {form: form} only %}
+            </div>
 
-    <div class="container">
-      <ul class="detailList">
-        {% for service in services %}
-        <li class="detailElement">
-          <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
-            <img src="{{ asset('images/img-homepage-1.jpg') }}">
-          </a>
-        </a>
-        <ul class="detailContent">
-          <li class="fullSize">
-            <a href="{{ path('show_service', { 'id': service.id }) }}">
-              <h3>{{ service.name }}</h3>
-            </a>
-            <a href="{{ path('show_service', { 'id': service.id }) }}">
-              <p>{{ service.content }}</p>
-            </a>
-          </li>
-        </ul>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="paginationContainer">
-    <div class="textCenter marginBottom25">
-      {{ knp_pagination_render(services) }}
+            <div class="container">
+                <ul class="detailList">
+                    {% for service in services %}
+                        <li class="detailElement">
+                            <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
+                                <img src="{{ asset('images/img-homepage-1.jpg') }}">
+                            </a>
+                            </a>
+                            <ul class="detailContent">
+                                <li class="fullSize">
+                                    <a href="{{ path('show_service', { 'id': service.id }) }}">
+                                        <h3>{{ service.name }}</h3>
+                                    </a>
+                                    <a href="{{ path('show_service', { 'id': service.id }) }}">
+                                        <p>{{ service.content }}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 {% endblock %}
