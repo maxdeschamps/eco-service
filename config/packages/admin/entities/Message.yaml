@@ -18,23 +18,19 @@ easy_admin:
         actions:
           - { name: 'show', icon: 'search', label: false}
         fields:
-          - { property: 'content', label: 'Contenu' }
+          - { property: 'email', label: 'Email' }
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'lastName', label: 'Nom' }
           - { property: 'subject', label: 'Sujet' }
-#      form:
-#        actions:
-#          - { name: 'delete', label: 'Supprimer' }
-#          - { name: 'list', label: 'Retourner vers la liste' }
-#        fields:
-#          - { property: 'state', label: 'Etat' }
-#          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
-#          - { property: 'subject', label: 'Sujet' }
-#          - { property: 'author', label: 'Auteur' }
       show:
         title: 'Message (#%%entity_id%%)'
         actions:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
+          - { property: 'email', label: 'Email' }
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'lastName', label: 'Nom' }
           - { property: 'subject', label: 'Sujet' }
+          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
         disabled_actions: ['edit']
