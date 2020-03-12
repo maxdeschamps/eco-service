@@ -1,3 +1,29 @@
+#service-tpl {
+  .search {
+    justify-content: space-around;
+
+    .filter {
+      width: 0;
+    }
+
+    .rechercher {
+      h4 {
+        width: max-content;
+      }
+    }
+  }
+}
+
+#article-tpl {
+  .search {
+    justify-content: space-around;
+
+    .filter {
+      width: 57%;
+    }
+  }
+}
+
 .search {
 
   position: relative;
@@ -27,6 +53,7 @@
     }
 
     .title-filter {
+      width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: start;

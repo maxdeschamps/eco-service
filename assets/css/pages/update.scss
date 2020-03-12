@@ -1,0 +1,110 @@
+#update {
+  background: $grey;
+
+  .containerGrey {
+    padding: 10% 0;
+
+    .container {
+      background: white;
+      border-radius: 10px;
+
+      .blockFull {
+        width: 100%;
+
+        .updateH1 {
+          text-align: center;
+          margin-bottom: 60px;
+        }
+
+        form {
+          .formContainer {
+            max-width: 30%;
+            margin: 0 auto;
+
+            @media screen and (max-width: $largeSize) {
+              max-width: 70%;
+            }
+            @media screen and (max-width: $mediumSize) {
+              max-width: 80%;
+            }
+            @media screen and (max-width: $extraSmallSize) {
+              max-width: 90%;
+            }
+
+            h5 {
+              padding-top: 20px;
+            }
+
+            div {
+              textarea {
+                resize: none;
+                overflow-y: auto;
+                border: 0;
+                border-bottom: 1px solid black;
+              }
+
+              div {
+                display: flex;
+
+                label {
+                  width: 50%;
+                  display: inline-block;
+                  margin: 10px 0;
+                  text-align: left;
+                  font-size: 17px;
+                  @media screen and (max-width: $mediumSize) {
+                    margin-top: 10px;
+                  }
+                }
+
+                input {
+                  border: 0;
+                  border-bottom: 1px solid black;
+                  margin: 10px 0;
+                  font-size: 17px;
+                  @media screen and (max-width: $mediumSize) {
+                    background: $lightGreen;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .btnEnvoyer {
+          cursor: pointer;
+          font-size: 17px;
+          text-transform: uppercase;
+          background: white;
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px 30px;
+          transition: 0.3s;
+          text-decoration: none;
+          margin-top: 70px;
+          @media screen and (max-width: $mediumSize) {
+            color: black;
+          }
+
+          &:hover {
+            background: black;
+            color: white;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  .backgroundLightGreen {
+    .container {
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+
+      .blockFull {
+        width: 100%;
+      }
+    }
+  }
+}

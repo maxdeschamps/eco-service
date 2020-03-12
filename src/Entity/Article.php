@@ -46,6 +46,26 @@ class Article
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ingredients;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $steps;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $difficulty;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $estimatedTime;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -133,5 +153,53 @@ class Article
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getIngredients(): ?string
+    {
+        return $this->ingredients;
+    }
+
+    public function setIngredients(?string $ingredients): self
+    {
+        $this->ingredients = $ingredients;
+
+        return $this;
+    }
+
+    public function getSteps(): ?string
+    {
+        return $this->steps;
+    }
+
+    public function setSteps(?string $steps): self
+    {
+        $this->steps = $steps;
+
+        return $this;
+    }
+
+    public function getDifficulty(): ?int
+    {
+        return $this->difficulty;
+    }
+
+    public function setDifficulty(?int $difficulty): self
+    {
+        $this->difficulty = $difficulty;
+
+        return $this;
+    }
+
+    public function getEstimatedTime(): ?int
+    {
+        return $this->estimatedTime;
+    }
+
+    public function setEstimatedTime(?int $estimatedTime): self
+    {
+        $this->estimatedTime = $estimatedTime;
+
+        return $this;
     }
 }
