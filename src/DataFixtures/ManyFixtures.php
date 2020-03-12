@@ -117,7 +117,7 @@ class ManyFixtures extends Fixture
             $article->setName($faker->word(10));
             $article->setIngredients($faker->word(100));
             $article->setSteps($faker->word(100));
-            $article->setDifficulty($faker->numberBetween(0,80)); 
+            $article->setDifficulty($faker->numberBetween(0,80));
             $article->setEstimatedTime($faker->numberBetween(0,100));
             $article->setContent($faker->text);
             $manager->persist($article);
@@ -136,7 +136,6 @@ class ManyFixtures extends Fixture
         for ($i = 0; $i < 15; $i++) {
             $message = new Message();
             $message->setSubject($manager->find(Subject::class, random_int(1, 10)));
-            $message->setState($faker->word(100));
             $message->setContent($faker->word(100));
             $message->setEmail($faker->email);
             $message->setFirstName($faker->word(7));

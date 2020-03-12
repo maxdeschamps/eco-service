@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Paiement{% endblock %}
+
+{% block idBody %}paiement{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success mt-2">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div id="contactForm">
+        <div class="container">
+            <div class="blocFull">
+                <h1>Paiement</h1>
+                {{ form_start(form) }}
+                <div class="blockUser">
+                    <div class="input-user">
+                        <div class="input-user-label">
+                            {{ form_label(form.name) }}
+                        </div>
+                        <div class="input-user-widget">
+                            {{ form_widget(form.name) }}
+                        </div>
+                    </div>
+                    <div class="input-user">
+                        <div class="input-user-label">
+                            {{ form_label(form.expiration_date) }}
+                        </div>
+                        <div class="input-user-widget">
+                            {{ form_widget(form.expiration_date) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-user">
+                    <div class="input-subject">
+                        {{ form_row(form.num_bluecard) }}
+                    </div>
+                </div>
+                <div class="input-subject">
+                    {{ form_row(form.crypto) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="terms">
+            {{ form_label(form.agreeTerms) }}
+            {{ form_widget(form.agreeTerms) }}
+        </div>
+        <button>Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+{% endblock %}
