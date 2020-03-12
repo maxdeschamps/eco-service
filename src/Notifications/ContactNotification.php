@@ -27,7 +27,7 @@ class ContactNotification {
             ->setFrom($messages->getEmail())
             ->setTo('eco-service@site.fr')
             ->setReplyTo($messages->getEmail())
-            ->setBody($this->renderer->render('contact/index.html.twig', [
+            ->setBody($this->renderer->render('contact/template-mail.html.twig', [
               'messages' => $messages
         ]), 'text/html');
 
