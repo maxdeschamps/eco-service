@@ -11,7 +11,7 @@
     <div id="header-product">
       <div class="img-product">
         {% for image in product.images %}
-          <figure class="zoom imgPres" style="background-image: url('{{ asset('images/produits/' ~ image.image) }}'); background-position: 98.8% 45.1957%;">
+          <figure class="zoom imgPres" style="background-image: url('{{ asset('uploads/images/produits/' ~ image.image) }}'); background-position: 98.8% 45.1957%;">
             <img src="{{ asset('uploads/images/produits/' ~ image.image) }}" />
           </figure>
         {% endfor %}
