@@ -33,6 +33,8 @@ easy_admin:
         children:
           - { entity: 'Service', icon: 'th-list', label: 'Liste des services'}
           - { entity: 'Service', icon: 'plus-circle', label: 'Ajouter un service', params: { action: 'new' } }
+          - { entity: 'Unity', icon: 'tags', label: 'Unités' }
+          - { entity: 'Unity', icon: 'plus-circle', label: 'Ajouter une unité', params: { action: 'new' } }
       - label: Articles
         icon: 'newspaper-o'
         children:
