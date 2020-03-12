@@ -74,7 +74,7 @@
             position: relative;
             display: block;
             content: "Étape " counter(counter_strike) " :";
-            font-family: "Gotham Bold";
+            font-family: "Gotham-Bold";
             font-size: 17px;
             padding-bottom: 20px;
           }
@@ -82,7 +82,7 @@
           &::after {
             content: "";
             width: 30%;
-            height: 4px;
+            height: 3px;
             background: black;
             position: absolute;
             bottom: 0;
@@ -90,7 +90,7 @@
             margin-right: auto;
             left: 0;
             right: 0;
-            border-radius: 20px;
+            border-radius: .5rem;
           }
         }
 
@@ -108,6 +108,10 @@
     background-color: white;
   }
 
+}
+
+
+#showArticle, #article-tpl {
   #header-menu .nav-article-tpl {
     background: #3f3f3f;
     span {

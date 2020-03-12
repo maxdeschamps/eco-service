@@ -83,6 +83,11 @@
   }
 }
 
-.bite {
-  background-color: $lightGreen;
+#cart, #paiement {
+  #header-menu .nav-cart {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
+  }
 }

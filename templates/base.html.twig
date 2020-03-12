@@ -47,7 +47,7 @@
           </div>
           <div id="header-menu-droite">
             <ul>
-              <li>
+              <li class="nav-cart">
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                   {% if app.user.isCompany == 0 %}
                     <a class="fontSize0" href="{{ path('cart_index') }}">Panier</a>
@@ -59,7 +59,7 @@
                 {% endif %}
                 <span><i class="fas fa-shopping-cart"></i></span>
               </li>
-              <li>
+              <li class="nav-account">
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                   <a class="fontSize0" href="{{ path('profile_index') }}">Profil</a>
                   <span><i class="fas fa-user-alt"></i></span>
