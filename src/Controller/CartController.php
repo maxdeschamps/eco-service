@@ -48,8 +48,6 @@ class CartController extends AbstractController
     {
       $panier = $session->get('panier', []);
 
-      dd($panier);
-
       if(!empty($panier[$id]))
         $panier[$id]+=$qte;
       else {
