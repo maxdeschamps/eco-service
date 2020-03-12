@@ -1,7 +1,7 @@
 <?php
 namespace App\Notifications;
 
-use App\Entity\Contact;
+use App\Entity\Message;
 use Twig\Environment;
 
 class ContactNotification {
@@ -22,13 +22,13 @@ class ContactNotification {
         $this->renderer = $renderer;
     }
 
-    public function notify(Contact $contact){
-        $message = (new \Swift_Message('Eco-Service[Admin]: '. $contact->getSubject()))
-            ->setFrom($contact->getEmail())
+    public function notify(Message $messages){
+        $message = (new \Swift_Message('Eco-Service[Admin]: '. $messages->getSubject()))
+            ->setFrom($messages->getEmail())
             ->setTo('eco-service@site.fr')
-            ->setReplyTo($contact->getEmail())
-            ->setBody($this->renderer->render('emails/contact.html.twig', [
-              'contact' => $contact
+            ->setReplyTo($messages->getEmail())
+            ->setBody($this->renderer->render('contact/index.html.twig', [
+              'messages' => $messages
         ]), 'text/html');
 
         $this->mailer->send($message);
