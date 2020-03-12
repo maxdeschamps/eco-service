@@ -21,13 +21,13 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, ContactNotification $notification, EntityManagerInterface $manager): Response
     {
-        $contact = new Message();
-        $form = $this->createForm(MessageType::class, $contact);
+        $messages = new Message();
+        $form = $this->createForm(MessageType::class, $messages);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $notification->notify($contact);
-            $manager->persist($contact);
+            $notification->notify($messages);
+            $manager->persist($messages);
             $manager->flush();
             $this->addFlash('success', 'Votre email à bien été envoyé');
             return $this->redirectToRoute('contact');
