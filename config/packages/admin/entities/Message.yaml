@@ -18,7 +18,6 @@ easy_admin:
         actions:
           - { name: 'show', icon: 'search', label: false}
         fields:
-          - { property: 'state', label: 'Etat' }
           - { property: 'content', label: 'Contenu' }
           - { property: 'subject', label: 'Sujet' }
 #      form:
@@ -36,7 +35,6 @@ easy_admin:
           - { name: 'delete', label: 'Supprimer' }
           - { name: 'list', label: 'Retourner vers la liste' }
         fields:
-          - { property: 'state', label: 'Etat' }
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'subject', label: 'Sujet' }
         disabled_actions: ['edit']
