@@ -5,6 +5,7 @@
 {% block idBody %}service-tpl{% endblock %}
 
 {% block body %}
+
     <div id="listeService">
         <div class="container reverse">
             <div class="blocHalf">
@@ -44,7 +45,11 @@
                     {% for service in services %}
                         <li class="detailElement">
                             <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
-                                <img src="{{ asset('images/img-homepage-1.jpg') }}">
+            {% if service.images is empty %}
+              <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+            {% else %}
+              <img src="{{ asset('uploads/images/produits/' ~ service.images[0].image) }}" />
+            {% endif %}
                             </a>
                             </a>
                             <ul class="detailContent">

@@ -21,7 +21,10 @@ easy_admin:
           - { property: 'author', label: 'Auteur' }
           - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
-          - { property: 'content', label: 'Contenu'}
+          - { property: 'difficulty', label: 'Difficulté (/100)'}
+          - { property: 'estimatedTime', label: 'Temps estimé (en min)'}
+          - { property: 'ingredients', label: 'Ingrédients'}
+          - { property: 'steps', label: 'Étapes'}
           - { property: 'images', label: 'Images'}
       form:
         actions:
@@ -31,6 +34,19 @@ easy_admin:
           - { property: 'author', label: 'Auteur' }
           - { property: 'category', label: 'Categorie' }
           - { property: 'name', label: 'Nom' }
-          - { property: 'content', label: 'Contenu', type: 'fos_ckeditor'}
+          - { property: 'difficulty', label: 'Difficulté (/100)'}
+          - { property: 'estimatedTime', label: 'Temps estimé (en min)'}
+          - { property: 'ingredients', label: 'Ingrédients', type: 'fos_ckeditor'}
+          - { property: 'steps', label: 'Étapes', type: 'fos_ckeditor'}
           - { property: 'images', label: 'Images'}
         disabled_actions: ['edit']
+      show:
+        fields:
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'category', label: 'Categorie' }
+          - { property: 'name', label: 'Nom' }
+          - { property: 'difficulty', label: 'Difficulté (/100)'}
+          - { property: 'estimatedTime', label: 'Temps estimé (en min)'}
+          - { property: 'ingredients', label: 'Ingrédients'}
+          - { property: 'steps', label: 'Étapes'}
+          - { property: 'images', label: 'Images'}
