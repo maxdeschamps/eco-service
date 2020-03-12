@@ -48,9 +48,21 @@
           <div id="header-menu-droite">
             <ul>
               <li>
-                <a href="{{ path('cart_index') }}">
-                  <i class="fas fa-shopping-cart"></i>
-                </a>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  {% if app.user.isCompany == 0 %}
+                    <a href="{{ path('cart_index') }}">
+                      <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  {% else %}
+                    <a href="{{ path('cart_company_index') }}">
+                      <i class="fas fa-shopping-cart"></i>
+                    </a>
+                  {% endif %}
+                {% else %}
+                  <a href="{{ path('cart_index') }}">
+                    <i class="fas fa-shopping-cart"></i>
+                  </a>
+                {% endif %}
               </li>
               <li>
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -82,11 +94,18 @@
             <a class="material-icons" href="{{ path('index_service') }}">Services</a>
             <a class="material-icons" href="{{ path('index_article') }}">Blog</a>
             <a class="material-icons" href="{{ path('contact') }}">Contact</a>
-            <a class="material-icons" href="{{ path('index_article') }}">Panier </a>
+
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+              {% if app.user.isCompany == 0 %}
+                <a class="material-icons" href="{{ path('cart_index') }}">Panier </a>
+              {% else %}
+                <a class="material-icons" href="{{ path('cart_company_index') }}">Panier </a>
+              {% endif %}
+
               <a class="material-icons" href="{{ path('profile_index') }}">Mon compte</a>
               <a class="material-icons" href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
+              <a class="material-icons" href="{{ path('cart_index') }}">Panier </a>
               <a class="material-icons" href="{{ path('app_login') }}">Connexion</a>
             {% endif %}
           </nav>

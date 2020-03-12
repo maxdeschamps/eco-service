@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Repository\ProductRepository;
+use App\Repository\ServiceRepository;
 
 class CartController extends AbstractController
 {
@@ -47,6 +48,8 @@ class CartController extends AbstractController
     {
       $panier = $session->get('panier', []);
 
+      dd($panier);
+
       if(!empty($panier[$id]))
         $panier[$id]+=$qte;
       else {
@@ -55,8 +58,11 @@ class CartController extends AbstractController
       }
       $session->set('panier', $panier);
 
-      return $this->redirectToRoute("cart_index");
-
+      if ($this->getUser() && $this->getUser()->getIsCompany() == 1) {
+        return $this->redirectToRoute("cart_company_index");
+      } else {
+        return $this->redirectToRoute("cart_index");
+      }
     }
 
     /**
@@ -73,26 +79,58 @@ class CartController extends AbstractController
       }
       $session->set('panier', $panier);
 
+      if ($this->getUser() && $this->getUser()->getIsCompany() == 1) {
+        return $this->redirectToRoute("cart_company_index");
+      } else {
+        return $this->redirectToRoute("cart_index");
+      }
+    }
+
+    /**
+     * @Route("/demande-de-devis", name="cart_company_index")
+     */
+    public function indexCompany(SessionInterface $session, ServiceRepository $serviceRepository)
+    {
+      $panier = $session->get('panier', []);
+
+      $panierWithData = [];
+
+      foreach (($panier) as $id => $quantity) {
+        $panierWithData[] = [
+          'service' => $serviceRepository->find($id),
+          'quantity' => $quantity
+        ];
+      }
+
+      $total = 0;
+
+      foreach ($panierWithData as $item) {
+        $totalItem = $item['service']->getPriceTtc() * $item['quantity'];
+        $total += $totalItem;
+      }
+
+      return $this->render('cart/indexCompany.html.twig', [
+        'items' => $panierWithData,
+        'total' => $total
+      ]);
+    }
+
+    /**
+    * @Route("/panier/editQuantity/{id}", name="cart_editQuanity")
+    */
+    public function editQuantity($id, SessionInterface $Session)
+    {
+      $panier = $session->get('panier', []);
+
+      if (!empty($panier[$id]))
+      {
+        $panier[$id] = $request->query->get('quantity');
+        $this->addFlash('success', 'Quantité modifié avec succès !');
+      }
+      $session->set('panier', $panier);
+
       return $this->redirectToRoute("cart_index");
 
     }
-
-    // /**
-    // * @Route("/panier/editQuantity/{id}", name="cart_editQuanity")
-    // */
-    // public function editQuantity($id, SessionInterface $Session)
-    // {
-    //   $panier = $session->get('panier', []);
-    //
-    //   if (!empty($panier[$id]))
-    //   {
-    //     $panier[$id] = $request->query->get('quantity');
-    //     $this->addFlash('success', 'Quantité modifié avec succès !');
-    //   }
-    //   $session->set('panier', $panier);
-    //
-    //   return $this->redirectToRoute("cart_index");
-    //
-    // }
 
 }

@@ -17,7 +17,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Produit</th>
+              <th>Service</th>
               <th>Prix HT</th>
               <th>Prix TTC</th>
               <th>Quantité</th>
@@ -28,13 +28,13 @@
           <tbody>
             {% for item in items %}
               <tr>
-                <td><a href="{{ path('show_product', { 'id': item.product.id }) }}">{{ item.product.name }}</a></td>
-                <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }}€</td>
-                <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }}€</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ (item.product.priceTtc * item.quantity)|number_format(2, ',', ' ') }}€</td>
+                <td><a href="{{ path('show_service', { 'id': item.service.id }) }}">{{ item.service.name }}</a></td>
+                <td>{{ (item.service.priceHt)|number_format(2, ',', ' ') }}€</td>
+                <td>{{ (item.service.priceTtc)|number_format(2, ',', ' ') }}€</td>
+                <td>{{ item.quantity }} {{ item.service.unity.name }}</td>
+                <td>{{ (item.service.priceTtc * item.quantity)|number_format(2, ',', ' ') }}€</td>
                 <td>
-                  <a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                  <a href="{{ path('cart_remove', {'id': item.service.id}) }}" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
                   </a>
                 </td>
