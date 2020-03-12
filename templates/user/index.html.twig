@@ -61,7 +61,7 @@
                 {% for bill in app.user.bills %}
                   <li>
                     <a href="{{ path('show_bill', { 'id': bill.getId }) }}">
-                      {{ bill.ref }}
+                      Facture #{{ bill.ref }}
                     </a>
                     <a href="{{ path('show_bill', { 'id': bill.getId }) }}">
                       <i class="far fa-eye"></i>
@@ -82,7 +82,7 @@
                 {% for quotation in app.user.quotations %}
                   <li>
                     <a href="{{ path('show_quotation', { 'id': quotation.getId }) }}">
-                      {{ quotation.ref }}</a>
+                      Devis #{{ quotation.ref }}</a>
                     <a href="{{ path('show_quotation', { 'id': quotation.getId }) }}">
                       <i class="far fa-eye"></i>
                     </a>

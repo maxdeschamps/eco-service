@@ -39,16 +39,24 @@
       </div>
     </div>
 
-    <div class="blocFull">
-      <ul class="detailList">
-        {% for product in products %}
-          <li class="detailElement">
-            <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
-              {% if product.images is empty %}
-                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/10/12192715/Brussels-Griffon.jpg"/>
-              {% else %}
-                <img src="{{ product.getImages[0].getUri }}"/>
-              {% endif %}
+  <div class="blocFull">
+    <ul class="detailList">
+      {% for product in products %}
+      <li class="detailElement">
+        <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
+          {% if product.images is empty %}
+          <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+          {% else %}
+          <img src="{{ product.getImages[0].getUri }}" />
+          {% endif %}
+        </a>
+        <ul class="detailContent">
+          <li class="detailContentDatas">
+            <a href="#">
+              <h3>{{ product.name }}</h3>
+            </a>
+            <a href="#">
+              <p>{{ product.category.name }}</p>
             </a>
             <ul class="detailContent">
               <li class="detailContentDatas">

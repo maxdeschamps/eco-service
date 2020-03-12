@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mon devis #{{ quotation.ref }}{% endblock %}
+
+{% block idBody %}{% endblock %}
+
+{% block body %}
+  <div class="container" style="margin-top: 50px;">
+    <div class="blocFull">
+      <h1>Mon devis #{{ quotation.ref }}</h1>
+
+      <ul>
+        {% for serviceQuotation in quotation.serviceQuotations %}
+          <li>
+            <a href="{{ path('show_service', { 'id': serviceQuotation.service.id }) }}">{{ serviceQuotation.service.name }} ({{ (serviceQuotation.service.priceTtc)|number_format(2, ',', ' ') }} €)</a>
+            <span>x {{ serviceQuotation.quantity }}</span>
+            <span>-- {{ (serviceQuotation.service.priceTtc * serviceQuotation.quantity)|number_format(2, ',', ' ') }} €</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p>Total: {{ total|number_format(2, ',', ' ') }} €</p>
+    </div>
+  </div>
+{% endblock %}

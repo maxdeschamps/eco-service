@@ -10,8 +10,9 @@
     <div class="blocHalf">
       <h1><span>Retrouvez tous nos</span></h1>
       <h1>SERVICES ECO SERVICE</h1>
-      <p class="blocContent">Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ? Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets. Nous vous proposons, pour vous aider dans cette
-        démarche, de multiples recettes : produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
+      <div class="blocContent">
+        <p>Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ? Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets. </p>
+        <p>Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes : produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
       </div>
       <div class="blocHalf">
         <img class="fullSize" src="{{ asset('images/img-blog.jpg') }}">
@@ -41,7 +42,7 @@
         {% for service in services %}
         <li class="detailElement">
           <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
-            <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+            <img src="{{ asset('images/img-homepage-1.jpg') }}">
           </a>
         </a>
         <ul class="detailContent">
