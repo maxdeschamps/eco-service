@@ -47,7 +47,7 @@
                       {% if article.images is empty %}
                         <img src="{{ asset('images/img-homepage-1.jpg') }}" />
                       {% else %}
-                        <img src="{{ article.getImages[0].getUri }}" />
+                        <img src="{{ asset('uploads/images/produits/' ~ article.images[0].image) }}" />
                       {% endif %}
 
                     </a>

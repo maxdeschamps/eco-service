@@ -42,7 +42,11 @@
         {% for service in services %}
         <li class="detailElement">
           <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
-            <img src="{{ asset('images/img-homepage-1.jpg') }}">
+            {% if service.images is empty %}
+              <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+            {% else %}
+              <img src="{{ asset('uploads/images/produits/' ~ service.images[0].image) }}" />
+            {% endif %}
           </a>
         </a>
         <ul class="detailContent">
@@ -51,7 +55,7 @@
               <h3>{{ service.name }}</h3>
             </a>
             <a href="{{ path('show_service', { 'id': service.id }) }}">
-              <p>{{ service.content }}</p>
+              <p>{{ service.content | raw }}</p>
             </a>
           </li>
         </ul>
