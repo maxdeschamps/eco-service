@@ -28,7 +28,7 @@
           <tbody>
             {% for item in items %}
               <tr>
-                <td>{{ item.product.name }}</td>
+                <td><a href="{{ path('show_product', { 'id': item.product.id }) }}">{{ item.product.name }}</a></td>
                 <td>{{ (item.product.priceHt)|number_format(2, ',', ' ') }}€</td>
                 <td>{{ (item.product.priceTtc)|number_format(2, ',', ' ') }}€</td>
                 <td>{{ item.quantity }}</td>
