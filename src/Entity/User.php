@@ -59,22 +59,17 @@ class User implements UserInterface, \Serializable
     private $phone;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Message", mappedBy="author")
-     */
-    private $messages;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Newsletter", mappedBy="subscribers")
      */
     private $newsletters;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist"})
      */
     private $delivery_address;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Address", cascade={"persist"})
      */
     private $billing_address;
 
@@ -210,36 +205,6 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
-    /**
-     * @return Collection|Message[]
-     */
-    public function getMessages(): Collection
-    {
-        return $this->messages;
-    }
-
-    public function addMessage(Message $message): self
-    {
-        if (!$this->messages->contains($message)) {
-            $this->messages[] = $message;
-            $message->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMessage(Message $message): self
-    {
-        if ($this->messages->contains($message)) {
-            $this->messages->removeElement($message);
-            // set the owning side to null (unless already changed)
-            if ($message->getAuthor() === $this) {
-                $message->setAuthor(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Newsletter[]
