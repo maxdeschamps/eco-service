@@ -1,7 +1,7 @@
 easy_admin:
   design:
   list:
-    title: 'Liste des %%entity_label%%'
+    title: 'Liste des images'
   entities:
     Image:
       class: App\Entity\Image

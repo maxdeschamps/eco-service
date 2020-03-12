@@ -4,7 +4,7 @@ easy_admin:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
-    title: 'Liste des %%entity_label%%'
+    title: 'Liste des services'
   entities:
     Service:
       edit:

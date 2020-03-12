@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block idBody %}addresses-tpl{% endblock %}
+
+{% block body %}
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="blocFull">
+      <h1>Saisissez vos addresses</h1>
+
+      {% for message in app.flashes('success') %}
+          <div class="alert alert-success mt-2">
+              {{ message }}
+          </div>
+      {% endfor %}
+
+      {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button class="btn" type="submit">Enregistrer les informations</button>
+      {{ form_end(form) }}
+    </div>
+
+    {% if app.user.isCompany == 0 %}
+      <div class="blocFull">
+        <h2>Choisissez votre mode de paiement</h2>
+
+        <div class="paiements">
+          <a href="{{ path('success')}}" class="paypal">
+            <img src="{{asset('images/paypal.png')}}" / />
+          </a>
+
+          <a href="{{ path('payment')}}" class="cb">
+            <img src="{{asset('images/cb.png')}}" / />
+          </a>
+        </div>
+      </div>
+    {% else %}
+      <div class="blocFull">
+        <a href="{{ path('success')}}" class="btn">
+          Faire ma demande de devis
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

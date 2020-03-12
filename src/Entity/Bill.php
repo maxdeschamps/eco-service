@@ -68,7 +68,7 @@ class Bill
     private $customer;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ProductBill", mappedBy="bill")
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductBill", mappedBy="bill", cascade={"persist"})
      */
     private $product_bills;
 

@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ service.getName }}
+{% block title %}{{ service.name }}
 {% endblock %}
 
 {% block idBody %}fiche-service{% endblock %}
@@ -17,13 +17,13 @@
         {% endfor %}
       </div>
       <div class="infos-service textCenter">
-        <h1><span>{{ service.getName }}</span></h1>
-        <p>{{ (service.getPriceTtc)|number_format(2, ',', ' ') }} € <span class="displayBlock">/ {{ service.getUnity.getName }}</span></p>
+        <h1><span>{{ service.name }}</span></h1>
+        <p>{{ (service.priceTtc)|number_format(2, ',', ' ') }} € <span class="displayBlock">/ {{ service.getUnity.getName }}</span></p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 1 %}
           <div class="add-to-cart">
             <label for="qty-service">Choisissez une quantité :</label>
-            <input id="qty-service" value="1" name="nbQuant" type="number" min="1" max="{{ (service.quantity )}}" >
+            <input id="qty-service" value="1" name="nbQuant" type="number" min="1" step="1" >
 
             <a class="btn-acheter" data-service="{{ service.id }}" href="{{ path('cart_add', {'id': service.id, 'qte': 1}) }}">Ajouter au PANIER</a>
           </div>

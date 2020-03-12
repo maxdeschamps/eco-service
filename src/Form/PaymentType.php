@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class PaymentType extends AbstractType
 {
@@ -20,12 +21,17 @@ class PaymentType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nom : '
             ])
-            ->add('num_bluecard')
+            ->add('num_bluecard', TextType::class, [
+              'label' => 'Numéro de carte'
+            ])
 
-            ->add('crypto')
+            ->add('crypto', TextType::class, [
+              'label' => 'Cryptogramme visuel'
+            ])
 
-            ->add('expiration_date')
-
+            ->add('expiration_date', DateType::class, [
+              'label'=> 'Date d\'expiration'
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'label' => 'En cochant cette case, vous acceptez nos conditions générales de vente',
                 'mapped' => false,

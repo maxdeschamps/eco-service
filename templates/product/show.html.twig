@@ -21,12 +21,16 @@
         <p>{{ (product.getPriceTtc)|number_format(2, ',', ' ') }} €</p>
 
         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user.isCompany == 0 %}
-          <div class="add-to-cart">
-            <label for="qty-product">Choisissez une quantité :</label>
-            <input id="qty-product" value="1" name="nbQuant" type="number" min="1" max="{{ (product.quantity )}}" >
+          {% if product.quantity > 0 %}
+            <div class="add-to-cart">
+              <label for="qty-product">Choisissez une quantité :</label>
+              <input id="qty-product" value="1" name="nbQuant" type="number" step="1" min="1" max="{{ (product.quantity )}}" >
 
-            <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
-          </div>
+              <a class="btn-acheter" data-product="{{ product.id }}" href="{{ path('cart_add', {'id': product.id, 'qte': 1}) }}">Ajouter au PANIER</a>
+            </div>
+          {% else %}
+            <p class="text-error">Ce produit n'est malheureusement plus disponible :( ...</p>
+          {% endif %}
         {% else %}
           <p class="text-error">Vous devez avoir un compte client pour pouvoir ajouter ce produit à votre panier</p>
         {% endif %}
@@ -75,7 +79,7 @@
                     <a href="{{ path('show_product', { 'id': product.getId }) }}">
                       <h3>{{ product.name }}</h3>
                     </a>
-                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                    <a href="{{ path('index_product') }}?categories={{ product.category.id }}&q=">
                       <p>{{ product.category.name }}</p>
                     </a>
                   </li>

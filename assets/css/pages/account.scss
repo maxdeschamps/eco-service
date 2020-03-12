@@ -113,3 +113,13 @@
     }
   }
 }
+
+
+#account, #loginPage, #registrationForm, #update, #quotation-tpl, #bill-tpl {
+  #header-menu .nav-account {
+    background: #3f3f3f;
+    span {
+      color: white;
+    }
+  }
+}

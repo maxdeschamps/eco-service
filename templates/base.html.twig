@@ -47,26 +47,36 @@
           </div>
           <div id="header-menu-droite">
             <ul>
-              <li>
-                <a href="{{ path('cart_index') }}">
-                  <i class="fas fa-shopping-cart"></i>
-                </a>
-              </li>
-              <li>
+              <li class="nav-cart">
                 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                  <a class="material-icons" href="{{ path('profile_index') }}">
-                    <i class="fas fa-user-alt"></i>
-                  </a>
+                  {% if app.user.isCompany == 0 %}
+                    <a class="fontSize0" href="{{ path('cart_index') }}">Panier</a>
+                  {% else %}
+                    <a class="fontSize0" href="{{ path('cart_company_index') }}">Panier</a>
+                  {% endif %}
                 {% else %}
-                  <a href="{{ path('app_login') }}">
-                    <i class="fas fa-user-alt"></i>
-                  </a>
+                  <a class="fontSize0" href="{{ path('cart_index') }}">Panier</a>
+                {% endif %}
+                <span><i class="fas fa-shopping-cart"></i></span>
+              </li>
+              <li class="nav-account">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                  <a class="fontSize0" href="{{ path('profile_index') }}">Profil</a>
+                  <span><i class="fas fa-user-alt"></i></span>
+                {% else %}
+                  <a class="fontSize0" href="{{ path('app_login') }}">Profil</a>
+                  <span><i class="fas fa-user-alt"></i></span>
                 {% endif %}
               </li>
+              {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li>
+                  <a class="fontSize0" href="{{ path('app_logout') }}">Déconnexion</a>
+                  <span><i class="fas fa-sign-out-alt"></i></span>
+                </li>
+              {% endif %}
               <li>
-                <a href="/">
-                  <img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service">
-                </a>
+                <a class="fontSize0" href="{{ path('homepage') }}">Accueil</a>
+                <span><img href="/" src="{{ asset('images/logo-eco-service.png') }}" alt="logo eco service"></span>
               </li>
             </ul>
           </div>
@@ -82,11 +92,18 @@
             <a class="material-icons" href="{{ path('index_service') }}">Services</a>
             <a class="material-icons" href="{{ path('index_article') }}">Blog</a>
             <a class="material-icons" href="{{ path('contact') }}">Contact</a>
-            <a class="material-icons" href="{{ path('index_article') }}">Panier </a>
+
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+              {% if app.user.isCompany == 0 %}
+                <a class="material-icons" href="{{ path('cart_index') }}">Panier </a>
+              {% else %}
+                <a class="material-icons" href="{{ path('cart_company_index') }}">Panier </a>
+              {% endif %}
+
               <a class="material-icons" href="{{ path('profile_index') }}">Mon compte</a>
               <a class="material-icons" href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
+              <a class="material-icons" href="{{ path('cart_index') }}">Panier </a>
               <a class="material-icons" href="{{ path('app_login') }}">Connexion</a>
             {% endif %}
           </nav>
@@ -126,7 +143,7 @@
           <div id="footer-logos">
             <ul>
               <li>
-                <a class="logoFooter" href="/">
+                <a class="logoFooter" href="{{ path('homepage') }}">
                   <img src="{{ asset('images/logo-eco-service.png') }}">
                   </a>
               </li>

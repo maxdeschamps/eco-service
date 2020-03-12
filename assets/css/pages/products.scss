@@ -173,6 +173,14 @@
   .backgroundLightGreenInHomepage {
     background-color: $lightGreen;
   }
+
+  #header-menu .nav-products-tpl {
+    background: #3f3f3f;
+
+    span {
+      color: white;
+    }
+  }
 }
 
 #blocProducts {

@@ -36,6 +36,7 @@ easy_admin:
           - { property: 'delivery_address', label: 'Adresse de livraison' }
           - { property: 'company', label: 'Entreprise'}
           - { property: 'service_quotations', label: 'Services du devis'}
+          - { property: 'extra', label: 'Texte supplémentaire' }
         disabled_actions: ['edit']
       show:
         title: 'Devis (#%%entity_id%%)'
@@ -52,3 +53,4 @@ easy_admin:
           - { property: 'billing_address', label: 'Adresse du devis'}
           - { property: 'delivery_address', label: 'Adresse de livraison'}
           - { property: 'service_quotations', label: 'Services du devis'}
+          - { property: 'extra', label: 'Texte supplémentaire' }

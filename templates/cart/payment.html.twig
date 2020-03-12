@@ -11,7 +11,7 @@
         </div>
     {% endfor %}
     <div id="contactForm">
-        <div class="container">
+        <div class="container" style="margin-top: 50px;">
             <div class="blocFull">
                 <h1>Paiement</h1>
                 {{ form_start(form) }}
@@ -43,15 +43,13 @@
                     {{ form_row(form.crypto) }}
                 </div>
             </div>
-        </div>
 
-        <div class="terms">
-            {{ form_label(form.agreeTerms) }}
-            {{ form_widget(form.agreeTerms) }}
+            <div class="terms">
+                {{ form_label(form.agreeTerms) }}
+                {{ form_widget(form.agreeTerms) }}
+            </div>
+            <button type="submit">Payer</button>
+            {{ form_end(form) }}
         </div>
-        <button>Envoyer</button>
-        {{ form_end(form) }}
-    </div>
-    </div>
     </div>
 {% endblock %}
