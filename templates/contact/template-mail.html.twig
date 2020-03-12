@@ -2,21 +2,46 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
     <tr>
         <td align="left">
+          <h3>Vous avez une nouvelle demande !</h3>
             <table cellspacing="0" cellpadding="0" width="100%" border="0">
                 <tr>
-                    <td style="">Sujet:</td>
+                    <td style="">Sujet de la demande : </td>
                     <td>{{ messages.subject }}</td>
                 </tr>
                 <tr>
-                    <td style="">Email:</td>
+                    <td style="">Nom et prénom du client :</td>
+                    <td>{{ messages.lastName }}&nbsp;{{ messages.firstName }}</td>
+                </tr>
+                <tr>
+                    <td style="">Adresse Email utilisée :</td>
                     <td>{{ messages.email }}</td>
                 </tr>
                 <tr>
-                    <td style="">Message:</td>
+                    <td style="">Contenu de la demande :</td>
                     <td>{{ messages.content }}</td>
                 </tr>
             </table>
         </td>
     </tr>
 </table>
+<style>
+
+table {
+  width:90%;
+}
+
+tr td:first-child {
+  width:30%;
+  padding-bottom: 40px;
+}
+
+tr td:last-child {
+  width:70%;
+  padding-bottom: 40px;
+  padding-left:15px;
+  text-align: justify;
+}
+
+
+</style>
 </html>
