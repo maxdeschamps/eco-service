@@ -10,18 +10,11 @@
   <div class="container">
     <div id="header-service">
       <div class="img-service">
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
-        <figure class="zoom imgPres" style="background-image: url({{ asset('images/img-homepage-1.jpg') }}); background-position: 98.8% 45.1957%;">
-          <img src="{{ asset('images/img-homepage-1.jpg') }}" alt="">
-        </figure>
+        {% for image in service.images %}
+          <figure class="zoom imgPres" style="background-image: url('{{ asset('images/produits/' ~ image.image) }}'); background-position: 98.8% 45.1957%;">
+            <img src="{{ asset('images/produits/' ~ image.image) }}" />
+          </figure>
+        {% endfor %}
       </div>
       <div class="infos-service textCenter">
         <h1><span>{{ service.getName }}</span></h1>
@@ -71,7 +64,11 @@
             {% for service in services %}
               <li class="detailElement">
                 <a class="fontSize0" href="{{ path('show_service', { 'id': service.id }) }}">
-                  <img src="https://img-9gag-fun.9cache.com/photo/a9pAbNK_700bwp.webp">
+                  {% if service.images is empty %}
+                    <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+                  {% else %}
+                    <img src="{{ asset('images/produits/' ~ service.images[0].image) }}" />
+                  {% endif %}
                 </a>
               </a>
               <ul class="detailContent">

@@ -44,6 +44,8 @@ easy_admin:
         icon: 'comment'
         children:
           - { entity: 'Message', icon: 'th-list', label: 'Liste des messages'}
+          - { entity: 'Subject', icon: 'tags', label: 'Sujets' }
+          - { entity: 'Subject', icon: 'plus-circle', label: 'Ajouter un sujet', params: { action: 'new' } }
       - label: Newsletters
         icon: 'envelope'
         children:
