@@ -42,13 +42,19 @@
             {% endfor %}
           </tbody>
         </table>
+
+        <div class="extra">
+          <h2>Vous souhaitez ajouter quelque chose ? <br/>Dites-le nous !</h2>
+          <textarea id="extra-service"></textarea>
+        </div>
+
         <div class="totalPanier">
-          <div>
+          <div class="total">
             <p>
               <b>Total :</b>
               {{ total|number_format(2, ',', ' ') }}€</p>
           </div>
-          <button class="btn">Passer à l'étape suivante</button>
+          <a id="link-to-address" href="{{ path('choose_addresses')}}" class="btn">Passer à l'étape suivante</a>
         </div>
       {% else %}
         <p style="text-align:center;">Surprise, c'est vide !</p>

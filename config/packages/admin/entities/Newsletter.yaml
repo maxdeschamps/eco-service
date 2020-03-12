@@ -4,7 +4,7 @@ easy_admin:
       - '@EasyAdmin/form/bootstrap_4.html.twig'
       - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   list:
-    title: 'Liste des %%entity_label%%'
+    title: 'Liste des newsletters'
   entities:
     Newsletter:
       class: App\Entity\Newsletter
@@ -30,4 +30,3 @@ easy_admin:
           - { property: 'content', label: 'Contenu', type: 'fos_ckeditor' }
           - { property: 'author', label: 'Auteur' }
         disabled_actions: ['edit']
-

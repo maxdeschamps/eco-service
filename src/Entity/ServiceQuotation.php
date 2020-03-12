@@ -24,7 +24,7 @@ class ServiceQuotation
     private $quantity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Quotation", inversedBy="service_quotations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Quotation", inversedBy="service_quotations", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $quotation;

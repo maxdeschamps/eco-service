@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Demande envoyée{% endblock %}
+
+{% block idBody %}addresses-tpl{% endblock %}
+
+{% block body %}
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="blocFull">
+      <h1>Merci de nous avoir fait confiance !</h1>
+
+      <p>Nous vous préviendrons de l'avancement de votre demande dans les plus brefs délais.</p>
+
+      <a href="{{ path('homepage')}}">Revenir sur le site</a>
+  </div>
+
+{% endblock %}

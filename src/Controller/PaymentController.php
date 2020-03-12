@@ -25,27 +25,13 @@ class PaymentController extends AbstractController
             $manager->persist($payment);
             $manager->flush();
             $this->addFlash('success', 'Votre Paiement à bien été effectué');
-            return $this->redirectToRoute('contact');
+            return $this->redirectToRoute('success');
         }
 
         return $this->render(
             'cart/payment.html.twig',
             [
                 'form' => $form->createView()
-            ]
-        );
-    }
-
-    /**
-     * @Route("/detail-paiement", name="payment-details")
-     */
-    public function detailPayment(Request $request, EntityManagerInterface $manager)
-    {
-
-        return $this->render(
-            '#',
-            [
-
             ]
         );
     }

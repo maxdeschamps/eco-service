@@ -24,7 +24,7 @@ class ProductBill
     private $quantity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Bill", inversedBy="product_bills")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Bill", inversedBy="product_bills", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $bill;

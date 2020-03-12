@@ -72,7 +72,7 @@ class Quotation
     private $company;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ServiceQuotation", mappedBy="quotation")
+     * @ORM\OneToMany(targetEntity="App\Entity\ServiceQuotation", mappedBy="quotation", cascade={"persist"}))
      */
     private $service_quotations;
 
@@ -205,7 +205,7 @@ class Quotation
         $this->ref = $ref;
         return $this;
     }
-    
+
     public function getExtra(): ?string
     {
         return $this->extra;

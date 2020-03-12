@@ -1,6 +1,6 @@
 easy_admin:
   list:
-    title: 'Liste des %%entity_label%%'
+    title: 'Liste des catégories'
   entities:
     Category:
       class: App\Entity\Category

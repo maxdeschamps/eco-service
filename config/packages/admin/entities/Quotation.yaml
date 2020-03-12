@@ -22,7 +22,6 @@ easy_admin:
           - { property: 'delivery_address', label: 'Adresse de livraison'}
           - { property: 'company', label: 'Entreprise'}
           - { property: 'service_quotations', label: 'Services du devis'}
-          - { property: 'extra', label: 'Texte supplémentaire' }
       form:
         actions:
           - { name: 'delete', label: 'Supprimer' }
