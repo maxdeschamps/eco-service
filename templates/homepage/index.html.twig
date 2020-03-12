@@ -37,7 +37,7 @@
                   {% if product.images is empty %}
                     <img src="{{ asset('images/img-homepage-1.jpg') }}" />
                   {% else %}
-                    <img src="{{ asset('images/produits/' ~ product.images[0].image) }}" />
+                    <img src="{{ asset('uploads/images/produits/' ~ product.images[0].image) }}" />
                   {% endif %}
                 </a>
                 <ul class="detailContent">

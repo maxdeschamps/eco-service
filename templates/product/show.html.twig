@@ -12,7 +12,7 @@
       <div class="img-product">
         {% for image in product.images %}
           <figure class="zoom imgPres" style="background-image: url('{{ asset('images/produits/' ~ image.image) }}'); background-position: 98.8% 45.1957%;">
-            <img src="{{ asset('images/produits/' ~ image.image) }}" />
+            <img src="{{ asset('uploads/images/produits/' ~ image.image) }}" />
           </figure>
         {% endfor %}
       </div>
@@ -67,7 +67,7 @@
                   {% if product.images is empty %}
                     <img src="{{ asset('images/img-homepage-1.jpg') }}" />
                   {% else %}
-                    <img src="{{ asset('images/produits/' ~ product.images[0].image) }}" />
+                    <img src="{{ asset('uploads/images/produits/' ~ product.images[0].image) }}" />
                   {% endif %}
                 </a>
                 <ul class="detailContent">

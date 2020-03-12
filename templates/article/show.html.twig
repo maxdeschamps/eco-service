@@ -9,7 +9,7 @@
   {% if article.images is empty %}
     <div class="blocImage" style="background-image: url('{{ asset('images/article-show.jpg') }}');">
   {% else %}
-    <div class="blocImage" style="background-image: url('{{ asset('images/produits/' ~ article.images[0].image) }}');">
+    <div class="blocImage" style="background-image: url('{{ asset('uploads/images/produits/' ~ article.images[0].image) }}');">
   {% endif %}
       <div class="title">
         <h1>{{ article.getName }}</h1>
