@@ -61,19 +61,44 @@ class UserController extends AbstractController
   }
 
   /**
-   * @Route("/ma-commande/{id}", name="show_summary")
+   * @Route("/ma-facture/{id}", name="show_bill")
    */
-  public function showSummary(?Quotation $quotation, ?Bill $bill)
+  public function showBill(Bill $bill)
   {
-    if (isset($quotation)) {
-      $summary = $quotation;
-    } else {
-      $summaray = $bill;
+    $total = 0;
+
+    foreach ($bill->getProductBills() as $item) {
+        $totalItem = $item->getProduct()->getPriceTtc() * $item->getQuantity();
+        $total += $totalItem;
     }
 
     return $this->render(
-      'user/show.html.twig',
-      ['summary' => $summary]
+      'user/showBill.html.twig',
+      [
+        'bill' => $bill,
+        'total' => $total
+      ]
+    );
+  }
+
+  /**
+   * @Route("/mon-devis/{id}", name="show_quotation")
+   */
+  public function showQuotation(Quotation $quotation)
+  {
+    $total = 0;
+
+    foreach ($quotation->getServiceQuotations() as $item) {
+        $totalItem = $item->getService()->getPriceTtc() * $item->getQuantity();
+        $total += $totalItem;
+    }
+
+    return $this->render(
+      'user/showQuotation.html.twig',
+      [
+        'quotation' => $quotation,
+        'total' => $total
+      ]
     );
   }
 }

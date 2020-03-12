@@ -10,12 +10,10 @@
       <div class="container">
           <div class="blocHalf">
             <h1><span>Pour le recyclage </span><br/>pensez Eco-Service.</h1>
-            <p class="blocContent">Notre quantité de déchets a doublé en 40 ans : dans nos poubelles, on retrouve des sacs en plastique, des gobelets jetables,
-            des disques de coton, des cotons-tiges, des capsules de café… Ne serait-il pas temps d'arrêter les frais ?
-            <br/>
-            Eco-Service vous aide à réduir votre impact sur la pollution : vous trouverez ici des produits éco-responsables, une démarche zéro déchet,
-            en passant par des astuces pour recycler soi même et fabriquer ses propres produits.
-          </p>
+            <div class="blocContent">
+              <p>Notre quantité de déchets a doublé en 40 ans : dans nos poubelles, on retrouve des sacs en plastique, des gobelets jetables, des disques de coton, des cotons-tiges, des capsules de café… Ne serait-il pas temps d'arrêter les frais ?</p>
+              <p>Eco-Service vous aide à réduir votre impact sur la pollution : vous trouverez ici des produits éco-responsables, une démarche zéro déchet, en passant par des astuces pour recycler soi même et fabriquer ses propres produits.</p>
+            </div>
           </div>
 
           <div class="blocHalf">
@@ -31,57 +29,30 @@
     <article id="blocProducts" class="backgroundLightGreen">
       <div class="container">
         <div class="blocFull">
-          <h2 class="textCenter">Nos produits phares</h2>
+          <h2 class="textCenter">Nos derniers produits</h2>
           <ul class="detailList">
-            {# TODO remplacer la liste par des valeurs de la base de données #}
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/gourde-inox.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Gourde isotherme en inox</h3>
-                  </a>
-                  <a href="#">
-                    <p>Alimentaire</p>
-                  </a>
-                </li>
-                <li class="detailPrice">25,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/coton.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>Lot de cotons réutilisables</h3>
-                  </a>
-                  <a href="#">
-                    <p>Cosmétiques</p>
-                  </a>
-                </li>
-                <li class="detailPrice">17,00 €</li>
-              </ul>
-            </li>
-            <li class="detailElement">
-              <a class="fontSize0" href="#">
-                <img src="{{ asset('images/toothbrush.jpg') }}">
-              </a>
-              <ul class="detailContent">
-                <li class="detailContentDatas">
-                  <a href="#">
-                    <h3>4 brosses à dents en bambou</h3>
-                  </a>
-                  <a href="#">
-                    <p>Hygiène</p>
-                  </a>
-                </li>
-                <li class="detailPrice">16,50 €</li>
-              </ul>
-            </li>
+            {% for product in products %}
+              <li class="detailElement">
+                <a class="fontSize0" href="{{ path('show_product', { 'id': product.getId }) }}">
+                  {% if product.images is empty %}
+                    <img src="{{ asset('images/img-homepage-1.jpg') }}" />
+                  {% else %}
+                    <img src="{{ product.getImages[0].getUri }}" />
+                  {% endif %}
+                </a>
+                <ul class="detailContent">
+                  <li class="detailContentDatas">
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                      <h3>{{ product.name }}</h3>
+                    </a>
+                    <a href="{{ path('show_product', { 'id': product.getId }) }}">
+                      <p>{{ product.category.name }}</p>
+                    </a>
+                  </li>
+                  <li class="detailPrice">{{ (product.priceTtc)|number_format(2, ',', ' ') }} €</li>
+                </ul>
+              </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -95,16 +66,12 @@
       <div class="container">
         <div class="blocHalf">
           <h3>Des produits</h3>
-          <p class="blocContent">Pourquoi nos poubelles se remplissent-elles si rapidement ? La raison est simple :
-            nous surconsommons des produits à usage unique.
-            <br>
-            Eco-service vous propose un défi simple : diviser votre quantité de déchets
-            hebdomadaire par deux voire par trois en ayant sous la main les objets utiles.
-            <br>
-            Si vous ne les possédez pas déjà, le fait de vous en procurer sera de toute évidence une source d’économies et un
-            pas de plus vers le zéro déchet (ou presque),
-            puisque nombre de ces indispensables sont à usage presque indéfini.</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
+          <div class="blocContent">
+            <p>Pourquoi nos poubelles se remplissent-elles si rapidement ? La raison est simple :<br/>nous surconsommons des produits à usage unique.</p>
+            <p>Eco-service vous propose un défi simple : diviser votre quantité de déchets hebdomadaire par deux voire par trois en ayant sous la main les objets utiles.</p>
+            <p>Si vous ne les possédez pas déjà, le fait de vous en procurer sera de toute évidence une source d’économies et un pas de plus vers le zéro déchet (ou presque), puisque nombre de ces indispensables sont à usage presque indéfini.</p>
+          </div>
+          <a class="btn" href="{{ path('index_product') }}">Accéder au catalogue</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-2.jpg') }}">
@@ -114,11 +81,13 @@
       <div class="container reverse">
         <div class="blocHalf">
           <h3>Des recettes DIY</h3>
-          <p class="blocContent">Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ?
-          Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets.
-          Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes :
-          produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au blog</a>
+          <div class="blocContent">
+            <p>Pourquoi ne pas vous mettre à fabriquer vous-même vos produits ?</p>
+            <p>Des produits d'entretien aux cosmétiques, vous ferez de considérables économies en plus de réduire vos déchets.</p>
+            <p>Nous vous proposons, pour vous aider dans cette démarche, de multiples recettes :</p>
+            <p>produit démaquillant, déodorant, cotons réutilisables, lessive, savon, baume à lèvres,...</p>
+          </div>
+          <a class="btn" href="{{ path('index_article') }}">Accéder au blog</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-3.jpg') }}">
@@ -128,10 +97,11 @@
       <div class="container">
         <div class="blocHalf">
           <h3>Des services</h3>
-          <p class="blocContent">Votre société désire adopter une démarche plus éco-responsable ? <br>
-            Recyclages, enlèvement de déchets, matériel : découvrez nos nombreux services dans le catalogue et
-            faites appel à nous en réalisant votre devis en ligne. Vous serez par la suite mis en relation avec un commercial.</p>
-          <a class="btn" href="#{# TODO remplacer le lien #}">Accéder au catalogue</a>
+          <div class="blocContent">
+            <p>Votre société désire adopter une démarche plus éco-responsable ?</p>
+            <p>Recyclages, enlèvement de déchets, matériel : découvrez nos nombreux services dans le catalogue et faites appel à nous en réalisant votre devis en ligne. Vous serez par la suite mis en relation avec un commercial.</p>
+          </div>
+          <a class="btn" href="{{ path('index_service') }}">Accéder au catalogue</a>
         </div>
         <div class="blocHalf">
           <img class="fullSize" src="{{ asset('images/img-homepage-4.jpg') }}">

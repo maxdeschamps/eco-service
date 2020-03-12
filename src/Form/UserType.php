@@ -21,12 +21,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-              'label' => 'Email'
+              'label' => 'Email :'
             ])
             ->add('password', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
-                'label' => 'Mot de passe',
+                'label' => 'Mot de passe :',
                 'mapped' => false,
                 'constraints' => [
                   new NotBlank([
@@ -40,32 +40,34 @@ class UserType extends AbstractType
                   ]),
                 ]
             ])
-            ->add('first_name', TextType::class, [
-              'label' => 'Prénom'
+            ->add('firstName', TextType::class, [
+              'label' => 'Prénom :'
             ])
             ->add('lastName', TextType::class, [
-              'label' => 'Nom'
+              'label' => 'Nom :'
             ])
             ->add('phone', TextType::class, [
-              'label' => 'Téléphone'
+              'label' => 'Téléphone :'
             ])
             ->add('isCompany', CheckboxType::class, [
               'label' => 'Vous êtes une société ?',
               'required' => false
             ])
             ->add('companyName', TextType::class, [
-              'label' => 'Nom de la société',
+              'label' => 'Nom de la société :',
               'required' => false
             ])
             ->add('newsletterAcceptance', CheckboxType::class, [
-              'label' => 'Recevoir la newsletter',
+              'label' => 'Recevoir la newsletter :',
               'required' => false
             ])
-            ->add('delivery_address', AddressType::class, [
-              'label' => 'Adresse de livraison'
+            ->add('deliveryAddress', AddressType::class, [
+              'label' => 'Adresse de livraison :',
+              'attr' => ['class' => 'marginTextarea']
             ])
-            ->add('billing_address', AddressType::class, [
-              'label' => 'Adresse de facturation'
+            ->add('billingAddress', AddressType::class, [
+              'label' => 'Adresse de facturation : ',
+              'attr' => ['class' => 'marginTextarea']
             ])
         ;
     }

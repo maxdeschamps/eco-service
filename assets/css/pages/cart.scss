@@ -1,0 +1,88 @@
+#cart {
+  background-color: $lightGreen;
+
+  .container {
+    h1 {
+      text-align: center;
+    }
+
+    .table {
+      width: 100%;
+      height: 50px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background: white;
+
+      tr {
+        height: 70px;
+
+        th {
+          text-align: center;
+        }
+
+        td {
+          text-align: center;
+        }
+
+        a.btn {
+          cursor: pointer;
+          font-size: 17px;
+          text-transform: uppercase;
+          background: white;
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px 30px;
+          transition: 0.3s;
+          text-decoration: none;
+          margin-top: 70px;
+          @media screen and (max-width: $smallSize) {
+            border: 0;
+            padding:0 10px;
+            margin:0;
+          }
+
+          &:hover {
+            background: black;
+            color: white;
+            transition: 0.3s;
+
+            @media screen and (max-width: $smallSize) {
+              background: white;
+              color:black;
+            }
+          }
+        }
+      }
+
+      .tbody {
+        background: $grey;
+        height: 50px;
+      }
+    }
+
+    .totalPanier {
+      text-align: right;
+      padding: 50px 0;
+
+      div {
+        width: 30%;
+        border: 1px solid black;
+        border-radius: 10px;
+        background: white;
+        margin-left: auto;
+        text-align: center;
+        @media screen and (max-width: $mediumSize) {
+          width:60%;
+        }
+      }
+
+      button {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+.bite {
+  background-color: $lightGreen;
+}

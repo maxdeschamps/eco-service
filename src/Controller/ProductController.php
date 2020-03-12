@@ -57,15 +57,18 @@ class ProductController extends AbstractController
         );
     }
 
-
     /**
      * @Route("/produit/{id}", name="show_product")
      */
     public function show(Product $product)
     {
-        return $this->render(
-            'product/show.html.twig',
-            ['product' => $product]
+        $products = $this->productRepository->findLastsProductsByCategory($product);
+
+        return $this->render('product/show.html.twig',
+            [
+              'products' => $products,
+              'product' => $product
+            ]
         );
     }
 }
