@@ -4,8 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Form\ProductSearchType;
-use App\Form\ProductType;
 use App\Data\SearchData;
+
+use App\Form\ProductBillType;
+use App\Entity\Bill;
+use App\Entity\ProductBill;
 
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -60,7 +63,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/produit/{id}", name="show_product")
      */
-    public function show(Product $product)
+    public function show(Product $product, Request $request)
     {
         $products = $this->productRepository->findLastsProductsByCategory($product);
 

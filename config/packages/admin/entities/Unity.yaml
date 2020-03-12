@@ -3,7 +3,7 @@ easy_admin:
     title: 'Liste des %%entity_label%%'
   entities:
     Unity:
-      class: App\Entity\Subject
+      class: App\Entity\Unity
       edit:
         title: 'Editer une unité (#%%entity_label%%)'
       new:
