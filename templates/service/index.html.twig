@@ -55,7 +55,7 @@
               <h3>{{ service.name }}</h3>
             </a>
             <a href="{{ path('show_service', { 'id': service.id }) }}">
-              <p>{{ service.content }}</p>
+              <p>{{ service.content | raw }}</p>
             </a>
           </li>
         </ul>

@@ -48,7 +48,7 @@
       <div class="blocFull">
         <h2>Description</h2>
         <p>
-          {{ service.content }}
+          {{ service.content | raw }}
         </p>
       </div>
     </div>
@@ -77,7 +77,7 @@
                     <h3>{{ service.name }}</h3>
                   </a>
                   <a href="{{ path('show_service', { 'id': service.id }) }}">
-                    <p>{{ service.content }}</p>
+                    <p>{{ service.content | raw }}</p>
                   </a>
                 </li>
               </ul>
