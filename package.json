@@ -15,7 +15,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "nouislider": "^14.1.1",
         "tarteaucitronjs": "^1.3.1"
     }
